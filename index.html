@@ -281,35 +281,79 @@
             <div class="row footer">
                 <div class="col">
                     <div class="container">
-                        <div class="row">
-                            <div class="col pt-5">
-                                <h3 class="text-white">Contact</h3>
+                        <div class="row pt-5 ">
+                            <div class="col-2 footer_text">
+                                <h3 class="text-left">INFO</h3>
+                                <ul>
+                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="#" title="Formats">Formats</a></li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 footer_text">
-                                <p>Studio / 56, Digvijay Plot,
-                                    <br>Jamnagar (India)
-                                    <br>
-                                    <span>Email:<a href="mailto:info@thewebvendor.com">info@thewebvendor.com</a></span>
-                                </p>
+                            <div class="col-2 footer_text">
+                                <h3 class="text-left">HELP</h3>
+                                <ul>
+                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
+                                </ul>
                             </div>
-                            <div class="col-6 footer_text d-flex justify-content-end">
-                                <div class="social">
-                                    <a href="#" title="Like Zamzar on Facebook" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
-                                            data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
-                                            alt="Facebook icon"></a>
+                            <div class="col-2 footer_text">
+                                <h3 class="text-left">resources</h3>
+                                <ul>
+                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
+                                    <li><a href="#" title="Tools">Tools</a></li>
+                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-2 footer_text">
+                                <h3 class="text-left">Company</h3>
+                                <ul>
+                                    <li><a href="#" title="About">About Us</a></li>
+                                    <li><a href="#" title="Advertise">Advertise</a></li>
+                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
+                                    <li><a href="#" title="Terms">Terms of Service</a></li>
+                                    <li><a href="#" title="Privacy">Privacy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="text-white text-center Subscribe">Subscribe to our newsletter</h5>
+                                        <form class="form-inline d-flex justify-content-center" action="" method="post"
+                                            target="_blank">
+                                            <div class="form-group">
 
-                                    <a href="#" title="Follow Zamzar on Twitter" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
-                                            data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
-                                            alt="Twitter icon"></a>
+                                                <input id="footer-subscribe-email" class="form-control p-3 mt-2"
+                                                    name="EMAIL" placeholder="Your email" type="email"
+                                                    style="font-size:1.2rem">
+                                            </div>
 
-                                    <a href="#" title="Check out Zamzar on Instagram" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
-                                            data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
-                                            alt="Instagram icon"></a>
+                                            <button type="submit" class="btn btn-success ml-2 mt-2"
+                                                style="font-size: 1.2rem;">Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="social d-flex justify-content-center">
+                                            <a href="#" title="Like Zamzar on Facebook" target="_blank"
+                                                rel="noopener noreferrer"><img
+                                                    src="images/social/social-facebook-icon.png"
+                                                    data-lazy-src="images/social-facebook-icon.png" width="32"
+                                                    height="34" alt="Facebook icon"></a>
+
+                                            <a href="#" title="Follow Zamzar on Twitter" target="_blank"
+                                                rel="noopener noreferrer"><img
+                                                    src="images/social/social-twitter-icon.png"
+                                                    data-lazy-src="images/social-twitter-icon.png" width="32"
+                                                    height="34" alt="Twitter icon"></a>
+
+                                            <a href="#" title="Check out Zamzar on Instagram" target="_blank"
+                                                rel="noopener noreferrer"><img
+                                                    src="images/social/social-instagram-icon.png"
+                                                    data-lazy-src="images/social-instagram-icon.png" width="32"
+                                                    height="32" alt="Instagram icon"></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -354,23 +398,21 @@
         </div>
         <!-- overlay menu items ends -->
         <!--  header show when scroll active start-->
-        <div class="header_show">
+
+        <div class="header_show  mynavbaranimatemobile navshow" style="z-index: 2;position: absolute;">
             <div class="logo_button">
                 <span class="header_logo">
                     <a href="/"><img src="images/zamzar-logo.png"></a>
                 </span>
-                <a href="tel:7087400902" class="call_mobile">
-
-                </a>
                 <span class="toggle_button" onclick="openNav()" style="color: #067aee;">&#9776;</span>
             </div>
         </div>
         <!-- header show when scoll active end -->
-        <div class="container">
-            <!-- fixed header start -->
-            <div class="row">
+        <!-- <div class="container"> -->
+        <!-- fixed header start -->
+        <!-- <div class="row">
                 <div class="col">
-                    <div class="header_main">
+                    <div class="header_show">
                         <div class="logo_button_fixed">
                             <span class="header_logo_fixed">
                                 <a href="/"><img src="images/zamzar-logo.png"></a>
@@ -382,99 +424,100 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- fixed header end -->
-        </div>
+            </div> -->
+        <!-- fixed header end -->
+        <!-- </div> -->
 
         <!-- ---------------------------- content start ---------------------------- -->
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col main_background">
+            <div class="row main_background_mobile">
+                <div class="col ">
                     <div class="container">
+                        <div class="mynavbaranimatetextmobile navshowtext">
+                            <div class="row ">
+                                <div class="col d-flex justify-content-center">
+                                    <h1 class="main_heading text-center">Welcome to The <span>VCF Converter!</span>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="main_heading_paragraph text-center pt-3">#1 Website to convert Excel
+                                        to VCF, VCF to Excel and
+                                        VCF Splitter - 100% Secure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="position: sticky; bottom: 1rem;padding-top: 25rem;">
                         <div class="row">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col d-flex justify-content-center">
-                                        <h1 class="main_heading text-center">Welcome to The <span>VCF Converter!</span>
-                                        </h1>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="main_heading_paragraph text-center pt-3">#1 Website to convert Excel
-                                            to VCF, VCF to Excel and
-                                            VCF Splitter - 100% Secure</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col service_type_mobile">
-                                        <div class="row d-flex justify-content-center ">
-                                            <div class="col-8">
-                                                <div class="wrap-col">
-                                                    <div class="item-container">
-                                                        <a href="#">
-                                                            <div class="item-caption">
-                                                                <div class="item-caption-inner">
-                                                                    <div class="item-caption-inner1">
-                                                                        <h3>Excel to VCF</h3>
-                                                                        <span>VCF Tools</span>
-                                                                    </div>
-                                                                </div>
+                            <div class="col service_type_mobile">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-8">
+                                        <div class="wrap-col">
+                                            <div class="item-container">
+                                                <a href="#">
+                                                    <div class="item-caption">
+                                                        <div class="item-caption-inner">
+                                                            <div class="item-caption-inner1">
+                                                                <h3>Excel to VCF</h3>
+                                                                <span>VCF Tools</span>
                                                             </div>
-                                                            <img src="images/exceltovcf.jpg"
-                                                                alt="Online Excel/CSV to VCF Converter free"
-                                                                title="Excel/CSV to VCF/vCard Converter">
-                                                        </a>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <img src="images/exceltovcf.jpg"
+                                                        alt="Online Excel/CSV to VCF Converter free"
+                                                        title="Excel/CSV to VCF/vCard Converter">
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="col-8">
-                                                <div class="wrap-col">
-                                                    <div class="item-container">
-                                                        <a href="#">
-                                                            <div class="item-caption">
-                                                                <div class="item-caption-inner">
-                                                                    <div class="item-caption-inner1">
-                                                                        <h3>VCF to Excel</h3>
-                                                                        <span>VCF Tools</span>
-                                                                    </div>
-                                                                </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-8">
+                                        <div class="wrap-col">
+                                            <div class="item-container">
+                                                <a href="#">
+                                                    <div class="item-caption">
+                                                        <div class="item-caption-inner">
+                                                            <div class="item-caption-inner1">
+                                                                <h3>VCF to Excel</h3>
+                                                                <span>VCF Tools</span>
                                                             </div>
-                                                            <img src="images/vcftoexcel.jpg"
-                                                                alt="Online Excel/CSV to VCF Converter free"
-                                                                title="Excel/CSV to VCF/vCard Converter">
-                                                        </a>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <img src="images/vcftoexcel.jpg"
+                                                        alt="Online Excel/CSV to VCF Converter free"
+                                                        title="Excel/CSV to VCF/vCard Converter">
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="col-8">
-                                                <div class="wrap-col">
-                                                    <div class="item-container">
-                                                        <a href="#">
-                                                            <div class="item-caption">
-                                                                <div class="item-caption-inner">
-                                                                    <div class="item-caption-inner1">
-                                                                        <h3>VCF Splitter</h3>
-                                                                        <span>VCF Tools</span>
-                                                                    </div>
-                                                                </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-8">
+                                        <div class="wrap-col">
+                                            <div class="item-container">
+                                                <a href="#">
+                                                    <div class="item-caption">
+                                                        <div class="item-caption-inner">
+                                                            <div class="item-caption-inner1">
+                                                                <h3>VCF Splitter</h3>
+                                                                <span>VCF Tools</span>
                                                             </div>
-                                                            <img src="images/vcfsplitter.jpg"
-                                                                alt="Online Excel/CSV to VCF Converter free"
-                                                                title="Excel/CSV to VCF/vCard Converter">
-                                                        </a>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <img src="images/vcfsplitter.jpg"
+                                                        alt="Online Excel/CSV to VCF Converter free"
+                                                        title="Excel/CSV to VCF/vCard Converter">
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+"use strict";
+
 // check scroll is active or not
 // var $logo = $(".header_show");
 // $(document).scroll(function () {
@@ -17,8 +19,8 @@ $(document).scroll(function () {
     $(".header_show_desktop").css("display", "none");
     $(".header_main_desktop").css("display", "block");
   }
-});
-// overlay menu function
+}); // overlay menu function
+
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
 }
@@ -27,6 +29,8 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 /* -------------- if specific item click than close navbar auto ------------- */
+
+
 $(document).ready(function () {
   $("#mobile_home_button").click(function () {
     closeNav();
@@ -52,20 +56,14 @@ $(document).ready(function () {
   $("#mobile_signup_button").click(function () {
     closeNav();
   });
+  /* --------------------- time delay to start animation --------------------- */
 
-/* --------------------- time delay to start animation --------------------- */
-
-  $(".navshow").hide(); 
-setTimeout(function(){ 
-
-	$(".navshow").show(); 
-},1000);
-
-$(".navshowtext").hide(); 
-setTimeout(function(){ 
-  
-	$(".navshowtext").show(); 
-},1000);
-
-
+  $(".navshow").hide();
+  setTimeout(function () {
+    $(".navshow").show();
+  }, 1000);
+  $(".navshowtext").hide();
+  setTimeout(function () {
+    $(".navshowtext").show();
+  }, 1000);
 });
