@@ -748,7 +748,7 @@ body {
 @keyframes navbaranimatetextmobile {
     from {
         opacity: 0;
-        padding-top: 12rem;
+        margin-top: 13rem;
     }
 
     to {
