@@ -590,7 +590,7 @@ body {
     }
 
     .footer {
-        background-color: #000;
+        background-color: #212121;
     }
 
     .ticked {
@@ -621,43 +621,63 @@ body {
     .paragraph_style {
         color: #808080;
     }
-
     .footer_text h3 {
-        color: #fff;
+        color: #e0e0e0;
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
-
-    .footer_text p span {
+    
+    .Subscribe {
+        color: #e0e0e0 !important;
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+    
+    }
+    
+    .footer_text ul {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer_text ul li {
+        list-style: none;
+        margin-bottom: 0.2rem;
+    }
+    
+    .footer_text ul li a {
+        font-size: 1.4rem;
+        line-height: 2.0rem;
         color: #cfcfcf;
     }
-
-    .footer_text p span a {
-        margin-left: 0.5rem;
-        color: #6e6e6e;
-    }
-
-    .footer_text p a:hover {
+    
+    .footer_text ul li a:hover {
         text-decoration: none;
-        color: #f7f7f7;
+        color: #f7f7f7
     }
-
-    .footer_text p {
-        color: #6e6e6e;
-    }
-
+    
     .social {
-        margin-top: 20px;
+        margin-top: 1.5rem;
     }
-
+    
+    .social a {
+        margin-left: 1rem;
+    }
+    
     .social a:hover {
         opacity: 0.5;
     }
-
+    
     .copyright_text h3 {
         font-size: 1.2rem;
         line-height: 2.0rem;
-        color: #6e6e6e;
+        color: #e0e0e0;
     }
-
+    
     .hrtag {
         background-color: #067aee;
     }
