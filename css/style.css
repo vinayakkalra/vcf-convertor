@@ -167,8 +167,8 @@ body {
 }
 
 .service_type {
-    margin-top: 23rem;
-    padding: 25px 10px 10px 10px;
+    /* margin-top: 23rem; */
+    padding: 2.5rem 1rem 1rem 1rem;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -477,7 +477,7 @@ body {
         font-weight: 500;
     }
 
-    .service_type {
+    .service_type_mobile {
         margin: 2rem !important;
         height: 100% !important;
         padding: 25px 10px 10px 10px;
@@ -640,3 +640,38 @@ body {
     }
     
 }
+
+/* ---------------------------- navbar animation ---------------------------- */
+/* animation for slider */
+@keyframes navbaranimate{
+    from{
+        opacity: 0;
+     margin-top:-5rem;
+    }    
+    to{    
+        opacity: 1;
+      margin-top:0;}
+  }
+  .mynavbaranimate{ 
+    animation-name: navbaranimate;
+    animation-duration: 1s;
+    animation-iteration-count: 1;  
+  }
+  /* animation for slider end */
+  @keyframes navbaranimatetext{
+    from{
+        opacity: 0;
+  padding-top:10rem;
+    }    
+    to{    
+        opacity: 1;
+      margin-top:0;}
+  }
+  .mynavbaranimatetext{ 
+    margin-top: 0px;
+    animation-name: navbaranimatetext;
+    animation-duration: 1s;
+    animation-iteration-count: 1;  
+  }
+  /* animation for slider end */
+/* -------------------------- navbar animation end -------------------------- */

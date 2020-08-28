@@ -52,4 +52,20 @@ $(document).ready(function () {
   $("#mobile_signup_button").click(function () {
     closeNav();
   });
+
+/* --------------------- time delay to start animation --------------------- */
+
+  $(".navshow").hide(); 
+setTimeout(function(){ 
+
+	$(".navshow").show(); 
+},1000);
+
+$(".navshowtext").hide(); 
+setTimeout(function(){ 
+  
+	$(".navshowtext").show(); 
+},1000);
+
+
 });
