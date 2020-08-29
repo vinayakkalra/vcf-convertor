@@ -54,18 +54,28 @@ $(document).ready(function () {
   });
 
 /* --------------------- time delay to start animation --------------------- */
+$("#navshow").hide(); 
+setTimeout(function(){ 
+  $('#navshow').addClass('mynavbaranimatemobile');
+    $("#navshow").show(); 
+  },1000);
+
+  $("#navshowtext").hide(); 
+  setTimeout(function(){ 
+    $("#navshowtext").addClass('mynavbaranimatetextmobile');  
+      $("#navshowtext").show(); 
+    },1000);
 
   $(".navshow").hide(); 
 setTimeout(function(){ 
-
+$('.navshow').addClass('mynavbaranimate');
 	$(".navshow").show(); 
 },1000);
 
 $(".navshowtext").hide(); 
 setTimeout(function(){ 
-  
+  $(".navshowtext").addClass('mynavbaranimatetext'); 
 	$(".navshowtext").show(); 
 },1000);
-
 
 });
