@@ -87,11 +87,16 @@ body {
     box-sizing: border-box;
     font-weight: 400;
     font-size: 1.6rem;
+    background: #f7f7f7;
 }
 
 .navbar ul li {
     font-size: 1.4rem;
 
+}
+
+p {
+    color: #808080;
 }
 
 .navbar ul li a {
@@ -621,6 +626,7 @@ body {
     .paragraph_style {
         color: #808080;
     }
+
     .footer_text h3 {
         color: #e0e0e0;
         font-size: 1.4rem;
@@ -629,55 +635,55 @@ body {
         letter-spacing: 1px;
         text-transform: uppercase;
     }
-    
+
     .Subscribe {
         color: #e0e0e0 !important;
         font-size: 1.4rem;
         line-height: 1.5rem;
         font-weight: 700;
-    
+
     }
-    
+
     .footer_text ul {
         text-align: left;
         padding: 0;
         margin: 0;
     }
-    
+
     .footer_text ul li {
         list-style: none;
         margin-bottom: 0.2rem;
     }
-    
+
     .footer_text ul li a {
         font-size: 1.4rem;
         line-height: 2.0rem;
         color: #cfcfcf;
     }
-    
+
     .footer_text ul li a:hover {
         text-decoration: none;
         color: #f7f7f7
     }
-    
+
     .social {
         margin-top: 1.5rem;
     }
-    
+
     .social a {
         margin-left: 1rem;
     }
-    
+
     .social a:hover {
         opacity: 0.5;
     }
-    
+
     .copyright_text h3 {
         font-size: 1.2rem;
         line-height: 2.0rem;
         color: #e0e0e0;
     }
-    
+
     .hrtag {
         background-color: #067aee;
     }
@@ -766,3 +772,89 @@ body {
 
 /* animation for slider end */
 /* -------------------------- navbar animation end -------------------------- */
+
+
+
+/* ------------------------- excel to vcf page style ------------------------ */
+
+.navbarshow_desktop {
+    background: #fff;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 0;
+}
+
+.exceltovcf_background {
+    padding: 30px 0 0 0;
+    height: 17rem;
+    width: 100%;
+    background: #2487eb url('../images/bg3.png') repeat-x bottom center;
+}
+
+.exceltovcf_heading h3 {
+    font-size: 4.8rem;
+    line-height: 5.3rem;
+    font-weight: 500;
+    color: #f7f7f7;
+}
+
+.exceltovcf_heading h3 span {
+    font-weight: 300;
+}
+
+.imagewithstar {
+
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    background-color: #c2eaca;
+    border: 1px solid #a4daaf;
+    color: #054213;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+
+.imagewithstar img {
+    text-align: center;
+
+}
+
+.exceltovcf_text ol {
+    color: #808080;
+}
+
+.exceltovcf_text h4 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    color: #3b3b3b;
+}
+.collapseSignup {
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    padding: 2rem 2rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+}
+.select_file_text{
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+    color: #3b3b3b;
+}
+.exceltovcf_background_mobile {
+
+    height: 100%;
+    background: #2487eb url('../images/bg3.png') repeat-x bottom center;
+}
+.exceltovcf_heading_mobile h3{
+    margin-top: 12rem;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+    font-weight: 500;
+    color: #f7f7f7;
+}
+.exceltovcf_heading_mobile h3 span{
+    font-weight: 300;
+}
+@media (max-width: 991px){
+    
+}
