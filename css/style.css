@@ -858,3 +858,14 @@ p {
 @media (max-width: 991px){
     
 }
+#step2,#step2_mobile{
+    display: none;
+}
+.form-control{
+    font-size: 1.6rem !important;
+}
+@media(max-width:991px){
+    .form-group label{
+        font-size: 1.55rem !important;
+    }
+}

@@ -176,18 +176,24 @@
                 <div class="col">
                     <div class="container">
                         <div class="row d-flex justify-content-center mt-5 mb-5">
+
+
+
                             <div class="col-8 collapseSignup">
-                                <div class="row">
+                                <!-- ----------------------------- step 1 code ----------------------------- -->
+                                <div class="row" id="step1">
                                     <div class="col-7">
-                                        <form action="" method="post" enctype="multipart/form-data" name="form1"
-                                            id="ff">
+                                        <form method="post" enctype="multipart/form-data" name="upload_excel"
+                                            id="upload_excel" data-name="upload_excel">
                                             <label class="row">
                                                 <div class="wrap-col select_file_text"> Step 1: Select file to convert
                                                 </div>
                                             </label>
                                             <label class="row">
                                                 <div class="wrap-col">Select file:
-                                                    <input type="file" name="xls_file" id="xls_file" required="">
+                                                    <input type="file" name="fileToUpload"
+                                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                                        id="fileToUpload">
                                                 </div>
                                             </label>
                                             <label class="row">
@@ -195,12 +201,110 @@
                                                     (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
                                                 </div>
                                             </label>
-                                            <input class="sendButton btn btn-primary" type="submit" name="Submit"
+                                            <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                 value="Submit" style="font-size: 1.6rem;padding: .5rem 2rem;">
                                         </form>
                                     </div>
                                     <div class="col-5 d-flex justify-content-center">
                                         <img src="images/addfile.svg" alt="add images" width="60%">
+                                    </div>
+                                </div>
+                                <!-- ----------------------------- step 2 code ----------------------------- -->
+                                <div class="row" id="step2">
+                                    <div class="col">
+                                        <form method="post" name="step2" id="step2form">
+                                            <div class="form-row">
+
+                                                <div class="wrap-col select_file_text">
+                                                    Step 2 : Open your excel sheet, and tell us where the data starts
+                                                    from:
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="upload_file" class="col-3">Uploaded file:</label>
+                                                <div class="col-9">
+                                                    <input type="text" readonly="readonly" value=""
+                                                        class="form-control" id="read_file">
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="file_name" id="file_name" value="">
+                                            <div class="form-group row">
+                                                <label for="sheet" class="col-3">Sheet Number:</label>
+                                                <div class="col-9">
+                                                    <input name="sheet" type="number" required="required" id="sheet"
+                                                        max="9999" min="1" value="1" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="first_column" class="col-3">First Column:</label>
+                                                <div class="col-9">
+                                                    <select name="first_column" id="first_column" required=""
+                                                        class="form-control">
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                        <option value="K">K</option>
+                                                        <option value="L">L</option>
+                                                        <option value="M">M</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_column" class="col-3">Last Column:</label>
+                                                <div class="col-9">
+                                                    <select name="last_column" id="last_column" required=""
+                                                        class="form-control">
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                        <option value="K">K</option>
+                                                        <option value="L">L</option>
+                                                        <option value="M">M</option>
+                                                        <option value="N">N</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="first_row" class="col-3">First Row
+                                                    Number:</label>
+                                                <div class="col-9">
+                                                    <input type="number" name="first_row" id="first_row" min="1"
+                                                        max="9999" required="required" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_row" class="col-3">Last Row
+                                                    Number:</label>
+                                                <div class="col-9">
+                                                    <input type="number" name="last_row" id="last_row" min="1"
+                                                        max="9999" required="required" autocomplete="off"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col d-flex justify-content-center mt-3">
+                                                    <input class="btn btn-primary" type="submit" name="submit2"
+                                                        id="submit2" value="Submit"
+                                                        style="font-size:1.6rem;padding: 0.5rem 2rem;">
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +363,7 @@
                                             </div>
 
                                             <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.2rem;">Subscribe</button>
+                                                style="font-size: 1.5rem;">Subscribe</button>
                                         </form>
                                     </div>
                                 </div>
@@ -359,7 +463,7 @@
                 </div>
             </div>
 
-<!-- ------------------------------ how to upload excel to vcf ------------------------------ -->
+            <!-- ------------------------------ how to upload excel to vcf ------------------------------ -->
 
             <div class="row pt-1 pb-2">
                 <div class="col">
@@ -410,13 +514,16 @@
                 </div>
             </div>
 
-<!-- ---------------------------- select file to convert----------------------------- -->
+            <!-- ---------------------------- select file to convert----------------------------- -->
 
             <div class="row pb-5">
                 <div class="col">
                     <div class="container">
                         <div class="row d-flex justify-content-center mt-2 mb-5">
-                            <div class="col-10 collapseSignup">
+
+<!-- -------------------------- step 1 for mobile -------------------------- -->
+
+                            <div class="col-10 collapseSignup" id="step1_mobile">
                                 <div class="row">
                                     <div class="col d-flex justify-content-center">
                                         <img src="images/addfile.svg" alt="add images" width="50%">
@@ -424,15 +531,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <form action="" method="post" enctype="multipart/form-data" name="form1"
-                                            id="ff">
+                                        <form method="post" enctype="multipart/form-data" name="form2"
+                                            id="upload_excel_mobile">
                                             <label class="row">
                                                 <div class="wrap-col select_file_text"> Step 1: Select file to convert
                                                 </div>
                                             </label>
                                             <label class="row">
                                                 <div class="wrap-col">Select file:
-                                                    <input type="file" name="xls_file" id="xls_file" required="" style="width: 100%;">
+                                                    <input type="file" name="fileToUpload_mobile"
+                                                        id="fileToUpload_mobile"
+                                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                                        style="width: 100%;">
                                                 </div>
                                             </label>
                                             <label class="row">
@@ -441,8 +551,109 @@
                                                 </div>
                                             </label>
                                             <div class="row d-flex justify-content-center">
-                                            <input class="sendButton btn btn-primary" type="submit" name="Submit"
-                                                value="Submit" style="font-size: 1.6rem;padding: .8rem 3rem;">
+                                                <input class="sendButton btn btn-primary" type="submit" name="submit"
+                                                    value="submit" style="font-size: 1.6rem;padding: .8rem 3rem;">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+<!-- -------------------------- step 2 for mobile -------------------------- -->
+                            <div class="10 collapseSignup" id="step2_mobile">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col">
+                                        <form method="post" name="step2" id="step2form_mobile">
+                                            <div class="form-row">
+
+                                                <div class="wrap-col select_file_text">
+                                                    Step 2 : Open your excel sheet, and tell us where the data starts
+                                                    from:
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="upload_file_mobile" class="col-5">Uploaded file:</label>
+                                                <div class="col-7">
+                                                    <input type="text" readonly="readonly" value=""
+                                                        class="form-control" id="read_file_mobile">
+                                                </div>
+                                            </div>
+                                            <!-- <input type="hidden" name="filename" id="filename" value="DNdata.xlsx"> -->
+                                            <div class="form-group row">
+                                                <label for="sheet_mobile" class="col-5">Sheet Number:</label>
+                                                <div class="col-7">
+                                                    <input name="sheet_mobile" type="number" required="required" id="sheet_mobile"
+                                                        max="9999" min="1" value="1" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="first_column_mobile" class="col-5">First Column:</label>
+                                                <div class="col-7">
+                                                    <select name="first_column_mobile" id="first_column_mobile" required=""
+                                                        class="form-control">
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                        <option value="K">K</option>
+                                                        <option value="L">L</option>
+                                                        <option value="M">M</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_column_mobile" class="col-5">Last Column:</label>
+                                                <div class="col-7">
+                                                    <select name="last_column_mobile" id="last_column_mobile" required=""
+                                                        class="form-control">
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                        <option value="E">E</option>
+                                                        <option value="F">F</option>
+                                                        <option value="G">G</option>
+                                                        <option value="H">H</option>
+                                                        <option value="I">I</option>
+                                                        <option value="J">J</option>
+                                                        <option value="K">K</option>
+                                                        <option value="L">L</option>
+                                                        <option value="M">M</option>
+                                                        <option value="N">N</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="first_row_mobile" class="col-5">First Row
+                                                    Number:</label>
+                                                <div class="col-7">
+                                                    <input type="number" name="first_row_mobile" id="first_row_mobile" min="1"
+                                                        max="9999" required="required" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_row_mobile" class="col-5">Last Row
+                                                    Number:</label>
+                                                <div class="col-7">
+                                                    <input type="number" name="last_row_mobile" id="last_row_mobile" min="1"
+                                                        max="9999" required="required" autocomplete="off"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col d-flex justify-content-center mt-3">
+                                                    <input class="btn btn-primary" type="submit" name="submit2"
+                                                        id="submit2" value="Submit"
+                                                        style="font-size:1.6rem;padding: 0.5rem 2rem;">
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -471,8 +682,8 @@
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
-                                    <button type="submit" class="btn btn-success ml-2"
-                                        style="font-size: 1.2rem;">Subscribe</button>
+                                    <button type="submit" class="btn btn-success ml-2 mt-sm-3"
+                                        style="font-size: 1.6rem;">Subscribe</button>
                                 </form>
                             </div>
                         </div>
@@ -544,8 +755,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -554,6 +763,77 @@
 
     <script>
         // Add custom javascript and jquery here
+
+        $(document).ready(function () {
+            $('#upload_excel').on('submit', function (event) {
+                event.preventDefault();
+                var file_name = $('#fileToUpload').val();
+                if (file_name == '') {
+                    alert("Please Select excel file");
+                    return false;
+                }
+                else {
+                    $.ajax({
+                        url: "php/insert.php",
+                        type: "POST",
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (data) {   
+                            alert(data);                                                   
+                            data=jQuery.parseJSON(data);                            
+                            if (data.status == 201) {
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({ 'event': 'upload_excel'});
+                                $("#step2").css('display', 'block');
+                                $("#step1").css('display', 'none');
+                                $("#read_file").val(data.filename);                               
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                //     alert("problem with query");
+                            } else {
+                            }
+                        }
+                    });
+                }
+            });
+
+            //  for mobile
+            $('#upload_excel_mobile').on('submit', function (event) {
+                event.preventDefault();
+                var file_name = $('#fileToUpload_mobile').val();
+                if (file_name == '') {
+                    alert("Please Select excel file");
+                    return false;
+                }
+                else {
+                    $.ajax({
+                        url: "php/insert_mobile.php",
+                        method: "POST",
+                        data: new FormData(this),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (data) {   
+                            alert(data);                                                   
+                            data=jQuery.parseJSON(data);                            
+                            if (data.status == 201) {
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({ 'event': 'upload_excel_mobile'});
+                                $("#step2_mobile").css('display', 'block');
+                                $("#step1_mobile").css('display', 'none');
+                                $("#read_file_mobile").val(data.filename);
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                //     alert("problem with query");
+                            } else {
+                            }
+                        }
+                    });
+                }
+            });
+        });
     </script>
 </body>
 
