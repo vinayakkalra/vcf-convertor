@@ -858,7 +858,7 @@ p {
 @media (max-width: 991px){
     
 }
-#step2,#step2_mobile{
+#step2,#step2_mobile,#step3{
     display: none;
 }
 .form-control{

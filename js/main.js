@@ -27,6 +27,11 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 /* -------------- if specific item click than close navbar auto ------------- */
+$("#navshow").hide(); 
+$("#navshowtext").hide(); 
+$(".navshow").hide(); 
+$(".navshowtext").hide(); 
+
 $(document).ready(function () {
   $("#mobile_home_button").click(function () {
     closeNav();
@@ -54,25 +59,25 @@ $(document).ready(function () {
   });
 
 /* --------------------- time delay to start animation --------------------- */
-$("#navshow").hide(); 
+
 setTimeout(function(){ 
   $('#navshow').addClass('mynavbaranimatemobile');
     $("#navshow").show(); 
   },1000);
 
-  $("#navshowtext").hide(); 
+ 
   setTimeout(function(){ 
     $("#navshowtext").addClass('mynavbaranimatetextmobile');  
       $("#navshowtext").show(); 
     },1000);
 
-  $(".navshow").hide(); 
+ 
 setTimeout(function(){ 
 $('.navshow').addClass('mynavbaranimate');
 	$(".navshow").show(); 
 },1000);
 
-$(".navshowtext").hide(); 
+
 setTimeout(function(){ 
   $(".navshowtext").addClass('mynavbaranimatetext'); 
 	$(".navshowtext").show(); 
