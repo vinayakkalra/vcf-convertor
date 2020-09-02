@@ -837,16 +837,17 @@
                         });
                         var sheets;
                         var items;
-                        sheet = workbook.SheetNames[1];
-                        // console.log(sheet);
-
+                        var json_object_length=workbook.SheetNames.length;
+                        sheet = workbook.SheetNames[0];
+                        // console.log(sheet);                        
+                        console.log(json_object_length);
                         // workbook.SheetNames.forEach(function (sheetName) {
                         // Here is your object
                         // console.log(sheetName);
                         var sheetName = sheet;
                         var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                         var json_object = JSON.stringify(XL_row_object);
-                        console.log(JSON.parse(json_object));
+                        // console.log(JSON.parse(json_object));
                         // alpha = JSON.parse(json_object);
                         // for (var key in JSON.parse(json_object)[0]) {
                         // console.log("Key: " + key[2]);
@@ -864,6 +865,12 @@
                             var first_row = $("#first_row").val();
                             var last_row = $("#last_row").val();
                             var show_data = "";
+                            if(json_object_length>=sheet){
+                                sheet = workbook.SheetNames[sheet-1];  
+                            var sheetName = sheet;                                         
+                            XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                            json_object = JSON.stringify(XL_row_object);
+                            console.log(JSON.parse(json_object));
                             $("#step3").css('display', 'block');
                             $("#step2").css('display', 'none');
                             for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
@@ -875,6 +882,10 @@
                                 $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
                                 console.log(String.fromCharCode(i));
                             }
+                            }
+                            else{
+                                alert("Sheet not found in file");
+                            }
                         });
 
                         //submit step 2 by mobile
@@ -885,6 +896,12 @@
                             var first_row = $("#first_row_mobile").val();
                             var last_row = $("#last_row_mobile").val();
                             var show_data = "";
+                            if(json_object_length>=sheet){
+                                sheet = workbook.SheetNames[sheet-1];  
+                            var sheetName = sheet;                                         
+                            XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                            json_object = JSON.stringify(XL_row_object);
+                            console.log(JSON.parse(json_object));
                             $("#step3_mobile").css('display', 'block');
                             $("#step2_mobile").css('display', 'none');
                             for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
@@ -896,6 +913,10 @@
                                 $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
                                 console.log(String.fromCharCode(i));
                             }
+                        }
+                            else{
+                                alert("Sheet not found in file");
+                            }
                         });
                         jQuery('#xlx_json').val(json_object);
                         // })
@@ -906,35 +927,23 @@
 
                     };
                     reader.readAsBinaryString(file);
+                    // console.log(file) ;                  
                 };
             };
             function handleFileSelect(evt) {
 
                 var files = evt.target.files; // FileList object
-                var xl2json = new ExcelToJSON();
-                xl2json.parseExcel(files[0]);
-            }
+                var xl2json = new ExcelToJSON();               
+                xl2json.parseExcel(files[0]);  
+                // console.log(files[0])              
+            }         
 
-            // function readTextFile(file) {
-            //     var rawFile = new XMLHttpRequest();
-            //     rawFile.open("GET", file, false);
-            //     rawFile.onreadystatechange = function () {
-            //         if (rawFile.readyState === 4) {
-            //             if (rawFile.status === 200 || rawFile.status == 0) {
-            //                 var allText = rawFile.responseText;
-            //                 // console.log(allText);
-            //             }
-            //         }
-            //     }
-            //     rawFile.send(null);
-            // }
-
-            // console.log(readTextFile("uploads/main.xlsx"));
-            // var filepath='../uploads/main.xlsx';
             if (document.getElementById("fileToUpload").value == "") {
                 document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
             }
             document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
+           
+            // console.log(document.getElementById("fileToUpload"));
 
 
             // ------------------------ step 1 to 2 functionality ------------------------- //
