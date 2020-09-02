@@ -43,6 +43,9 @@
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
+        .form-group label {
+            font-weight: 500 !important;
+        }
     </style>
 </head>
 
@@ -304,7 +307,7 @@
                                                         style="font-size:1.6rem;padding: 1rem 6rem;">
                                                 </div>
                                             </div>
-                                        </form>                                        
+                                        </form>
                                     </div>
                                 </div>
 
@@ -315,7 +318,7 @@
                                         <form name="step3">
                                             <div class="form-row">
 
-                                                <div class="wrap-col select_file_text">
+                                                <div class="wrap-col select_file_text pb-3">
                                                     Step 3 : Tell about data in each column
                                                 </div>
                                             </div>
@@ -323,10 +326,10 @@
 
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
-                                            <input class="btn btn-primary" type="button" name="submit3_desktop"
-                                            id="submit2_desktop" value="Submit"
-                                            style="font-size:1.6rem;padding: 1rem 6rem;">
-                                        </div>
+                                                <input class="btn btn-primary" type="button" name="submit2_desktop"
+                                                    id="submit2_desktop" value="Submit"
+                                                    style="font-size:1.6rem;padding: 1rem 6rem;">
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -575,7 +578,7 @@
                                             </label>
                                             <div class="row d-flex justify-content-center">
                                                 <input class="sendButton btn btn-primary" type="submit" name="submit"
-                                                    value="submit" style="font-size: 1.6rem;padding: .8rem 3rem;">
+                                                    value="submit" style="font-size: 1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
                                     </div>
@@ -595,24 +598,30 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="upload_file_mobile" class="col-5">Uploaded file:</label>
-                                                <div class="col-7">
+                                                <label for="upload_file_mobile" class="col">Uploaded file:</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <input type="text" readonly="readonly" value="" class="form-control"
                                                         id="read_file_mobile">
                                                 </div>
                                             </div>
                                             <!-- <input type="hidden" name="filename" id="filename" value="DNdata.xlsx"> -->
                                             <div class="form-group row">
-                                                <label for="sheet_mobile" class="col-5">Sheet Number:</label>
-                                                <div class="col-7">
+                                                <label for="sheet_mobile" class="col">Sheet Number:</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <input name="sheet_mobile" type="number" required="required"
                                                         id="sheet_mobile" max="9999" min="1" value="1"
                                                         class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="first_column_mobile" class="col-5">First Column:</label>
-                                                <div class="col-7">
+                                                <label for="first_column_mobile" class="col">First Column:</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <select name="first_column_mobile" id="first_column_mobile"
                                                         required="" class="form-control">
                                                         <option value="A">A</option>
@@ -633,8 +642,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="last_column_mobile" class="col-5">Last Column:</label>
-                                                <div class="col-7">
+                                                <label for="last_column_mobile" class="col">Last Column:</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <select name="last_column_mobile" id="last_column_mobile"
                                                         required="" class="form-control">
                                                         <option value="A">A</option>
@@ -656,17 +667,21 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="first_row_mobile" class="col-5">First Row
+                                                <label for="first_row_mobile" class="col">First Row
                                                     Number:</label>
-                                                <div class="col-7">
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <input type="number" name="first_row_mobile" id="first_row_mobile"
                                                         min="1" max="9999" required="required" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="last_row_mobile" class="col-5">Last Row
+                                                <label for="last_row_mobile" class="col">Last Row
                                                     Number:</label>
-                                                <div class="col-7">
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col">
                                                     <input type="number" name="last_row_mobile" id="last_row_mobile"
                                                         min="1" max="9999" required="required" autocomplete="off"
                                                         class="form-control">
@@ -674,10 +689,32 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
-                                                    <input class="btn btn-primary" type="submit" name="submit2"
-                                                        id="submit2" value="Submit"
-                                                        style="font-size:1.6rem;padding: 0.5rem 2rem;">
+                                                    <input class="btn btn-primary" type="button" name="submit2_mobile"
+                                                        id="submit2_mobile" value="Submit"
+                                                        style="font-size:1.6rem;padding: 1rem 5rem;">
                                                 </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------------------- step 3 mobile start ----------------------------- -->
+                            <div class="10 collapseSignup" id="step3_mobile">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col">
+                                        <form name="step3_mobile">
+                                            <div class="form-row">
+                                                <div class="wrap-col select_file_text pb-3">
+                                                    Step 3 : Tell about data in each column
+                                                </div>
+                                            </div>
+                                            <div id="step3_dyanamic_data_mobile">
+
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-5">
+                                                <input class="btn btn-primary" type="button" name="submit3_mobile"
+                                                    id="submit2_mobile" value="Submit"
+                                                    style="font-size:1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
                                     </div>
@@ -788,9 +825,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
     <script>
         $(document).ready(function () {
-
             // ---------------------- step 2 to 3 functionality ---------------------- //
-
             var alpha = "";
             var ExcelToJSON = function () {
                 this.parseExcel = function (file) {
@@ -805,38 +840,57 @@
                             // Here is your object
                             var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                             var json_object = JSON.stringify(XL_row_object);
-                            // console.log(JSON.parse(json_object));
-
+                            console.log(JSON.parse(json_object));
                             // alpha = JSON.parse(json_object);
                             // for (var key in JSON.parse(json_object)[0]) {
-                                // console.log("Key: " + key[2]);
-                                // console.log("Value: " + JSON.parse(json_object)[0][key]);                                         
-
+                            // console.log("Key: " + key[2]);
+                            // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
                             // }
-                            //   console.log(Object.keys(JSON.parse(json_object)[0])[2]);              
+                            //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
                             // console.log(JSON.parse(json_object)[0]);
-                            alpha = JSON.parse(json_object)[0].Chandan;
+                            // alpha = JSON.parse(json_object)[0].Chandan;
+
+                            //submit step 2 by dekstop
                             $("#submit2_desktop").click(function () {
                                 var sheet = $("#sheet").val();
                                 var first_column = $("#first_column").val();
                                 var last_column = $("#last_column").val();
                                 var first_row = $("#first_row").val();
                                 var last_row = $("#last_row").val();
-                                var show_data="";
+                                var show_data = "";
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
-                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
-
+                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
                                     // var j=(i.charCodeAt(0)-97);
-                                    var show_data= Object.keys(JSON.parse(json_object)[0])[i - 65];
-                                    if(show_data == undefined){
-                                        show_data="";
-                                    }                                    
-                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' . What is ' +show_data+ '</label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
+                                    if (show_data == undefined) {//if row not found than show blank
+                                        show_data = "";
+                                    }
+                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
                                     console.log(String.fromCharCode(i));
                                 }
+                            });
 
-                            });                           
+                            //submit step 2 by mobile
+                            $("#submit2_mobile").click(function () {
+                                var sheet = $("#sheet_mobile").val();
+                                var first_column = $("#first_column_mobile").val();
+                                var last_column = $("#last_column_mobile").val();
+                                var first_row = $("#first_row_mobile").val();
+                                var last_row = $("#last_row_mobile").val();
+                                var show_data = "";
+                                $("#step3_mobile").css('display', 'block');
+                                $("#step2_mobile").css('display', 'none');
+                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
+                                    // var j=(i.charCodeAt(0)-97);
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
+                                    if (show_data == undefined) {
+                                        show_data = "";
+                                    }
+                                    $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                    console.log(String.fromCharCode(i));
+                                }
+                            });
                             jQuery('#xlx_json').val(json_object);
                         })
                     };
@@ -854,7 +908,11 @@
                 var xl2json = new ExcelToJSON();
                 xl2json.parseExcel(files[0]);
             }
+            if (document.getElementById("fileToUpload").value == "") {
+                document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
+            }
             document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
+
 
             // ------------------------ step 1 to 2 functionality ------------------------- //
 
