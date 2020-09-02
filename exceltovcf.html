@@ -826,73 +826,79 @@
     <script>
         $(document).ready(function () {
             // ---------------------- step 2 to 3 functionality ---------------------- //
-            var alpha = "";
+            // var alpha = "";
             var ExcelToJSON = function () {
                 this.parseExcel = function (file) {
                     var reader = new FileReader();
-
-                    reader.onload = function (e) {
+                    reader.onload = function (e) {                        
                         var data = e.target.result;
                         var workbook = XLSX.read(data, {
                             type: 'binary'
                         });
-                        workbook.SheetNames.forEach(function (sheetName) {
-                            // Here is your object
-                            var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                            var json_object = JSON.stringify(XL_row_object);
-                            console.log(JSON.parse(json_object));
-                            // alpha = JSON.parse(json_object);
-                            // for (var key in JSON.parse(json_object)[0]) {
-                            // console.log("Key: " + key[2]);
-                            // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
-                            // }
-                            //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
-                            // console.log(JSON.parse(json_object)[0]);
-                            // alpha = JSON.parse(json_object)[0].Chandan;
+                        var sheets;
+                        var items;
+                        sheet = workbook.SheetNames[1];
+                        // console.log(sheet);
 
-                            //submit step 2 by dekstop
-                            $("#submit2_desktop").click(function () {
-                                var sheet = $("#sheet").val();
-                                var first_column = $("#first_column").val();
-                                var last_column = $("#last_column").val();
-                                var first_row = $("#first_row").val();
-                                var last_row = $("#last_row").val();
-                                var show_data = "";
-                                $("#step3").css('display', 'block');
-                                $("#step2").css('display', 'none');
-                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
-                                    // var j=(i.charCodeAt(0)-97);
-                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
-                                    if (show_data == undefined) {//if row not found than show blank
-                                        show_data = "";
-                                    }
-                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                    console.log(String.fromCharCode(i));
-                                }
-                            });
+                        // workbook.SheetNames.forEach(function (sheetName) {
+                        // Here is your object
+                        // console.log(sheetName);
+                        var sheetName = sheet;
+                        var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                        var json_object = JSON.stringify(XL_row_object);
+                        console.log(JSON.parse(json_object));
+                        // alpha = JSON.parse(json_object);
+                        // for (var key in JSON.parse(json_object)[0]) {
+                        // console.log("Key: " + key[2]);
+                        // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
+                        // }
+                        //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
+                        // console.log(JSON.parse(json_object)[0]);
+                        // alpha = JSON.parse(json_object)[0].Chandan;
 
-                            //submit step 2 by mobile
-                            $("#submit2_mobile").click(function () {
-                                var sheet = $("#sheet_mobile").val();
-                                var first_column = $("#first_column_mobile").val();
-                                var last_column = $("#last_column_mobile").val();
-                                var first_row = $("#first_row_mobile").val();
-                                var last_row = $("#last_row_mobile").val();
-                                var show_data = "";
-                                $("#step3_mobile").css('display', 'block');
-                                $("#step2_mobile").css('display', 'none');
-                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
-                                    // var j=(i.charCodeAt(0)-97);
-                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
-                                    if (show_data == undefined) {
-                                        show_data = "";
-                                    }
-                                    $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                    console.log(String.fromCharCode(i));
+                        //submit step 2 by dekstop
+                        $("#submit2_desktop").click(function () {
+                            var sheet = $("#sheet").val();
+                            var first_column = $("#first_column").val();
+                            var last_column = $("#last_column").val();
+                            var first_row = $("#first_row").val();
+                            var last_row = $("#last_row").val();
+                            var show_data = "";
+                            $("#step3").css('display', 'block');
+                            $("#step2").css('display', 'none');
+                            for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
+                                // var j=(i.charCodeAt(0)-97);
+                                var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
+                                if (show_data == undefined) {//if row not found than show blank
+                                    show_data = "";
                                 }
-                            });
-                            jQuery('#xlx_json').val(json_object);
-                        })
+                                $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                console.log(String.fromCharCode(i));
+                            }
+                        });
+
+                        //submit step 2 by mobile
+                        $("#submit2_mobile").click(function () {
+                            var sheet = $("#sheet_mobile").val();
+                            var first_column = $("#first_column_mobile").val();
+                            var last_column = $("#last_column_mobile").val();
+                            var first_row = $("#first_row_mobile").val();
+                            var last_row = $("#last_row_mobile").val();
+                            var show_data = "";
+                            $("#step3_mobile").css('display', 'block');
+                            $("#step2_mobile").css('display', 'none');
+                            for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
+                                // var j=(i.charCodeAt(0)-97);
+                                var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
+                                if (show_data == undefined) {
+                                    show_data = "";
+                                }
+                                $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                console.log(String.fromCharCode(i));
+                            }
+                        });
+                        jQuery('#xlx_json').val(json_object);
+                        // })
                     };
 
                     reader.onerror = function (ex) {
@@ -908,6 +914,23 @@
                 var xl2json = new ExcelToJSON();
                 xl2json.parseExcel(files[0]);
             }
+
+            // function readTextFile(file) {
+            //     var rawFile = new XMLHttpRequest();
+            //     rawFile.open("GET", file, false);
+            //     rawFile.onreadystatechange = function () {
+            //         if (rawFile.readyState === 4) {
+            //             if (rawFile.status === 200 || rawFile.status == 0) {
+            //                 var allText = rawFile.responseText;
+            //                 // console.log(allText);
+            //             }
+            //         }
+            //     }
+            //     rawFile.send(null);
+            // }
+
+            // console.log(readTextFile("uploads/main.xlsx"));
+            // var filepath='../uploads/main.xlsx';
             if (document.getElementById("fileToUpload").value == "") {
                 document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
             }
