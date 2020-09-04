@@ -30,6 +30,7 @@
 
     <!-- Enter page description -->
     <meta property="og:description" content="ENTER_PAGE_DESCRIPTION">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <!-- Enter Logo image URL for example : http://cryptonite.finstreet.in/images/cryptonitepost.png -->
     <!-- <meta property="og:image" itemprop="image" content="ENTER_IMAGE_URL" />
@@ -46,6 +47,14 @@
         .form-group label {
             font-weight: 500 !important;
         }
+
+        /* #step1,#step2{
+            display:none;
+
+        }
+        #step3{
+            display:block;
+        } */
     </style>
 </head>
 
@@ -204,7 +213,7 @@
                                                     (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
                                                 </div>
                                             </label>
-                                            <input class="sendButton btn btn-primary" type="submit" name="submit"
+                                            <input class="sendButton btn blue-gradient" type="submit" name="submit"
                                                 value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;">
                                         </form>
                                     </div>
@@ -302,8 +311,8 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
-                                                    <input class="btn btn-primary" type="button" name="submit2_desktop"
-                                                        id="submit2_desktop" value="Submit"
+                                                    <input class="sendButton btn blue-gradient" type="button"
+                                                        name="submit2_desktop" id="submit2_desktop" value="Submit"
                                                         style="font-size:1.6rem;padding: 1rem 6rem;">
                                                 </div>
                                             </div>
@@ -326,11 +335,16 @@
 
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
-                                                <input class="btn btn-primary" type="button" name="submit2_desktop"
-                                                    id="submit2_desktop" value="Submit"
+                                                <input class="sendButton btn blue-gradient" type="button"
+                                                    name="submit3_desktop" id="submit3_desktop" value="Submit"
                                                     style="font-size:1.6rem;padding: 1rem 6rem;">
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                                <div class="row" id="step4">
+                                    <div class="col">
+                                        <h3>Congratulation ! Your file is ready to download</h3>
                                     </div>
                                 </div>
                             </div>
@@ -383,13 +397,13 @@
                                             target="_blank">
                                             <div class="form-group">
 
-                                                <input id="footer-subscribe-email" class="form-control p-3 mt-2"
+                                                <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-2"
                                                     name="EMAIL" placeholder="Your email" type="email"
                                                     style="font-size:1.2rem">
                                             </div>
 
                                             <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;">Subscribe</button>
+                                                style="font-size: 1.2rem;">Subscribe</button>
                                         </form>
                                     </div>
                                 </div>
@@ -430,6 +444,103 @@
             </div>
         </div>
     </div>
+
+    <!-- -------------------------- popup desktop start hear --------------------------- -->
+    <!-- Modal -->
+    <div class="modal fade" id="pop_up_desktop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <!--Content-->
+            <div class="modal-content form-elegant" id="sign_in_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                            in</strong></h3>
+
+                </div>
+                <!--Body-->
+                <div class="modal-body mx-5">
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="Form_email_signin" class="form-control validate"
+                            placeholder="Your email">
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="Form_pass_signin" class="form-control validate"
+                            placeholder="Your password">
+                        <p class="font-small blue-text d-flex justify-content-end mt-3">Forgot <a href="#"
+                                class="blue-text ml-1">
+                                Password?</a></p>
+                    </div>
+                    <div class="text-center mb-5">
+                        <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            id="pop_up_signin">Sign
+                            in</button>
+                    </div>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer mx-5 mt-2 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Not a member? <a id="signup_link"
+                            class="blue-text ml-1">
+                            Sign Up</a></p>
+                </div>
+            </div>
+
+            <div class="modal-content form-elegant" id="sign_up_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                            Up</strong></h3>
+
+                </div>
+                <!--Body-->
+                <form data-name="signup_form" name="signup-form">
+                    <div class="modal-body mx-5">
+                        <!--Body-->
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="Form_email_signup" class="form-control validate"
+                                placeholder="Your email">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input type="text" id="Form_phone_signup" class="form-control validate"
+                                placeholder="Mobile number">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass_signup" class="form-control validate"
+                                placeholder="Your password">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass2_signup" class="form-control validate"
+                                placeholder="Confirm password">
+
+                        </div>
+                        <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="pop_up_signup">Sign
+                                Up</button>
+                        </div>
+                    </div>
+                </form>
+                <!--Footer-->
+                <div class="modal-footer mx-5 pt-5 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Already a member? <a id="signin_link"
+                            class="blue-text ml-1">
+                            Sign In</a></p>
+                </div>
+            </div>
+
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
+    <!-- ----------------------- popup desktop end here ------------------------ -->
 
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
@@ -577,7 +688,7 @@
                                                 </div>
                                             </label>
                                             <div class="row d-flex justify-content-center">
-                                                <input class="sendButton btn btn-primary" type="submit" name="submit"
+                                                <input class="sendButton btn blue-gradient" type="submit" name="submit"
                                                     value="submit" style="font-size: 1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
@@ -689,8 +800,8 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
-                                                    <input class="btn btn-primary" type="button" name="submit2_mobile"
-                                                        id="submit2_mobile" value="Submit"
+                                                    <input class="sendButton btn blue-gradient" type="button"
+                                                        name="submit2_mobile" id="submit2_mobile" value="Submit"
                                                         style="font-size:1.6rem;padding: 1rem 5rem;">
                                                 </div>
                                             </div>
@@ -712,8 +823,8 @@
 
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
-                                                <input class="btn btn-primary" type="button" name="submit3_mobile"
-                                                    id="submit2_mobile" value="Submit"
+                                                <input class="sendButton btn blue-gradient" type="button"
+                                                    name="submit3_mobile" id="submit3_mobile" value="Submit"
                                                     style="font-size:1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
@@ -738,8 +849,8 @@
                                     target="_blank">
                                     <div class="form-group">
 
-                                        <input id="footer-subscribe-email" class="form-control p-3 mt-3" name="EMAIL"
-                                            placeholder="Your email" type="email"
+                                        <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-3"
+                                            name="EMAIL" placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
@@ -825,125 +936,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
     <script>
         $(document).ready(function () {
-            // ---------------------- step 2 to 3 functionality ---------------------- //
-            // var alpha = "";
-            var ExcelToJSON = function () {
-                this.parseExcel = function (file) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {                        
-                        var data = e.target.result;
-                        var workbook = XLSX.read(data, {
-                            type: 'binary'
-                        });
-                        var sheets;
-                        var items;
-                        var json_object_length=workbook.SheetNames.length;
-                        sheet = workbook.SheetNames[0];
-                        // console.log(sheet);                        
-                        console.log(json_object_length);
-                        // workbook.SheetNames.forEach(function (sheetName) {
-                        // Here is your object
-                        // console.log(sheetName);
-                        var sheetName = sheet;
-                        var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                        var json_object = JSON.stringify(XL_row_object);
-                        // console.log(JSON.parse(json_object));
-                        // alpha = JSON.parse(json_object);
-                        // for (var key in JSON.parse(json_object)[0]) {
-                        // console.log("Key: " + key[2]);
-                        // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
-                        // }
-                        //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
-                        // console.log(JSON.parse(json_object)[0]);
-                        // alpha = JSON.parse(json_object)[0].Chandan;
-
-                        //submit step 2 by dekstop
-                        $("#submit2_desktop").click(function () {
-                            var sheet = $("#sheet").val();
-                            var first_column = $("#first_column").val();
-                            var last_column = $("#last_column").val();
-                            var first_row = $("#first_row").val();
-                            var last_row = $("#last_row").val();
-                            var show_data = "";
-                            if(json_object_length>=sheet){
-                                sheet = workbook.SheetNames[sheet-1];  
-                            var sheetName = sheet;                                         
-                            XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                            json_object = JSON.stringify(XL_row_object);
-                            console.log(JSON.parse(json_object));
-                            $("#step3").css('display', 'block');
-                            $("#step2").css('display', 'none');
-                            for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
-                                // var j=(i.charCodeAt(0)-97);
-                                var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
-                                if (show_data == undefined) {//if row not found than show blank
-                                    show_data = "";
-                                }
-                                $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="last_column" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                console.log(String.fromCharCode(i));
-                            }
-                            }
-                            else{
-                                alert("Sheet not found in file");
-                            }
-                        });
-
-                        //submit step 2 by mobile
-                        $("#submit2_mobile").click(function () {
-                            var sheet = $("#sheet_mobile").val();
-                            var first_column = $("#first_column_mobile").val();
-                            var last_column = $("#last_column_mobile").val();
-                            var first_row = $("#first_row_mobile").val();
-                            var last_row = $("#last_row_mobile").val();
-                            var show_data = "";
-                            if(json_object_length>=sheet){
-                                sheet = workbook.SheetNames[sheet-1];  
-                            var sheetName = sheet;                                         
-                            XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                            json_object = JSON.stringify(XL_row_object);
-                            console.log(JSON.parse(json_object));
-                            $("#step3_mobile").css('display', 'block');
-                            $("#step2_mobile").css('display', 'none');
-                            for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
-                                // var j=(i.charCodeAt(0)-97);
-                                var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
-                                if (show_data == undefined) {
-                                    show_data = "";
-                                }
-                                $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                console.log(String.fromCharCode(i));
-                            }
-                        }
-                            else{
-                                alert("Sheet not found in file");
-                            }
-                        });
-                        jQuery('#xlx_json').val(json_object);
-                        // })
-                    };
-
-                    reader.onerror = function (ex) {
-                        console.log(ex);
-
-                    };
-                    reader.readAsBinaryString(file);
-                    // console.log(file) ;                  
-                };
-            };
-            function handleFileSelect(evt) {
-
-                var files = evt.target.files; // FileList object
-                var xl2json = new ExcelToJSON();               
-                xl2json.parseExcel(files[0]);  
-                // console.log(files[0])              
-            }    
-            if (document.getElementById("fileToUpload").value == "") {
-                document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
-            }
-            document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
-        
-            // console.log(document.getElementById("fileToUpload"));
-
+            var total_data_come = 0;
 
             // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1017,8 +1010,265 @@
                     });
                 }
             });
-        });
 
+            // ---------------------- step 2 to 3 functionality ---------------------- //
+            // var alpha = "";
+            var ExcelToJSON = function () {
+                this.parseExcel = function (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var data = e.target.result;
+                        var workbook = XLSX.read(data, {
+                            type: 'binary'
+                        });
+                        var sheets;
+                        var items;
+                        var json_object_length = workbook.SheetNames.length;
+                        sheet = workbook.SheetNames[0];
+                        // console.log(sheet);                        
+                        console.log(json_object_length);
+                        // workbook.SheetNames.forEach(function (sheetName) {
+                        // Here is your object
+                        // console.log(sheetName);
+                        var sheetName = sheet;
+                        var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                        var json_object = JSON.stringify(XL_row_object);
+                        // console.log(JSON.parse(json_object));
+                        // alpha = JSON.parse(json_object);
+                        // for (var key in JSON.parse(json_object)[0]) {
+                        // console.log("Key: " + key[2]);
+                        // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
+                        // }
+                        //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
+                        // console.log(JSON.parse(json_object)[0]);
+                        // alpha = JSON.parse(json_object)[0].Chandan;
+
+                        //submit step 2 by dekstop
+                        $("#submit2_desktop").click(function () {
+                            var sheet = $("#sheet").val();
+                            var first_column = $("#first_column").val();
+                            var last_column = $("#last_column").val();
+                            var first_row = $("#first_row").val();
+                            var last_row = $("#last_row").val();
+                            var show_data = "";
+                            if (json_object_length >= sheet) {
+                                sheet = workbook.SheetNames[sheet - 1];
+                                var sheetName = sheet;
+                                XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                                json_object = JSON.stringify(XL_row_object);
+                                console.log(JSON.parse(json_object));
+                                $("#step3").css('display', 'block');
+                                $("#step2").css('display', 'none');
+                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
+                                    // var j=(i.charCodeAt(0)-97);
+                                    total_data_come = (last_column.charCodeAt(0) - 64);
+
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
+                                    if (show_data == undefined) {//if row not found than show blank
+                                        show_data = "";
+                                    }
+                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="column' + (i - 64) + '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                    console.log(String.fromCharCode(i));
+                                }
+                            }
+                            else {
+                                alert("Sheet not found in file");
+                            }
+                        });
+
+                        //submit step 2 by mobile
+                        $("#submit2_mobile").click(function () {
+                            var sheet = $("#sheet_mobile").val();
+                            var first_column = $("#first_column_mobile").val();
+                            var last_column = $("#last_column_mobile").val();
+                            var first_row = $("#first_row_mobile").val();
+                            var last_row = $("#last_row_mobile").val();
+                            var show_data = "";
+                            if (json_object_length >= sheet) {
+                                sheet = workbook.SheetNames[sheet - 1];
+                                var sheetName = sheet;
+                                XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                                json_object = JSON.stringify(XL_row_object);
+                                console.log(JSON.parse(json_object));
+                                $("#step3_mobile").css('display', 'block');
+                                $("#step2_mobile").css('display', 'none');
+                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
+                                    // var j=(i.charCodeAt(0)-97);
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
+                                    if (show_data == undefined) {
+                                        show_data = "";
+                                    }
+                                    $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                    console.log(String.fromCharCode(i));
+                                }
+                            }
+                            else {
+                                alert("Sheet not found in file");
+                            }
+                        });
+                        jQuery('#xlx_json').val(json_object);
+                        // })
+                    };
+
+                    reader.onerror = function (ex) {
+                        console.log(ex);
+
+                    };
+                    reader.readAsBinaryString(file);
+                    // console.log(file) ;                  
+                };
+            };
+            function handleFileSelect(evt) {
+
+                var files = evt.target.files; // FileList object
+                var xl2json = new ExcelToJSON();
+                xl2json.parseExcel(files[0]);
+                // console.log(files[0])              
+            }
+            if (document.getElementById("fileToUpload").value == "") {
+                document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
+            }
+            document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
+
+            // console.log(document.getElementById("fileToUpload"));
+
+            // ---------------------- step 3 to 4 functionality ---------------------- //
+
+            $('#submit3_desktop').click(function () {
+                var column_array = [];
+                var error = "";
+                for (var i = 1; i <= total_data_come; i++) {
+                    column_array[i] = $("#column" + i).val();
+                }
+                for (var i = 1; i <= total_data_come; i++) {
+                    if (column_array[i] == "") {
+                        $("#column" + i).css('border-color', 'red');
+                        $("#column" + i).css('border-width', '2px');
+                        error = error + 'column_array[' + i + ']';
+                    } else {
+                        $("#column" + i).css('border-color', '#C0BBBB');
+                        $("#column" + i).css('border-width', '1px');
+                    }
+                }
+                if (error == "") {
+                    $('#pop_up_desktop').modal('show');
+                    $('#step4').css('display', 'block');
+                    $('#step3').css('display', 'none');
+                }
+                else {
+                    $('#pop_up_desktop').modal('hide');
+                    $('#step3').css('display', 'block');
+                    $('#step4').css('display', 'none');
+                }
+                $('#signin_link').click(function () {
+                    $('#sign_in_page').css('display', 'block');
+                    $('#sign_up_page').css('display', 'none');
+                    // alert("My name is sign in");
+                });
+                $('#signup_link').click(function () {
+
+                    $('#sign_up_page').css('display', 'block');
+                    $('#sign_in_page').css('display', 'none');
+                    // alert("My name is sign up");
+                });
+
+            });
+
+            // ------------------------- pop up sign up form ------------------------- //
+            $('#pop_up_signup').on("click", function () {
+                var mobile = $("#Form_phone_signup").val();
+                var password = $("#Form_pass_signup").val();
+                var con_password = $("#Form_pass2_signup").val();
+                var email = $("#Form_email_signup").val();
+                var error = "";
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                }
+                if (mobile == "") {
+                    $("#Form_phone_signup").css('border-color', 'red');
+                    $("#Form_phone_signup").css('border-width', '2px');
+                    error = error + 'mobile';
+                } else {
+                    $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                    $("#Form_phone_signup").css('border-width', '1px');
+                }
+                if (password == "") {
+                    $("#Form_pass_signup").css('border-color', 'red');
+                    $("#Form_pass_signup").css('border-width', '2px');
+                    error = error + 'password';
+                } else {
+                    $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                    $("#Form_pass_signup").css('border-width', '1px');
+                }
+                if (con_password == "") {
+                    $("#Form_pass2_signup").css('border-color', 'red');
+                    $("#Form_pass2_signup").css('border-width', '2px');
+                    error = error + 'Class';
+                } else {
+                    $("#Form_pass2_signup").css('border-color', '#C0BBBB');
+                    $("#Form_pass2_signup").css('border-width', '1px');
+                }
+                if (!validateEmail(email)) {
+                    $("#Form_email_signup").css('border-color', 'red');
+                    $("#Form_email_signup").css('border-width', '2px');
+                    error = error + 'email';
+                } else {
+                    $("#Form_email_signup").css('border-color', '#C0BBBB');
+                    $("#Form_email_signup").css('border-width', '1px');
+                }
+                if (password != con_password) {
+                    $("#Form_pass2_signup").css('border-color', 'red');
+                    $("#Form_pass2_signup").css('border-width', '2px');
+                    $("#Form_pass_signup").css('border-color', 'red');
+                    $("#Form_pass_signup").css('border-width', '2px');
+                    alert('Password not match !');
+                    error = error + 'password not matched';
+                }
+                if (error == "") {
+                    // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
+                    // $('#loadingDesktop4').css('display', 'block');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/signup_form.php',
+                        dataType: "json",
+                        data: {
+                            'mobile': mobile,
+                            'password': password,
+                            'email': email
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {
+                                $('#pop_up_desktop').modal('hide');
+                                //  $("#contact-success").css('display', 'block');
+                                //   $("#contact-form").css('display', 'none');
+                                //   $("#ticket-id").html('#' + data.id);
+                                // scrollTo(0,0);                               
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({
+                                    'event': 'signup-form',
+                                    'mobile': mobile,
+                                    'password': password,
+                                    'email': email
+                                });
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                //     alert("problem with query");
+                            } else {
+                            }
+                        }
+                    });
+                } else {
+                    // alert('There are error in the form. Please check your submissions');
+                }
+            });
+
+            // ---------------------- step signup form  to download file functionality ---------------------- //
+
+
+
+        });
     </script>
 </body>
 

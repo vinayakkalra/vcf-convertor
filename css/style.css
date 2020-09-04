@@ -828,47 +828,244 @@ p {
     line-height: 2.6rem;
     color: #3b3b3b;
 }
+
 .collapseSignup {
-  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
     padding: 2rem 2rem 2rem;
     border-radius: 0.5rem;
     background-color: #fff;
 }
-.select_file_text{
+
+.select_file_text {
     font-size: 2.4rem;
     line-height: 2.6rem;
     font-weight: 500;
     color: #3b3b3b;
 }
+
 .exceltovcf_background_mobile {
 
     height: 100%;
     background: #2487eb url('../images/bg3.png') repeat-x bottom center;
 }
-.exceltovcf_heading_mobile h3{
+
+.exceltovcf_heading_mobile h3 {
     margin-top: 12rem;
     font-size: 2.8rem;
     line-height: 3.3rem;
     font-weight: 500;
     color: #f7f7f7;
 }
-.exceltovcf_heading_mobile h3 span{
+
+.exceltovcf_heading_mobile h3 span {
     font-weight: 300;
 }
-@media (max-width: 991px){
-    
-}
-#step2,#step2_mobile,#step3,#step3_mobile{
+
+@media (max-width: 991px) {}
+
+#step2,
+#step2_mobile,
+#step3,
+#step3_mobile,#step4,#step4_mobile{
     display: none;
 }
-.form-control{
+
+.form-control {
     font-size: 1.6rem !important;
-    
+
 }
 
-@media(max-width:991px){
-    .form-group label{
+@media(max-width:991px) {
+    .form-group label {
         font-size: 1.55rem !important;
-       
+
     }
+    .btn{
+        padding: .64rem 2.14rem !important;
+    }
+}
+
+/* --------------------------- pop up model style --------------------------- */
+.sendButton {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 10em;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    text-transform: capitalize;
+}
+
+#sign_in_page {
+    display: none;
+}
+
+.modal {
+    font-size: 100% !important;
+    padding-right: 0 !important;
+}
+
+.modal-dialog .modal-content {
+    border: 0;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.modal-dialog .modal-content .modal-header {
+    border-top-left-radius: .125rem;
+    border-top-right-radius: .125rem;
+}
+
+.dark-grey-text {
+    color: #4f4f4f !important;
+}
+
+strong {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.md-form {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.md-form .prefix {
+    position: absolute;
+    transition: color 0.2s;
+}
+
+.md-form input:not([type]),
+.md-form input[type="text"]:not(.browser-default),
+.md-form input[type="password"]:not(.browser-default),
+.md-form input[type="email"]:not(.browser-default),
+.md-form input[type="url"]:not(.browser-default),
+.md-form input[type="time"]:not(.browser-default),
+.md-form input[type="date"]:not(.browser-default),
+.md-form input[type="datetime"]:not(.browser-default),
+.md-form input[type="datetime-local"]:not(.browser-default),
+.md-form input[type="tel"]:not(.browser-default),
+.md-form input[type="number"]:not(.browser-default),
+.md-form input[type="search"]:not(.browser-default),
+.md-form input[type="phone"]:not(.browser-default),
+.md-form input[type="search-md"],
+.md-form textarea.md-textarea {
+
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: none;
+
+    box-shadow: none;
+
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.md-form .prefix~input,
+.md-form .prefix~textarea {
+    width: calc(100% - 2.5rem);
+    margin-left: 2.5rem;
+}
+
+.md-form .form-control {
+
+    box-sizing: border-box !important;
+}
+
+.md-form .validate {
+    margin-bottom: 2.5rem;
+}
+
+.md-form .form-control {
+    height: auto;
+    padding: .6rem 0 .4rem 0;
+    margin: 0 0 .5rem 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.grey-text {
+    color: #9e9e9e !important;
+}
+
+.btn.blue-gradient {
+    color: #fff;
+    transition: .5s ease;
+}
+
+.btn.btn-block {
+    margin: inherit;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: none;
+}
+
+.btn-rounded {
+    border-radius: 10em;
+}
+
+.blue-gradient {
+    background: linear-gradient(40deg, #45cafc, #303f9f) !important;
+}
+
+.sendButton:hover {
+    background: linear-gradient(-40deg, #45cafc, #303f9f) !important;
+}
+
+.btn {   
+    text-transform: uppercase;
+
+    white-space: normal;
+
+    border: 0;
+
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    padding: .84rem 2.14rem;
+    font-size: 1.6rem
+}
+
+.blue-text {
+    color: #2196f3 !important;
+}
+
+.md-form .prefix {
+    top: .25rem;
+    font-size: 2.3rem;
+}
+
+.md-form .prefix~input,
+.md-form .prefix~textarea {
+    width: calc(100% - 2.5rem);
+    margin-left: 2.5rem;
+}
+
+.md-form .form-control {
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.md-form .validate {
+    margin-bottom: 2.5rem;
+}
+
+.md-form .form-control {
+    height: auto;
+    padding: .6rem 0 .4rem 0;
+    margin: 0 0 .5rem 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.model-title {
+    font-size: 5rem;
+}
+
+.md-form .form-control {
+    margin-left: 3.5rem !important;
 }
