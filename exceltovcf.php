@@ -49,8 +49,8 @@
             font-weight: 500 !important;
         }
 
-        
-         /* #step1,
+
+        /* #step1,
         #step2,
         #step3 {
             display: none;
@@ -136,8 +136,9 @@
             background-color: #16a085;
             text-decoration: none;
         }
-        .hr_tag_style{
-            width: 70%;            
+
+        .hr_tag_style {
+            width: 70%;
         }
     </style>
 </head>
@@ -389,7 +390,7 @@
                                                     Number:</label>
                                                 <div class="col-9">
                                                     <input type="number" name="first_row" id="first_row" min="1"
-                                                        max="9999"  class="form-control" autocomplete="off">
+                                                        max="9999" class="form-control" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -397,8 +398,7 @@
                                                     Number:</label>
                                                 <div class="col-9">
                                                     <input type="number" name="last_row" id="last_row" min="1"
-                                                        max="9999"  autocomplete="off"
-                                                        class="form-control">
+                                                        max="9999" autocomplete="off" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -441,17 +441,18 @@
                                     <div class="col pb-3">
                                         <div class="row">
                                             <div class="col">
-                                                <h1 class="display-3 text-center mt-3 mb-3">Congratulation !</h1>   
-                                                <div class="d-flex justify-content-center">                                           
-                                                        <hr class="hr_tag_style">
-                                                    </div> 
+                                                <h1 class="display-3 text-center mt-3 mb-3">Congratulation !</h1>
+                                                <div class="d-flex justify-content-center">
+                                                    <hr class="hr_tag_style">
+                                                </div>
                                                 <h3 id="vcf_filename" style="
                                                 font-size: 3rem;
                                                 font-weight: 500;
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="#" style="color: #007bff;">Click
+                                                    VCF files you can choose our paid version . <a href="#"
+                                                        style="color: #007bff;">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -1377,48 +1378,48 @@
                             var first_row = $("#first_row").val();
                             var last_row = $("#last_row").val();
                             var show_data = "";
-                            var error="";
+                            var error = "";
                             if (first_row == "") {
-                    $("#first_row").css('border-color', 'red');
-                    $("#first_row").css('border-width', '2px');
-                    error = error + 'first_row';
-                } else {
-                    $("#first_row").css('border-color', '#C0BBBB');
-                    $("#first_row").css('border-width', '1px');
-                }
-                if (last_row == "") {
-                    $("#last_row").css('border-color', 'red');
-                    $("#last_row").css('border-width', '2px');
-                    error = error + 'last_row';
-                } else {
-                    $("#last_row").css('border-color', '#C0BBBB');
-                    $("#last_row").css('border-width', '1px');
-                }               
-                    if(error == ""){
-                            if (json_object_length >= sheet) {
-                                sheet = workbook.SheetNames[sheet - 1];
-                                var sheetName = sheet;
-                                XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                                json_object = JSON.stringify(XL_row_object);
-                                console.log(JSON.parse(json_object));
-                                $("#step3").css('display', 'block');
-                                $("#step2").css('display', 'none');
-                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
-                                    // var j=(i.charCodeAt(0)-97);
-                                    total_data_come = (last_column.charCodeAt(0) - 64);
+                                $("#first_row").css('border-color', 'red');
+                                $("#first_row").css('border-width', '2px');
+                                error = error + 'first_row';
+                            } else {
+                                $("#first_row").css('border-color', '#C0BBBB');
+                                $("#first_row").css('border-width', '1px');
+                            }
+                            if (last_row == "") {
+                                $("#last_row").css('border-color', 'red');
+                                $("#last_row").css('border-width', '2px');
+                                error = error + 'last_row';
+                            } else {
+                                $("#last_row").css('border-color', '#C0BBBB');
+                                $("#last_row").css('border-width', '1px');
+                            }
+                            if (error == "") {
+                                if (json_object_length >= sheet) {
+                                    sheet = workbook.SheetNames[sheet - 1];
+                                    var sheetName = sheet;
+                                    XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                                    json_object = JSON.stringify(XL_row_object);
+                                    console.log(JSON.parse(json_object));
+                                    $("#step3").css('display', 'block');
+                                    $("#step2").css('display', 'none');
+                                    for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
+                                        // var j=(i.charCodeAt(0)-97);
+                                        total_data_come = (last_column.charCodeAt(0) - 64);
 
-                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
-                                    if (show_data == undefined) {//if row not found than show blank
-                                        show_data = "";
+                                        var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
+                                        if (show_data == undefined) {//if row not found than show blank
+                                            show_data = "";
+                                        }
+                                        $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="column' + (i - 64) + '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                        console.log(String.fromCharCode(i));
                                     }
-                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="column' + (i - 64) + '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                    console.log(String.fromCharCode(i));
+                                }
+                                else {
+                                    alert("Sheet not found in file");
                                 }
                             }
-                            else {
-                                alert("Sheet not found in file");
-                            }
-                        }                       
                         });
 
                         //submit step 2 by mobile
