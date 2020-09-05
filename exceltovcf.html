@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- css to include style.css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.0/tailwind.min.css">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -48,13 +49,96 @@
             font-weight: 500 !important;
         }
 
-        /* #step1,#step2{
-            display:none;
+        
+         /* #step1,
+        #step2,
+        #step3 {
+            display: none;
 
         }
-        #step3{
-            display:block;
-        } */
+
+        #step4 {
+            display: block;
+        }  */
+
+        #payment_button_monthly {
+            border-radius: 20px;
+            padding: .65rem 3rem;
+
+            color: #fff;
+        }
+
+        #payment_button_daily {
+            border-radius: 20px;
+            padding: .65rem 3rem;
+            background-color: #4d5cff;
+            color: #fff;
+        }
+
+        img {
+            display: inline !important;
+            vertical-align: middle !important;
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 1rem;
+        }
+
+        .text-base {
+            font-size: 1.6rem;
+        }
+
+        .leading-6 {
+            line-height: 2.79rem;
+        }
+
+        .text-indigo-600 {
+            --text-opacity: 1;
+            color: #2487eb;
+
+        }
+
+        .text-indigo-500 {
+            --text-opacity: 1;
+            color: #2487eb;
+
+        }
+
+        .bg-indigo-500 {
+            --bg-opacity: 1;
+            background-color: #2487eb;
+
+        }
+
+        .product_subheading {
+            font-size: 2rem;
+        }
+
+        .product_heading {
+            font-size: 3.8rem;
+            font-weight: 900;
+        }
+
+        .hover\:bg-indigo-700:hover {
+            --bg-opacity: 1;
+            background-color: #16a085;
+            text-decoration: none;
+        }
+        .hr_tag_style{
+            width: 70%;            
+        }
     </style>
 </head>
 
@@ -75,30 +159,36 @@
 
                                     <ul class="nav navbar-right">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="/#home">Home</a>
+                                            <a class="nav-link" href="#">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/#why_yschool">Tools +</a>
+                                            <a class="nav-link" href="#">Tools +</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/#about_classes">Services +</a>
+                                            <a class="nav-link" href="#">Services +</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/#about_classes">Downloads</a>
+                                            <a class="nav-link" href="#">Downloads</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="/#our_team">Policy</a>
+                                            <a class="nav-link " href="#">Policy</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="/#our_team">Contact</a>
+                                            <a class="nav-link " href="#">Contact</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link btn_active" href="/#our_team"
-                                                style="background: #e0e0e0;margin-left: 1rem;">Login</a>
+                                            <a class="nav-link btn_active" href="#"
+                                                style="background: #e0e0e0;margin-left: 1rem;"
+                                                id="pop_up_login_header">Login</a>
+                                            <div style="margin-left: 1rem;" id="show_user_name"></div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link btn_active" href="/#our_team"
-                                                style="background: #e0e0e0;margin-left: 1rem;">SignUp</a>
+                                            <a class="nav-link btn_active" href="#"
+                                                style="background: #e0e0e0;margin-left: 1rem;"
+                                                id="pop_up_signup_header">SignUp</a>
+                                            <a class="nav-link btn_active" href="#"
+                                                style="background: #e0e0e0;margin-left: 1rem;"
+                                                id="pop_up_logout_header">Logout</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -129,7 +219,8 @@
                     <div class="container">
                         <div class="row pt-5">
                             <div class="col">
-                                <h3 style="font-size: 3rem;line-height: 3.3rem;color: #2487eb;">How to convert Excel/CSV
+                                <h3 style="font-size: 3rem;line-height: 3.3rem;color: #2487eb;font-weight: 500;">How to
+                                    convert Excel/CSV
                                     to VCF Online
                                 </h3>
                             </div>
@@ -167,8 +258,9 @@
                                     in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
                                     how to Convert Excel xlsx to Vcard vcf File online:</p>
                                 <p>
-                                <h4>Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
-                                <ol>
+                                <h4 style="font-weight: 500;">Follow these steps to convert Excel (xls/xslx/csv) to
+                                    vCard vcf</h4>
+                                <ol style="list-style: decimal;padding-left: 4rem;">
                                     <li>Upload Excel/csv file to convert. </li>
                                     <li>Select first row,column and last row,column as per data in you sheet. </li>
                                     <li>Select which column contains what data. Example, which column contains name?
@@ -297,7 +389,7 @@
                                                     Number:</label>
                                                 <div class="col-9">
                                                     <input type="number" name="first_row" id="first_row" min="1"
-                                                        max="9999" required="required" class="form-control">
+                                                        max="9999"  class="form-control" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -305,7 +397,7 @@
                                                     Number:</label>
                                                 <div class="col-9">
                                                     <input type="number" name="last_row" id="last_row" min="1"
-                                                        max="9999" required="required" autocomplete="off"
+                                                        max="9999"  autocomplete="off"
                                                         class="form-control">
                                                 </div>
                                             </div>
@@ -342,9 +434,240 @@
                                         </form>
                                     </div>
                                 </div>
+
+                                <!-- ---------------------------- step 4 start ----------------------------- -->
+
                                 <div class="row" id="step4">
-                                    <div class="col">
-                                        <h3>Congratulation ! Your file is ready to download</h3>
+                                    <div class="col pb-3">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h1 class="display-3 text-center mt-3 mb-3">Congratulation !</h1>   
+                                                <div class="d-flex justify-content-center">                                           
+                                                        <hr class="hr_tag_style">
+                                                    </div> 
+                                                <h3 id="vcf_filename" style="
+                                                font-size: 3rem;
+                                                font-weight: 500;
+                                            "></h3>
+                                                <p>You can download only 5 VCF files in demo version if you want to
+                                                    download all
+                                                    VCF files you can choose our paid version . <a href="#" style="color: #007bff;">Click
+                                                        here</a> to
+                                                    download your demo VCF file.</p>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- <div class="row pt-2">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 class="text-center">Our Daily Plan</h1>
+                                                    </div>
+                                                </div>
+                                                <p>kindly make a small payment of <strong
+                                                        style="font-weight:500;font-size:1.6rem">50 INR</strong>
+                                                    (download Unlimited VCF
+                                                    files for single use only) online, and you will receive file on your
+                                                    email address:</p>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-center">
+                                                        <button class="btn SendButton bg-primary"
+                                                            id="payment_button_daily">Pay
+                                                            Now</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col d-flex justify-content-center">
+                                                        <p>(All debit/credit cards, netbanking accepted)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h1 class="text-center">Our Monthly Plan</h1>
+                                                    </div>
+                                                </div>
+                                                <p>kindly make <del>600 INR/month</del> (50% off) <strong
+                                                        style="font-weight:500;font-size:1.6rem">300 INR/month</strong>
+                                                    (download Unlimited VCF files for 30 days) payment online, and you
+                                                    will receive file on your email address:</p>
+                                                <div class="row">
+                                                    <div class="col d-flex justify-content-center">
+                                                        <button class="btn SendButton bg-warning"
+                                                            id="payment_button_monthly">Pay
+                                                            Now</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col d-flex justify-content-center">
+                                                        <p>(All debit/credit cards, netbanking accepted)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="pt-4 pb-4 bg-white">
+                                                    <div
+                                                        class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+
+                                                        <div class="text-center">
+
+                                                            <h3 class="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900"
+                                                                style="font-size: 4rem;">
+                                                                Our <span class="text-indigo-600">Pricing</span>
+                                                            </h3>
+
+                                                        </div>
+
+                                                        <div class="mt-20">
+                                                            <ul
+                                                                class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:col-gap-10 sm:row-gap-10">
+
+                                                                <li class="p-5 pb-10 text-center">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            Basic
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            Free
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                3GB Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                10 Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                2 Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="p-5 pb-10 text-center bg-gray-100 collapseSignup">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center  w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            pro
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            50 INR
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                20GB Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                50 Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                20 Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="p-5 pb-10 text-center">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            Enterprise
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            300 INR
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -456,7 +779,7 @@
                 <!--Header-->
                 <div class="modal-header text-center">
                     <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
-                            in</strong></h3>
+                            In</strong></h3>
 
                 </div>
                 <!--Body-->
@@ -484,7 +807,7 @@
                 <!--Footer-->
                 <div class="modal-footer mx-5 mt-2 pb-5">
                     <p class="font-small grey-text d-flex justify-content-end">Not a member? <a id="signup_link"
-                            class="blue-text ml-1">
+                            class="blue-text ml-1" style="cursor: pointer;">
                             Sign Up</a></p>
                 </div>
             </div>
@@ -531,7 +854,7 @@
                 <!--Footer-->
                 <div class="modal-footer mx-5 pt-5 pb-5">
                     <p class="font-small grey-text d-flex justify-content-end">Already a member? <a id="signin_link"
-                            class="blue-text ml-1">
+                            class="blue-text ml-1" style="cursor: pointer;">
                             Sign In</a></p>
                 </div>
             </div>
@@ -937,6 +1260,8 @@
     <script>
         $(document).ready(function () {
             var total_data_come = 0;
+            var uploaded_file_name = "";
+            var uploaded_user_name = "";
 
             // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -967,6 +1292,7 @@
                                 $("#step2").css('display', 'block');
                                 $("#step1").css('display', 'none');
                                 $("#read_file").val(data.filename);
+                                uploaded_file_name = data.filename;
                             } else if (data.status == 601) {
                                 console.log(data.error);
                                 //     alert("problem with query");
@@ -1051,6 +1377,24 @@
                             var first_row = $("#first_row").val();
                             var last_row = $("#last_row").val();
                             var show_data = "";
+                            var error="";
+                            if (first_row == "") {
+                    $("#first_row").css('border-color', 'red');
+                    $("#first_row").css('border-width', '2px');
+                    error = error + 'first_row';
+                } else {
+                    $("#first_row").css('border-color', '#C0BBBB');
+                    $("#first_row").css('border-width', '1px');
+                }
+                if (last_row == "") {
+                    $("#last_row").css('border-color', 'red');
+                    $("#last_row").css('border-width', '2px');
+                    error = error + 'last_row';
+                } else {
+                    $("#last_row").css('border-color', '#C0BBBB');
+                    $("#last_row").css('border-width', '1px');
+                }               
+                    if(error == ""){
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1074,6 +1418,7 @@
                             else {
                                 alert("Sheet not found in file");
                             }
+                        }                       
                         });
 
                         //submit step 2 by mobile
@@ -1151,11 +1496,17 @@
                     }
                 }
                 if (error == "") {
+                    $('.collapseSignup').removeClass('col-8');
+                    $('.collapseSignup').addClass('col-10');
                     $('#pop_up_desktop').modal('show');
                     $('#step4').css('display', 'block');
                     $('#step3').css('display', 'none');
+                    var file_start_char = uploaded_file_name.substring(0, 2);
+                    $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
                 }
                 else {
+                    $('.collapseSignup').removeClass('col-10');
+                    $('.collapseSignup').addClass('col-8');
                     $('#pop_up_desktop').modal('hide');
                     $('#step3').css('display', 'block');
                     $('#step4').css('display', 'none');
@@ -1181,6 +1532,7 @@
                 var con_password = $("#Form_pass2_signup").val();
                 var email = $("#Form_email_signup").val();
                 var error = "";
+                uploaded_user_name = email;
                 function validateEmail(email) {
                     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     return re.test(String(email).toLowerCase());
@@ -1241,6 +1593,12 @@
                             console.log(data);
                             if (data.status == 201) {
                                 $('#pop_up_desktop').modal('hide');
+                                $('#pop_up_login_header').css('display', 'none');
+                                $('#show_user_name').css('display', 'block');
+                                $('#pop_up_signup_header').css('display', 'none');
+                                $('#pop_up_logout_header').css('display', 'block');
+                                var file_first_char = (uploaded_user_name.substring(0, 1)).toUpperCase();
+                                $('#show_user_name').attr('data-letters', file_first_char);
                                 //  $("#contact-success").css('display', 'block');
                                 //   $("#contact-form").css('display', 'none');
                                 //   $("#ticket-id").html('#' + data.id);
@@ -1267,7 +1625,28 @@
             // ---------------------- step signup form  to download file functionality ---------------------- //
 
 
+            // ---------------- header pop up login and signup button ---------------- //
+            $('#pop_up_login_header').click(function () {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+            });
+            $('#pop_up_signup_header').click(function () {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'none');
+                $('#sign_up_page').css('display', 'block');
+            });
+            $('#signin_link').click(function () {
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+                // alert("My name is sign in");
+            });
+            $('#signup_link').click(function () {
 
+                $('#sign_up_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
         });
     </script>
 </body>

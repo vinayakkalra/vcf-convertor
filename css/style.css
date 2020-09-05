@@ -866,7 +866,11 @@ p {
 #step2,
 #step2_mobile,
 #step3,
-#step3_mobile,#step4,#step4_mobile{
+#step3_mobile,
+#step4,
+#step4_mobile,
+#pop_up_logout_header,
+#show_user_name {
     display: none;
 }
 
@@ -880,7 +884,8 @@ p {
         font-size: 1.55rem !important;
 
     }
-    .btn{
+
+    .btn {
         padding: .64rem 2.14rem !important;
     }
 }
@@ -990,7 +995,7 @@ strong {
 
 .btn.blue-gradient {
     color: #fff;
-    transition: .5s ease;
+    transition: .2s ease-in-out;
 }
 
 .btn.btn-block {
@@ -1009,14 +1014,16 @@ html [type="button"],
 }
 
 .blue-gradient {
-    background: linear-gradient(40deg, #45cafc, #303f9f) !important;
+    /* background: linear-gradient(40deg, #45cafc, #303f9f) !important; */
+    background: #2487eb;
 }
 
 .sendButton:hover {
-    background: linear-gradient(-40deg, #45cafc, #303f9f) !important;
+    /* background: linear-gradient(-40deg, #45cafc, #303f9f) !important; */
+    background: #16a085;
 }
 
-.btn {   
+.btn {
     text-transform: uppercase;
 
     white-space: normal;
@@ -1068,4 +1075,21 @@ html [type="button"],
 
 .md-form .form-control {
     margin-left: 3.5rem !important;
+}
+
+/* ------------------------- sign page circle arise ------------------------- */
+[data-letters]:before {
+    content: attr(data-letters);
+    display: inline-block;
+    font-size: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    border-radius: 50%;
+    background: #039420;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: white;
+    cursor: pointer;
 }
