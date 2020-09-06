@@ -1683,9 +1683,6 @@
                     // alert('There are error in the form. Please check your submissions');
                 }
             });
-
-
-
             // ---------------- header pop up login and signup button ---------------- //
             $('#pop_up_login_header').click(function () {
                 $('#pop_up_desktop').modal('show');
