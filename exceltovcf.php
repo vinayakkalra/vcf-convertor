@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- css to include style.css -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.0/tailwind.min.css">
+    <link rel="stylesheet" href="css/product.css">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -457,58 +457,6 @@
                                                     download your demo VCF file.</p>
                                             </div>
                                         </div>
-
-
-                                        <!-- <div class="row pt-2">
-                                            <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h1 class="text-center">Our Daily Plan</h1>
-                                                    </div>
-                                                </div>
-                                                <p>kindly make a small payment of <strong
-                                                        style="font-weight:500;font-size:1.6rem">50 INR</strong>
-                                                    (download Unlimited VCF
-                                                    files for single use only) online, and you will receive file on your
-                                                    email address:</p>
-                                                <div class="row">
-                                                    <div class="col d-flex justify-content-center">
-                                                        <button class="btn SendButton bg-primary"
-                                                            id="payment_button_daily">Pay
-                                                            Now</button>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-2">
-                                                    <div class="col d-flex justify-content-center">
-                                                        <p>(All debit/credit cards, netbanking accepted)</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h1 class="text-center">Our Monthly Plan</h1>
-                                                    </div>
-                                                </div>
-                                                <p>kindly make <del>600 INR/month</del> (50% off) <strong
-                                                        style="font-weight:500;font-size:1.6rem">300 INR/month</strong>
-                                                    (download Unlimited VCF files for 30 days) payment online, and you
-                                                    will receive file on your email address:</p>
-                                                <div class="row">
-                                                    <div class="col d-flex justify-content-center">
-                                                        <button class="btn SendButton bg-warning"
-                                                            id="payment_button_monthly">Pay
-                                                            Now</button>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-2">
-                                                    <div class="col d-flex justify-content-center">
-                                                        <p>(All debit/credit cards, netbanking accepted)</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                         <div class="row">
                                             <div class="col">
                                                 <div class="pt-4 pb-4 bg-white">
@@ -785,6 +733,8 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body mx-5">
+                    <div class="alert alert-danger" role="alert" id="alert_id_signin">
+                    </div>
                     <!--Body-->
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
@@ -823,6 +773,8 @@
                 <!--Body-->
                 <form data-name="signup_form" name="signup-form">
                     <div class="modal-body mx-5">
+                        <div class="alert alert-danger" role="alert" id="alert_id_signup">
+                        </div>
                         <!--Body-->
                         <div class="md-form mb-5">
                             <i class="fas fa-envelope prefix grey-text"></i>
@@ -1256,10 +1208,11 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/xlsx.js"></script>
     <script>
         $(document).ready(function () {
+            var name_user = '';           
             var total_data_come = 0;
             var uploaded_file_name = "";
             var uploaded_user_name = "";
@@ -1499,7 +1452,22 @@
                 if (error == "") {
                     $('.collapseSignup').removeClass('col-8');
                     $('.collapseSignup').addClass('col-10');
-                    $('#pop_up_desktop').modal('show');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/auth.php',
+                        dataType: "json",
+                        data: {
+                            
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {                               
+                                $('#pop_up_desktop').modal('hide');                                
+                            } else {
+                                $('#pop_up_desktop').modal('show');   
+                            }                            
+                        }
+                    });                   
                     $('#step4').css('display', 'block');
                     $('#step3').css('display', 'none');
                     var file_start_char = uploaded_file_name.substring(0, 2);
@@ -1614,16 +1582,108 @@
                             } else if (data.status == 601) {
                                 console.log(data.error);
                                 //     alert("problem with query");
-                            } else {
+                            }
+                            else if (data.status == 301) {
+                                $('#alert_id_signup').css('display', 'block');
+                                $('#alert_id_signup').html(data.error);
+                                alert(data.error);
+                            }
+                            else if (data.status == 302) {
+                                $('#alert_id_signup').css('display', 'block');
+                                $('#alert_id_signup').html(data.error);
+                            }
+                            else {
+                                //console.log(data.error)
                             }
                         }
                     });
-                } else {
+                }
+                else {
                     // alert('There are error in the form. Please check your submissions');
                 }
             });
 
-            // ---------------------- step signup form  to download file functionality ---------------------- //
+            // ---------------------- step signin form  to download file functionality ---------------------- //
+            $('#pop_up_signin').on("click", function () {
+                var email = $("#Form_email_signin").val();
+                var password = $("#Form_pass_signin").val();
+                var error = "";
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                }
+                if (password == "") {
+                    $("#Form_pass_signin").css('border-color', 'red');
+                    $("#Form_pass_signin").css('border-width', '2px');
+                    error = error + 'password';
+                } else {
+                    $("#Form_pass_signin").css('border-color', '#C0BBBB');
+                    $("#Form_pass_signin").css('border-width', '1px');
+                }
+                if (!validateEmail(email)) {
+                    $("#Form_email_signin").css('border-color', 'red');
+                    $("#Form_email_signin").css('border-width', '2px');
+                    error = error + 'email';
+                } else {
+                    $("#Form_email_signin").css('border-color', '#C0BBBB');
+                    $("#Form_email_signin").css('border-width', '1px');
+                }
+                if (error == "") {
+                    // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
+                    // $('#loadingDesktop4').css('display', 'block');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/login_form.php',
+                        dataType: "json",
+                        data: {
+                            'password': password,
+                            'email': email
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {
+                                $('#pop_up_desktop').modal('hide');
+                                $('#pop_up_login_header').css('display', 'none');
+                                $('#show_user_name').css('display', 'block');
+                                $('#pop_up_signup_header').css('display', 'none');
+                                $('#pop_up_logout_header').css('display', 'block');  
+                                name_user=data.email;                 
+                                var file_first_char = (name_user.substring(0, 1)).toUpperCase();
+                                $('#show_user_name').attr('data-letters', file_first_char);
+                                //  $("#contact-success").css('display', 'block');
+                                //   $("#contact-form").css('display', 'none');
+                                //   $("#ticket-id").html('#' + data.id);
+                                // scrollTo(0,0);                               
+                                window.dataLayer = window.dataLayer || [];
+                                window.dataLayer.push({
+                                    'event': 'signin-form',                                    
+                                    'password': password,
+                                    'email': email
+                                });
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                //     alert("problem with query");
+                            }
+                            else if (data.status == 301) {
+                                $('#alert_id_signin').css('display', 'block');
+                                $('#alert_id_signin').html(data.error);
+                                alert(data.error);
+                            }
+                            else if (data.status == 302) {
+                                $('#alert_id_signin').css('display', 'block');
+                                $('#alert_id_signin').html(data.error);
+                            }
+                            else {
+                                //console.log(data.error)
+                            }
+                        }
+                    });
+                }
+                else {
+                    // alert('There are error in the form. Please check your submissions');
+                }
+            });
+
 
 
             // ---------------- header pop up login and signup button ---------------- //
@@ -1648,6 +1708,32 @@
                 $('#sign_in_page').css('display', 'none');
                 // alert("My name is sign up");
             });
+
+/* ------------------------------- logout call ------------------------------ */
+$('#pop_up_logout_header').click(function () {
+    var logout_var='logout';
+                $.ajax({
+                        type: 'POST',
+                        url: 'php/logout.php',
+                        dataType: "json",
+                        data: {
+                            'logout_var': logout_var
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {                               
+                                $('#pop_up_login_header').css('display', 'block');
+                                $('#show_user_name').css('display', 'none');
+                                $('#pop_up_signup_header').css('display', 'block');
+                                $('#pop_up_logout_header').css('display', 'none'); 
+                                window.location.replace(data.url);                                 
+                            } else {
+                                console.log(data.error);
+                                //     alert("problem with query");
+                            }                            
+                        }
+                    });
+});
         });
     </script>
 </body>

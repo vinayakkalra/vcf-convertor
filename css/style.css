@@ -1093,3 +1093,6 @@ html [type="button"],
     color: white;
     cursor: pointer;
 }
+#alert_id_signin,#alert_id_signup{
+    display: none;
+}
