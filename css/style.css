@@ -870,7 +870,10 @@ p {
 #step4,
 #step4_mobile,
 #pop_up_logout_header,
-#show_user_name {
+.show_user_name{
+    display: none;
+}
+.popup_logout_mobile{
     display: none;
 }
 
@@ -885,9 +888,7 @@ p {
 
     }
 
-    .btn {
-        padding: .64rem 2.14rem !important;
-    }
+
 }
 
 /* --------------------------- pop up model style --------------------------- */
@@ -1093,6 +1094,8 @@ html [type="button"],
     color: white;
     cursor: pointer;
 }
-#alert_id_signin,#alert_id_signup{
+
+#alert_id_signin,
+#alert_id_signup {
     display: none;
 }
