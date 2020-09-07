@@ -835,9 +835,7 @@ session_start();
                 alert('Password not match !');
                 error = error + 'password not matched';
             }
-            if (error == "") {
-                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                // $('#loadingDesktop4').css('display', 'block');
+            if (error == "") {                
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -851,22 +849,7 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
-                            // $('.pop_up_login_header').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_header').css('display', 'none');
-                            // $('.pop_up_logout_header').css('display', 'block');
-                            //mobile
-                            // $('.pop_up_login_mobile').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_mobile').css('display', 'none');
-                            // $('.popup_logout_mobile').css('display', 'block');
-                            var file_first_char = (uploaded_user_name.substring(0, 1))
-                                .toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);
-                            //  $("#contact-success").css('display', 'block');
-                            //   $("#contact-form").css('display', 'none');
-                            //   $("#ticket-id").html('#' + data.id);
-                            // scrollTo(0,0);                               
+                            window.location = "index"; 
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signup-form',
@@ -921,9 +904,7 @@ session_start();
                 $("#Form_email_signin").css('border-color', '#C0BBBB');
                 $("#Form_email_signin").css('border-width', '1px');
             }
-            if (error == "") {
-                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                // $('#loadingDesktop4').css('display', 'block');
+            if (error == "") {                
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -934,24 +915,9 @@ session_start();
                     },
                     success: function(data) {
                         console.log(data);
-                        if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');
-                            // $('.pop_up_login_header').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_header').css('display', 'none');
-                            // $('.pop_up_logout_header').css('display', 'block');
-                            //mobile                                
-                            // $('.pop_up_login_mobile').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_mobile').css('display', 'none');
-                            // $('.popup_logout_mobile').css('display', 'block');
-                            name_user = data.email;
-                            var file_first_char = (name_user.substring(0, 1)).toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);
-                            //  $("#contact-success").css('display', 'block');
-                            //   $("#contact-form").css('display', 'none');
-                            //   $("#ticket-id").html('#' + data.id);
-                            // scrollTo(0,0);                               
+                        if (data.status == 201) {                            
+                            $('#pop_up_desktop').modal('hide');  
+                            window.location = "index";                           
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signin-form',
@@ -1026,11 +992,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {
-                        $('.pop_up_login_header').css('display', 'block');
-                        $('.show_user_name').css('display', 'none');
-                        $('.pop_up_signup_header').css('display', 'block');
-                        $('.pop_up_logout_header').css('display', 'none');
+                    if (data.status == 201) {                       
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -1051,11 +1013,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {
-                        // $('.pop_up_login_mobile').css('display', 'block');
-                        // $('.show_user_name').css('display', 'none');
-                        // $('.pop_up_signup_mobile').css('display', 'block');
-                        // $('.popup_logout_mobile').css('display', 'none');
+                    if (data.status == 201) {                       
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);

@@ -159,7 +159,7 @@ session_start();
                         <div class="row">
                             <div class=" col-12">
                                 <nav class="navbar">
-                                    <a class="navbar-brand" href="/" style="width:40%"><img src="images/zamzar-logo.png"
+                                    <a class="navbar-brand" href="/" style="width:35%"><img src="images/zamzar-logo.png"
                                             width="50%"></a>
 
                                     <ul class="nav navbar-right">
@@ -1454,7 +1454,8 @@ session_start();
                     cache: false,
                     processData: false,
                     success: function(data) {
-                        alert(data);
+                        window.location.hash = 'step2';                                                    
+                        // alert(data);
                         data = jQuery.parseJSON(data);
                         if (data.status == 201) {
                             window.dataLayer = window.dataLayer || [];
@@ -1489,7 +1490,7 @@ session_start();
                     cache: false,
                     processData: false,
                     success: function(data) {
-                        alert(data);
+                        // alert(data);
                         data = jQuery.parseJSON(data);
                         if (data.status == 201) {
                             window.dataLayer = window.dataLayer || [];
@@ -1567,6 +1568,7 @@ session_start();
                             $("#last_row").css('border-width', '1px');
                         }
                         if (error == "") {
+                            window.location.hash = 'step3';
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1721,6 +1723,7 @@ session_start();
 
                     },
                     success: function(data) {
+                        window.location.hash = 'step4';
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
@@ -1883,17 +1886,8 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            user_id = data.id;
-                            // $('#pop_up_desktop').modal('hide');
-                            // $('#pop_up_login_header').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('#pop_up_signup_header').css('display', 'none');
-                            // $('#pop_up_logout_header').css('display', 'block');
-                            //mobile
-                            // $('.pop_up_login_mobile').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_mobile').css('display', 'none');
-                            // $('.popup_logout_mobile').css('display', 'block');
+                            user_id = data.id;  
+                            window.location = "exceltovcf#step4";                    
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                                 .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
@@ -1970,16 +1964,17 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
+                            window.location = "exceltovcf"; 
                             $('#pop_up_desktop').modal('hide');
-                            $('#pop_up_login_header').css('display', 'none');
-                            $('.show_user_name').css('display', 'block');
-                            $('#pop_up_signup_header').css('display', 'none');
-                            $('#pop_up_logout_header').css('display', 'block');
-                            //mobile                                
-                            $('.pop_up_login_mobile').css('display', 'none');
-                            $('.show_user_name').css('display', 'block');
-                            $('.pop_up_signup_mobile').css('display', 'none');
-                            $('.popup_logout_mobile').css('display', 'block');
+                            // $('#pop_up_login_header').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('#pop_up_signup_header').css('display', 'none');
+                            // $('#pop_up_logout_header').css('display', 'block');
+                            // //mobile                                
+                            // $('.pop_up_login_mobile').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_mobile').css('display', 'none');
+                            // $('.popup_logout_mobile').css('display', 'block');
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
@@ -2099,111 +2094,6 @@ session_start();
                 }
             });
         });
-
-        /* ------------------------ product call for desktop ------------------------ */
-        // $('#basic').click(function(){
-        //   product_name="basic";  
-        //   $.ajax({
-        //                 type: 'POST',
-        //                 url: 'php/product.php',
-        //                 dataType: "json",
-        //                 data: {
-        //                     'product_name': product_name,
-        //                     'user_id':user_id
-        //                 },
-        //                 success: function(data) {
-        //                     console.log(data);
-        //                     if (data.status == 201) {
-        //                         // $('#pop_up_login_header').css('display', 'block');
-        //                         // $('.show_user_name').css('display', 'none');
-        //                         // $('#pop_up_signup_header').css('display', 'block');
-        //                         // $('#pop_up_logout_header').css('display', 'none');
-        //                         // window.location.replace(data.url);
-        //                     } else {
-        //                         console.log(data.error);
-        //                         //     alert("problem with query");
-        //                     }
-        //                 }
-        //             });
-        // });
-        // $('#basic1').click(function(){
-        //   product_name="basic";  
-        //   $.ajax({
-        //                 type: 'POST',
-        //                 url: 'php/product.php',
-        //                 dataType: "json",
-        //                 data: {
-        //                     'product_name': product_name,
-        //                     'user_id':user_id
-        //                 },
-        //                 success: function(data) {
-        //                     console.log(data);
-        //                     if (data.status == 201) {
-        //                         // $('#pop_up_login_header').css('display', 'block');
-        //                         // $('.show_user_name').css('display', 'none');
-        //                         // $('#pop_up_signup_header').css('display', 'block');
-        //                         // $('#pop_up_logout_header').css('display', 'none');
-        //                         // window.location.replace(data.url);
-        //                     } else {
-        //                         console.log(data.error);
-        //                         //     alert("problem with query");
-        //                     }
-        //                 }
-        //             });
-
-        // });
-        // $('#pro').click(function(){
-        //   product_name="pro"; 
-        //   $.ajax({
-        //                 type: 'POST',
-        //                 url: 'php/product.php',
-        //                 dataType: "json",
-        //                 data: {
-        //                     'product_name': product_name,
-        //                     'user_id':user_id
-        //                 },
-        //                 success: function(data) {
-        //                     console.log(data);
-        //                     if (data.status == 201) {
-        //                         // $('#pop_up_login_header').css('display', 'block');
-        //                         // $('.show_user_name').css('display', 'none');
-        //                         // $('#pop_up_signup_header').css('display', 'block');
-        //                         // $('#pop_up_logout_header').css('display', 'none');
-        //                         // window.location.replace(data.url);
-        //                     } else {
-        //                         console.log(data.error);
-        //                         //     alert("problem with query");
-        //                     }
-        //                 }
-        //             });
-
-        // });
-        // $('#basic').click(function(){
-        //   product_name="enterprise";  
-        //   $.ajax({
-        //                 type: 'POST',
-        //                 url: 'php/product.php',
-        //                 dataType: "json",
-        //                 data: {
-        //                     'product_name': product_name,
-        //                     'user_id':user_id
-        //                 },
-        //                 success: function(data) {
-        //                     console.log(data);
-        //                     if (data.status == 201) {
-        //                         // $('#pop_up_login_header').css('display', 'block');
-        //                         // $('.show_user_name').css('display', 'none');
-        //                         // $('#pop_up_signup_header').css('display', 'block');
-        //                         // $('#pop_up_logout_header').css('display', 'none');
-        //                         // window.location.replace(data.url);
-        //                     } else {
-        //                         console.log(data.error);
-        //                         //     alert("problem with query");
-        //                     }
-        //                 }
-        //             });
-
-        // });
     });
     </script>
 </body>
