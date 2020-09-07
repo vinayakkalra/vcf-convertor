@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,21 +180,34 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="#">Contact</a>
-                                        </li>
-                                        <li class="nav-item">
+                                        </li>                                        
+                                        <!-- test -->
+                                        <?php
+                                        if(!isset($_SESSION["user_email"])){
+                                            echo '<li class="nav-item"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="pop_up_login_header">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="pop_up_signup_header">SignUp</a> </li>';
+                                        }else{
+                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item"><a class="nav-link btn_active" href="#"
+                                            style="background: #e0e0e0;margin-left: 1rem;"
+                                            id="pop_up_logout_header">Logout</a> </li>';
+                                        }?>
+                                       
+                                    
+
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link btn_active" href="#"
                                                 style="background: #e0e0e0;margin-left: 1rem;"
                                                 id="pop_up_login_header">Login</a>
-                                            <div style="margin-left: 1rem;" class="show_user_name"></div>
+                                           
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link btn_active" href="#"
                                                 style="background: #e0e0e0;margin-left: 1rem;"
                                                 id="pop_up_signup_header">SignUp</a>
+
                                             <a class="nav-link btn_active" href="#"
                                                 style="background: #e0e0e0;margin-left: 1rem;"
                                                 id="pop_up_logout_header">Logout</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </nav>
 
@@ -452,7 +469,7 @@
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="#"
-                                                        style="color: #007bff;">Click
+                                                        style="color: #007bff;" id="basic">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -514,7 +531,7 @@
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -559,7 +576,7 @@
                                                                                 20 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="pro"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -603,7 +620,7 @@
                                                                                 Unlimited Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="enterprise"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -1414,6 +1431,8 @@
         var total_data_come = 0;
         var uploaded_file_name = "";
         var uploaded_user_name = "";
+        var user_id = 0;
+        var product_name = "";
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1864,16 +1883,17 @@
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');
-                            $('#pop_up_login_header').css('display', 'none');
-                            $('.show_user_name').css('display', 'block');
-                            $('#pop_up_signup_header').css('display', 'none');
-                            $('#pop_up_logout_header').css('display', 'block');
+                            user_id = data.id;
+                            // $('#pop_up_desktop').modal('hide');
+                            // $('#pop_up_login_header').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('#pop_up_signup_header').css('display', 'none');
+                            // $('#pop_up_logout_header').css('display', 'block');
                             //mobile
-                            $('.pop_up_login_mobile').css('display', 'none');
-                            $('.show_user_name').css('display', 'block');
-                            $('.pop_up_signup_mobile').css('display', 'none');
-                            $('.popup_logout_mobile').css('display', 'block');
+                            // $('.pop_up_login_mobile').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_mobile').css('display', 'none');
+                            // $('.popup_logout_mobile').css('display', 'block');
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                                 .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
@@ -1949,6 +1969,7 @@
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
+                            user_id = data.id;
                             $('#pop_up_desktop').modal('hide');
                             $('#pop_up_login_header').css('display', 'none');
                             $('.show_user_name').css('display', 'block');
@@ -2041,10 +2062,10 @@
                 success: function(data) {
                     console.log(data);
                     if (data.status == 201) {
-                        $('#pop_up_login_header').css('display', 'block');
-                        $('.show_user_name').css('display', 'none');
-                        $('#pop_up_signup_header').css('display', 'block');
-                        $('#pop_up_logout_header').css('display', 'none');
+                        // $('#pop_up_login_header').css('display', 'block');
+                        // $('.show_user_name').css('display', 'none');
+                        // $('#pop_up_signup_header').css('display', 'block');
+                        // $('#pop_up_logout_header').css('display', 'none');
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -2066,10 +2087,10 @@
                 success: function(data) {
                     console.log(data);
                     if (data.status == 201) {
-                        $('.pop_up_login_mobile').css('display', 'block');
-                        $('.show_user_name').css('display', 'none');
-                        $('.pop_up_signup_mobile').css('display', 'block');
-                        $('.popup_logout_mobile').css('display', 'none');
+                        // $('.pop_up_login_mobile').css('display', 'block');
+                        // $('.show_user_name').css('display', 'none');
+                        // $('.pop_up_signup_mobile').css('display', 'block');
+                        // $('.popup_logout_mobile').css('display', 'none');
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -2078,6 +2099,111 @@
                 }
             });
         });
+
+        /* ------------------------ product call for desktop ------------------------ */
+        // $('#basic').click(function(){
+        //   product_name="basic";  
+        //   $.ajax({
+        //                 type: 'POST',
+        //                 url: 'php/product.php',
+        //                 dataType: "json",
+        //                 data: {
+        //                     'product_name': product_name,
+        //                     'user_id':user_id
+        //                 },
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     if (data.status == 201) {
+        //                         // $('#pop_up_login_header').css('display', 'block');
+        //                         // $('.show_user_name').css('display', 'none');
+        //                         // $('#pop_up_signup_header').css('display', 'block');
+        //                         // $('#pop_up_logout_header').css('display', 'none');
+        //                         // window.location.replace(data.url);
+        //                     } else {
+        //                         console.log(data.error);
+        //                         //     alert("problem with query");
+        //                     }
+        //                 }
+        //             });
+        // });
+        // $('#basic1').click(function(){
+        //   product_name="basic";  
+        //   $.ajax({
+        //                 type: 'POST',
+        //                 url: 'php/product.php',
+        //                 dataType: "json",
+        //                 data: {
+        //                     'product_name': product_name,
+        //                     'user_id':user_id
+        //                 },
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     if (data.status == 201) {
+        //                         // $('#pop_up_login_header').css('display', 'block');
+        //                         // $('.show_user_name').css('display', 'none');
+        //                         // $('#pop_up_signup_header').css('display', 'block');
+        //                         // $('#pop_up_logout_header').css('display', 'none');
+        //                         // window.location.replace(data.url);
+        //                     } else {
+        //                         console.log(data.error);
+        //                         //     alert("problem with query");
+        //                     }
+        //                 }
+        //             });
+
+        // });
+        // $('#pro').click(function(){
+        //   product_name="pro"; 
+        //   $.ajax({
+        //                 type: 'POST',
+        //                 url: 'php/product.php',
+        //                 dataType: "json",
+        //                 data: {
+        //                     'product_name': product_name,
+        //                     'user_id':user_id
+        //                 },
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     if (data.status == 201) {
+        //                         // $('#pop_up_login_header').css('display', 'block');
+        //                         // $('.show_user_name').css('display', 'none');
+        //                         // $('#pop_up_signup_header').css('display', 'block');
+        //                         // $('#pop_up_logout_header').css('display', 'none');
+        //                         // window.location.replace(data.url);
+        //                     } else {
+        //                         console.log(data.error);
+        //                         //     alert("problem with query");
+        //                     }
+        //                 }
+        //             });
+
+        // });
+        // $('#basic').click(function(){
+        //   product_name="enterprise";  
+        //   $.ajax({
+        //                 type: 'POST',
+        //                 url: 'php/product.php',
+        //                 dataType: "json",
+        //                 data: {
+        //                     'product_name': product_name,
+        //                     'user_id':user_id
+        //                 },
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     if (data.status == 201) {
+        //                         // $('#pop_up_login_header').css('display', 'block');
+        //                         // $('.show_user_name').css('display', 'none');
+        //                         // $('#pop_up_signup_header').css('display', 'block');
+        //                         // $('#pop_up_logout_header').css('display', 'none');
+        //                         // window.location.replace(data.url);
+        //                     } else {
+        //                         console.log(data.error);
+        //                         //     alert("problem with query");
+        //                     }
+        //                 }
+        //             });
+
+        // });
     });
     </script>
 </body>

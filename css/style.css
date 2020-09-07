@@ -868,15 +868,10 @@ p {
 #step3,
 #step3_mobile,
 #step4,
-#step4_mobile,
-#pop_up_logout_header,
-.show_user_name{
+#step4_mobile
+{
     display: none;
 }
-.popup_logout_mobile{
-    display: none;
-}
-
 .form-control {
     font-size: 1.6rem !important;
 

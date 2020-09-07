@@ -45,6 +45,7 @@ if(isset($_POST['email'])){
         $data['email']=$email;
         echo json_encode($data);
         session_start();
+        $_SESSION['first_char']=ucfirst($email[0]);
         $_SESSION['user_email']=$email;
         }
     else  

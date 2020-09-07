@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +33,7 @@
 
     <!-- Enter page description -->
     <meta property="og:description" content="ENTER_PAGE_DESCRIPTION">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Enter Logo image URL for example : http://cryptonite.finstreet.in/images/cryptonitepost.png -->
     <!-- <meta property="og:image" itemprop="image" content="ENTER_IMAGE_URL" />
     <meta property="og:image:secure_url" itemprop="image" content="ENTER_IMAGE_URL" />
@@ -79,15 +82,15 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="/#our_team"
-                                                style="background: #e0e0e0;margin-left: 1rem;">Login</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="/#our_team"
-                                                style="background: #e0e0e0;margin-left: 1rem;">SignUp</a>
-                                        </li>
+                                        </li>                                       
+                                        <?php
+                                        if(!isset($_SESSION["user_email"])){
+                                            echo '<li class="nav-item"> <a class="nav-link btn_active pop_up_login_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_signup_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">SignUp</a> </li>';
+                                        }else{
+                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_logout_header" href="#"
+                                            style="background: #e0e0e0;margin-left: 1rem;"
+                                            id="">Logout</a> </li>';
+                                        }?>
                                     </ul>
                                 </nav>
 
@@ -125,15 +128,15 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;">Login</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;">SignUp</a>
-                                        </li>
+                                        </li>                                        
+                                        <?php
+                                        if(!isset($_SESSION["user_email"])){
+                                            echo '<li class="nav-item pop_up_login_header"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_signup_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">SignUp</a> </li>';
+                                        }else{
+                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item pop_up_logout_header"> <a class="nav-link btn_active" href="#"
+                                            style="background: #e0e0e0;margin-left: 1rem;"
+                                            id="">Logout</a> </li>';
+                                        }?>
                                     </ul>
                                 </nav>
                             </div>
@@ -322,7 +325,7 @@
                                             target="_blank">
                                             <div class="form-group">
 
-                                                <input id="footer-subscribe-email" class="form-control p-3 mt-2"
+                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
                                                     name="EMAIL" placeholder="Your email" type="email"
                                                     style="font-size:1.2rem">
                                             </div>
@@ -369,6 +372,105 @@
             </div>
         </div>
     </div>
+        <!-- -------------------------- popup desktop start hear --------------------------- -->
+    <!-- Modal -->
+    <div class="modal fade" id="pop_up_desktop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <!--Content-->
+            <div class="modal-content form-elegant" id="sign_in_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                            In</strong></h3>
+
+                </div>
+                <!--Body-->
+                <div class="modal-body mx-5">
+                    <div class="alert alert-danger" role="alert" id="alert_id_signin">
+                    </div>
+                    <!--Body-->
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="Form_email_signin" class="form-control validate"
+                            placeholder="Your email">
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="Form_pass_signin" class="form-control validate"
+                            placeholder="Your password">
+                        <p class="font-small blue-text d-flex justify-content-end mt-3">Forgot <a href="#"
+                                class="blue-text ml-1">
+                                Password?</a></p>
+                    </div>
+                    <div class="text-center mb-5">
+                        <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            id="pop_up_signin">Sign
+                            in</button>
+                    </div>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer mx-5 mt-2 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Not a member? <a id="signup_link"
+                            class="blue-text ml-1" style="cursor: pointer;">
+                            Sign Up</a></p>
+                </div>
+            </div>
+
+            <div class="modal-content form-elegant" id="sign_up_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                            Up</strong></h3>
+
+                </div>
+                <!--Body-->
+                <form data-name="signup_form" name="signup-form">
+                    <div class="modal-body mx-5">
+                        <div class="alert alert-danger" role="alert" id="alert_id_signup">
+                        </div>
+                        <!--Body-->
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="Form_email_signup" class="form-control validate"
+                                placeholder="Your email">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input type="text" id="Form_phone_signup" class="form-control validate"
+                                placeholder="Mobile number">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass_signup" class="form-control validate"
+                                placeholder="Your password">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass2_signup" class="form-control validate"
+                                placeholder="Confirm password">
+
+                        </div>
+                        <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="pop_up_signup">Sign
+                                Up</button>
+                        </div>
+                    </div>
+                </form>
+                <!--Footer-->
+                <div class="modal-footer mx-5 pt-5 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Already a member? <a id="signin_link"
+                            class="blue-text ml-1" style="cursor: pointer;">
+                            Sign In</a></p>
+                </div>
+            </div>
+
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modal -->
 
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
@@ -387,11 +489,17 @@
                     <a href="#" id="mobile_downloads_button">Downloads</a>
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
-                    <a href="#" id="mobile_login_button">
+                    <a href="#" class="pop_up_login_mobile">
                         <div class="btn btn-primary" style="font-size:1.6rem">Login</div>
                     </a>
-                    <a href="#" id="mobile_signup_button">
-                        <div class="btn btn-success" style="font-size:1.6rem">SignUp</div>
+                    <a href="#" class="show_user_name">
+                        <div style="margin-left: 1rem;"></div>
+                    </a>
+                    <a href="#" class="pop_up_signup_mobile">
+                        <div class="btn btn-success " style="font-size:1.6rem">SignUp</div>
+                    </a>
+                    <a href="#" class="pt-3 d-flex">
+                        <div class="btn btn-success popup_logout_mobile" style="font-size:1.6rem">Logout</div>
                     </a>
                 </div>
             </div>
@@ -585,7 +693,7 @@
                                     target="_blank">
                                     <div class="form-group">
 
-                                        <input id="footer-subscribe-email" class="form-control p-3 mt-3" name="EMAIL"
+                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3" name="EMAIL"
                                             placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
@@ -672,7 +780,292 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Add custom javascript and jquery here
+        $(document).ready(function(){
+             // ------------------------- pop up sign up form ------------------------- //
+        $('#pop_up_signup').on("click", function() {
+            var mobile = $("#Form_phone_signup").val();
+            var password = $("#Form_pass_signup").val();
+            var con_password = $("#Form_pass2_signup").val();
+            var email = $("#Form_email_signup").val();
+            var error = "";
+            uploaded_user_name = email;
+
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_signup").css('border-color', 'red');
+                $("#Form_phone_signup").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                $("#Form_phone_signup").css('border-width', '1px');
+            }
+            if (password == "") {
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass_signup").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');
+                error = error + 'Class';
+            } else {
+                $("#Form_pass2_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass2_signup").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_signup").css('border-color', 'red');
+                $("#Form_email_signup").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_signup").css('border-color', '#C0BBBB');
+                $("#Form_email_signup").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {
+                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
+                // $('#loadingDesktop4').css('display', 'block');
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/signup_form.php',
+                    dataType: "json",
+                    data: {
+                        'mobile': mobile,
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
+                            // $('.pop_up_login_header').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_header').css('display', 'none');
+                            // $('.pop_up_logout_header').css('display', 'block');
+                            //mobile
+                            // $('.pop_up_login_mobile').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_mobile').css('display', 'none');
+                            // $('.popup_logout_mobile').css('display', 'block');
+                            var file_first_char = (uploaded_user_name.substring(0, 1))
+                                .toUpperCase();
+                            $('.show_user_name').attr('data-letters', file_first_char);
+                            //  $("#contact-success").css('display', 'block');
+                            //   $("#contact-form").css('display', 'none');
+                            //   $("#ticket-id").html('#' + data.id);
+                            // scrollTo(0,0);                               
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'signup-form',
+                                'mobile': mobile,
+                                'password': password,
+                                'email': email
+                            });
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('#alert_id_signup').html(data.error);
+                            alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('#alert_id_signup').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+
+        // ---------------------- step signin form  to download file functionality ---------------------- //
+        $('#pop_up_signin').on("click", function() {
+            var email = $("#Form_email_signin").val();
+            var password = $("#Form_pass_signin").val();
+            var error = "";
+
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (password == "") {
+                $("#Form_pass_signin").css('border-color', 'red');
+                $("#Form_pass_signin").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signin").css('border-color', '#C0BBBB');
+                $("#Form_pass_signin").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_signin").css('border-color', 'red');
+                $("#Form_email_signin").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_signin").css('border-color', '#C0BBBB');
+                $("#Form_email_signin").css('border-width', '1px');
+            }
+            if (error == "") {
+                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
+                // $('#loadingDesktop4').css('display', 'block');
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/login_form.php',
+                    dataType: "json",
+                    data: {
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
+                            // $('.pop_up_login_header').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_header').css('display', 'none');
+                            // $('.pop_up_logout_header').css('display', 'block');
+                            //mobile                                
+                            // $('.pop_up_login_mobile').css('display', 'none');
+                            // $('.show_user_name').css('display', 'block');
+                            // $('.pop_up_signup_mobile').css('display', 'none');
+                            // $('.popup_logout_mobile').css('display', 'block');
+                            name_user = data.email;
+                            var file_first_char = (name_user.substring(0, 1)).toUpperCase();
+                            $('.show_user_name').attr('data-letters', file_first_char);
+                            //  $("#contact-success").css('display', 'block');
+                            //   $("#contact-form").css('display', 'none');
+                            //   $("#ticket-id").html('#' + data.id);
+                            // scrollTo(0,0);                               
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'signin-form',
+                                'password': password,
+                                'email': email
+                            });
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_signin').css('display', 'block');
+                            $('#alert_id_signin').html(data.error);
+                            alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_signin').css('display', 'block');
+                            $('#alert_id_signin').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+
+
+
+        // ---------------- header pop up login and signup button ---------------- //
+        $('.pop_up_login_header').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+        });
+        $('.pop_up_signup_header').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'none');
+            $('#sign_up_page').css('display', 'block');
+        });
+        $('#signin_link').click(function() {
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+            // alert("My name is sign in");
+        });
+        $('#signup_link').click(function() {
+
+            $('#sign_up_page').css('display', 'block');
+            $('#sign_in_page').css('display', 'none');
+            // alert("My name is sign up");
+        });
+
+        // ---------------- header pop up login and signup button mobile---------------- //
+        $('.pop_up_login_mobile').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+        });
+        $('.pop_up_signup_mobile').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'none');
+            $('#sign_up_page').css('display', 'block');
+        });
+        /* ------------------------------- logout call ------------------------------ */
+        $('.pop_up_logout_header').click(function() {
+            var logout_var = 'logout';
+            $.ajax({
+                type: 'POST',
+                url: 'php/logout.php',
+                dataType: "json",
+                data: {
+                    'logout_var': logout_var
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (data.status == 201) {
+                        $('.pop_up_login_header').css('display', 'block');
+                        $('.show_user_name').css('display', 'none');
+                        $('.pop_up_signup_header').css('display', 'block');
+                        $('.pop_up_logout_header').css('display', 'none');
+                        window.location.replace(data.url);
+                    } else {
+                        console.log(data.error);
+                        //     alert("problem with query");
+                    }
+                }
+            });
+        });
+        /* ------------------------------- logout call ------------------------------ */
+        $('.popup_logout_mobile').click(function() {
+            var logout_var = 'logout';
+            $.ajax({
+                type: 'POST',
+                url: 'php/logout.php',
+                dataType: "json",
+                data: {
+                    'logout_var': logout_var
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (data.status == 201) {
+                        // $('.pop_up_login_mobile').css('display', 'block');
+                        // $('.show_user_name').css('display', 'none');
+                        // $('.pop_up_signup_mobile').css('display', 'block');
+                        // $('.popup_logout_mobile').css('display', 'none');
+                        window.location.replace(data.url);
+                    } else {
+                        console.log(data.error);
+                        //     alert("problem with query");
+                    }
+                }
+            });
+        });
+
+        });
     </script>
 </body>
 

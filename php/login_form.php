@@ -20,7 +20,9 @@ if(isset($_POST['email'])){
 			
                 $data['status'] = 201;
                 $data['email']=$email;
+                $data['id']= $row['id']; 
                 session_start();
+                $_SESSION['first_char']=ucfirst($email[0]);
                 $_SESSION['user_email']=$email;
                 //  $_SESSION['user_name'] = $row['email'];
                 $_SESSION['user_id'] = $row['id'];
