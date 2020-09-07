@@ -868,12 +868,10 @@ p {
 #step3,
 #step3_mobile,
 #step4,
-#step4_mobile,
-#pop_up_logout_header,
-#show_user_name {
+#step4_mobile
+{
     display: none;
 }
-
 .form-control {
     font-size: 1.6rem !important;
 
@@ -885,9 +883,7 @@ p {
 
     }
 
-    .btn {
-        padding: .64rem 2.14rem !important;
-    }
+
 }
 
 /* --------------------------- pop up model style --------------------------- */
@@ -1093,6 +1089,8 @@ html [type="button"],
     color: white;
     cursor: pointer;
 }
-#alert_id_signin,#alert_id_signup{
+
+#alert_id_signin,
+#alert_id_signup {
     display: none;
 }

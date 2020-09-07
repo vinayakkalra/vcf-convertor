@@ -42,9 +42,10 @@ if(isset($_POST['email'])){
         if($result = mysqli_query($link, $query)) {   
     $data['status'] = 201;
         $data['id'] = $id;
-        $data['email']=$email;
+        $data['email']=$email;        
         echo json_encode($data);
         session_start();
+        $_SESSION['first_char']=ucfirst($email[0]);
         $_SESSION['user_email']=$email;
         }
     else  

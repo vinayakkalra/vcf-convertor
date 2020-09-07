@@ -1,8 +1,10 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <!-- Enter a proper page title here -->
     <title>VCF Converter| Example with all standards</title>
 
@@ -45,12 +47,12 @@
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
-        .form-group label {
-            font-weight: 500 !important;
-        }
+    .form-group label {
+        font-weight: 500 !important;
+    }
 
 
-        /* #step1,
+    /* #step1,
         #step2,
         #step3 {
             display: none;
@@ -61,85 +63,85 @@
             display: block;
         }  */
 
-        #payment_button_monthly {
-            border-radius: 20px;
-            padding: .65rem 3rem;
+    #payment_button_monthly {
+        border-radius: 20px;
+        padding: .65rem 3rem;
 
-            color: #fff;
-        }
+        color: #fff;
+    }
 
-        #payment_button_daily {
-            border-radius: 20px;
-            padding: .65rem 3rem;
-            background-color: #4d5cff;
-            color: #fff;
-        }
+    #payment_button_daily {
+        border-radius: 20px;
+        padding: .65rem 3rem;
+        background-color: #4d5cff;
+        color: #fff;
+    }
 
-        img {
-            display: inline !important;
-            vertical-align: middle !important;
-        }
+    img {
+        display: inline !important;
+        vertical-align: middle !important;
+    }
 
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
-            margin: 1rem;
-        }
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+        margin: 1rem;
+    }
 
-        .text-base {
-            font-size: 1.6rem;
-        }
+    .text-base {
+        font-size: 1.6rem;
+    }
 
-        .leading-6 {
-            line-height: 2.79rem;
-        }
+    .leading-6 {
+        line-height: 2.79rem;
+    }
 
-        .text-indigo-600 {
-            --text-opacity: 1;
-            color: #2487eb;
+    .text-indigo-600 {
+        --text-opacity: 1;
+        color: #2487eb;
 
-        }
+    }
 
-        .text-indigo-500 {
-            --text-opacity: 1;
-            color: #2487eb;
+    .text-indigo-500 {
+        --text-opacity: 1;
+        color: #2487eb;
 
-        }
+    }
 
-        .bg-indigo-500 {
-            --bg-opacity: 1;
-            background-color: #2487eb;
+    .bg-indigo-500 {
+        --bg-opacity: 1;
+        background-color: #2487eb;
 
-        }
+    }
 
-        .product_subheading {
-            font-size: 2rem;
-        }
+    .product_subheading {
+        font-size: 2rem;
+    }
 
-        .product_heading {
-            font-size: 3.8rem;
-            font-weight: 900;
-        }
+    .product_heading {
+        font-size: 3.8rem;
+        font-weight: 900;
+    }
 
-        .hover\:bg-indigo-700:hover {
-            --bg-opacity: 1;
-            background-color: #16a085;
-            text-decoration: none;
-        }
+    .hover\:bg-indigo-700:hover {
+        --bg-opacity: 1;
+        background-color: #16a085;
+        text-decoration: none;
+    }
 
-        .hr_tag_style {
-            width: 70%;
-        }
+    .hr_tag_style {
+        width: 70%;
+    }
     </style>
 </head>
 
@@ -155,7 +157,7 @@
                         <div class="row">
                             <div class=" col-12">
                                 <nav class="navbar">
-                                    <a class="navbar-brand" href="/" style="width:40%"><img src="images/zamzar-logo.png"
+                                    <a class="navbar-brand" href="/" style="width:35%"><img src="images/zamzar-logo.png"
                                             width="50%"></a>
 
                                     <ul class="nav navbar-right">
@@ -177,20 +179,11 @@
                                         <li class="nav-item">
                                             <a class="nav-link " href="#">Contact</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_login_header">Login</a>
-                                            <div style="margin-left: 1rem;" id="show_user_name"></div>
+                                        <!-- test -->
+                                        <li class="nav-item" id="set_id_one">                                            
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_signup_header">SignUp</a>
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_logout_header">Logout</a>
-                                        </li>
+                                        <li class="nav-item" id="set_id_two">                                            
+                                        </li>                                        
                                     </ul>
                                 </nav>
 
@@ -452,7 +445,7 @@
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="#"
-                                                        style="color: #007bff;">Click
+                                                        style="color: #007bff;" id="basic">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -514,7 +507,7 @@
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -559,7 +552,7 @@
                                                                                 20 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="pro"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -603,7 +596,7 @@
                                                                                 Unlimited Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="#" id="enterprise"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -835,11 +828,17 @@
                     <a href="#" id="mobile_downloads_button">Downloads</a>
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
-                    <a href="#" id="mobile_login_button">
+                    <a href="#" class="pop_up_login_mobile">
                         <div class="btn btn-primary" style="font-size:1.6rem">Login</div>
                     </a>
-                    <a href="#" id="mobile_signup_button">
-                        <div class="btn btn-success" style="font-size:1.6rem">SignUp</div>
+                    <a href="#" class="show_user_name">
+                        <div style="margin-left: 1rem;"></div>
+                    </a>
+                    <a href="#" class="pop_up_signup_mobile">
+                        <div class="btn btn-success " style="font-size:1.6rem">SignUp</div>
+                    </a>
+                    <a href="#" class="pt-3 d-flex">
+                        <div class="btn btn-success popup_logout_mobile" style="font-size:1.6rem">Logout</div>
                     </a>
                 </div>
             </div>
@@ -870,7 +869,8 @@
         <div class="container">
             <div class="row">
                 <div class="col pt-5 pb-3">
-                    <h3 style="font-size: 2.5rem;line-height: 2.8rem;color: #2487eb;">How to convert Excel/CSV
+                    <h3 style="font-size: 2.5rem;line-height: 2.8rem;color: #2487eb;font-weight:500">How to convert
+                        Excel/CSV
                         to VCF Online
                     </h3>
                 </div>
@@ -912,8 +912,8 @@
                         in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
                         how to Convert Excel xlsx to Vcard vcf File online:</p>
                     <p>
-                    <h4>Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
-                    <ol>
+                    <h4 style="font-weight:500">Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
+                    <ol style="padding-left:4rem;list-style:decimal;">
                         <li>Upload Excel/csv file to convert. </li>
                         <li>Select first row,column and last row,column as per data in you sheet. </li>
                         <li>Select which column contains what data. Example, which column contains name?
@@ -936,7 +936,7 @@
 
                             <!-- -------------------------- step 1 for mobile -------------------------- -->
 
-                            <div class="col-10 collapseSignup" id="step1_mobile">
+                            <div class="col collapseSignup" id="step1_mobile">
                                 <div class="row">
                                     <div class="col d-flex justify-content-center">
                                         <img src="images/addfile.svg" alt="add images" width="50%">
@@ -973,7 +973,7 @@
                             </div>
 
                             <!-- -------------------------- step 2 for mobile -------------------------- -->
-                            <div class="10 collapseSignup" id="step2_mobile">
+                            <div class="col collapseSignup" id="step2_mobile">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">
                                         <form method="post" name="step2" id="step2form_mobile">
@@ -1086,7 +1086,7 @@
                                 </div>
                             </div>
                             <!-- ---------------------------- step 3 mobile start ----------------------------- -->
-                            <div class="10 collapseSignup" id="step3_mobile">
+                            <div class="col collapseSignup" id="step3_mobile">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">
                                         <form name="step3_mobile">
@@ -1104,6 +1104,197 @@
                                                     style="font-size:1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- --------------------------- step 4 mobile start -------------------------- -->
+
+                            <div class="col collapseSignup" id="step4_mobile">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col">
+                                        <!-- <div class="row" id="step4_mobile">
+                                    <div class="col pb-3"> -->
+                                        <div class="row">
+                                            <div class="col">
+                                                <h1 class="display-4 text-center mt-3 mb-3">Congratulation !</h1>
+                                                <div class="d-flex justify-content-center">
+                                                    <hr class="hr_tag_style">
+                                                </div>
+                                                <h3 id="vcf_filename" style="
+                                                font-size: 3rem;
+                                                font-weight: 500;
+                                            "></h3>
+                                                <p>You can download only 5 VCF files in demo version if you want to
+                                                    download all
+                                                    VCF files you can choose our paid version . <a href="#"
+                                                        style="color: #007bff;">Click
+                                                        here</a> to
+                                                    download your demo VCF file.</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="pt-4 pb-4 bg-white">
+                                                    <div
+                                                        class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+
+                                                        <div class="text-center">
+
+                                                            <h3 class="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900"
+                                                                style="font-size: 4rem;">
+                                                                Our <span class="text-indigo-600">Pricing</span>
+                                                            </h3>
+
+                                                        </div>
+
+                                                        <div class="mt-20">
+                                                            <ul
+                                                                class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:col-gap-10 sm:row-gap-10">
+
+                                                                <li class="p-5 pb-10 text-center">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            Basic
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            Free
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                3GB Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                10 Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                2 Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li
+                                                                    class="p-5 pb-10 text-center bg-gray-100 collapseSignup">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center  w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            pro
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            50 INR
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                20GB Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                50 Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                20 Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="p-5 pb-10 text-center">
+                                                                    <div class="flex flex-col items-center">
+                                                                        <div class="flex-shrink-0">
+                                                                            <div class="flex items-center justify-center w-12 rounded-md text-indigo-500"
+                                                                                style="width: 4rem;">
+                                                                                <svg class="h-10 w-10" fill="none"
+                                                                                    style="height: 100%;width: 100%;"
+                                                                                    viewBox="0 0 24 24"
+                                                                                    stroke="currentColor">
+                                                                                    <path stroke-linecap="round"
+                                                                                        stroke-linejoin="round"
+                                                                                        stroke-width="2"
+                                                                                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p
+                                                                            class="mt-2 mb-4 text-base leading-6 text-gray-900 font-semibold product_subheading">
+                                                                            Enterprise
+                                                                        </p>
+                                                                        <h3
+                                                                            class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
+                                                                            300 INR
+                                                                        </h3>
+                                                                        <ul class="my-10">
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Storage
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Emails
+                                                                            </li>
+                                                                            <li
+                                                                                class="my-3 text-base leading-6 text-gray-500">
+                                                                                Unlimited Sub-domains
+                                                                            </li>
+                                                                        </ul>
+                                                                        <a href="#"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
+                                                                    </div>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- </div>
+                                </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -1211,527 +1402,706 @@
     <script src="js/jszip.js"></script>
     <script src="js/xlsx.js"></script>
     <script>
-        $(document).ready(function () {
-            var name_user = '';           
-            var total_data_come = 0;
-            var uploaded_file_name = "";
-            var uploaded_user_name = "";
+    $(document).ready(function() {
+        var name_user = '';
+        var total_data_come = 0;
+        var uploaded_file_name = "";
+        var uploaded_user_name = "";
+        var user_id = 0;
+        var product_name = "";
 
-            // ------------------------ step 1 to 2 functionality ------------------------- //
+        // ------------------------ step 1 to 2 functionality ------------------------- //
 
-            // ----------------------------- for desktop ----------------------------- //
+        // ----------------------------- for desktop ----------------------------- //
 
 
-            $('#upload_excel').on('submit', function (event) {
-                event.preventDefault();
-                var file_name = $('#fileToUpload').val();
-                if (file_name == '') {
-                    alert("Please Select excel file");
-                    return false;
-                }
-                else {
-                    $.ajax({
-                        url: "php/insert.php",
-                        type: "POST",
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function (data) {
-                            alert(data);
-                            data = jQuery.parseJSON(data);
-                            if (data.status == 201) {
-                                window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({ 'event': 'upload_excel' });
-                                $("#step2").css('display', 'block');
-                                $("#step1").css('display', 'none');
-                                $("#read_file").val(data.filename);
-                                uploaded_file_name = data.filename;
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            } else {
-                            }
-                        }
+        $('#upload_excel').on('submit', function(event) {
+            event.preventDefault();
+            var file_name = $('#fileToUpload').val();
+            if (file_name == '') {
+                alert("Please Select excel file");
+                return false;
+            } else {
+                $.ajax({
+                    url: "php/insert.php",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        window.location.hash = 'step2';
+                        // alert(data);
+                        data = jQuery.parseJSON(data);
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'upload_excel'
+                            });
+                            $("#step2").css('display', 'block');
+                            $("#step1").css('display', 'none');
+                            $("#read_file").val(data.filename);
+                            uploaded_file_name = data.filename;
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else {}
+                    }
+                });
+            }
+        });
+        //  for mobile
+        $('#upload_excel_mobile').on('submit', function(event) {
+            event.preventDefault();
+            var file_name = $('#fileToUpload_mobile').val();
+            if (file_name == '') {
+                alert("Please Select excel file");
+                return false;
+            } else {
+                $.ajax({
+                    url: "php/insert_mobile.php",
+                    method: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        // alert(data);
+                        data = jQuery.parseJSON(data);
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'upload_excel_mobile'
+                            });
+                            $("#step2_mobile").css('display', 'block');
+                            $("#step1_mobile").css('display', 'none');
+                            $("#read_file_mobile").val(data.filename);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else {}
+                    }
+                });
+            }
+        });
+
+        // ---------------------- step 2 to 3 functionality ---------------------- //
+        // var alpha = "";
+        var ExcelToJSON = function() {
+            this.parseExcel = function(file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var data = e.target.result;
+                    var workbook = XLSX.read(data, {
+                        type: 'binary'
                     });
-                }
-            });
-            //  for mobile
-            $('#upload_excel_mobile').on('submit', function (event) {
-                event.preventDefault();
-                var file_name = $('#fileToUpload_mobile').val();
-                if (file_name == '') {
-                    alert("Please Select excel file");
-                    return false;
-                }
-                else {
-                    $.ajax({
-                        url: "php/insert_mobile.php",
-                        method: "POST",
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function (data) {
-                            alert(data);
-                            data = jQuery.parseJSON(data);
-                            if (data.status == 201) {
-                                window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({ 'event': 'upload_excel_mobile' });
-                                $("#step2_mobile").css('display', 'block');
-                                $("#step1_mobile").css('display', 'none');
-                                $("#read_file_mobile").val(data.filename);
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            } else {
-                            }
+                    var sheets;
+                    var items;
+                    var json_object_length = workbook.SheetNames.length;
+                    sheet = workbook.SheetNames[0];
+                    // console.log(sheet);                        
+                    console.log(json_object_length);
+                    // workbook.SheetNames.forEach(function (sheetName) {
+                    // Here is your object
+                    // console.log(sheetName);
+                    var sheetName = sheet;
+                    var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[
+                        sheetName]);
+                    var json_object = JSON.stringify(XL_row_object);
+                    // console.log(JSON.parse(json_object));
+                    // alpha = JSON.parse(json_object);
+                    // for (var key in JSON.parse(json_object)[0]) {
+                    // console.log("Key: " + key[2]);
+                    // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
+                    // }
+                    //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
+                    // console.log(JSON.parse(json_object)[0]);
+                    // alpha = JSON.parse(json_object)[0].Chandan;
+
+                    //submit step 2 by dekstop
+                    $("#submit2_desktop").click(function() {
+                        var sheet = $("#sheet").val();
+                        var first_column = $("#first_column").val();
+                        var last_column = $("#last_column").val();
+                        var first_row = $("#first_row").val();
+                        var last_row = $("#last_row").val();
+                        var show_data = "";
+                        var error = "";
+                        if (first_row == "") {
+                            $("#first_row").css('border-color', 'red');
+                            $("#first_row").css('border-width', '2px');
+                            error = error + 'first_row';
+                        } else {
+                            $("#first_row").css('border-color', '#C0BBBB');
+                            $("#first_row").css('border-width', '1px');
                         }
-                    });
-                }
-            });
-
-            // ---------------------- step 2 to 3 functionality ---------------------- //
-            // var alpha = "";
-            var ExcelToJSON = function () {
-                this.parseExcel = function (file) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        var data = e.target.result;
-                        var workbook = XLSX.read(data, {
-                            type: 'binary'
-                        });
-                        var sheets;
-                        var items;
-                        var json_object_length = workbook.SheetNames.length;
-                        sheet = workbook.SheetNames[0];
-                        // console.log(sheet);                        
-                        console.log(json_object_length);
-                        // workbook.SheetNames.forEach(function (sheetName) {
-                        // Here is your object
-                        // console.log(sheetName);
-                        var sheetName = sheet;
-                        var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                        var json_object = JSON.stringify(XL_row_object);
-                        // console.log(JSON.parse(json_object));
-                        // alpha = JSON.parse(json_object);
-                        // for (var key in JSON.parse(json_object)[0]) {
-                        // console.log("Key: " + key[2]);
-                        // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
-                        // }
-                        //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
-                        // console.log(JSON.parse(json_object)[0]);
-                        // alpha = JSON.parse(json_object)[0].Chandan;
-
-                        //submit step 2 by dekstop
-                        $("#submit2_desktop").click(function () {
-                            var sheet = $("#sheet").val();
-                            var first_column = $("#first_column").val();
-                            var last_column = $("#last_column").val();
-                            var first_row = $("#first_row").val();
-                            var last_row = $("#last_row").val();
-                            var show_data = "";
-                            var error = "";
-                            if (first_row == "") {
-                                $("#first_row").css('border-color', 'red');
-                                $("#first_row").css('border-width', '2px');
-                                error = error + 'first_row';
-                            } else {
-                                $("#first_row").css('border-color', '#C0BBBB');
-                                $("#first_row").css('border-width', '1px');
-                            }
-                            if (last_row == "") {
-                                $("#last_row").css('border-color', 'red');
-                                $("#last_row").css('border-width', '2px');
-                                error = error + 'last_row';
-                            } else {
-                                $("#last_row").css('border-color', '#C0BBBB');
-                                $("#last_row").css('border-width', '1px');
-                            }
-                            if (error == "") {
-                                if (json_object_length >= sheet) {
-                                    sheet = workbook.SheetNames[sheet - 1];
-                                    var sheetName = sheet;
-                                    XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-                                    json_object = JSON.stringify(XL_row_object);
-                                    console.log(JSON.parse(json_object));
-                                    $("#step3").css('display', 'block');
-                                    $("#step2").css('display', 'none');
-                                    for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) { //alphabetical loop selected according to user
-                                        // var j=(i.charCodeAt(0)-97);
-                                        total_data_come = (last_column.charCodeAt(0) - 64);
-
-                                        var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];//give alphabet indexing
-                                        if (show_data == undefined) {//if row not found than show blank
-                                            show_data = "";
-                                        }
-                                        $("#step3_dyanamic_data").html($("#step3_dyanamic_data").html() + '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label><div class="col-7"><select name="last_column" id="column' + (i - 64) + '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
-                                        console.log(String.fromCharCode(i));
-                                    }
-                                }
-                                else {
-                                    alert("Sheet not found in file");
-                                }
-                            }
-                        });
-
-                        //submit step 2 by mobile
-                        $("#submit2_mobile").click(function () {
-                            var sheet = $("#sheet_mobile").val();
-                            var first_column = $("#first_column_mobile").val();
-                            var last_column = $("#last_column_mobile").val();
-                            var first_row = $("#first_row_mobile").val();
-                            var last_row = $("#last_row_mobile").val();
-                            var show_data = "";
+                        if (last_row == "") {
+                            $("#last_row").css('border-color', 'red');
+                            $("#last_row").css('border-width', '2px');
+                            error = error + 'last_row';
+                        } else {
+                            $("#last_row").css('border-color', '#C0BBBB');
+                            $("#last_row").css('border-width', '1px');
+                        }
+                        if (error == "") {
+                            window.location.hash = 'step3';
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
-                                XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                                XL_row_object = XLSX.utils.sheet_to_row_object_array(
+                                    workbook.Sheets[sheetName]);
+                                json_object = JSON.stringify(XL_row_object);
+                                console.log(JSON.parse(json_object));
+                                $("#step3").css('display', 'block');
+                                $("#step2").css('display', 'none');
+                                for (var i = first_column.charCodeAt(0); i <= last_column
+                                    .charCodeAt(0); i++
+                                ) { //alphabetical loop selected according to user
+                                    // var j=(i.charCodeAt(0)-97);
+                                    total_data_come = (last_column.charCodeAt(0) - 64);
+
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[
+                                        i - 65]; //give alphabet indexing
+                                    if (show_data ==
+                                        undefined) { //if row not found than show blank
+                                        show_data = "";
+                                    }
+                                    $("#step3_dyanamic_data").html($("#step3_dyanamic_data")
+                                        .html() +
+                                        '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' +
+                                        String.fromCharCode(i) + ' .      What is ' +
+                                        show_data +
+                                        ' : </label><div class="col-7"><select name="last_column" id="column' +
+                                        (i - 64) +
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
+                                    );
+                                    console.log(String.fromCharCode(i));
+                                }
+                            } else {
+                                alert("Sheet not found in file");
+                            }
+                        }
+                    });
+
+                    //submit step 2 by mobile
+                    $("#submit2_mobile").click(function() {
+                        var sheet = $("#sheet_mobile").val();
+                        var first_column = $("#first_column_mobile").val();
+                        var last_column = $("#last_column_mobile").val();
+                        var first_row = $("#first_row_mobile").val();
+                        var last_row = $("#last_row_mobile").val();
+                        var show_data = "";
+                        var error = "";
+                        if (first_row == "") {
+                            $("#first_row_mobile").css('border-color', 'red');
+                            $("#first_row_mobile").css('border-width', '2px');
+                            error = error + 'first_row';
+                        } else {
+                            $("#first_row_mobile").css('border-color', '#C0BBBB');
+                            $("#first_row_mobile").css('border-width', '1px');
+                        }
+                        if (last_row == "") {
+                            $("#last_row_mobile").css('border-color', 'red');
+                            $("#last_row_mobile").css('border-width', '2px');
+                            error = error + 'last_row';
+                        } else {
+                            $("#last_row_mobile").css('border-color', '#C0BBBB');
+                            $("#last_row_mobile").css('border-width', '1px');
+                        }
+                        if (error == "") {
+                            if (json_object_length >= sheet) {
+                                sheet = workbook.SheetNames[sheet - 1];
+                                var sheetName = sheet;
+                                XL_row_object = XLSX.utils.sheet_to_row_object_array(
+                                    workbook.Sheets[sheetName]);
                                 json_object = JSON.stringify(XL_row_object);
                                 console.log(JSON.parse(json_object));
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
-                                for (var i = first_column.charCodeAt(0); i <= last_column.charCodeAt(0); i++) {
+                                for (var i = first_column.charCodeAt(0); i <= last_column
+                                    .charCodeAt(0); i++) {
                                     // var j=(i.charCodeAt(0)-97);
-                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 65];
+                                    total_data_come = (last_column.charCodeAt(0) - 64);
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[
+                                        i - 65];
                                     if (show_data == undefined) {
                                         show_data = "";
                                     }
-                                    $("#step3_dyanamic_data_mobile").html($("#step3_dyanamic_data_mobile").html() + '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' + String.fromCharCode(i) + ' .      What is ' + show_data + ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="last_column" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>');
+                                    $("#step3_dyanamic_data_mobile").html($(
+                                            "#step3_dyanamic_data_mobile").html() +
+                                        '<div class="form-group row"><label for="what_is_last_column" class="col"> Column ' +
+                                        String.fromCharCode(i) + ' .      What is ' +
+                                        show_data +
+                                        ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="column_mobile' +
+                                        (i - 64) +
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
+                                    );
                                     console.log(String.fromCharCode(i));
                                 }
-                            }
-                            else {
+                            } else {
                                 alert("Sheet not found in file");
                             }
-                        });
-                        jQuery('#xlx_json').val(json_object);
-                        // })
-                    };
-
-                    reader.onerror = function (ex) {
-                        console.log(ex);
-
-                    };
-                    reader.readAsBinaryString(file);
-                    // console.log(file) ;                  
+                        }
+                    });
+                    jQuery('#xlx_json').val(json_object);
+                    // })
                 };
+
+                reader.onerror = function(ex) {
+                    console.log(ex);
+
+                };
+                reader.readAsBinaryString(file);
+                // console.log(file) ;                  
             };
-            function handleFileSelect(evt) {
+        };
 
-                var files = evt.target.files; // FileList object
-                var xl2json = new ExcelToJSON();
-                xl2json.parseExcel(files[0]);
-                // console.log(files[0])              
+        function handleFileSelect(evt) {
+
+            var files = evt.target.files; // FileList object
+            var xl2json = new ExcelToJSON();
+            xl2json.parseExcel(files[0]);
+            // console.log(files[0])              
+        }
+        if (document.getElementById("fileToUpload").value == "") {
+            document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
+        }
+        document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
+
+        // console.log(document.getElementById("fileToUpload"));
+
+        // ---------------------- step 3 to 4 functionality ---------------------- //
+
+        $('#submit3_desktop').click(function() {
+            var column_array = [];
+            var error = "";
+            for (var i = 1; i <= total_data_come; i++) {
+                column_array[i] = $("#column" + i).val();
             }
-            if (document.getElementById("fileToUpload").value == "") {
-                document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
-            }
-            document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
-
-            // console.log(document.getElementById("fileToUpload"));
-
-            // ---------------------- step 3 to 4 functionality ---------------------- //
-
-            $('#submit3_desktop').click(function () {
-                var column_array = [];
-                var error = "";
-                for (var i = 1; i <= total_data_come; i++) {
-                    column_array[i] = $("#column" + i).val();
+            for (var i = 1; i <= total_data_come; i++) {
+                if (column_array[i] == "") {
+                    $("#column" + i).css('border-color', 'red');
+                    $("#column" + i).css('border-width', '2px');
+                    error = error + 'column_array[' + i + ']';
+                } else {
+                    $("#column" + i).css('border-color', '#C0BBBB');
+                    $("#column" + i).css('border-width', '1px');
                 }
-                for (var i = 1; i <= total_data_come; i++) {
-                    if (column_array[i] == "") {
-                        $("#column" + i).css('border-color', 'red');
-                        $("#column" + i).css('border-width', '2px');
-                        error = error + 'column_array[' + i + ']';
-                    } else {
-                        $("#column" + i).css('border-color', '#C0BBBB');
-                        $("#column" + i).css('border-width', '1px');
+            }
+            if (error == "") {
+                $('.collapseSignup').removeClass('col-8');
+                $('.collapseSignup').addClass('col-10');
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/auth.php',
+                    dataType: "json",
+                    data: {
+
+                    },
+                    success: function(data) {
+                        window.location.hash = 'step4';
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
+                        } else if (data.status == 601) {
+                            $('#pop_up_desktop').modal('show');
+                        } else {
+                            $('#pop_up_desktop').modal('show');
+                        }
                     }
-                }
-                if (error == "") {
-                    $('.collapseSignup').removeClass('col-8');
-                    $('.collapseSignup').addClass('col-10');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/auth.php',
-                        dataType: "json",
-                        data: {
-                            
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            if (data.status == 201) {                               
-                                $('#pop_up_desktop').modal('hide');                                
-                            } else {
-                                $('#pop_up_desktop').modal('show');   
-                            }                            
-                        }
-                    });                   
-                    $('#step4').css('display', 'block');
-                    $('#step3').css('display', 'none');
-                    var file_start_char = uploaded_file_name.substring(0, 2);
-                    $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
-                }
-                else {
-                    $('.collapseSignup').removeClass('col-10');
-                    $('.collapseSignup').addClass('col-8');
-                    $('#pop_up_desktop').modal('hide');
-                    $('#step3').css('display', 'block');
-                    $('#step4').css('display', 'none');
-                }
-                $('#signin_link').click(function () {
-                    $('#sign_in_page').css('display', 'block');
-                    $('#sign_up_page').css('display', 'none');
-                    // alert("My name is sign in");
                 });
-                $('#signup_link').click(function () {
-
-                    $('#sign_up_page').css('display', 'block');
-                    $('#sign_in_page').css('display', 'none');
-                    // alert("My name is sign up");
-                });
-
-            });
-
-            // ------------------------- pop up sign up form ------------------------- //
-            $('#pop_up_signup').on("click", function () {
-                var mobile = $("#Form_phone_signup").val();
-                var password = $("#Form_pass_signup").val();
-                var con_password = $("#Form_pass2_signup").val();
-                var email = $("#Form_email_signup").val();
-                var error = "";
-                uploaded_user_name = email;
-                function validateEmail(email) {
-                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return re.test(String(email).toLowerCase());
-                }
-                if (mobile == "") {
-                    $("#Form_phone_signup").css('border-color', 'red');
-                    $("#Form_phone_signup").css('border-width', '2px');
-                    error = error + 'mobile';
-                } else {
-                    $("#Form_phone_signup").css('border-color', '#C0BBBB');
-                    $("#Form_phone_signup").css('border-width', '1px');
-                }
-                if (password == "") {
-                    $("#Form_pass_signup").css('border-color', 'red');
-                    $("#Form_pass_signup").css('border-width', '2px');
-                    error = error + 'password';
-                } else {
-                    $("#Form_pass_signup").css('border-color', '#C0BBBB');
-                    $("#Form_pass_signup").css('border-width', '1px');
-                }
-                if (con_password == "") {
-                    $("#Form_pass2_signup").css('border-color', 'red');
-                    $("#Form_pass2_signup").css('border-width', '2px');
-                    error = error + 'Class';
-                } else {
-                    $("#Form_pass2_signup").css('border-color', '#C0BBBB');
-                    $("#Form_pass2_signup").css('border-width', '1px');
-                }
-                if (!validateEmail(email)) {
-                    $("#Form_email_signup").css('border-color', 'red');
-                    $("#Form_email_signup").css('border-width', '2px');
-                    error = error + 'email';
-                } else {
-                    $("#Form_email_signup").css('border-color', '#C0BBBB');
-                    $("#Form_email_signup").css('border-width', '1px');
-                }
-                if (password != con_password) {
-                    $("#Form_pass2_signup").css('border-color', 'red');
-                    $("#Form_pass2_signup").css('border-width', '2px');
-                    $("#Form_pass_signup").css('border-color', 'red');
-                    $("#Form_pass_signup").css('border-width', '2px');
-                    alert('Password not match !');
-                    error = error + 'password not matched';
-                }
-                if (error == "") {
-                    // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                    // $('#loadingDesktop4').css('display', 'block');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/signup_form.php',
-                        dataType: "json",
-                        data: {
-                            'mobile': mobile,
-                            'password': password,
-                            'email': email
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            if (data.status == 201) {
-                                $('#pop_up_desktop').modal('hide');
-                                $('#pop_up_login_header').css('display', 'none');
-                                $('#show_user_name').css('display', 'block');
-                                $('#pop_up_signup_header').css('display', 'none');
-                                $('#pop_up_logout_header').css('display', 'block');
-                                var file_first_char = (uploaded_user_name.substring(0, 1)).toUpperCase();
-                                $('#show_user_name').attr('data-letters', file_first_char);
-                                //  $("#contact-success").css('display', 'block');
-                                //   $("#contact-form").css('display', 'none');
-                                //   $("#ticket-id").html('#' + data.id);
-                                // scrollTo(0,0);                               
-                                window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({
-                                    'event': 'signup-form',
-                                    'mobile': mobile,
-                                    'password': password,
-                                    'email': email
-                                });
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            }
-                            else if (data.status == 301) {
-                                $('#alert_id_signup').css('display', 'block');
-                                $('#alert_id_signup').html(data.error);
-                                alert(data.error);
-                            }
-                            else if (data.status == 302) {
-                                $('#alert_id_signup').css('display', 'block');
-                                $('#alert_id_signup').html(data.error);
-                            }
-                            else {
-                                //console.log(data.error)
-                            }
-                        }
-                    });
-                }
-                else {
-                    // alert('There are error in the form. Please check your submissions');
-                }
-            });
-
-            // ---------------------- step signin form  to download file functionality ---------------------- //
-            $('#pop_up_signin').on("click", function () {
-                var email = $("#Form_email_signin").val();
-                var password = $("#Form_pass_signin").val();
-                var error = "";
-                function validateEmail(email) {
-                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return re.test(String(email).toLowerCase());
-                }
-                if (password == "") {
-                    $("#Form_pass_signin").css('border-color', 'red');
-                    $("#Form_pass_signin").css('border-width', '2px');
-                    error = error + 'password';
-                } else {
-                    $("#Form_pass_signin").css('border-color', '#C0BBBB');
-                    $("#Form_pass_signin").css('border-width', '1px');
-                }
-                if (!validateEmail(email)) {
-                    $("#Form_email_signin").css('border-color', 'red');
-                    $("#Form_email_signin").css('border-width', '2px');
-                    error = error + 'email';
-                } else {
-                    $("#Form_email_signin").css('border-color', '#C0BBBB');
-                    $("#Form_email_signin").css('border-width', '1px');
-                }
-                if (error == "") {
-                    // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                    // $('#loadingDesktop4').css('display', 'block');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/login_form.php',
-                        dataType: "json",
-                        data: {
-                            'password': password,
-                            'email': email
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            if (data.status == 201) {
-                                $('#pop_up_desktop').modal('hide');
-                                $('#pop_up_login_header').css('display', 'none');
-                                $('#show_user_name').css('display', 'block');
-                                $('#pop_up_signup_header').css('display', 'none');
-                                $('#pop_up_logout_header').css('display', 'block');  
-                                name_user=data.email;                 
-                                var file_first_char = (name_user.substring(0, 1)).toUpperCase();
-                                $('#show_user_name').attr('data-letters', file_first_char);
-                                //  $("#contact-success").css('display', 'block');
-                                //   $("#contact-form").css('display', 'none');
-                                //   $("#ticket-id").html('#' + data.id);
-                                // scrollTo(0,0);                               
-                                window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({
-                                    'event': 'signin-form',                                    
-                                    'password': password,
-                                    'email': email
-                                });
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            }
-                            else if (data.status == 301) {
-                                $('#alert_id_signin').css('display', 'block');
-                                $('#alert_id_signin').html(data.error);
-                                alert(data.error);
-                            }
-                            else if (data.status == 302) {
-                                $('#alert_id_signin').css('display', 'block');
-                                $('#alert_id_signin').html(data.error);
-                            }
-                            else {
-                                //console.log(data.error)
-                            }
-                        }
-                    });
-                }
-                else {
-                    // alert('There are error in the form. Please check your submissions');
-                }
-            });
-            // ---------------- header pop up login and signup button ---------------- //
-            $('#pop_up_login_header').click(function () {
-                $('#pop_up_desktop').modal('show');
-                $('#sign_in_page').css('display', 'block');
-                $('#sign_up_page').css('display', 'none');
-            });
-            $('#pop_up_signup_header').click(function () {
-                $('#pop_up_desktop').modal('show');
-                $('#sign_in_page').css('display', 'none');
-                $('#sign_up_page').css('display', 'block');
-            });
-            $('#signin_link').click(function () {
+                $('#step4').css('display', 'block');
+                $('#step3').css('display', 'none');
+                var file_start_char = uploaded_file_name.substring(0, 2);
+                $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
+            } else {
+                $('.collapseSignup').removeClass('col-10');
+                $('.collapseSignup').addClass('col-8');
+                $('#pop_up_desktop').modal('hide');
+                $('#step3').css('display', 'block');
+                $('#step4').css('display', 'none');
+            }
+            $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
                 // alert("My name is sign in");
             });
-            $('#signup_link').click(function () {
+            $('#signup_link').click(function() {
 
                 $('#sign_up_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
                 // alert("My name is sign up");
             });
 
-/* ------------------------------- logout call ------------------------------ */
-$('#pop_up_logout_header').click(function () {
-    var logout_var='logout';
-                $.ajax({
-                        type: 'POST',
-                        url: 'php/logout.php',
-                        dataType: "json",
-                        data: {
-                            'logout_var': logout_var
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            if (data.status == 201) {                               
-                                $('#pop_up_login_header').css('display', 'block');
-                                $('#show_user_name').css('display', 'none');
-                                $('#pop_up_signup_header').css('display', 'block');
-                                $('#pop_up_logout_header').css('display', 'none'); 
-                                window.location.replace(data.url);                                 
-                            } else {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            }                            
-                        }
-                    });
-});
         });
+
+        // ---------------------- step 3 to 4 functionality for mobile---------------------- //
+
+        $('#submit3_mobile').click(function() {
+            var column_array = [];
+            var error = "";
+            for (var i = 1; i <= total_data_come; i++) {
+                column_array[i] = $("#column_mobile" + i).val();
+            }
+            for (var i = 1; i <= total_data_come; i++) {
+                if (column_array[i] == "") {
+                    $("#column_mobile" + i).css('border-color', 'red');
+                    $("#column_mobile" + i).css('border-width', '2px');
+                    error = error + 'column_array[' + i + ']';
+                } else {
+                    $("#column_mobile" + i).css('border-color', '#C0BBBB');
+                    $("#column_mobile" + i).css('border-width', '1px');
+                }
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/auth.php',
+                    dataType: "json",
+                    data: {},
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
+                        } else if (data.status == 601) {
+                            $('#pop_up_desktop').modal('show');
+                        } else {
+                            $('#pop_up_desktop').modal('show');
+                        }
+                    }
+                });
+                $('#step4_mobile').css('display', 'block');
+                $('#step3_mobile').css('display', 'none');
+                var file_start_char = uploaded_file_name.substring(0, 2);
+                $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
+            } else {
+                $('#pop_up_desktop').modal('hide');
+                $('#step3_mobile').css('display', 'block');
+                $('#step4_mobile').css('display', 'none');
+            }
+            $('#signin_link').click(function() {
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+                // alert("My name is sign in");
+            });
+            $('#signup_link').click(function() {
+
+                $('#sign_up_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
+
+        });
+
+        // ------------------------- pop up sign up form ------------------------- //
+        $('#pop_up_signup').on("click", function() {
+            var mobile = $("#Form_phone_signup").val();
+            var password = $("#Form_pass_signup").val();
+            var con_password = $("#Form_pass2_signup").val();
+            var email = $("#Form_email_signup").val();
+            var error = "";
+            uploaded_user_name = email;
+
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_signup").css('border-color', 'red');
+                $("#Form_phone_signup").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                $("#Form_phone_signup").css('border-width', '1px');
+            }
+            if (password == "") {
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass_signup").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');
+                error = error + 'Class';
+            } else {
+                $("#Form_pass2_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass2_signup").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_signup").css('border-color', 'red');
+                $("#Form_email_signup").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_signup").css('border-color', '#C0BBBB');
+                $("#Form_email_signup").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {                
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/signup_form.php',
+                    dataType: "json",
+                    data: {
+                        'mobile': mobile,
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            user_id = data.id;
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });                           
+                            var file_first_char = (uploaded_user_name.substring(0, 1))
+                                .toUpperCase();
+                            $('.show_user_name').attr('data-letters', file_first_char);                                                      
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'signup-form',
+                                'mobile': mobile,
+                                'password': password,
+                                'email': email
+                            });
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('#alert_id_signup').html(data.error);
+                            alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('#alert_id_signup').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+
+        // ---------------------- step signin form  to download file functionality ---------------------- //
+        $('#pop_up_signin').on("click", function() {
+            var email = $("#Form_email_signin").val();
+            var password = $("#Form_pass_signin").val();
+            var error = "";
+
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (password == "") {
+                $("#Form_pass_signin").css('border-color', 'red');
+                $("#Form_pass_signin").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signin").css('border-color', '#C0BBBB');
+                $("#Form_pass_signin").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_signin").css('border-color', 'red');
+                $("#Form_email_signin").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_signin").css('border-color', '#C0BBBB');
+                $("#Form_email_signin").css('border-width', '1px');
+            }
+            if (error == "") {                
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/login_form.php',
+                    dataType: "json",
+                    data: {
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            user_id = data.id;
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            // window.location = "exceltovcf"; 
+                            $('#pop_up_desktop').modal('hide');                            
+                            name_user = data.email;
+                            var file_first_char = (name_user.substring(0, 1)).toUpperCase();
+                            $('.show_user_name').attr('data-letters', file_first_char);
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'signin-form',
+                                'password': password,
+                                'email': email
+                            });
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_signin').css('display', 'block');
+                            $('#alert_id_signin').html(data.error);
+                            alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_signin').css('display', 'block');
+                            $('#alert_id_signin').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+
+        // ---------------- header pop up login and signup button ---------------- //
+        function model_sign_up_sign_in(){
+        $('.pop_up_login_header').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+        });
+        $('.pop_up_signup_header').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'none');
+            $('#sign_up_page').css('display', 'block');
+        });
+        $('#signin_link').click(function() {
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+            // alert("My name is sign in");
+        });
+        $('#signup_link').click(function() {
+
+            $('#sign_up_page').css('display', 'block');
+            $('#sign_in_page').css('display', 'none');
+            // alert("My name is sign up");
+        });
+        }
+         model_sign_up_sign_in();
+        // ---------------- header pop up login and signup button mobile---------------- //
+        $('.pop_up_login_mobile').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'block');
+            $('#sign_up_page').css('display', 'none');
+        });
+        $('.pop_up_signup_mobile').click(function() {
+            $('#pop_up_desktop').modal('show');
+            $('#sign_in_page').css('display', 'none');
+            $('#sign_up_page').css('display', 'block');
+        });
+        /* ------------------------------- logout call ------------------------------ */
+        function logout_signup_signin(){
+        $('.pop_up_logout_header').click(function() {
+            console.log('chanduwa');
+            var logout_var = 'logout';
+            $.ajax({
+                type: 'POST',
+                url: 'php/logout.php',
+                dataType: "json",
+                data: {
+                    'logout_var': logout_var
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (data.status == 201) {                        
+                        window.location.replace(data.url);
+                    } else {
+                        console.log(data.error);
+                        //     alert("problem with query");
+                    }
+                }
+            });
+        });
+        }
+        logout_signup_signin();
+        /* ------------------------------- logout call mobile------------------------------ */
+        $('.popup_logout_mobile').click(function() {
+            var logout_var = 'logout';
+            $.ajax({
+                type: 'POST',
+                url: 'php/logout.php',
+                dataType: "json",
+                data: {
+                    'logout_var': logout_var
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (data.status == 201) {                        
+                        window.location.replace(data.url);
+                    } else {
+                        console.log(data.error);
+                        //     alert("problem with query");
+                    }
+                }
+            });
+        });
+        $.ajax({
+            type: 'POST',
+            url: 'php/login_show.php',            
+            success: function(response) {               
+                console.log(response);
+                $("#set_id_one").html(response);
+                model_sign_up_sign_in();
+                logout_signup_signin();
+                
+            }
+        });
+        $.ajax({
+                type: 'POST',
+                url: 'php/login_show2.php',                               
+                success: function(response) {                                  
+                    $("#set_id_two").html(response);                                   
+                    model_sign_up_sign_in();
+                    logout_signup_signin();
+                }
+            });
+
+    });
     </script>
 </body>
 
