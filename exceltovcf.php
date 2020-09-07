@@ -1,12 +1,10 @@
 <?php 
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <!-- Enter a proper page title here -->
     <title>VCF Converter| Example with all standards</title>
 
@@ -180,34 +178,12 @@ session_start();
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="#">Contact</a>
-                                        </li>                                        
-                                        <!-- test -->
-                                        <?php
-                                        if(!isset($_SESSION["user_email"])){
-                                            echo '<li class="nav-item"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="pop_up_login_header">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="pop_up_signup_header">SignUp</a> </li>';
-                                        }else{
-                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item"><a class="nav-link btn_active" href="#"
-                                            style="background: #e0e0e0;margin-left: 1rem;"
-                                            id="pop_up_logout_header">Logout</a> </li>';
-                                        }?>
-                                       
-                                    
-
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_login_header">Login</a>
-                                           
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_signup_header">SignUp</a>
-
-                                            <a class="nav-link btn_active" href="#"
-                                                style="background: #e0e0e0;margin-left: 1rem;"
-                                                id="pop_up_logout_header">Logout</a>
-                                        </li> -->
+                                        <!-- test -->
+                                        <li class="nav-item" id="set_id_one">                                            
+                                        </li>
+                                        <li class="nav-item" id="set_id_two">                                            
+                                        </li>                                        
                                     </ul>
                                 </nav>
 
@@ -1454,7 +1430,7 @@ session_start();
                     cache: false,
                     processData: false,
                     success: function(data) {
-                        window.location.hash = 'step2';                                                    
+                        window.location.hash = 'step2';
                         // alert(data);
                         data = jQuery.parseJSON(data);
                         if (data.status == 201) {
@@ -1871,9 +1847,7 @@ session_start();
                 alert('Password not match !');
                 error = error + 'password not matched';
             }
-            if (error == "") {
-                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                // $('#loadingDesktop4').css('display', 'block');
+            if (error == "") {                
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -1886,15 +1860,28 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            user_id = data.id;  
-                            window.location = "exceltovcf#step4";                    
+                            user_id = data.id;
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });                           
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                                 .toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);
-                            //  $("#contact-success").css('display', 'block');
-                            //   $("#contact-form").css('display', 'none');
-                            //   $("#ticket-id").html('#' + data.id);
-                            // scrollTo(0,0);                               
+                            $('.show_user_name').attr('data-letters', file_first_char);                                                      
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signup-form',
@@ -1949,9 +1936,7 @@ session_start();
                 $("#Form_email_signin").css('border-color', '#C0BBBB');
                 $("#Form_email_signin").css('border-width', '1px');
             }
-            if (error == "") {
-                // $("#submitApply").css({ 'background-color': '#5c5b5b', 'cursor': 'wait' });
-                // $('#loadingDesktop4').css('display', 'block');
+            if (error == "") {                
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -1964,24 +1949,29 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
-                            window.location = "exceltovcf"; 
-                            $('#pop_up_desktop').modal('hide');
-                            // $('#pop_up_login_header').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('#pop_up_signup_header').css('display', 'none');
-                            // $('#pop_up_logout_header').css('display', 'block');
-                            // //mobile                                
-                            // $('.pop_up_login_mobile').css('display', 'none');
-                            // $('.show_user_name').css('display', 'block');
-                            // $('.pop_up_signup_mobile').css('display', 'none');
-                            // $('.popup_logout_mobile').css('display', 'block');
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $("#set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            // window.location = "exceltovcf"; 
+                            $('#pop_up_desktop').modal('hide');                            
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                            //  $("#contact-success").css('display', 'block');
-                            //   $("#contact-form").css('display', 'none');
-                            //   $("#ticket-id").html('#' + data.id);
-                            // scrollTo(0,0);                               
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signin-form',
@@ -2008,15 +1998,14 @@ session_start();
             }
         });
 
-
-
         // ---------------- header pop up login and signup button ---------------- //
-        $('#pop_up_login_header').click(function() {
+        function model_sign_up_sign_in(){
+        $('.pop_up_login_header').click(function() {
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'block');
             $('#sign_up_page').css('display', 'none');
         });
-        $('#pop_up_signup_header').click(function() {
+        $('.pop_up_signup_header').click(function() {
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'none');
             $('#sign_up_page').css('display', 'block');
@@ -2032,7 +2021,8 @@ session_start();
             $('#sign_in_page').css('display', 'none');
             // alert("My name is sign up");
         });
-
+        }
+         model_sign_up_sign_in();
         // ---------------- header pop up login and signup button mobile---------------- //
         $('.pop_up_login_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
@@ -2045,7 +2035,9 @@ session_start();
             $('#sign_up_page').css('display', 'block');
         });
         /* ------------------------------- logout call ------------------------------ */
-        $('#pop_up_logout_header').click(function() {
+        function logout_signup_signin(){
+        $('.pop_up_logout_header').click(function() {
+            console.log('chanduwa');
             var logout_var = 'logout';
             $.ajax({
                 type: 'POST',
@@ -2056,11 +2048,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {
-                        // $('#pop_up_login_header').css('display', 'block');
-                        // $('.show_user_name').css('display', 'none');
-                        // $('#pop_up_signup_header').css('display', 'block');
-                        // $('#pop_up_logout_header').css('display', 'none');
+                    if (data.status == 201) {                        
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -2069,7 +2057,9 @@ session_start();
                 }
             });
         });
-        /* ------------------------------- logout call ------------------------------ */
+        }
+        logout_signup_signin();
+        /* ------------------------------- logout call mobile------------------------------ */
         $('.popup_logout_mobile').click(function() {
             var logout_var = 'logout';
             $.ajax({
@@ -2081,11 +2071,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {
-                        // $('.pop_up_login_mobile').css('display', 'block');
-                        // $('.show_user_name').css('display', 'none');
-                        // $('.pop_up_signup_mobile').css('display', 'block');
-                        // $('.popup_logout_mobile').css('display', 'none');
+                    if (data.status == 201) {                        
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -2094,6 +2080,27 @@ session_start();
                 }
             });
         });
+        $.ajax({
+            type: 'POST',
+            url: 'php/login_show.php',            
+            success: function(response) {               
+                console.log(response);
+                $("#set_id_one").html(response);
+                model_sign_up_sign_in();
+                logout_signup_signin();
+                
+            }
+        });
+        $.ajax({
+                type: 'POST',
+                url: 'php/login_show2.php',                               
+                success: function(response) {                                  
+                    $("#set_id_two").html(response);                                   
+                    model_sign_up_sign_in();
+                    logout_signup_signin();
+                }
+            });
+
     });
     </script>
 </body>

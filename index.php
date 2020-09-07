@@ -83,14 +83,10 @@ session_start();
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
                                         </li>                                       
-                                        <?php
-                                        if(!isset($_SESSION["user_email"])){
-                                            echo '<li class="nav-item"> <a class="nav-link btn_active pop_up_login_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_signup_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">SignUp</a> </li>';
-                                        }else{
-                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_logout_header" href="#"
-                                            style="background: #e0e0e0;margin-left: 1rem;"
-                                            id="">Logout</a> </li>';
-                                        }?>
+                                        <li class="nav-item set_id_one">                                            
+                                        </li>
+                                        <li class="nav-item set_id_two">                                            
+                                        </li> 
                                     </ul>
                                 </nav>
 
@@ -129,14 +125,10 @@ session_start();
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
                                         </li>                                        
-                                        <?php
-                                        if(!isset($_SESSION["user_email"])){
-                                            echo '<li class="nav-item pop_up_login_header"> <a class="nav-link btn_active" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">Login</a> </li> <li class="nav-item"> <a class="nav-link btn_active pop_up_signup_header" href="#" style="background: #e0e0e0;margin-left: 1rem;" id="">SignUp</a> </li>';
-                                        }else{
-                                            echo '<li class="nav-item"><div style="margin-left: 1rem;" class="show_user_name" data-letters="'.$_SESSION['first_char'].'"></div> </li> <li class="nav-item pop_up_logout_header"> <a class="nav-link btn_active" href="#"
-                                            style="background: #e0e0e0;margin-left: 1rem;"
-                                            id="">Logout</a> </li>';
-                                        }?>
+                                        <li class="nav-item set_id_one">                                            
+                                        </li>
+                                        <li class="nav-item set_id_two">                                            
+                                        </li> 
                                     </ul>
                                 </nav>
                             </div>
@@ -849,7 +841,24 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
-                            window.location = "index"; 
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $(".set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $(".set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signup-form',
@@ -917,7 +926,24 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {                            
                             $('#pop_up_desktop').modal('hide');  
-                            window.location = "index";                           
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show.php',                               
+                                success: function(response) {                                  
+                                    $(".set_id_one").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',                               
+                                success: function(response) {                                  
+                                    $(".set_id_two").html(response);                                   
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });                           
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signin-form',
@@ -947,6 +973,7 @@ session_start();
 
 
         // ---------------- header pop up login and signup button ---------------- //
+        function model_sign_up_sign_in(){
         $('.pop_up_login_header').click(function() {
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'block');
@@ -968,7 +995,8 @@ session_start();
             $('#sign_in_page').css('display', 'none');
             // alert("My name is sign up");
         });
-
+        }
+         model_sign_up_sign_in();
         // ---------------- header pop up login and signup button mobile---------------- //
         $('.pop_up_login_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
@@ -981,7 +1009,9 @@ session_start();
             $('#sign_up_page').css('display', 'block');
         });
         /* ------------------------------- logout call ------------------------------ */
+        function logout_signup_signin(){
         $('.pop_up_logout_header').click(function() {
+            console.log('chanduwa');
             var logout_var = 'logout';
             $.ajax({
                 type: 'POST',
@@ -992,7 +1022,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {                       
+                    if (data.status == 201) {                        
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -1001,7 +1031,9 @@ session_start();
                 }
             });
         });
-        /* ------------------------------- logout call ------------------------------ */
+        }
+        logout_signup_signin();
+        /* ------------------------------- logout call mobile------------------------------ */
         $('.popup_logout_mobile').click(function() {
             var logout_var = 'logout';
             $.ajax({
@@ -1022,7 +1054,26 @@ session_start();
                 }
             });
         });
-
+        $.ajax({
+            type: 'POST',
+            url: 'php/login_show.php',            
+            success: function(response) {               
+                console.log(response);
+                $(".set_id_one").html(response);
+                model_sign_up_sign_in();
+                logout_signup_signin();
+                
+            }
+        });
+        $.ajax({
+                type: 'POST',
+                url: 'php/login_show2.php',                               
+                success: function(response) {                                  
+                    $(".set_id_two").html(response);                                   
+                    model_sign_up_sign_in();
+                    logout_signup_signin();
+                }
+            });
         });
     </script>
 </body>
