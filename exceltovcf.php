@@ -1559,7 +1559,7 @@
                                 $("#step2").css('display', 'none');
                                 for (var i = first_column.charCodeAt(0); i <= last_column
                                     .charCodeAt(0); i++
-                                    ) { //alphabetical loop selected according to user
+                                ) { //alphabetical loop selected according to user
                                     // var j=(i.charCodeAt(0)-97);
                                     total_data_come = (last_column.charCodeAt(0) - 64);
 
@@ -1577,7 +1577,7 @@
                                         ' : </label><div class="col-7"><select name="last_column" id="column' +
                                         (i - 64) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
-                                        );
+                                    );
                                     console.log(String.fromCharCode(i));
                                 }
                             } else {
@@ -1638,7 +1638,7 @@
                                         ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="column_mobile' +
                                         (i - 64) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
-                                        );
+                                    );
                                     console.log(String.fromCharCode(i));
                                 }
                             } else {
@@ -1705,6 +1705,8 @@
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
+                        } else if (data.status == 601) {
+                            $('#pop_up_desktop').modal('show');
                         } else {
                             $('#pop_up_desktop').modal('show');
                         }
@@ -1763,6 +1765,8 @@
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
+                        } else if (data.status == 601) {
+                            $('#pop_up_desktop').modal('show');
                         } else {
                             $('#pop_up_desktop').modal('show');
                         }
