@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Sep 07, 2020 at 10:45 PM
+=======
+-- Generation Time: Sep 07, 2020 at 10:36 PM
+>>>>>>> 6aeaa18c8241802e0cce3f4dc06eaac99864da3e
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -629,7 +633,11 @@ ALTER TABLE `table_excel`
 -- AUTO_INCREMENT for table `product_details`
 --
 ALTER TABLE `product_details`
+<<<<<<< HEAD
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 6aeaa18c8241802e0cce3f4dc06eaac99864da3e
 
 --
 -- AUTO_INCREMENT for table `signup-details`
