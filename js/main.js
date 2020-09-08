@@ -51,12 +51,13 @@ $(document).ready(function () {
   $("#mobile_contact_button").click(function () {
     closeNav();
   });
-  $("#mobile_login_button").click(function () {
+  $("#set_id_one_mobile").click(function () {
     closeNav();
   });
-  $("#mobile_signup_button").click(function () {
+  $("#set_id_two_mobile").click(function () {
     closeNav();
   });
+  
 
 /* --------------------- time delay to start animation --------------------- */
 

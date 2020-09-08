@@ -872,9 +872,29 @@ p {
 {
     display: none;
 }
+
 .form-control {
     font-size: 1.6rem !important;
 
+}
+#set_id_one_mobile,#set_id_two_mobile{
+    list-style: none;
+}
+
+#set_id_one_mobile a{
+    text-decoration: none;
+    background: #2487eb !important;
+    margin:0.8rem 1rem !important;
+
+}
+#set_id_two_mobile a{
+
+    background: #5cb85c !important;
+    margin:0.5rem 1rem !important;
+
+}
+#set_id_one_mobile div{    
+    margin-left:4rem !important;
 }
 
 @media(max-width:991px) {
