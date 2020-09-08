@@ -180,9 +180,9 @@ session_start();
                                             <a class="nav-link " href="#">Contact</a>
                                         </li>
                                         <!-- test -->
-                                        <li class="nav-item" id="set_id_one">                                            
+                                        <li class="nav-item set_id_one">                                            
                                         </li>
-                                        <li class="nav-item" id="set_id_two">                                            
+                                        <li class="nav-item set_id_two">                                            
                                         </li>                                        
                                     </ul>
                                 </nav>
@@ -828,18 +828,8 @@ session_start();
                     <a href="#" id="mobile_downloads_button">Downloads</a>
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
-                    <a href="#" class="pop_up_login_mobile">
-                        <div class="btn btn-primary" style="font-size:1.6rem">Login</div>
-                    </a>
-                    <a href="#" class="show_user_name">
-                        <div style="margin-left: 1rem;"></div>
-                    </a>
-                    <a href="#" class="pop_up_signup_mobile">
-                        <div class="btn btn-success " style="font-size:1.6rem">SignUp</div>
-                    </a>
-                    <a href="#" class="pt-3 d-flex">
-                        <div class="btn btn-success popup_logout_mobile" style="font-size:1.6rem">Logout</div>
-                    </a>
+                    <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
+                    <li class="nav-item set_id_two" id="set_id_two_mobile"></li>                    
                 </div>
             </div>
         </div>
@@ -1865,7 +1855,7 @@ session_start();
                                 type: 'POST',
                                 url: 'php/login_show.php',                               
                                 success: function(response) {                                  
-                                    $("#set_id_one").html(response);                                   
+                                    $(".set_id_one").html(response);                                   
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
@@ -1874,11 +1864,12 @@ session_start();
                                 type: 'POST',
                                 url: 'php/login_show2.php',                               
                                 success: function(response) {                                  
-                                    $("#set_id_two").html(response);                                   
+                                    $(".set_id_two").html(response);                                   
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            });                           
+                            }); 
+                            $('#pop_up_desktop').modal('hide');                          
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                                 .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);                                                      
@@ -1953,7 +1944,7 @@ session_start();
                                 type: 'POST',
                                 url: 'php/login_show.php',                               
                                 success: function(response) {                                  
-                                    $("#set_id_one").html(response);                                   
+                                    $(".set_id_one").html(response);                                   
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
@@ -1962,7 +1953,7 @@ session_start();
                                 type: 'POST',
                                 url: 'php/login_show2.php',                               
                                 success: function(response) {                                  
-                                    $("#set_id_two").html(response);                                   
+                                    $(".set_id_two").html(response);                                   
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
@@ -2036,8 +2027,7 @@ session_start();
         });
         /* ------------------------------- logout call ------------------------------ */
         function logout_signup_signin(){
-        $('.pop_up_logout_header').click(function() {
-            console.log('chanduwa');
+        $('.pop_up_logout_header').click(function() {            
             var logout_var = 'logout';
             $.ajax({
                 type: 'POST',
@@ -2060,32 +2050,32 @@ session_start();
         }
         logout_signup_signin();
         /* ------------------------------- logout call mobile------------------------------ */
-        $('.popup_logout_mobile').click(function() {
-            var logout_var = 'logout';
-            $.ajax({
-                type: 'POST',
-                url: 'php/logout.php',
-                dataType: "json",
-                data: {
-                    'logout_var': logout_var
-                },
-                success: function(data) {
-                    console.log(data);
-                    if (data.status == 201) {                        
-                        window.location.replace(data.url);
-                    } else {
-                        console.log(data.error);
-                        //     alert("problem with query");
-                    }
-                }
-            });
-        });
+        // $('.popup_logout_mobile').click(function() {
+        //     var logout_var = 'logout';
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: 'php/logout.php',
+        //         dataType: "json",
+        //         data: {
+        //             'logout_var': logout_var
+        //         },
+        //         success: function(data) {
+        //             console.log(data);
+        //             if (data.status == 201) {                        
+        //                 window.location.replace(data.url);
+        //             } else {
+        //                 console.log(data.error);
+        //                 //     alert("problem with query");
+        //             }
+        //         }
+        //     });
+        // });
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',            
             success: function(response) {               
                 console.log(response);
-                $("#set_id_one").html(response);
+                $(".set_id_one").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();
                 
@@ -2095,7 +2085,7 @@ session_start();
                 type: 'POST',
                 url: 'php/login_show2.php',                               
                 success: function(response) {                                  
-                    $("#set_id_two").html(response);                                   
+                    $(".set_id_two").html(response);                                   
                     model_sign_up_sign_in();
                     logout_signup_signin();
                 }

@@ -481,18 +481,8 @@ session_start();
                     <a href="#" id="mobile_downloads_button">Downloads</a>
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
-                    <a href="#" class="pop_up_login_mobile">
-                        <div class="btn btn-primary" style="font-size:1.6rem">Login</div>
-                    </a>
-                    <a href="#" class="show_user_name">
-                        <div style="margin-left: 1rem;"></div>
-                    </a>
-                    <a href="#" class="pop_up_signup_mobile">
-                        <div class="btn btn-success " style="font-size:1.6rem">SignUp</div>
-                    </a>
-                    <a href="#" class="pt-3 d-flex">
-                        <div class="btn btn-success popup_logout_mobile" style="font-size:1.6rem">Logout</div>
-                    </a>
+                    <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
+                    <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
                 </div>
             </div>
         </div>
