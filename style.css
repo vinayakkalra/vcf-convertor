@@ -1,0 +1,29 @@
+body {
+    font-family: arial;
+    font-size: 0.95em;
+}
+.contact-row-header {
+    background: #ececec;
+    border-bottom: #E0E0E0 1px solid;
+}
+.contact-row-header div {
+    display: inline-block;
+    width: 15%;
+    padding: 8px;
+}
+.contact-row {
+    border-bottom: #E0E0E0 1px solid;
+}
+.contact-row div {
+    display: inline-block;
+    width: 15%;
+    padding: 8px;
+    vertical-align: middle;
+}
+div.action {
+    width:5%;
+}
+
+.action img {
+    width:48px;
+}
