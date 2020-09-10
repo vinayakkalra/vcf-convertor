@@ -1048,7 +1048,7 @@ session_start();
             type: 'POST',
             url: 'php/login_show.php',            
             success: function(response) {               
-                console.log(response);
+                // console.log(response);
                 $(".set_id_one").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();

@@ -180,10 +180,10 @@ session_start();
                                             <a class="nav-link " href="#">Contact</a>
                                         </li>
                                         <!-- test -->
-                                        <li class="nav-item set_id_one">                                            
+                                        <li class="nav-item set_id_one">
                                         </li>
-                                        <li class="nav-item set_id_two">                                            
-                                        </li>                                        
+                                        <li class="nav-item set_id_two">
+                                        </li>
                                     </ul>
                                 </nav>
 
@@ -507,14 +507,14 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#" id="basic1"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                        <div  id="basic1"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full free_subs">
                                                                             Get Started
-                                                                        </a>
+                                                                        </div>
                                                                     </div>
                                                                 </li>
-                                                                <li
-                                                                    class="p-5 pb-10 text-center bg-gray-100 collapseSignup">
+                                                                <li class="p-5 pb-10 text-center bg-gray-100 collapseSignup"
+                                                                    style="max-width:100%">
                                                                     <div class="flex flex-col items-center">
                                                                         <div class="flex-shrink-0">
                                                                             <div class="flex items-center justify-center  w-12 rounded-md text-indigo-500"
@@ -829,7 +829,7 @@ session_start();
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
-                    <li class="nav-item set_id_two" id="set_id_two_mobile"></li>                    
+                    <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
                 </div>
             </div>
         </div>
@@ -1399,6 +1399,14 @@ session_start();
         var uploaded_user_name = "";
         var user_id = 0;
         var product_name = "";
+        var keys_change;
+        var json_array;
+        var data_key=[];
+        var data_value=[];
+        var row_start;
+        var row_end;  
+        var all_data=[];  
+          
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1420,7 +1428,6 @@ session_start();
                     cache: false,
                     processData: false,
                     success: function(data) {
-                        window.location.hash = 'step2';
                         // alert(data);
                         data = jQuery.parseJSON(data);
                         if (data.status == 201) {
@@ -1490,15 +1497,16 @@ session_start();
                     var json_object_length = workbook.SheetNames.length;
                     sheet = workbook.SheetNames[0];
                     // console.log(sheet);                        
-                    console.log(json_object_length);
-                    // workbook.SheetNames.forEach(function (sheetName) {
-                    // Here is your object
-                    // console.log(sheetName);
+                //     console.log(json_object_length);//check the no. of sheet
+                //     workbook.SheetNames.forEach(function (sheetName) {                  
+                //     console.log(sheetName);
+                // });
                     var sheetName = sheet;
                     var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[
                         sheetName]);
                     var json_object = JSON.stringify(XL_row_object);
-                    // console.log(JSON.parse(json_object));
+                    
+                    console.log(JSON.parse(json_object));
                     // alpha = JSON.parse(json_object);
                     // for (var key in JSON.parse(json_object)[0]) {
                     // console.log("Key: " + key[2]);
@@ -1534,14 +1542,17 @@ session_start();
                             $("#last_row").css('border-width', '1px');
                         }
                         if (error == "") {
-                            window.location.hash = 'step3';
+                            row_start=first_row;
+                            row_end=last_row;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
                                 XL_row_object = XLSX.utils.sheet_to_row_object_array(
                                     workbook.Sheets[sheetName]);
-                                json_object = JSON.stringify(XL_row_object);
-                                console.log(JSON.parse(json_object));
+                                json_object = JSON.stringify(XL_row_object);                                
+                                // console.log(JSON.parse(json_object));
+                                //   console.log(XL_row_object);                            
+                                keys_change = XL_row_object;
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
                                 for (var i = first_column.charCodeAt(0); i <= last_column
@@ -1551,7 +1562,7 @@ session_start();
                                     total_data_come = (last_column.charCodeAt(0) - 64);
 
                                     var show_data = Object.keys(JSON.parse(json_object)[0])[
-                                        i - 65]; //give alphabet indexing
+                                        i - 65]; //give alphabet indexing                                        
                                     if (show_data ==
                                         undefined) { //if row not found than show blank
                                         show_data = "";
@@ -1565,8 +1576,9 @@ session_start();
                                         (i - 64) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
                                     );
-                                    console.log(String.fromCharCode(i));
+                                    // console.log(String.fromCharCode(i));
                                 }
+                                
                             } else {
                                 alert("Sheet not found in file");
                             }
@@ -1663,11 +1675,36 @@ session_start();
         // ---------------------- step 3 to 4 functionality ---------------------- //
 
         $('#submit3_desktop').click(function() {
+            // console.log(keys_change);
             var column_array = [];
+            var column_array2 = [];
             var error = "";
+            var take;
+            var take2 = [];            
+            json_array = keys_change;
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column" + i).val();
+                json_array = JSON.parse(JSON.stringify(json_array).split('"' + Object.keys(keys_change[
+                    0])[i - 1] + '":').join('"' + column_array[i] + '":'));
+                take = json_array[0];
+                take2[i - 1] = column_array[i];
+                data_key[i]=take2[i - 1];
+                data_value[i]=take[data_key[i]];                              
+            } 
+
+/* ---------------------------- data value to make VCF---------------------------- */
+
+            for (var i = 1; i <= total_data_come; i++) {
+                console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             }
+            for(var j=row_start;j<=row_end;j++){
+                console.log(json_array[j-1]);
+                all_data[j]=json_array[j-1];
+            }
+           
+
+/* -------------------------- data value to make VCF end -------------------------- */
+
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
                     $("#column" + i).css('border-color', 'red');
@@ -1689,7 +1726,6 @@ session_start();
 
                     },
                     success: function(data) {
-                        window.location.hash = 'step4';
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
@@ -1723,13 +1759,12 @@ session_start();
                 // alert("My name is sign up");
             });
 
-        });
-
+        });       
         // ---------------------- step 3 to 4 functionality for mobile---------------------- //
 
-        $('#submit3_mobile').click(function() {
+        $('#submit3_mobile').click(function() {            
             var column_array = [];
-            var error = "";
+            var error = "";            
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column_mobile" + i).val();
             }
@@ -1837,7 +1872,7 @@ session_start();
                 alert('Password not match !');
                 error = error + 'password not matched';
             }
-            if (error == "") {                
+            if (error == "") {
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -1853,26 +1888,26 @@ session_start();
                             user_id = data.id;
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_one").html(response);                                   
+                                url: 'php/login_show.php',
+                                success: function(response) {
+                                    $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show2.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_two").html(response);                                   
+                                url: 'php/login_show2.php',
+                                success: function(response) {
+                                    $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            }); 
-                            $('#pop_up_desktop').modal('hide');                          
+                            });
+                            $('#pop_up_desktop').modal('hide');
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                                 .toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);                                                      
+                            $('.show_user_name').attr('data-letters', file_first_char);
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signup-form',
@@ -1927,7 +1962,7 @@ session_start();
                 $("#Form_email_signin").css('border-color', '#C0BBBB');
                 $("#Form_email_signin").css('border-width', '1px');
             }
-            if (error == "") {                
+            if (error == "") {
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -1942,24 +1977,24 @@ session_start();
                             user_id = data.id;
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_one").html(response);                                   
+                                url: 'php/login_show.php',
+                                success: function(response) {
+                                    $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show2.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_two").html(response);                                   
+                                url: 'php/login_show2.php',
+                                success: function(response) {
+                                    $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
                             // window.location = "exceltovcf"; 
-                            $('#pop_up_desktop').modal('hide');                            
+                            $('#pop_up_desktop').modal('hide');
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
@@ -1989,31 +2024,56 @@ session_start();
             }
         });
 
-        // ---------------- header pop up login and signup button ---------------- //
-        function model_sign_up_sign_in(){
-        $('.pop_up_login_header').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'block');
-            $('#sign_up_page').css('display', 'none');
-        });
-        $('.pop_up_signup_header').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'none');
-            $('#sign_up_page').css('display', 'block');
-        });
-        $('#signin_link').click(function() {
-            $('#sign_in_page').css('display', 'block');
-            $('#sign_up_page').css('display', 'none');
-            // alert("My name is sign in");
-        });
-        $('#signup_link').click(function() {
+/* ------------------------- download start on click ------------------------ */
+            $('.free_subs').click(function(){           
+        console.log(all_data);
+                $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: 'POST',
+                    url: 'index2.php',
+                    dataType: "json",
+                    data: JSON.stringify(all_data),
+                    success: function(data) {
+                        // console.log(data);
+                        if (data.status == 201) {
+                        alert('success');
+                        } else {
+                            console.log(data.error);
+                                 alert("problem with query");
+                        }
+                    }
+                });
+            });
 
-            $('#sign_up_page').css('display', 'block');
-            $('#sign_in_page').css('display', 'none');
-            // alert("My name is sign up");
-        });
+
+
+/* ------------------------- //download end on click ------------------------ */
+
+        // ---------------- header pop up login and signup button ---------------- //
+        function model_sign_up_sign_in() {
+            $('.pop_up_login_header').click(function() {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+            });
+            $('.pop_up_signup_header').click(function() {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'none');
+                $('#sign_up_page').css('display', 'block');
+            });
+            $('#signin_link').click(function() {
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+                // alert("My name is sign in");
+            });
+            $('#signup_link').click(function() {
+
+                $('#sign_up_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
         }
-         model_sign_up_sign_in();
+        model_sign_up_sign_in();
         // ---------------- header pop up login and signup button mobile---------------- //
         $('.pop_up_login_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
@@ -2026,27 +2086,27 @@ session_start();
             $('#sign_up_page').css('display', 'block');
         });
         /* ------------------------------- logout call ------------------------------ */
-        function logout_signup_signin(){
-        $('.pop_up_logout_header').click(function() {            
-            var logout_var = 'logout';
-            $.ajax({
-                type: 'POST',
-                url: 'php/logout.php',
-                dataType: "json",
-                data: {
-                    'logout_var': logout_var
-                },
-                success: function(data) {
-                    console.log(data);
-                    if (data.status == 201) {                        
-                        window.location.replace(data.url);
-                    } else {
-                        console.log(data.error);
-                        //     alert("problem with query");
+        function logout_signup_signin() {
+            $('.pop_up_logout_header').click(function() {
+                var logout_var = 'logout';
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/logout.php',
+                    dataType: "json",
+                    data: {
+                        'logout_var': logout_var
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            window.location.replace(data.url);
+                        } else {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        }
                     }
-                }
+                });
             });
-        });
         }
         logout_signup_signin();
         /* ------------------------------- logout call mobile------------------------------ */
@@ -2072,25 +2132,25 @@ session_start();
         // });
         $.ajax({
             type: 'POST',
-            url: 'php/login_show.php',            
-            success: function(response) {               
-                console.log(response);
+            url: 'php/login_show.php',
+            success: function(response) {
+                // console.log(response);
                 $(".set_id_one").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();
-                
+
             }
         });
         $.ajax({
-                type: 'POST',
-                url: 'php/login_show2.php',                               
-                success: function(response) {                                  
-                    $(".set_id_two").html(response);                                   
-                    model_sign_up_sign_in();
-                    logout_signup_signin();
-                }
-            });
-
+            type: 'POST',
+            url: 'php/login_show2.php',
+            success: function(response) {
+                $(".set_id_two").html(response);
+                model_sign_up_sign_in();
+                logout_signup_signin();
+            }
+        });
+        
     });
     </script>
 </body>
