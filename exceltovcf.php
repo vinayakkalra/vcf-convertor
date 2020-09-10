@@ -509,7 +509,7 @@ session_start();
                                                                         </ul>
                                                                         <div  id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full free_subs">
-                                                                            Get Started
+                                                                            <a href="index2.php?action=export">Get Started</a>
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -2034,7 +2034,7 @@ session_start();
                     dataType: "json",
                     data: JSON.stringify(all_data),
                     success: function(data) {
-                        // console.log(data);
+                        console.log(data);
                         if (data.status == 201) {
                         alert('success');
                         } else {
