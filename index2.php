@@ -22,7 +22,18 @@ $json=json_decode(file_get_contents("php://input"));
   }
 //    foreach($array_key_value as $x){
         print_r($array_key_value);
-        print_r($array_data_value);
+        // print_r($array_data_value);
+        echo ($array_key_value)[1];
+
+
+        foreach($array_key_value as $x=>$j){
+
+          if(($array_key_value)[$x]=="first_name"){
+            echo "Hii i am here";
+            echo $array_data_value[$x];
+          }
+        }
+        
 //     }
 
   
