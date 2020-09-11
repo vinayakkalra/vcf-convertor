@@ -1,112 +1,87 @@
 <?php
 session_start();
-
-// if(!empty($_GET["action"])) {
-$json=json_decode(file_get_contents("php://input"));
-
-$first_name=array();
-$last_name=array();
-$mobile=array();
-$email=array();
-$address=array();
-$tel_home=array();
-$tel_office=array();
-$fax=array();
-$nickname=array();
-$city=array();
-$company=array();
-$birthday=array();
-$website=array();
+ if(!isset($_POST["action"])) {
+  $json=json_decode(file_get_contents("php://input"));
+  $json_length=count($json);
+$i=0;
+$first_name="";
+$last_name="";
+$mobile="";
+$email="";
+$address="";
+$tel_home="";
+$tel_office="";
+$fax="";
+$nickname="";
+$city="";
+$company="";
+$birthday="";
+$website="";
+$data=array();
+require_once "VcardExport.php";
 $complete_array=array();
-    // $all_data = $_POST['all_data'];
-    $data_key=$json;  
-    $array_key_value = array();
-    $array_data_value= array(); 
-//   print_r($data_key[1]);
+for($i=1;$i<($json_length);$i++)
+{
 
-  //  foreach ($json as $value) {
-      print_r($json);
-  //   foreach($value as $key=>$val) {
-  //       // do stuff
-  //       $array_key_value[]=$key;
-  //       $array_data_value[]=$val;
-  //       echo $key.' is '.$val.'<br>';
-        
-    // }
-   
-  // }
-   foreach($array_key_value as $x){
-        echo count($array_key_value);
-        echo count($array_data_value);
-        echo ($array_key_value)[1];
-   }
+  foreach (($json[$i]) as $key=>$value) {
+//     echo($key);
+// echo($value);
 
-      
-//         foreach($array_key_value as $x=>$j){
+if($key=="first_name"){
+  $first_name=$value;
+} 
+else if($key=="last_name"){
+          $last_name=$value;
+}
 
-//           if(($array_key_value)[$x]=="first_name"){
-//             $first_name[]=($array_data_value)[$x];           
-       
-//           } 
-//           if($array_key_value[$x]=="last_name"){
-//             $last_name[]=($array_data_value)[$x];            
-//           }
-          
-//           if($array_key_value[$x]=="email"){
-//             $email[]=($array_data_value)[$x]; 
-           
-//         }
-//          if($array_key_value[$x]=="mobile"){
-//             $mobile[]=($array_data_value)[$x]; 
-            
-//       }
-//     if($array_key_value[$x]=="tel_office"){
-       
-//         $tel_office[]=($array_data_value)[$x]; 
-//     }
-//     if($array_key_value[$x]=="tel_home"){
-    
-//         $tel_home[]=($array_data_value)[$x]; 
-//   }
-//    if($array_key_value[$x]=="fax"){
-   
-//     $fax[]=($array_data_value)[$x]; 
-// }
-//  if($array_key_value[$x]=="city"){
+else if($key=="email"){
+$email=$value;
  
-//     $city[]=($array_data_value)[$x]; 
-// }
-//  if($array_key_value[$x]=="nickname"){
+}
+else if($key=="mobile"){
+  $mobile=$value;
+}
+else if($key=="tel_office"){
+$tel_office=$value;
+}
+else if($key=="tel_home"){
+$tel_home=$value;
+}
+else if($key=="fax"){
+$fax=$value;
+}
+else if($key=="city"){
+$city=$value; 
+}
+else if($key=="nickname"){
+$nickname=$value;
+}
+else if($key=="company"){
+$company=$value;
+} 
+else if($key=="address"){
+$address=$value; 
+}
+else if($key=="website"){
+$website=$value; 
+}
+else if($key=="birthday"){
+$birthday=$value;
+}// print_r($first_name);
+
+ }
+ $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$birthday);
+}
+  // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
+  for($i=0;$i<($json_length-1);$i++){
+      $vcardExport = new VcardExport();      
+      $vcardExport->contactVcardExportService($complete_array[$i]);
   
-//     $nickname[]=($array_data_value)[$x]; 
-// }
-// if($array_key_value[$x]=="company"){
-  
-//     $company[]=($array_data_value)[$x]; 
-// } 
-// if($array_key_value[$x]=="address"){
-  
-//     $address[]=($array_data_value)[$x]; 
-// }
-//  if($array_key_value[$x]=="website"){
-  
-//     $website[]=($array_data_value)[$x]; 
-// }
-//  if($array_key_value[$x]=="birthday"){
-
-//     $birthday[]=($array_data_value)[$x]; 
-// }// print_r($first_name);
-//         }
-
-
-
-
-  
-  // $complete_array=array('chandan','sharma','987654321','abc@gmail.com','varanasi','456','0000','aarya');
-  // require_once "VcardExport.php";
-  // $vcardExport = new VcardExport();
-  // $vcardExport->contactVcardExportService($complete_array);
-  // exit;
-//  }
-
+  }
+ 
+ exit;
+ }
+else{
+  echo "action not found";
+}
 ?>

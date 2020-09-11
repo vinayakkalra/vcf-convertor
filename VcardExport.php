@@ -12,10 +12,10 @@ class VcardExport
         for($i=0;$i<=5;$i++){
         $vcardObj->addName($complete_array[0]. " " .$complete_array[1]);
         // $vcardObj->addBirthday($complete_array[5]);
-        $vcardObj->addEmail($complete_array[3]);
-        $vcardObj->addPhoneNumber($complete_array[2]);
+        $vcardObj->addEmail($complete_array[2]);
+        $vcardObj->addPhoneNumber($complete_array[3]);
         $vcardObj->addAddress($complete_array[4]);
-        $vcardObj->addRole($complete_array[6]);  
+        // $vcardObj->addRole($complete_array[5]);  
         $vcardObj->addCompany('QuadB','QuadbTech');   
         $vcardObj->addJobtitle('WebDeveloper'); 
          $vcardObj->addUrl('http://vcfconvertor.quadbtech.com/'); 
