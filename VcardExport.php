@@ -9,8 +9,9 @@ class VcardExport
         // define vcard
         $vcardObj = new VCard();
         // add personal data
+        for($i=0;$i<=5;$i++){
         $vcardObj->addName($complete_array[0]. " " .$complete_array[1]);
-        $vcardObj->addBirthday($complete_array[12]);
+        // $vcardObj->addBirthday($complete_array[5]);
         $vcardObj->addEmail($complete_array[3]);
         $vcardObj->addPhoneNumber($complete_array[2]);
         $vcardObj->addAddress($complete_array[4]);
@@ -21,6 +22,7 @@ class VcardExport
         $vcardObj->addNote('Hwllo freinds welcome to our vcf converter'); 
       
         return $vcardObj->download();
+        }
     }
 }
 

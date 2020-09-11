@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// if(!empty($_GET["action"])) {
 $json=json_decode(file_get_contents("php://input"));
 
 $first_name=array();
@@ -21,17 +23,18 @@ $complete_array=array();
     $array_key_value = array();
     $array_data_value= array(); 
 //   print_r($data_key[1]);
-  foreach ($json as $value) {
-    // print_r($value);
-    foreach($value as $key=>$val) {
-        // do stuff
-        $array_key_value[]=$key;
-        $array_data_value[]=$val;
-        echo $key.' is '.$val.'<br>';
+
+  //  foreach ($json as $value) {
+      print_r($json);
+  //   foreach($value as $key=>$val) {
+  //       // do stuff
+  //       $array_key_value[]=$key;
+  //       $array_data_value[]=$val;
+  //       echo $key.' is '.$val.'<br>';
         
-    }
+    // }
    
-  }
+  // }
    foreach($array_key_value as $x){
         echo count($array_key_value);
         echo count($array_data_value);
@@ -39,98 +42,71 @@ $complete_array=array();
    }
 
       
-        foreach($array_key_value as $x=>$j){
+//         foreach($array_key_value as $x=>$j){
 
-          if(($array_key_value)[$x]=="first_name"){
-            $first_name[]=($array_data_value)[$x];           
+//           if(($array_key_value)[$x]=="first_name"){
+//             $first_name[]=($array_data_value)[$x];           
        
-          }else{
-            $first_name[]="";
-          } 
-          if($array_key_value[$x]=="last_name"){
-            $last_name[]=($array_data_value)[$x];            
-          }
-          else {
-            $last_name[]="";
-          }
-          if($array_key_value[$x]=="email"){
-            $email[]=($array_data_value)[$x]; 
+//           } 
+//           if($array_key_value[$x]=="last_name"){
+//             $last_name[]=($array_data_value)[$x];            
+//           }
+          
+//           if($array_key_value[$x]=="email"){
+//             $email[]=($array_data_value)[$x]; 
            
-        }else{
-          $email[]="";
-        }
-         if($array_key_value[$x]=="mobile"){
-            $mobile[]=($array_data_value)[$x]; 
+//         }
+//          if($array_key_value[$x]=="mobile"){
+//             $mobile[]=($array_data_value)[$x]; 
             
-      }else {
-        $mobile[]="";
-      }
-    if($array_key_value[$x]=="tel_office"){
+//       }
+//     if($array_key_value[$x]=="tel_office"){
        
-        $tel_office[]=($array_data_value)[$x]; 
-    }else{
-      $tel_office[]="";
-    }
-    if($array_key_value[$x]=="tel_home"){
+//         $tel_office[]=($array_data_value)[$x]; 
+//     }
+//     if($array_key_value[$x]=="tel_home"){
     
-        $tel_home[]=($array_data_value)[$x]; 
-  }else{
-    $tel_home[]="";
-  }
-   if($array_key_value[$x]=="fax"){
+//         $tel_home[]=($array_data_value)[$x]; 
+//   }
+//    if($array_key_value[$x]=="fax"){
    
-    $fax[]=($array_data_value)[$x]; 
-}else{
-  $fax[]="";
-}
- if($array_key_value[$x]=="city"){
+//     $fax[]=($array_data_value)[$x]; 
+// }
+//  if($array_key_value[$x]=="city"){
  
-    $city[]=($array_data_value)[$x]; 
-}else{
-  $city[]="";
-}
- if($array_key_value[$x]=="nickname"){
+//     $city[]=($array_data_value)[$x]; 
+// }
+//  if($array_key_value[$x]=="nickname"){
   
-    $nickname[]=($array_data_value)[$x]; 
-}else{
-$nickname[]="";
-}
-if($array_key_value[$x]=="company"){
+//     $nickname[]=($array_data_value)[$x]; 
+// }
+// if($array_key_value[$x]=="company"){
   
-    $company[]=($array_data_value)[$x]; 
-}else{
-  $company[]="";
-} 
-if($array_key_value[$x]=="address"){
+//     $company[]=($array_data_value)[$x]; 
+// } 
+// if($array_key_value[$x]=="address"){
   
-    $address[]=($array_data_value)[$x]; 
-}else{
-  $address[]="";
-}
- if($array_key_value[$x]=="website"){
+//     $address[]=($array_data_value)[$x]; 
+// }
+//  if($array_key_value[$x]=="website"){
   
-    $website[]=($array_data_value)[$x]; 
-}else{
-  $website[]="";
-}
- if($array_key_value[$x]=="birthday"){
+//     $website[]=($array_data_value)[$x]; 
+// }
+//  if($array_key_value[$x]=="birthday"){
 
-    $birthday[]=($array_data_value)[$x]; 
-}else{
-  $birthday[]="";
-}
-// print_r($first_name);
-        }
+//     $birthday[]=($array_data_value)[$x]; 
+// }// print_r($first_name);
+//         }
 
 
-if(!empty($_GET["action"])) {
- 
-  // $contactResult = $dbController->runQuery($query,$param_type,$param_value_array);
-  $complete_array=array($first_name[0],last_name[0],$mobile[0],$email[0],$address[0],$tel_home[0],$tel_office[0],$fax[0],$nickname[0],$city[0],$website[0],$birthday[0]);
+
+
   
-  require_once "VcardExport.php";
-  $vcardExport = new VcardExport();
-  $vcardExport->contactVcardExportService($complete_array);
-  exit;
-}
+  // $complete_array=array('chandan','sharma','987654321','abc@gmail.com','varanasi','456','0000','aarya');
+  // require_once "VcardExport.php";
+  // $vcardExport = new VcardExport();
+  // $vcardExport->contactVcardExportService($complete_array);
+  // exit;
+//  }
+
 ?>

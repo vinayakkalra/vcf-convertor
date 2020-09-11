@@ -507,10 +507,10 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <div  id="basic1"
+                                                                        <a href="index2.php?action=export"><div  id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full free_subs">
-                                                                            <a href="index2.php?action=export">Get Started</a>
-                                                                        </div>
+                                                                           Get Started
+                                                                        </div></a>
                                                                     </div>
                                                                 </li>
                                                                 <li class="p-5 pb-10 text-center bg-gray-100 collapseSignup"
