@@ -1,8 +1,11 @@
 <?php
 session_start();
- if(!isset($_POST["action"])) {
-  $json=json_decode(file_get_contents("php://input"));
-  $json_length=count($json);
+require_once "VcardExport.php";
+ if(isset($_POST['action'])) {
+   $data=array();
+$json=json_decode(file_get_contents("php://input"));
+$json_length=count($json);
+  // echo($json_length);
 $i=0;
 $first_name="";
 $last_name="";
@@ -18,14 +21,13 @@ $company="";
 $birthday="";
 $website="";
 $data=array();
-require_once "VcardExport.php";
 $complete_array=array();
-for($i=1;$i<($json_length);$i++)
-{
-
+ for($i=0;$i<($json_length);$i++)
+ {
+// print_r($json[$i]);
   foreach (($json[$i]) as $key=>$value) {
-//     echo($key);
-// echo($value);
+//      echo($key);
+//  echo($value);
 
 if($key=="first_name"){
   $first_name=$value;
@@ -71,17 +73,21 @@ $birthday=$value;
 
  }
  $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$birthday);
-}
+ }
   // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
-  for($i=0;$i<($json_length-1);$i++){
-      $vcardExport = new VcardExport();      
-      $vcardExport->contactVcardExportService($complete_array[$i]);
-  
+  for($i=0;$i<($json_length);$i++){   
+      $vcardExport[$i] = new VcardExport();      
+      $vcardExport[$i]->contactVcardExportService($complete_array[$i]); 
+      // $chandu[]=array($vcardExport[$i]);     
   }
- 
+ $data['status']=201;
+ $data['result']=$vcardExport;
+ echo json_encode($data);
  exit;
  }
-else{
-  echo "action not found";
-}
+ else{
+  $data['status']=601; 
+  echo json_encode($data);
+ }
+
 ?>

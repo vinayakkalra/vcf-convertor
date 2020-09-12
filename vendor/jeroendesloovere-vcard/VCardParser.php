@@ -331,3 +331,4 @@ class VCardParser implements Iterator
         return str_replace("\\n", PHP_EOL, $text);
     }
 }
+?>

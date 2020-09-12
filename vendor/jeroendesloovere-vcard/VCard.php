@@ -1,19 +1,6 @@
 <?php
-
 namespace JeroenDesloovere\VCard;
-
-/*
- * This file is part of the VCard PHP Class from Jeroen Desloovere.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Behat\Transliterator\Transliterator;
-
-/**
- * VCard PHP Class to generate .vcard files and save them to a file or output as a download.
- */
 class VCard
 {
     /**
@@ -630,11 +617,9 @@ class VCard
     {
         // define output
         $output = $this->getOutput();
-
-        foreach ($this->getHeaders(false) as $header) {
+        foreach ($this->getHeaders(true) as $header) {
             header($header);
         }
-
         // echo the output and it will be a download
         echo $output;
     }
@@ -990,3 +975,4 @@ class VCard
         return ($version < 8);
     }
 }
+?>

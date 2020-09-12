@@ -445,7 +445,7 @@ session_start();
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="#"
-                                                        style="color: #007bff;" id="basic">Click
+                                                        style="color: #007bff;" id="basic" class="free_subs">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -507,10 +507,10 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <div  id="basic1"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full free_subs">
-                                                                            <a href="#"> Get Started</a>
-                                                                        </div>
+                                                                        <a  id="basic1"
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            Get Started
+                                                                        </a>
                                                                     </div>
                                                                 </li>
                                                                 <li class="p-5 pb-10 text-center bg-gray-100 collapseSignup"
@@ -1699,8 +1699,10 @@ session_start();
             }
             for(var j=row_start;j<=row_end;j++){
                 console.log(json_array[j-1]);
-                all_data[j]=json_array[j-1];
+                all_data[(row_end)-(j)]=json_array[j-1];                
             }
+            // console.log(all_data); 
+               
            
 
 /* -------------------------- data value to make VCF end -------------------------- */
@@ -2026,7 +2028,7 @@ session_start();
 
 /* ------------------------- download start on click ------------------------ */
             $('.free_subs').click(function(){           
-        console.log(all_data);
+        // console.log(JSON.stringify(all_data));
                 $.ajax({
                     contentType: "application/json; charset=utf-8",
                     type: 'POST',
@@ -2036,10 +2038,10 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                        alert('success');
+                        alert('success');                        
                         } else {
-                            console.log(data.error);
-                                 alert("problem with query");
+                            console.log(data);                          
+                            alert("problem with query");
                         }
                     }
                 });
