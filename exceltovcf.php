@@ -444,8 +444,8 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="#"
-                                                        style="color: #007bff;" id="basic" class="free_subs">Click
+                                                    VCF files you can choose our paid version . <a href="index2.php"
+                                                        style="color: #007bff;cursor: pointer;" id="basic" class="free_subs">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -1703,7 +1703,22 @@ session_start();
             }
             // console.log(all_data); 
                
-           
+            $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: 'POST',
+                    url: 'php/dataforvcf.php',
+                    dataType: "json",
+                    data: JSON.stringify(all_data),
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                        alert('success');                        
+                        } else {
+                            console.log(data);                          
+                            alert("problem with query");
+                        }
+                    }
+                });
 
 /* -------------------------- data value to make VCF end -------------------------- */
 
@@ -2029,22 +2044,7 @@ session_start();
 /* ------------------------- download start on click ------------------------ */
             $('.free_subs').click(function(){           
         // console.log(JSON.stringify(all_data));
-                $.ajax({
-                    contentType: "application/json; charset=utf-8",
-                    type: 'POST',
-                    url: 'index2.php',
-                    dataType: "json",
-                    data: JSON.stringify(all_data),
-                    success: function(data) {
-                        console.log(data);
-                        if (data.status == 201) {
-                        alert('success');                        
-                        } else {
-                            console.log(data);                          
-                            alert("problem with query");
-                        }
-                    }
-                });
+                
             });
 
 

@@ -1,93 +1,49 @@
 <?php
 session_start();
-require_once "VcardExport.php";
- if(isset($_POST['action'])) {
-   $data=array();
-$json=json_decode(file_get_contents("php://input"));
-$json_length=count($json);
-  // echo($json_length);
-$i=0;
-$first_name="";
-$last_name="";
-$mobile="";
-$email="";
-$address="";
-$tel_home="";
-$tel_office="";
-$fax="";
-$nickname="";
-$city="";
-$company="";
-$birthday="";
-$website="";
-$data=array();
-$complete_array=array();
- for($i=0;$i<($json_length);$i++)
- {
-// print_r($json[$i]);
-  foreach (($json[$i]) as $key=>$value) {
-//      echo($key);
-//  echo($value);
+require_once "DBController.php";
+$dbController = new DBController();
 
-if($key=="first_name"){
-  $first_name=$value;
-} 
-else if($key=="last_name"){
-          $last_name=$value;
+if(!empty($_GET["action"])) {
+    $query = "SELECT * FROM vcf_data WHERE id = ?";
+    $param_type = "i";
+    $param_value_array = array($_GET["id"]);
+    $contactResult = $dbController->runQuery($query,$param_type,$param_value_array);    
+    require_once "VcardExport.php";
+    $vcardExport = new VcardExport();
+    $vcardExport->contactVcardExportService($contactResult);
+    exit;
 }
+// Program to display current page URL. 
+  
+$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
+                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
+                $_SERVER['REQUEST_URI']; 
+require_once('php/link.php');
+$result1 = mysqli_query($link, "SELECT round FROM `vcf_data`"); 
+ $row=mysqli_fetch_array($result1);
 
-else if($key=="email"){
-$email=$value;
- 
+for ($i=1;($i<=$row['round']);$i++){
+    $files[] = $current_url."?action=export&id=".$i.".vcf";   
 }
-else if($key=="mobile"){
-  $mobile=$value;
-}
-else if($key=="tel_office"){
-$tel_office=$value;
-}
-else if($key=="tel_home"){
-$tel_home=$value;
-}
-else if($key=="fax"){
-$fax=$value;
-}
-else if($key=="city"){
-$city=$value; 
-}
-else if($key=="nickname"){
-$nickname=$value;
-}
-else if($key=="company"){
-$company=$value;
-} 
-else if($key=="address"){
-$address=$value; 
-}
-else if($key=="website"){
-$website=$value; 
-}
-else if($key=="birthday"){
-$birthday=$value;
-}// print_r($first_name);
+// $files = array($image1, $image2);
 
- }
- $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$birthday);
- }
-  // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
-  for($i=0;$i<($json_length);$i++){   
-      $vcardExport[$i] = new VcardExport();      
-      $vcardExport[$i]->contactVcardExportService($complete_array[$i]); 
-      // $chandu[]=array($vcardExport[$i]);     
-  }
- $data['status']=201;
- $data['result']=$vcardExport;
- echo json_encode($data);
- exit;
- }
- else{
-  $data['status']=601; 
-  echo json_encode($data);
- }
+$tmpFile = tempnam('/tmp', '');
+
+$zip = new ZipArchive;
+$zip->open($tmpFile, ZipArchive::CREATE);
+foreach ($files as $file) {
+    // download file
+    $fileContent = file_get_contents($file);
+
+    $zip->addFromString(basename($file), $fileContent);
+}
+$zip->close();
+
+header('Content-Type: application/zip');
+header('Content-disposition: attachment; filename=file.zip');
+header('Content-Length: ' . filesize($tmpFile));
+readfile($tmpFile);
+
+unlink($tmpFile);
 
 ?>

@@ -3,7 +3,7 @@ class DBController {
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "vcf_database";
+	private $database = "vcfconverter";
 	private $conn;
 	
     function __construct() {

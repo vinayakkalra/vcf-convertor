@@ -617,7 +617,7 @@ class VCard
     {
         // define output
         $output = $this->getOutput();
-        foreach ($this->getHeaders(true) as $header) {
+        foreach ($this->getHeaders(false) as $header) {
             header($header);
         }
         // echo the output and it will be a download

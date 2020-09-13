@@ -34,3 +34,4 @@ class VCardException extends \Exception
         return new self('Output directory does not exist.');
     }
 }
+?>
