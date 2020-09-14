@@ -1683,15 +1683,16 @@ session_start();
             } 
 
 /* ----------------------------get  data value to make VCF---------------------------- */
-
+                var num_start=parseInt(row_start, 10);
+                var num_end=parseInt(row_end, 10);
             for (var i = 1; i <= total_data_come; i++) {
                 // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             }
-            for(var j=row_start;j<=row_end;j++){
+            for(var j=num_start;j<=num_end;j++){
                 // console.log(json_array[j-1]);
-                all_data[(row_end)-(j)]=json_array[j-1];                
+                all_data[(num_end)-(j)]=json_array[j-1];                
             }
-            // console.log(all_data); 
+    
 
 /* --------------------- data send for to make vcf files start-------------------- */
 
