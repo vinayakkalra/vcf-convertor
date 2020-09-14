@@ -500,27 +500,6 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <!-- header show when scoll active end -->
-                <!-- <div class="container"> -->
-                <!-- fixed header start -->
-                <!-- <div class="row">
-                <div class="col">
-                    <div class="header_show">
-                        <div class="logo_button_fixed">
-                            <span class="header_logo_fixed">
-                                <a href="/"><img src="images/zamzar-logo.png"></a>
-                            </span>
-                            <a href="tel:7087400902" class="call_mobile">
-
-                            </a>
-                            <span class="toggle_button_fixed" onclick="openNav()" style="color: #067aee;">&#9776;</span>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-                <!-- fixed header end -->
-                <!-- </div> -->
-
                 <!-- ---------------------------- content start ---------------------------- -->
             <div class=" d-flex justify-content-center" style="width: 100%;">
 
@@ -1050,7 +1029,6 @@ session_start();
                 $(".set_id_one").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();
-                
             }
         });
         $.ajax({
