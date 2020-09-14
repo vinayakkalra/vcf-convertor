@@ -28,7 +28,6 @@ for ($i=1;($i<=$row['round']);$i++){
 // $files = array($image1, $image2);
 
 $tmpFile = tempnam('/tmp', '');
-
 $zip = new ZipArchive;
 $zip->open($tmpFile, ZipArchive::CREATE);
 foreach ($files as $file) {
