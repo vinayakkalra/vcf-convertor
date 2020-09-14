@@ -15,7 +15,7 @@ $c=$_SESSION['array_name'];
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Downloads</title>
 </head>
 <body>
 <input type="hidden"  value="<?php  echo $c; ?>" id="server_text"></input>
