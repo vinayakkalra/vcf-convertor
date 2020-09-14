@@ -427,9 +427,7 @@ session_start();
                                         </form>
                                     </div>
                                 </div>
-
                                 <!-- ---------------------------- step 4 start ----------------------------- -->
-
                                 <div class="row" id="step4">
                                     <div class="col pb-3">
                                         <div class="row">
@@ -445,7 +443,7 @@ session_start();
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="download.php"
-                                                        style="color: #007bff;" id="basic" class="free_subs">Click
+                                                        style="color: #007bff;" id="basic">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -1508,16 +1506,6 @@ session_start();
                     
                     // console.log(JSON.parse(json_object));
 
-
-                    // alpha = JSON.parse(json_object);
-                    // for (var key in JSON.parse(json_object)[0]) {
-                    // console.log("Key: " + key[2]);
-                    // console.log("Value: " + JSON.parse(json_object)[0][key]);                                       
-                    // }
-                    //  console.log(Object.keys(JSON.parse(json_object)[0])[0]);              
-                    // console.log(JSON.parse(json_object)[0]);
-                    // alpha = JSON.parse(json_object)[0].Chandan;
-
                     //submit step 2 by dekstop
                     $("#submit2_desktop").click(function() {
                         var sheet = $("#sheet").val();
@@ -1694,7 +1682,7 @@ session_start();
                 data_value[i]=take[data_key[i]];                              
             } 
 
-/* ---------------------------- data value to make VCF---------------------------- */
+/* ----------------------------get  data value to make VCF---------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
                 // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
@@ -1704,10 +1692,23 @@ session_start();
                 all_data[(row_end)-(j)]=json_array[j-1];                
             }
             // console.log(all_data); 
-               
-           
 
-/* -------------------------- data value to make VCF end -------------------------- */
+/* --------------------- data send for to make vcf files start-------------------- */
+
+            $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: 'POST',
+                    url: 'index2.php',                   
+                    data: JSON.stringify(all_data),
+                    success: function(data) {                    
+                        
+                        // window.location.href = 'index.php';                        
+                        
+                    }
+                });
+ /* --------------------- data send for to make vcf files end-------------------- */
+
+/* -------------------------- get data value to make VCF end -------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
@@ -2027,24 +2028,6 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
-/* ------------------------- download start on click ------------------------ */
-            $('.free_subs').click(function(){           
-        // console.log(JSON.stringify(all_data));
-                $.ajax({
-                    contentType: "application/json; charset=utf-8",
-                    type: 'POST',
-                    url: 'index2.php',                   
-                    data: JSON.stringify(all_data),
-                    success: function(data) {                    
-                        
-                        // window.location.href = 'index.php';                        
-                        
-                    }
-                });
-            });
-
-/* ------------------------- //download end on click ------------------------ */
-
         // ---------------- header pop up login and signup button ---------------- //
         function model_sign_up_sign_in() {
             $('.pop_up_login_header').click(function() {
@@ -2105,27 +2088,6 @@ session_start();
             });
         }
         logout_signup_signin();
-        /* ------------------------------- logout call mobile------------------------------ */
-        // $('.popup_logout_mobile').click(function() {
-        //     var logout_var = 'logout';
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: 'php/logout.php',
-        //         dataType: "json",
-        //         data: {
-        //             'logout_var': logout_var
-        //         },
-        //         success: function(data) {
-        //             console.log(data);
-        //             if (data.status == 201) {                        
-        //                 window.location.replace(data.url);
-        //             } else {
-        //                 console.log(data.error);
-        //                 //     alert("problem with query");
-        //             }
-        //         }
-        //     });
-        // });
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',
@@ -2134,7 +2096,6 @@ session_start();
                 $(".set_id_one").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();
-
             }
         });
         $.ajax({
