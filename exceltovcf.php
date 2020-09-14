@@ -1115,7 +1115,7 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="#"
+                                                    VCF files you can choose our paid version . <a href="download.php"
                                                         style="color: #007bff;">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
@@ -1584,6 +1584,8 @@ session_start();
                         var last_row = $("#last_row_mobile").val();
                         var show_data = "";
                         var error = "";
+                            row_start=first_row;
+                            row_end=last_row;
                         if (first_row == "") {
                             $("#first_row_mobile").css('border-color', 'red');
                             $("#first_row_mobile").css('border-width', '2px');
@@ -1608,6 +1610,7 @@ session_start();
                                     workbook.Sheets[sheetName]);
                                 json_object = JSON.stringify(XL_row_object);
                                 console.log(JSON.parse(json_object));
+                                keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
                                 for (var i = first_column.charCodeAt(0); i <= last_column
@@ -1768,12 +1771,51 @@ session_start();
         });       
         // ---------------------- step 3 to 4 functionality for mobile---------------------- //
 
-        $('#submit3_mobile').click(function() {            
+        $('#submit3_mobile').click(function() {          
             var column_array = [];
-            var error = "";            
+            var column_array2 = [];
+            var error = "";
+            var take;
+            var take2 = [];            
+            json_array = keys_change;
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column_mobile" + i).val();
+                json_array = JSON.parse(JSON.stringify(json_array).split('"' + Object.keys(keys_change[
+                    0])[i - 1] + '":').join('"' + column_array[i] + '":'));
+                take = json_array[0];
+                take2[i - 1] = column_array[i];
+                data_key[i]=take2[i - 1];
+                data_value[i]=take[data_key[i]];                              
+            } 
+
+/* ----------------------------get  data value to make VCF for mobile---------------------------- */
+                var num_start=parseInt(row_start, 10);
+                var num_end=parseInt(row_end, 10);
+            for (var i = 1; i <= total_data_come; i++) {
+                // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             }
+            for(var j=num_start;j<=num_end;j++){
+                // console.log(json_array[j-1]);
+                all_data[(num_end)-(j)]=json_array[j-1];                
+            }
+            console.log(all_data.length);
+
+/* --------------------- data send for to make vcf files start for mobile-------------------- */
+
+            $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: 'POST',
+                    url: 'index2.php',                   
+                    data: JSON.stringify(all_data),
+                    success: function(data) {                    
+                        
+                        // window.location.href = 'index.php';                        
+                        
+                    }
+                });
+ /* --------------------- data send for to make vcf files end for mobile-------------------- */
+
+/* -------------------------- get data value to make VCF for mobile end -------------------------- */           
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
                     $("#column_mobile" + i).css('border-color', 'red');
@@ -1823,7 +1865,6 @@ session_start();
             });
 
         });
-
         // ------------------------- pop up sign up form ------------------------- //
         $('#pop_up_signup').on("click", function() {
             var mobile = $("#Form_phone_signup").val();

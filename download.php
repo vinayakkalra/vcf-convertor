@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['authenticated']))
 {
     //if the value was not set, you redirect the user to your login page
-header('location:/');
+header('location:index');
 exit;
     
 }
@@ -24,7 +24,7 @@ $c=$_SESSION['array_name'];
         var take=document.getElementById('server_text').value;                                    
         var blob = new Blob([take], {type: "text/plain;charset=utf-8"});
         saveAs(blob, "contact.vcf");
-        window.location.replace("/");               
+        window.location.replace("index");               
 </script>  
 </body>
 </html>
