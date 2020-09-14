@@ -2,8 +2,10 @@
 
 require_once('link.php');
 
- $target_dir = "../uploads/";
- $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_dir = "../uploads/";
+$temp = explode(".", $_FILES["fileToUpload"]["name"]);
+$newfilename = round(microtime(true)) . '.' . end($temp);
+$target_file = $target_dir .$newfilename;
  $uploadOk = 1;
  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
  
@@ -19,11 +21,11 @@ require_once('link.php');
    }
  }
  
- // Check if file already exists
-//  if (file_exists($target_file)) {
-//     echo "Sorry, file already exists.";
-//    $uploadOk = 0;
-//  }
+//  Check if file already exists
+ if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+   $uploadOk = 0;
+ }
  
  // Check file size
  if ($_FILES["fileToUpload"]["size"] > 500000) {
