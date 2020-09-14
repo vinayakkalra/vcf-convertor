@@ -1506,7 +1506,9 @@ session_start();
                         sheetName]);
                     var json_object = JSON.stringify(XL_row_object);
                     
-                    console.log(JSON.parse(json_object));
+                    // console.log(JSON.parse(json_object));
+
+
                     // alpha = JSON.parse(json_object);
                     // for (var key in JSON.parse(json_object)[0]) {
                     // console.log("Key: " + key[2]);
@@ -1695,10 +1697,10 @@ session_start();
 /* ---------------------------- data value to make VCF---------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
-                console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
+                // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             }
             for(var j=row_start;j<=row_end;j++){
-                console.log(json_array[j-1]);
+                // console.log(json_array[j-1]);
                 all_data[(row_end)-(j)]=json_array[j-1];                
             }
             // console.log(all_data); 
@@ -1974,7 +1976,7 @@ session_start();
                         'email': email
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
                             $.ajax({
