@@ -40,7 +40,7 @@ foreach ($files as $file) {
 $zip->close();
 
 header('Content-Type: application/zip');
-header('Content-disposition: attachment; filename=file.zip');
+header('Content-disposition: attachment; filename=VcfConvertor.zip');
 header('Content-Length: ' . filesize($tmpFile));
 readfile($tmpFile);
 
