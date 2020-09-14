@@ -444,7 +444,7 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="#"
+                                                    VCF files you can choose our paid version . <a href="contact.vcf" download
                                                         style="color: #007bff;" id="basic" class="free_subs">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
