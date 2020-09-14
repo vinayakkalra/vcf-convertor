@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once "VcardExport.php";
- if(isset($_POST['action'])) {
-   $data=array();
+if($_SERVER['REQUEST_METHOD']=='POST'){
+$data=array();
 $json=json_decode(file_get_contents("php://input"));
 $json_length=count($json);
   // echo($json_length);
@@ -77,17 +77,30 @@ $birthday=$value;
   // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
   for($i=0;$i<($json_length);$i++){   
       $vcardExport[$i] = new VcardExport();      
-      $vcardExport[$i]->contactVcardExportService($complete_array[$i]); 
-      // $chandu[]=array($vcardExport[$i]);     
-  }
- $data['status']=201;
- $data['result']=$vcardExport;
- echo json_encode($data);
- exit;
- }
- else{
-  $data['status']=601; 
-  echo json_encode($data);
- }
+      $vcardExport[$i]->contactVcardExportService($complete_array[$i]);              
+  }  
+  // print_r($_SESSION['array_name']);
+  $c=$_SESSION['array_name'];
 
+    $file = "contact.vcf";
+    $txt = fopen($file, "w") or die("Unable to open file!");
+    fwrite($txt, $c);
+    fclose($txt);
+    header('Content-Description: File Transfer');
+    header('Content-Disposition: attachment; filename='.basename($file));
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($file));
+    header("Content-Type: text/plain");
+    readfile($file);     
+    unset($_SESSION['array_name']); 
+    $data['status']=201;  
+    echo json_encode($data);    
+}
+else{
+      $data['status'] = 601;     
+      echo json_encode($data);
+}
 ?>
+

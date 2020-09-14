@@ -2025,29 +2025,21 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
-
 /* ------------------------- download start on click ------------------------ */
             $('.free_subs').click(function(){           
         // console.log(JSON.stringify(all_data));
                 $.ajax({
                     contentType: "application/json; charset=utf-8",
                     type: 'POST',
-                    url: 'index2.php',
-                    dataType: "json",
+                    url: 'index2.php',                   
                     data: JSON.stringify(all_data),
-                    success: function(data) {
-                        console.log(data);
-                        if (data.status == 201) {
-                        alert('success');                        
-                        } else {
-                            console.log(data);                          
-                            alert("problem with query");
-                        }
+                    success: function(data) {                    
+                        
+                        window.location.href = 'index.php';                        
+                        
                     }
                 });
             });
-
-
 
 /* ------------------------- //download end on click ------------------------ */
 

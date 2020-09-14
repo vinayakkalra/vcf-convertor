@@ -24,6 +24,7 @@ if(isset($_POST['email'])){
                 session_start();
                 $_SESSION['first_char']=ucfirst($email[0]);
                 $_SESSION['user_email']=$email;
+                $_SESSION['array_name']="";
                 //  $_SESSION['user_name'] = $row['email'];
                 $_SESSION['user_id'] = $row['id'];
                 echo json_encode($data); 
