@@ -1609,7 +1609,7 @@ session_start();
                                 XL_row_object = XLSX.utils.sheet_to_row_object_array(
                                     workbook.Sheets[sheetName]);
                                 json_object = JSON.stringify(XL_row_object);
-                                console.log(JSON.parse(json_object));
+                                // console.log(JSON.parse(json_object));
                                 keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
@@ -1631,7 +1631,7 @@ session_start();
                                         (i - 64) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
                                     );
-                                    console.log(String.fromCharCode(i));
+                                    // console.log(String.fromCharCode(i));
                                 }
                             } else {
                                 alert("Sheet not found in file");
@@ -1688,15 +1688,21 @@ session_start();
 /* ----------------------------get  data value to make VCF---------------------------- */
                 var num_start=parseInt(row_start, 10);
                 var num_end=parseInt(row_end, 10);
-            for (var i = 1; i <= total_data_come; i++) {
+                var num_raw_data=0;
+                if(num_start>num_end){
+                    num_raw_data=num_start;
+                    num_start=num_end;
+                    num_end=num_raw_data;
+                    num_raw_data=0;
+                }
+            // for (var i = 1; i <= total_data_come; i++) {
                 // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
-            }
+            // }
             for(var j=num_start;j<=num_end;j++){
                 // console.log(json_array[j-1]);
                 all_data[(num_end)-(j)]=json_array[j-1];                
             }
-    
-
+            
 /* --------------------- data send for to make vcf files start-------------------- */
 
             $.ajax({
@@ -1791,14 +1797,21 @@ session_start();
 /* ----------------------------get  data value to make VCF for mobile---------------------------- */
                 var num_start=parseInt(row_start, 10);
                 var num_end=parseInt(row_end, 10);
-            for (var i = 1; i <= total_data_come; i++) {
+                var num_raw_data=0;
+                if(num_start>num_end){
+                    num_raw_data=num_start;
+                    num_start=num_end;
+                    num_end=num_raw_data;
+                    num_raw_data=0;
+                }
+            // for (var i = 1; i <= total_data_come; i++) {
                 // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
-            }
+            // }
             for(var j=num_start;j<=num_end;j++){
                 // console.log(json_array[j-1]);
                 all_data[(num_end)-(j)]=json_array[j-1];                
             }
-            console.log(all_data.length);
+            // console.log(all_data.length);
 
 /* --------------------- data send for to make vcf files start for mobile-------------------- */
 
