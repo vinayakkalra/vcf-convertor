@@ -617,19 +617,9 @@ class VCard
 
     public function download()
     {
-<<<<<<< HEAD
-        // define output
-        $output = $this->getOutput();
-        foreach ($this->getHeaders(false) as $header) {
-            header($header);
-        }
-        // echo the output and it will be a download
-        echo $output;
-=======
         $output = $this->getOutput(true);
         // echo $output;
         $_SESSION['array_name'] .= $output;            
->>>>>>> master30
     }
     /**
      * Fold a line according to RFC2425 section 5.8.1.

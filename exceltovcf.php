@@ -290,7 +290,7 @@ session_start();
                                             <label class="row">
                                                 <div class="wrap-col">Select file:
                                                     <input type="file" name="fileToUpload"
-                                                        accept=".csv,application/vnd.ms-excel,.xlt,application/vnd.ms-excel,.xla,application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xltx,application/vnd.openxmlformats-officedocument.spreadsheetml.template,.xlsm,application/vnd.ms-excel.sheet.macroEnabled.12,.xltm,application/vnd.ms-excel.template.macroEnabled.12,.xlam,application/vnd.ms-excel.addin.macroEnabled.12,.xlsb,application/vnd.ms-excel.sheet.binary.macroEnabled.12"
+                                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                                                         id="fileToUpload">
                                                 </div>
                                             </label>
@@ -444,9 +444,8 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="index2.php"
-                                                        style="color: #007bff;cursor: pointer;" id="basic"
-                                                        class="free_subs">Click
+                                                    VCF files you can choose our paid version . <a href="#"
+                                                        style="color: #007bff;" id="basic" class="free_subs">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -508,7 +507,7 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a id="basic1"
+                                                                        <a  id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -945,7 +944,7 @@ session_start();
                                                 <div class="wrap-col">Select file:
                                                     <input type="file" name="fileToUpload_mobile"
                                                         id="fileToUpload_mobile"
-                                                        accept=".csv,application/vnd.ms-excel,.xlt,application/vnd.ms-excel,.xla,application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xltx,application/vnd.openxmlformats-officedocument.spreadsheetml.template,.xlsm,application/vnd.ms-excel.sheet.macroEnabled.12,.xltm,application/vnd.ms-excel.template.macroEnabled.12,.xlam,application/vnd.ms-excel.addin.macroEnabled.12,.xlsb,application/vnd.ms-excel.sheet.binary.macroEnabled.12"
+                                                        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
                                                         style="width: 100%;">
                                                 </div>
                                             </label>
@@ -1402,12 +1401,12 @@ session_start();
         var product_name = "";
         var keys_change;
         var json_array;
-        var data_key = [];
-        var data_value = [];
+        var data_key=[];
+        var data_value=[];
         var row_start;
-        var row_end;
-        var all_data = [];
-
+        var row_end;  
+        var all_data=[];  
+          
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1498,15 +1497,15 @@ session_start();
                     var json_object_length = workbook.SheetNames.length;
                     sheet = workbook.SheetNames[0];
                     // console.log(sheet);                        
-                    //     console.log(json_object_length);//check the no. of sheet
-                    //     workbook.SheetNames.forEach(function (sheetName) {                  
-                    //     console.log(sheetName);
-                    // });
+                //     console.log(json_object_length);//check the no. of sheet
+                //     workbook.SheetNames.forEach(function (sheetName) {                  
+                //     console.log(sheetName);
+                // });
                     var sheetName = sheet;
                     var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[
                         sheetName]);
                     var json_object = JSON.stringify(XL_row_object);
-
+                    
                     console.log(JSON.parse(json_object));
                     // alpha = JSON.parse(json_object);
                     // for (var key in JSON.parse(json_object)[0]) {
@@ -1543,14 +1542,14 @@ session_start();
                             $("#last_row").css('border-width', '1px');
                         }
                         if (error == "") {
-                            row_start = first_row;
-                            row_end = last_row;
+                            row_start=first_row;
+                            row_end=last_row;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
                                 XL_row_object = XLSX.utils.sheet_to_row_object_array(
                                     workbook.Sheets[sheetName]);
-                                json_object = JSON.stringify(XL_row_object);
+                                json_object = JSON.stringify(XL_row_object);                                
                                 // console.log(JSON.parse(json_object));
                                 //   console.log(XL_row_object);                            
                                 keys_change = XL_row_object;
@@ -1563,8 +1562,7 @@ session_start();
                                     total_data_come = (last_column.charCodeAt(0) - 64);
 
                                     var show_data = Object.keys(JSON.parse(json_object)[0])[
-                                        i - 65
-                                        ]; //give alphabet indexing                                        
+                                        i - 65]; //give alphabet indexing                                        
                                     if (show_data ==
                                         undefined) { //if row not found than show blank
                                         show_data = "";
@@ -1580,7 +1578,7 @@ session_start();
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
-
+                                
                             } else {
                                 alert("Sheet not found in file");
                             }
@@ -1682,7 +1680,7 @@ session_start();
             var column_array2 = [];
             var error = "";
             var take;
-            var take2 = [];
+            var take2 = [];            
             json_array = keys_change;
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column" + i).val();
@@ -1690,40 +1688,24 @@ session_start();
                     0])[i - 1] + '":').join('"' + column_array[i] + '":'));
                 take = json_array[0];
                 take2[i - 1] = column_array[i];
-                data_key[i] = take2[i - 1];
-                data_value[i] = take[data_key[i]];
-            }
+                data_key[i]=take2[i - 1];
+                data_value[i]=take[data_key[i]];                              
+            } 
 
-            /* ---------------------------- data value to make VCF---------------------------- */
+/* ---------------------------- data value to make VCF---------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
-                console.log(data_key[i] + ":" + data_value[i] + " and " + row_start + " and " +
-                row_end);
+                console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             }
-            for (var j = row_start; j <= row_end; j++) {
-                console.log(json_array[j - 1]);
-                all_data[(row_end) - (j)] = json_array[j - 1];
+            for(var j=row_start;j<=row_end;j++){
+                console.log(json_array[j-1]);
+                all_data[(row_end)-(j)]=json_array[j-1];                
             }
             // console.log(all_data); 
+               
+           
 
-            $.ajax({
-                contentType: "application/json; charset=utf-8",
-                type: 'POST',
-                url: 'php/dataforvcf.php',
-                dataType: "json",
-                data: JSON.stringify(all_data),
-                success: function(data) {
-                    console.log(data);
-                    if (data.status == 201) {
-                        alert('success');
-                    } else {
-                        console.log(data);
-                        alert("problem with query");
-                    }
-                }
-            });
-
-            /* -------------------------- data value to make VCF end -------------------------- */
+/* -------------------------- data value to make VCF end -------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
@@ -1779,12 +1761,12 @@ session_start();
                 // alert("My name is sign up");
             });
 
-        });
+        });       
         // ---------------------- step 3 to 4 functionality for mobile---------------------- //
 
-        $('#submit3_mobile').click(function() {
+        $('#submit3_mobile').click(function() {            
             var column_array = [];
-            var error = "";
+            var error = "";            
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column_mobile" + i).val();
             }
@@ -2162,7 +2144,7 @@ session_start();
                 logout_signup_signin();
             }
         });
-
+        
     });
     </script>
 </body>

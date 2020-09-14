@@ -29,45 +29,47 @@ $complete_array=array();
 //      echo($key);
 //  echo($value);
 
-if(!empty($_GET["action"])) {
-    $query = "SELECT * FROM vcf_data WHERE id = ?";
-    $param_type = "i";
-    $param_value_array = array($_GET["id"]);
-    $contactResult = $dbController->runQuery($query,$param_type,$param_value_array);    
-    require_once "VcardExport.php";
-    $vcardExport = new VcardExport();
-    $vcardExport->contactVcardExportService($contactResult);
-    exit;
+if($key=="first_name"){
+  $first_name=$value;
+} 
+else if($key=="last_name"){
+          $last_name=$value;
 }
-// Program to display current page URL. 
-  
-$current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
-                $_SERVER['REQUEST_URI']; 
-require_once('php/link.php');
-$result1 = mysqli_query($link, "SELECT round FROM `vcf_data`"); 
- $row=mysqli_fetch_array($result1);
 
-for ($i=1;($i<=$row['round']);$i++){
-    $files[] = $current_url."?action=export&id=".$i.".vcf";   
+else if($key=="email"){
+$email=$value;
+ 
 }
-// $files = array($image1, $image2);
-
-$tmpFile = tempnam('/tmp', '');
-$zip = new ZipArchive;
-$zip->open($tmpFile, ZipArchive::CREATE);
-foreach ($files as $file) {
-    // download file
-    $fileContent = file_get_contents($file);
-
-    $zip->addFromString(basename($file), $fileContent);
+else if($key=="mobile"){
+  $mobile=$value;
 }
-$zip->close();
-
-header('Content-Type: application/zip');
-header('Content-disposition: attachment; filename=VcfConvertor.zip');
-header('Content-Length: ' . filesize($tmpFile));
-readfile($tmpFile);
+else if($key=="tel_office"){
+$tel_office=$value;
+}
+else if($key=="tel_home"){
+$tel_home=$value;
+}
+else if($key=="fax"){
+$fax=$value;
+}
+else if($key=="city"){
+$city=$value; 
+}
+else if($key=="nickname"){
+$nickname=$value;
+}
+else if($key=="company"){
+$company=$value;
+} 
+else if($key=="address"){
+$address=$value; 
+}
+else if($key=="website"){
+$website=$value; 
+}
+else if($key=="birthday"){
+$birthday=$value;
+}// print_r($first_name);
 
  }
  $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$birthday);

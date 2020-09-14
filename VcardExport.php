@@ -2,7 +2,7 @@
 use JeroenDesloovere\VCard\VCard;
 class VcardExport
 {
-    public function contactVcardExportService($contactResult)
+    public function contactVcardExportService($complete_array)
     {
         require_once 'vendor/Behat-Transliterator/Transliterator.php';
         require_once 'vendor/jeroendesloovere-vcard/VCard.php';
