@@ -1,6 +1,7 @@
 <?php
 namespace JeroenDesloovere\VCard;
 use Behat\Transliterator\Transliterator;
+$_SESSION['array_name']="";
 class VCard
 {
     /**
@@ -613,8 +614,10 @@ class VCard
     /**
      * Download a vcard or vcal file to the browser.
      */
+
     public function download()
     {
+<<<<<<< HEAD
         // define output
         $output = $this->getOutput();
         foreach ($this->getHeaders(false) as $header) {
@@ -622,8 +625,12 @@ class VCard
         }
         // echo the output and it will be a download
         echo $output;
+=======
+        $output = $this->getOutput(true);
+        // echo $output;
+        $_SESSION['array_name'] .= $output;            
+>>>>>>> master30
     }
-
     /**
      * Fold a line according to RFC2425 section 5.8.1.
      *

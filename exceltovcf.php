@@ -2043,16 +2043,23 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
+/* ------------------------- download start on click ------------------------ */
+            $('.free_subs').click(function(){           
+        // console.log(JSON.stringify(all_data));
+                $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: 'POST',
+                    url: 'index2.php',                   
+                    data: JSON.stringify(all_data),
+                    success: function(data) {                    
+                        
+                        window.location.href = 'index.php';                        
+                        
+                    }
+                });
+            });
 
-        /* ------------------------- download start on click ------------------------ */
-        $('.free_subs').click(function() {
-            // console.log(JSON.stringify(all_data));
-
-        });
-
-
-
-        /* ------------------------- //download end on click ------------------------ */
+/* ------------------------- //download end on click ------------------------ */
 
         // ---------------- header pop up login and signup button ---------------- //
         function model_sign_up_sign_in() {

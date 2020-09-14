@@ -47,6 +47,7 @@ if(isset($_POST['email'])){
         session_start();
         $_SESSION['first_char']=ucfirst($email[0]);
         $_SESSION['user_email']=$email;
+        $_SESSION['array_name']="";
         }
     else  
     {  
