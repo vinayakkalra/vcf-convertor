@@ -48,6 +48,7 @@ if(isset($_POST['email'])){
         $_SESSION['first_char']=ucfirst($email[0]);
         $_SESSION['user_email']=$email;
         $_SESSION['array_name']="";
+        $_SESSION['authenticated']=true;
         }
     else  
     {  

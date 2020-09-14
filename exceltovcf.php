@@ -444,7 +444,7 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="contact.vcf" download
+                                                    VCF files you can choose our paid version . <a href="download.php"
                                                         style="color: #007bff;" id="basic" class="free_subs">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
@@ -2037,7 +2037,7 @@ session_start();
                     data: JSON.stringify(all_data),
                     success: function(data) {                    
                         
-                        window.location.href = 'index.php';                        
+                        // window.location.href = 'index.php';                        
                         
                     }
                 });

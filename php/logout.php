@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['logout_var'])){
+if(isset($_POST['logout_var'])){ 
 session_unset();
 session_destroy();
 $host  = $_SERVER['HTTP_HOST'];
