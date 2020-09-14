@@ -1545,6 +1545,16 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
+                                var string_raw="";
+                                if(first_column.charCodeAt(0)>last_column
+                                    .charCodeAt(0)){
+                                    string_raw=first_column;
+                                    first_column=last_column;
+                                    last_column=string_raw;
+                                    string_raw=""; 
+                                    }
+                                    // console.log("first_column="+first_column);
+                                    // console.log("last_column="+last_column);
                                 for (var i = first_column.charCodeAt(0); i <= last_column
                                     .charCodeAt(0); i++
                                 ) { //alphabetical loop selected according to user
@@ -1613,6 +1623,16 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
+                                var string_raw="";
+                                if(first_column.charCodeAt(0)>last_column
+                                    .charCodeAt(0)){
+                                    string_raw=first_column;
+                                    first_column=last_column;
+                                    last_column=string_raw;
+                                    string_raw=""; 
+                                    }
+                                    // console.log("first_column="+first_column);
+                                    // console.log("last_column="+last_column);
                                 for (var i = first_column.charCodeAt(0); i <= last_column
                                     .charCodeAt(0); i++) {
                                     // var j=(i.charCodeAt(0)-97);
@@ -1684,7 +1704,6 @@ session_start();
                 data_key[i]=take2[i - 1];
                 data_value[i]=take[data_key[i]];                              
             } 
-
 /* ----------------------------get  data value to make VCF---------------------------- */
                 var num_start=parseInt(row_start, 10);
                 var num_end=parseInt(row_end, 10);
