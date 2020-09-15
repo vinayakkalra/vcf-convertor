@@ -1768,38 +1768,6 @@ session_start();
                     num_end=num_raw_data;
                     num_raw_data=0;
                 }
-            // for (var i = 1; i <= total_data_come; i++) {
-                // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
-            // }
-
-/* ------------------------------ testing mode ------------------------------ */
-
-            for(var j=num_start;j<=num_end;j++){
-                            // console.log(json_array[j-1]);
-                            all_data[(num_end)-(j)]=json_array[j-1];                
-                        }; 
-
-/* ---------------------------- testing mode end ---------------------------- */
-
-/* ------------------------- check the subscription ------------------------- */
-
-            // $.ajax({
-            //         contentType: "application/json; charset=utf-8",
-            //         type: 'POST',
-            //         url: 'php/subscription.php',                   
-            //         data: {
-            //             'email':'chandan@gmail.com'
-            //         },
-            //         success: function(data) { 
-            //             console.log(data);                  
-                                
-                        
-            //         }
-            //     });
-
-/* ----------------------- check the subscription end ----------------------- */
-
-
 
 /* -------------------------- get data value to make VCF end -------------------------- */
 
@@ -1825,30 +1793,23 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');
-                            
+                            $('#pop_up_desktop').modal('hide');                            
+                        }
+                        else if(data.status == 301){
+                        $('#pop_up_desktop').modal('hide');
+                        num_end=data.row_end;                       
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
+                            num_end=data.row_end;                            
                         } else {
                             $('#pop_up_desktop').modal('show');
+                            num_end=1;
                         }   
-/* --------------------- data send for to make vcf files start-------------------- */ 
-                        // $.ajax({  
-                        //         type: 'POST',
-                        //         url: 'php/subscription.php',
-                        //         data: {
-                        //             num_end: num_end
-                        //         },
-                        //         success: function(data) {
-                        //             console.log(data); 
-                        //             num_end=parseInt(data.num_end, 10);
-                        //             // console.log(num_end);                
-                        //             for(var j=num_start;j<=(num_end);j++){
-                        //             // console.log(json_array[j-1]);
-                        //             all_data[(num_end)-(j)]=json_array[j-1];                
-                        //             }; 
-                        //         }
-                        //     });
+                        for(var j=num_start;j<=num_end;j++){
+                            // console.log(json_array[j-1]);
+                            all_data[(num_end)-(j)]=json_array[j-1];                
+                        }; 
+/* --------------------- data send for to make vcf files start-------------------- */
                         $.ajax({
                                 contentType: "application/json; charset=utf-8",
                                 type: 'POST',
@@ -1916,15 +1877,6 @@ session_start();
                     num_end=num_raw_data;
                     num_raw_data=0;
                 }
-            // for (var i = 1; i <= total_data_come; i++) {
-                // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
-            // }
-            for(var j=num_start;j<=num_end;j++){
-                // console.log(json_array[j-1]);
-                all_data[(num_end)-(j)]=json_array[j-1];                
-            }
-            // console.log(all_data.length);
-
 /* -------------------------- get data value to make VCF for mobile end -------------------------- */           
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
@@ -1946,23 +1898,39 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
-                        } else if (data.status == 601) {
+                        }else if(data.status == 301){
+                            $('#pop_up_desktop').modal('hide');
+                            num_end=data.row_end;
+                            console.log(num_end);
+                        }
+                        else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
+                                num_end=data.row_end;
+                                console.log(num_end);
                         } else {
                             $('#pop_up_desktop').modal('show');
+                                num_end=1;
+                                console.log(num_end);
                         }
-                    $.ajax({
-                            contentType: "application/json; charset=utf-8",
-                            type: 'POST',
-                            url: 'index2.php',                   
-                            data: JSON.stringify(all_data),
-                            success: function(data) {                   
-                                
-                                // window.location.href = 'index.php';                        
-                                
-                            }
-                        });
+                        for(var j=num_start;j<=num_end;j++){
+                            // console.log(json_array[j-1]);
+                            all_data[(num_end)-(j)]=json_array[j-1];                
+                        }; 
+/* --------------------- data send for to make vcf files start-------------------- */
+                        $.ajax({
+                                contentType: "application/json; charset=utf-8",
+                                type: 'POST',
+                                url: 'index2.php',                   
+                                data: JSON.stringify(all_data),
+                                success: function(data) {                   
+                                    
+                                    // window.location.href = 'index.php';                        
+                                    
+                                }
+                            });
+ /* --------------------- data send for to make vcf files end-------------------- */
                     }
+                    
                 });
                 $('#step4_mobile').css('display', 'block');
                 $('#step3_mobile').css('display', 'none');

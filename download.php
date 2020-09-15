@@ -24,7 +24,7 @@ else{
         var take=document.getElementById('server_text').value;                                    
         var blob = new Blob([take], {type: "text/plain;charset=utf-8"});
         saveAs(blob, "contact.vcf");
-        // window.location.replace("index");               
+        window.location.replace("index");               
 </script>  
 </body>
 </html>
