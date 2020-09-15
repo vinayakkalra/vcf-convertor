@@ -1834,10 +1834,10 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                         }   
 /* --------------------- data send for to make vcf files start-------------------- */ 
-                        $.ajax({                                
+                        $.ajax({  
+                                                              
                                 type: 'POST',
-                                url: 'php/subscription.php', 
-                                dataType: "json",                  
+                                url: 'php/subscription.php',
                                 data: {
                                     num_end: num_end
                                 },
