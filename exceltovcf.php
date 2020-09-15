@@ -1834,18 +1834,20 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                         }   
 /* --------------------- data send for to make vcf files start-------------------- */ 
-                        $.ajax({
-                                contentType: "application/json; charset=utf-8",
+                        $.ajax({                                
                                 type: 'POST',
-                                url: 'php/subscription.php',                   
+                                url: 'php/subscription.php', 
+                                dataType: "json",                  
                                 data: {
-                                    'num_end':num_end
+                                    num_end: num_end
                                 },
                                 success: function(data) {
-                                    console.log(data);                 
-                                    for(var j=num_start;j<=(data.num_end);j++){
-                            // console.log(json_array[j-1]);
-                                    all_data[(data.num_end)-(j)]=json_array[j-1];                
+                                    console.log(data); 
+                                    num_end=parseInt(data.num_end, 10);
+                                    // console.log(num_end);                
+                                    for(var j=num_start;j<=(num_end);j++){
+                                    // console.log(json_array[j-1]);
+                                    all_data[(num_end)-(j)]=json_array[j-1];                
                                     }; 
                                 }
                             });
