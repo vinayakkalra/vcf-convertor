@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2020 at 05:05 AM
+-- Generation Time: Sep 15, 2020 at 09:49 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -33,6 +33,8 @@ CREATE TABLE `signup-details` (
   `email` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `subscription` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `time` varchar(255) NOT NULL,
   `from_ip` varchar(255) NOT NULL,
   `from_browser` varchar(255) NOT NULL
@@ -42,9 +44,10 @@ CREATE TABLE `signup-details` (
 -- Dumping data for table `signup-details`
 --
 
-INSERT INTO `signup-details` (`id`, `email`, `mobile`, `password`, `time`, `from_ip`, `from_browser`) VALUES
-(28, 'admin2@gmail.com', '999999999', '4dff4ea340f0a823f15d3f4f01ab62eae0e5da579ccb851f8db9dfe84c58b2b37b89903a740e1ee172da793a6e79d560e5f7f9bd058a12a280433ed6fa46510a', 'Sun, 06 Sep 2020 01:33:59 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Mobile Safari/537.36'),
-(29, 'new@gmail.com', '123456789', '4dff4ea340f0a823f15d3f4f01ab62eae0e5da579ccb851f8db9dfe84c58b2b37b89903a740e1ee172da793a6e79d560e5f7f9bd058a12a280433ed6fa46510a', 'Mon, 14 Sep 2020 16:49:53 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36');
+INSERT INTO `signup-details` (`id`, `email`, `mobile`, `password`, `subscription`, `status`, `time`, `from_ip`, `from_browser`) VALUES
+(28, 'admin2@gmail.com', '999999999', '4dff4ea340f0a823f15d3f4f01ab62eae0e5da579ccb851f8db9dfe84c58b2b37b89903a740e1ee172da793a6e79d560e5f7f9bd058a12a280433ed6fa46510a', '100', NULL, 'Sun, 06 Sep 2020 01:33:59 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Mobile Safari/537.36'),
+(29, 'new@gmail.com', '123456789', '4dff4ea340f0a823f15d3f4f01ab62eae0e5da579ccb851f8db9dfe84c58b2b37b89903a740e1ee172da793a6e79d560e5f7f9bd058a12a280433ed6fa46510a', '100', NULL, 'Mon, 14 Sep 2020 16:49:53 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(30, 'chandan@gmail.com', '987456123', '4dff4ea340f0a823f15d3f4f01ab62eae0e5da579ccb851f8db9dfe84c58b2b37b89903a740e1ee172da793a6e79d560e5f7f9bd058a12a280433ed6fa46510a', NULL, NULL, 'Tue, 15 Sep 2020 20:52:52 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -284,7 +287,138 @@ INSERT INTO `table_excel` (`id`, `excel`, `time`, `from_ip`, `from_browser`) VAL
 (217, 'uploads/Names.xls', 'Tue, 15 Sep 2020 01:37:11 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
 (218, 'uploads/Names.xls', 'Tue, 15 Sep 2020 01:37:47 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
 (219, 'uploads/Names.xls', 'Tue, 15 Sep 2020 01:38:16 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
-(220, 'uploads/Names.xls', 'Tue, 15 Sep 2020 01:41:33 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36');
+(220, 'uploads/Names.xls', 'Tue, 15 Sep 2020 01:41:33 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(221, 'uploads/Names.xls', 'Tue, 15 Sep 2020 08:53:52 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(222, 'uploads/Names.xls', 'Tue, 15 Sep 2020 08:54:23 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(223, 'uploads/Names.xls', 'Tue, 15 Sep 2020 08:55:18 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(224, 'uploads/Names.xls', 'Tue, 15 Sep 2020 08:56:07 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(225, 'uploads/main.csv', 'Tue, 15 Sep 2020 09:22:40 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(226, 'uploads/main.csv', 'Tue, 15 Sep 2020 09:25:10 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(227, 'uploads/main.csv', 'Tue, 15 Sep 2020 09:26:39 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(228, 'uploads/Names.xls', 'Tue, 15 Sep 2020 09:27:20 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(229, 'uploads/main.csv', 'Tue, 15 Sep 2020 09:30:36 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(230, 'uploads/Names.csv', 'Tue, 15 Sep 2020 09:32:28 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(231, 'uploads/main.csv', 'Tue, 15 Sep 2020 09:38:28 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(232, 'uploads/Names.csv', 'Tue, 15 Sep 2020 09:38:51 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(233, 'uploads/Names.csv', 'Tue, 15 Sep 2020 09:40:08 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(234, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:23:58 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(235, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:34:04 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(236, 'uploads/Names.csv', 'Tue, 15 Sep 2020 10:43:37 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(237, 'uploads/Names.csv', 'Tue, 15 Sep 2020 10:44:44 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(238, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:45:30 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(239, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:45:48 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(240, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:49:33 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(241, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:50:27 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(242, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:51:23 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(243, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:55:02 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(244, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:57:28 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(245, 'uploads/Names.xls', 'Tue, 15 Sep 2020 10:58:05 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(246, 'uploads/Names.xls', 'Tue, 15 Sep 2020 11:00:02 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(247, 'uploads/Names.xls', 'Tue, 15 Sep 2020 11:01:57 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(248, 'uploads/Names.xls', 'Tue, 15 Sep 2020 11:16:37 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(249, 'uploads/Names.csv', 'Tue, 15 Sep 2020 12:54:42 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(250, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:05:10 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(251, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:06:34 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(252, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:08:00 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(253, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:08:15 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36');
+INSERT INTO `table_excel` (`id`, `excel`, `time`, `from_ip`, `from_browser`) VALUES
+(254, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:09:26 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(255, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:24:59 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(256, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:33:20 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(257, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:36:06 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(258, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:40:26 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(259, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:40:39 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(260, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:45:13 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(261, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:53:35 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(262, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:55:17 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(263, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:56:12 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(264, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:58:00 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(265, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:58:40 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(266, 'uploads/Names.xls', 'Tue, 15 Sep 2020 13:59:26 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(267, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:05:38 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(268, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:06:14 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(269, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:08:41 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(270, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:09:55 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(271, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:10:52 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(272, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:12:01 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(273, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:12:40 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(274, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:12:58 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(275, 'uploads/Names.csv', 'Tue, 15 Sep 2020 14:18:50 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(276, 'uploads/Names.xls', 'Tue, 15 Sep 2020 14:19:19 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(277, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:01:29 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(278, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:03:15 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(279, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:04:32 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(280, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:10:44 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(281, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:12:40 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(282, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:16:06 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(283, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:17:03 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(284, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:21:03 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(285, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:22:55 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(286, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:29:40 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(287, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:37:59 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(288, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:40:12 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(289, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:41:50 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(290, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:45:14 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(291, 'uploads/Names.xls', 'Tue, 15 Sep 2020 15:50:30 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(292, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:00:56 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(293, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:05:18 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(294, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:05:32 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(295, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:12:43 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(296, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:15:16 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(297, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:17:43 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(298, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:18:00 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(299, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:19:47 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(300, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:20:39 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(301, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:22:08 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(302, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:23:48 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(303, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:25:25 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(304, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:28:14 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(305, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:30:36 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(306, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:30:46 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(307, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:32:55 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(308, 'uploads/Names.xls', 'Tue, 15 Sep 2020 16:33:35 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(309, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:11:11 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(310, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:15:18 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(311, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:27:51 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(312, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:30:00 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(313, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:38:04 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(314, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:39:21 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(315, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:40:45 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(316, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:42:03 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(317, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:46:37 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(318, 'uploads/Names.xls', 'Tue, 15 Sep 2020 17:46:48 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(319, 'uploads/Names.xls', 'Tue, 15 Sep 2020 18:17:25 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(320, 'uploads/Names.xls', 'Tue, 15 Sep 2020 18:59:18 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(321, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:18:44 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(322, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:19:49 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(323, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:21:46 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(324, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:22:55 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(325, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:24:23 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(326, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:28:08 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(327, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:34:29 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(328, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:37:17 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(329, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:37:56 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(330, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:40:46 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(331, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:53:04 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(332, 'uploads/Names.xls', 'Tue, 15 Sep 2020 19:54:27 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(333, 'uploads/Names.csv', 'Tue, 15 Sep 2020 20:01:03 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(334, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:02:41 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(335, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:08:19 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(336, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:38:18 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(337, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:39:29 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(338, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:40:06 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(339, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:51:32 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(340, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:52:15 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(341, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:54:47 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(342, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:55:45 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(343, 'uploads/Names.xls', 'Tue, 15 Sep 2020 20:58:43 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(344, 'uploads/Names.xls', 'Tue, 15 Sep 2020 21:00:04 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(345, 'uploads/Names.xls', 'Tue, 15 Sep 2020 21:02:29 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(346, 'uploads/Names.xls', 'Tue, 15 Sep 2020 21:03:27 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(347, 'uploads/Names.xls', 'Tue, 15 Sep 2020 23:38:15 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(348, 'uploads/Names.xls', 'Wed, 16 Sep 2020 01:02:45 +0530', '::1', 'Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Mobile Safari/537.36'),
+(349, 'uploads/Names.xls', 'Wed, 16 Sep 2020 01:04:01 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36'),
+(350, 'uploads/Names.xls', 'Wed, 16 Sep 2020 01:13:04 +0530', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36');
 
 --
 -- Indexes for dumped tables
@@ -310,13 +444,13 @@ ALTER TABLE `table_excel`
 -- AUTO_INCREMENT for table `signup-details`
 --
 ALTER TABLE `signup-details`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `table_excel`
 --
 ALTER TABLE `table_excel`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=351;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
