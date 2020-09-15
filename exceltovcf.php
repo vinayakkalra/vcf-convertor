@@ -1387,8 +1387,11 @@ session_start();
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/jszip.js"></script>
-    <script src="js/xlsx.js"></script>
+    <!-- we can use this perticuler for read xlsx file only start-->
+    <!-- <script src="js/jszip.js"></script>
+    <script src="js/xlsx.js"></script> -->
+    <!-- we can use this perticuler for read xlsx file only end-->
+    <script src="js/xlsx.full.min.js"></script>
     <script>
     $(document).ready(function() {
         var name_user = '';
