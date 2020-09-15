@@ -1,6 +1,7 @@
 <?php
 namespace JeroenDesloovere\VCard;
 use Behat\Transliterator\Transliterator;
+session_start();
 $_SESSION['array_name']="";
 class VCard
 {

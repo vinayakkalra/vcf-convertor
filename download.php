@@ -1,5 +1,6 @@
 <?php
 session_start();
+$c=$_SESSION['array_name'];
 if (!isset($_SESSION['authenticated']))
 {
     //if the value was not set, you redirect the user to your login page
@@ -8,7 +9,6 @@ exit;
     
 }
 else{
-$c=$_SESSION['array_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

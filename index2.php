@@ -80,7 +80,6 @@ $birthday=$value;
       $vcardExport[$i]->contactVcardExportService($complete_array[$i]);              
   }  
   // print_r($_SESSION['array_name']);
-     
     $data['status']=201;  
     echo json_encode($data);    
 }
