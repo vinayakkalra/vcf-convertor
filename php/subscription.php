@@ -7,7 +7,7 @@ if(isset($_POST['num_end'])) {
     echo $row_end;   
     $result = mysqli_query($link, "SELECT `subscription` FROM `signup-details` WHERE `email`='$user_mail'");
     $row=mysqli_fetch_array($result);
-    if($row['subscription']=""){
+    if($row['subscription']==""){
         $data['num_end']=5;
         $data['status'] = 201;
         echo json_encode($data);

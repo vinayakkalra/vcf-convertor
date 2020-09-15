@@ -1774,10 +1774,10 @@ session_start();
 
 /* ------------------------------ testing mode ------------------------------ */
 
-            // for(var j=num_start;j<=num_end;j++){
-            //                 // console.log(json_array[j-1]);
-            //                 all_data[(num_end)-(j)]=json_array[j-1];                
-            //             }; 
+            for(var j=num_start;j<=num_end;j++){
+                            // console.log(json_array[j-1]);
+                            all_data[(num_end)-(j)]=json_array[j-1];                
+                        }; 
 
 /* ---------------------------- testing mode end ---------------------------- */
 
@@ -1821,7 +1821,6 @@ session_start();
                     url: 'php/auth.php',
                     dataType: "json",
                     data: {
-
                     },
                     success: function(data) {
                         console.log(data);
@@ -1834,23 +1833,22 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                         }   
 /* --------------------- data send for to make vcf files start-------------------- */ 
-                        $.ajax({  
-                                                              
-                                type: 'POST',
-                                url: 'php/subscription.php',
-                                data: {
-                                    num_end: num_end
-                                },
-                                success: function(data) {
-                                    console.log(data); 
-                                    num_end=parseInt(data.num_end, 10);
-                                    // console.log(num_end);                
-                                    for(var j=num_start;j<=(num_end);j++){
-                                    // console.log(json_array[j-1]);
-                                    all_data[(num_end)-(j)]=json_array[j-1];                
-                                    }; 
-                                }
-                            });
+                        // $.ajax({  
+                        //         type: 'POST',
+                        //         url: 'php/subscription.php',
+                        //         data: {
+                        //             num_end: num_end
+                        //         },
+                        //         success: function(data) {
+                        //             console.log(data); 
+                        //             num_end=parseInt(data.num_end, 10);
+                        //             // console.log(num_end);                
+                        //             for(var j=num_start;j<=(num_end);j++){
+                        //             // console.log(json_array[j-1]);
+                        //             all_data[(num_end)-(j)]=json_array[j-1];                
+                        //             }; 
+                        //         }
+                        //     });
                         $.ajax({
                                 contentType: "application/json; charset=utf-8",
                                 type: 'POST',
