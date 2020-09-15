@@ -1406,8 +1406,8 @@ session_start();
         var data_value=[];
         var row_start;
         var row_end;  
-        var all_data=[];  
-          
+        var all_data=[];
+        var total_data_length=0;  
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1508,6 +1508,9 @@ session_start();
                     var json_object = JSON.stringify(XL_row_object);
                     
                     // console.log(JSON.parse(json_object));
+                    // console.log(JSON.parse(json_object).length);
+                    total_data_length=(JSON.parse(json_object).length)+1;
+                    console.log(total_data_length);
 
                     //submit step 2 by dekstop
                     $("#submit2_desktop").click(function() {
@@ -1534,6 +1537,30 @@ session_start();
                             $("#last_row").css('border-color', '#C0BBBB');
                             $("#last_row").css('border-width', '1px');
                         }
+
+/* ----------------------------- row bound check ---------------------------- */
+
+                        var row_check_start=parseInt(first_row, 10);
+                        var row_check_end=parseInt(last_row, 10);
+                        if(row_check_start>total_data_length){
+                            $("#first_row").css('border-color', 'red');
+                            $("#first_row").css('border-width', '2px');
+                            error = error + 'first_row';
+                        }else{
+                            $("#first_row").css('border-color', '#C0BBBB');
+                            $("#first_row").css('border-width', '1px');
+                        }
+                        if(row_check_end>total_data_length){
+                            $("#last_row").css('border-color', 'red');
+                            $("#last_row").css('border-width', '2px');
+                            error = error + 'last_row';
+                        }else{
+                            $("#last_row").css('border-color', '#C0BBBB');
+                            $("#last_row").css('border-width', '1px');
+                        }
+
+/* --------------------------- row bound check end -------------------------- */
+
                         if (error == "") {
                             row_start=first_row;
                             row_end=last_row;
@@ -1542,7 +1569,7 @@ session_start();
                                 var sheetName = sheet;
                                 XL_row_object = XLSX.utils.sheet_to_row_object_array(
                                     workbook.Sheets[sheetName]);
-                                json_object = JSON.stringify(XL_row_object);                                
+                                json_object = JSON.stringify(XL_row_object);                    
                                 // console.log(JSON.parse(json_object));
                                 //   console.log(XL_row_object);                            
                                 keys_change = XL_row_object;
@@ -1595,10 +1622,8 @@ session_start();
                         var last_column = $("#last_column_mobile").val();
                         var first_row = $("#first_row_mobile").val();
                         var last_row = $("#last_row_mobile").val();
-                        var show_data = "";
-                        var error = "";
-                            row_start=first_row;
-                            row_end=last_row;
+                        var show_data = "";                        
+                        var error = "";                          
                         if (first_row == "") {
                             $("#first_row_mobile").css('border-color', 'red');
                             $("#first_row_mobile").css('border-width', '2px');
@@ -1615,7 +1640,30 @@ session_start();
                             $("#last_row_mobile").css('border-color', '#C0BBBB');
                             $("#last_row_mobile").css('border-width', '1px');
                         }
+                        /* ----------------------------- row bound check mobile ---------------------------- */
+
+                        var row_check_start=parseInt(first_row, 10);
+                        var row_check_end=parseInt(last_row, 10);
+                        if(row_check_start>total_data_length){
+                            $("#first_row_mobile").css('border-color', 'red');
+                            $("#first_row_mobile").css('border-width', '2px');
+                            error = error + 'first_row';
+                        }else{
+                            $("#first_row_mobile").css('border-color', '#C0BBBB');
+                            $("#first_row_mobile").css('border-width', '1px');
+                        }
+                        if(row_check_end>total_data_length){
+                            $("#last_row_mobile").css('border-color', 'red');
+                            $("#last_row_mobile").css('border-width', '2px');
+                            error = error + 'last_row';
+                        }else{
+                            $("#last_row_mobile").css('border-color', '#C0BBBB');
+                            $("#last_row_mobile").css('border-width', '1px');
+                        }
+/* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
+                            row_start=first_row;
+                            row_end=last_row;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
