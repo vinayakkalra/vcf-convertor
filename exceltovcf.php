@@ -1409,6 +1409,8 @@ session_start();
         var all_data=[];
         var total_data_length=0;  
         var result=[];
+        var num_start=0;
+        var num_end=0;
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1757,8 +1759,8 @@ session_start();
                 data_value[i]=take[data_key[i]];                              
             } 
 /* ----------------------------get  data value to make VCF---------------------------- */
-                var num_start=parseInt(row_start, 10);
-                var num_end=parseInt(row_end, 10);
+                num_start=parseInt(row_start, 10);
+                num_end=parseInt(row_end, 10);
                 var num_raw_data=0;
                 if(num_start>num_end){
                     num_raw_data=num_start;
@@ -1769,10 +1771,15 @@ session_start();
             // for (var i = 1; i <= total_data_come; i++) {
                 // console.log(data_key[i]+":"+data_value[i]+" and "+row_start+" and "+row_end);
             // }
-            for(var j=num_start;j<=num_end;j++){
-                            // console.log(json_array[j-1]);
-                            all_data[(num_end)-(j)]=json_array[j-1];                
-                        }; 
+
+/* ------------------------------ testing mode ------------------------------ */
+
+            // for(var j=num_start;j<=num_end;j++){
+            //                 // console.log(json_array[j-1]);
+            //                 all_data[(num_end)-(j)]=json_array[j-1];                
+            //             }; 
+
+/* ---------------------------- testing mode end ---------------------------- */
 
 /* ------------------------- check the subscription ------------------------- */
 
@@ -1785,7 +1792,7 @@ session_start();
             //         },
             //         success: function(data) { 
             //             console.log(data);                  
-                                               
+                                
                         
             //         }
             //     });
@@ -1825,7 +1832,23 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                         } else {
                             $('#pop_up_desktop').modal('show');
-                        }                    
+                        }   
+/* --------------------- data send for to make vcf files start-------------------- */ 
+                        $.ajax({
+                                contentType: "application/json; charset=utf-8",
+                                type: 'POST',
+                                url: 'php/subscription.php',                   
+                                data: {
+                                    'num_end':num_end
+                                },
+                                success: function(data) {
+                                    console.log(data);                 
+                                    for(var j=num_start;j<=(data.num_end);j++){
+                            // console.log(json_array[j-1]);
+                                    all_data[(data.num_end)-(j)]=json_array[j-1];                
+                                    }; 
+                                }
+                            });
                         $.ajax({
                                 contentType: "application/json; charset=utf-8",
                                 type: 'POST',
@@ -1883,9 +1906,9 @@ session_start();
                 data_value[i]=take[data_key[i]];                              
             } 
 
-/* ----------------------------get  data value to make VCF for mobile---------------------------- */
-                var num_start=parseInt(row_start, 10);
-                var num_end=parseInt(row_end, 10);
+/* ----------------------------get  data value to make VCF for mobile start---------------------------- */
+                num_start=parseInt(row_start, 10);
+                num_end=parseInt(row_end, 10);
                 var num_raw_data=0;
                 if(num_start>num_end){
                     num_raw_data=num_start;
