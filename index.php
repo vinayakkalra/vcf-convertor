@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- css to include style.css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -82,11 +83,11 @@ session_start();
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
-                                        </li>                                       
-                                        <li class="nav-item set_id_one">                                            
                                         </li>
-                                        <li class="nav-item set_id_two">                                            
-                                        </li> 
+                                        <li class="nav-item set_id_one">
+                                        </li>
+                                        <li class="nav-item set_id_two">
+                                        </li>
                                     </ul>
                                 </nav>
 
@@ -124,11 +125,11 @@ session_start();
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="/#our_team">Contact</a>
-                                        </li>                                        
-                                        <li class="nav-item set_id_one">                                            
                                         </li>
-                                        <li class="nav-item set_id_two">                                            
-                                        </li> 
+                                        <li class="nav-item set_id_one">
+                                        </li>
+                                        <li class="nav-item set_id_two">
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -364,7 +365,7 @@ session_start();
             </div>
         </div>
     </div>
-        <!-- -------------------------- popup desktop start hear --------------------------- -->
+    <!-- -------------------------- popup desktop start hear --------------------------- -->
     <!-- Modal -->
     <div class="modal fade" id="pop_up_desktop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
@@ -392,7 +393,7 @@ session_start();
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
-                        <p class="font-small blue-text d-flex justify-content-end mt-3">Forgot <a href="#"
+                        <p class="font-small blue-text d-flex justify-content-end mt-3" id="forgot_password_link">Forgot <a href="#"
                                 class="blue-text ml-1">
                                 Password?</a></p>
                     </div>
@@ -458,7 +459,58 @@ session_start();
                             Sign In</a></p>
                 </div>
             </div>
+            <!-- ------------------------------ Forgot password start ------------------------------ -->
 
+            <div class="modal-content form-elegant" id="forgot_password_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot
+                            Password ?</strong></h3>
+
+                </div>
+                <!--Body-->
+                <form data-name="forgot_password_form" name="forgot_password_form">
+                    <div class="modal-body mx-5">
+                        <div class="alert alert-danger" role="alert" id="alert_id_forgot">
+                        </div>
+                        <div class="alert alert-success" role="alert" id="alert_id_forgot2">
+                        </div>
+                        <!--Body-->
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="Form_email_forgot" class="form-control validate"
+                                placeholder="Your email">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input type="text" id="Form_phone_forgot" class="form-control validate"
+                                placeholder="Mobile number">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass_forgot" class="form-control validate"
+                                placeholder="New password">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass2_forgot" class="form-control validate"
+                                placeholder="Confirm password">
+
+                        </div>
+                        <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="pop_up_forgot">Change Password</button>
+                        </div>
+                    </div>
+                </form>
+                <!--Footer-->
+                <div class="modal-footer mx-5 pt-5 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Go Back to&nbsp;<a id="signin_link_forgot"
+                            class="blue-text ml-1" style="cursor: pointer;">
+                            Log In</a>&nbsp;page</p>
+                </div>
+            </div>
+            <!-- ------------------------------ Forgot password end ------------------------------ -->
             <!--/.Content-->
         </div>
     </div>
@@ -496,31 +548,32 @@ session_start();
                             <span class="header_logo">
                                 <a href="/"><img src="images/zamzar-logo.png"></a>
                             </span>
-                            <span class="toggle_button" onclick="openNav()" style="color: #067aee;width: 100%;text-align: right;">&#9776;</span>
+                            <span class="toggle_button" onclick="openNav()"
+                                style="color: #067aee;width: 100%;text-align: right;">&#9776;</span>
                         </div>
                     </div>
                 </div>
                 <!-- ---------------------------- content start ---------------------------- -->
-            <div class=" d-flex justify-content-center" style="width: 100%;">
+                <div class=" d-flex justify-content-center" style="width: 100%;">
 
-                <div class="container" style="height: 28rem;">
-                    <div  id="navshowtext">
-                        <div class="row ">
-                            <div class="col d-flex justify-content-center">
-                                <h1 class="main_heading text-center">Welcome to The <span>VCF Converter!</span>
-                                </h1>
+                    <div class="container" style="height: 28rem;">
+                        <div id="navshowtext">
+                            <div class="row ">
+                                <div class="col d-flex justify-content-center">
+                                    <h1 class="main_heading text-center">Welcome to The <span>VCF Converter!</span>
+                                    </h1>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="main_heading_paragraph text-center pt-3">#1 Website to convert Excel
-                                    to VCF, VCF to Excel and
-                                    VCF Splitter - 100% Secure</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="main_heading_paragraph text-center pt-3">#1 Website to convert Excel
+                                        to VCF, VCF to Excel and
+                                        VCF Splitter - 100% Secure</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="container">
                     <div class="row pb-5">
                         <div class="col service_type_mobile topset">
@@ -654,8 +707,8 @@ session_start();
                                     target="_blank">
                                     <div class="form-group">
 
-                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3" name="EMAIL"
-                                            placeholder="Your email" type="email"
+                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
+                                            name="EMAIL" placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
@@ -739,8 +792,8 @@ session_start();
     <script src="js/main.js"></script>
 
     <script>
-        $(document).ready(function(){
-             // ------------------------- pop up sign up form ------------------------- //
+    $(document).ready(function() {
+        // ------------------------- pop up sign up form ------------------------- //
         $('#pop_up_signup').on("click", function() {
             var mobile = $("#Form_phone_signup").val();
             var password = $("#Form_pass_signup").val();
@@ -791,10 +844,10 @@ session_start();
                 $("#Form_pass2_signup").css('border-width', '2px');
                 $("#Form_pass_signup").css('border-color', 'red');
                 $("#Form_pass_signup").css('border-width', '2px');
-                alert('Password not match !');
+                // alert('Password not match !');
                 error = error + 'password not matched';
             }
-            if (error == "") {                
+            if (error == "") {
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -810,18 +863,18 @@ session_start();
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_one").html(response);                                   
+                                url: 'php/login_show.php',
+                                success: function(response) {
+                                    $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show2.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_two").html(response);                                   
+                                url: 'php/login_show2.php',
+                                success: function(response) {
+                                    $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
@@ -839,7 +892,7 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
                             $('#alert_id_signup').html(data.error);
-                            alert(data.error);
+                            // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signup').css('display', 'block');
                             $('#alert_id_signup').html(data.error);
@@ -852,7 +905,97 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
+        /* -------------------------- forgot_password functionality start ------------------------- */
+        $('#pop_up_forgot').on("click", function() {
+            var mobile = $("#Form_phone_forgot").val();
+            var password = $("#Form_pass_forgot").val();
+            var con_password = $("#Form_pass2_forgot").val();
+            var email = $("#Form_email_forgot").val();
+            var error = "";
 
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_forgot").css('border-color', 'red');
+                $("#Form_phone_forgot").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_forgot").css('border-color', '#C0BBBB');
+                $("#Form_phone_forgot").css('border-width', '1px');
+            }
+            if (password == "") {
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass_forgot").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');
+                error = error + 'Class';
+            } else {
+                $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass2_forgot").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_forgot").css('border-color', 'red');
+                $("#Form_email_forgot").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_forgot").css('border-color', '#C0BBBB');
+                $("#Form_email_forgot").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                // alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/forgot_password.php',
+                    dataType: "json",
+                    data: {
+                        'mobile': mobile,
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#alert_id_forgot2').css('display', 'block');
+                            $('#alert_id_forgot').css('display', 'none');
+                            $('#alert_id_forgot2').html(data.success);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                            // alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+        /* -------------------------- forgot_password functionality end ------------------------- */
         // ---------------------- step signin form  to download file functionality ---------------------- //
         $('#pop_up_signin').on("click", function() {
             var email = $("#Form_email_signin").val();
@@ -880,7 +1023,7 @@ session_start();
                 $("#Form_email_signin").css('border-color', '#C0BBBB');
                 $("#Form_email_signin").css('border-width', '1px');
             }
-            if (error == "") {                
+            if (error == "") {
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -891,26 +1034,26 @@ session_start();
                     },
                     success: function(data) {
                         console.log(data);
-                        if (data.status == 201) {                            
-                            $('#pop_up_desktop').modal('hide');  
+                        if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_one").html(response);                                   
+                                url: 'php/login_show.php',
+                                success: function(response) {
+                                    $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
                             $.ajax({
                                 type: 'POST',
-                                url: 'php/login_show2.php',                               
-                                success: function(response) {                                  
-                                    $(".set_id_two").html(response);                                   
+                                url: 'php/login_show2.php',
+                                success: function(response) {
+                                    $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            });                           
+                            });
                             window.dataLayer = window.dataLayer || [];
                             window.dataLayer.push({
                                 'event': 'signin-form',
@@ -923,7 +1066,7 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
                             $('#alert_id_signin').html(data.error);
-                            alert(data.error);
+                            // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signin').css('display', 'block');
                             $('#alert_id_signin').html(data.error);
@@ -940,30 +1083,40 @@ session_start();
 
 
         // ---------------- header pop up login and signup button ---------------- //
-        function model_sign_up_sign_in(){
-        $('.pop_up_login_header').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'block');
-            $('#sign_up_page').css('display', 'none');
-        });
-        $('.pop_up_signup_header').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'none');
-            $('#sign_up_page').css('display', 'block');
-        });
-        $('#signin_link').click(function() {
-            $('#sign_in_page').css('display', 'block');
-            $('#sign_up_page').css('display', 'none');
-            // alert("My name is sign in");
-        });
-        $('#signup_link').click(function() {
+        function model_sign_up_sign_in() {
+            $('.pop_up_login_header').click(function() {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+            });
+            $('.pop_up_signup_header').click(function() {
+                $('#pop_up_desktop').modal('show');
+                $('#sign_in_page').css('display', 'none');
+                $('#sign_up_page').css('display', 'block');
+            });
+            $('#signin_link').click(function() {
+                $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
+                // alert("My name is sign in");
+            });
+            $('#signup_link').click(function() {
 
-            $('#sign_up_page').css('display', 'block');
-            $('#sign_in_page').css('display', 'none');
-            // alert("My name is sign up");
-        });
+                $('#sign_up_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
+            $('#forgot_password_link').click(function() {
+
+                $('#forgot_password_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
+            $('#signin_link_forgot').click(function() {
+                $('#forgot_password_page').css('display', 'none');
+                $('#sign_in_page').css('display', 'block');
+            });
         }
-         model_sign_up_sign_in();
+        model_sign_up_sign_in();
         // ---------------- header pop up login and signup button mobile---------------- //
         $('.pop_up_login_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
@@ -976,28 +1129,28 @@ session_start();
             $('#sign_up_page').css('display', 'block');
         });
         /* ------------------------------- logout call ------------------------------ */
-        function logout_signup_signin(){
-        $('.pop_up_logout_header').click(function() {
-            console.log('chanduwa');
-            var logout_var = 'logout';
-            $.ajax({
-                type: 'POST',
-                url: 'php/logout.php',
-                dataType: "json",
-                data: {
-                    'logout_var': logout_var
-                },
-                success: function(data) {
-                    console.log(data);
-                    if (data.status == 201) {                        
-                        window.location.replace(data.url);
-                    } else {
-                        console.log(data.error);
-                        //     alert("problem with query");
+        function logout_signup_signin() {
+            $('.pop_up_logout_header').click(function() {
+                console.log('chanduwa');
+                var logout_var = 'logout';
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/logout.php',
+                    dataType: "json",
+                    data: {
+                        'logout_var': logout_var
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            window.location.replace(data.url);
+                        } else {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        }
                     }
-                }
+                });
             });
-        });
         }
         logout_signup_signin();
         /* ------------------------------- logout call mobile------------------------------ */
@@ -1012,7 +1165,7 @@ session_start();
                 },
                 success: function(data) {
                     console.log(data);
-                    if (data.status == 201) {                       
+                    if (data.status == 201) {
                         window.location.replace(data.url);
                     } else {
                         console.log(data.error);
@@ -1023,8 +1176,8 @@ session_start();
         });
         $.ajax({
             type: 'POST',
-            url: 'php/login_show.php',            
-            success: function(response) {               
+            url: 'php/login_show.php',
+            success: function(response) {
                 // console.log(response);
                 $(".set_id_one").html(response);
                 model_sign_up_sign_in();
@@ -1032,15 +1185,15 @@ session_start();
             }
         });
         $.ajax({
-                type: 'POST',
-                url: 'php/login_show2.php',                               
-                success: function(response) {                                  
-                    $(".set_id_two").html(response);                                   
-                    model_sign_up_sign_in();
-                    logout_signup_signin();
-                }
-            });
+            type: 'POST',
+            url: 'php/login_show2.php',
+            success: function(response) {
+                $(".set_id_two").html(response);
+                model_sign_up_sign_in();
+                logout_signup_signin();
+            }
         });
+    });
     </script>
 </body>
 

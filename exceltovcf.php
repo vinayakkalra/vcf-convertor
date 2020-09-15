@@ -714,13 +714,14 @@ session_start();
         aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
         <div class="modal-dialog modal-dialog-centered" role="document">
 
+<!-- --------------------------- sign_in start here --------------------------- -->
+
             <!--Content-->
             <div class="modal-content form-elegant" id="sign_in_page">
                 <!--Header-->
                 <div class="modal-header text-center">
                     <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
                             In</strong></h3>
-
                 </div>
                 <!--Body-->
                 <div class="modal-body mx-5">
@@ -736,7 +737,7 @@ session_start();
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
-                        <p class="font-small blue-text d-flex justify-content-end mt-3">Forgot <a href="#"
+                        <p class="font-small blue-text d-flex justify-content-end mt-3" id="forgot_password_link">Forgot <a href="#"
                                 class="blue-text ml-1">
                                 Password?</a></p>
                     </div>
@@ -753,6 +754,8 @@ session_start();
                             Sign Up</a></p>
                 </div>
             </div>
+<!-- --------------------------- sign_in start end --------------------------- -->
+<!-- ------------------------------ Sign_up_start ----------------------------- -->
 
             <div class="modal-content form-elegant" id="sign_up_page">
                 <!--Header-->
@@ -802,7 +805,58 @@ session_start();
                             Sign In</a></p>
                 </div>
             </div>
+<!-- ------------------------------ Sign_up_start end----------------------------- -->
+<!-- ------------------------------ Forgot password start ------------------------------ -->
 
+            <div class="modal-content form-elegant" id="forgot_password_page">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot Password ?</strong></h3>
+
+                </div>
+                <!--Body-->
+                <form data-name="forgot_password_form" name="forgot_password_form">
+                    <div class="modal-body mx-5">
+                        <div class="alert alert-danger" role="alert" id="alert_id_forgot">
+                        </div>
+                        <div class="alert alert-success" role="alert" id="alert_id_forgot2">
+                        </div>
+                        <!--Body-->
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="Form_email_forgot" class="form-control validate"
+                                placeholder="Your email">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input type="text" id="Form_phone_forgot" class="form-control validate"
+                                placeholder="Mobile number">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass_forgot" class="form-control validate"
+                                placeholder="New password">
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass2_forgot" class="form-control validate"
+                                placeholder="Confirm password">
+
+                        </div>
+                        <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="pop_up_forgot">Change Password</button>
+                        </div>
+                    </div>
+                </form>
+                <!--Footer-->
+                <div class="modal-footer mx-5 pt-5 pb-5">
+                    <p class="font-small grey-text d-flex justify-content-end">Go Back to &nbsp;<a id="signin_link_forgot"
+                            class="blue-text ml-1" style="cursor: pointer;">
+                            Log In </a> &nbsp;page</p>
+                </div>
+            </div>
+<!-- ------------------------------ Forgot password end ------------------------------ -->
             <!--/.Content-->
         </div>
     </div>
@@ -2005,7 +2059,7 @@ session_start();
                 $("#Form_pass2_signup").css('border-width', '2px');
                 $("#Form_pass_signup").css('border-color', 'red');
                 $("#Form_pass_signup").css('border-width', '2px');
-                alert('Password not match !');
+                // alert('Password not match !');
                 error = error + 'password not matched';
             }
             if (error == "") {
@@ -2057,7 +2111,7 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
                             $('#alert_id_signup').html(data.error);
-                            alert(data.error);
+                            // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signup').css('display', 'block');
                             $('#alert_id_signup').html(data.error);
@@ -2071,7 +2125,99 @@ session_start();
             }
         });
 
-        // ---------------------- step signin form  to download file functionality ---------------------- //
+/* -------------------------- forgot_password functionality start ------------------------- */
+        $('#pop_up_forgot').on("click", function() {
+                    var mobile = $("#Form_phone_forgot").val();
+                    var password = $("#Form_pass_forgot").val();
+                    var con_password = $("#Form_pass2_forgot").val();
+                    var email = $("#Form_email_forgot").val();
+                    var error = "";            
+
+                    function validateEmail(email) {
+                        var re =
+                            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        return re.test(String(email).toLowerCase());
+                    }
+                    if (mobile == "") {
+                        $("#Form_phone_forgot").css('border-color', 'red');
+                        $("#Form_phone_forgot").css('border-width', '2px');
+                        error = error + 'mobile';
+                    } else {
+                        $("#Form_phone_forgot").css('border-color', '#C0BBBB');
+                        $("#Form_phone_forgot").css('border-width', '1px');
+                    }
+                    if (password == "") {
+                        $("#Form_pass_forgot").css('border-color', 'red');
+                        $("#Form_pass_forgot").css('border-width', '2px');
+                        error = error + 'password';
+                    } else {
+                        $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                        $("#Form_pass_forgot").css('border-width', '1px');
+                    }
+                    if (con_password == "") {
+                        $("#Form_pass2_forgot").css('border-color', 'red');
+                        $("#Form_pass2_forgot").css('border-width', '2px');
+                        error = error + 'Class';
+                    } else {
+                        $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
+                        $("#Form_pass2_forgot").css('border-width', '1px');
+                    }
+                    if (!validateEmail(email)) {
+                        $("#Form_email_forgot").css('border-color', 'red');
+                        $("#Form_email_forgot").css('border-width', '2px');
+                        error = error + 'email';
+                    } else {
+                        $("#Form_email_forgot").css('border-color', '#C0BBBB');
+                        $("#Form_email_forgot").css('border-width', '1px');
+                    }
+                    if (password != con_password) {
+                        $("#Form_pass2_forgot").css('border-color', 'red');
+                        $("#Form_pass2_forgot").css('border-width', '2px');
+                        $("#Form_pass_forgot").css('border-color', 'red');
+                        $("#Form_pass_forgot").css('border-width', '2px');
+                        // alert('Password not match !');
+                        error = error + 'password not matched';
+                    }
+                    if (error == "") {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/forgot_password.php',
+                            dataType: "json",
+                            data: {
+                                'mobile': mobile,
+                                'password': password,
+                                'email': email
+                            },
+                            success: function(data) {
+                                console.log(data);
+                                if (data.status == 201) {                                   
+                                    $('#alert_id_forgot2').css('display', 'block');
+                                    $('#alert_id_forgot').css('display', 'none');
+                                    $('#alert_id_forgot2').html(data.success);
+                                } else if (data.status == 601) {
+                                    console.log(data.error);
+                                    //     alert("problem with query");
+                                } else if (data.status == 301) {
+                                    $('#alert_id_forgot').css('display', 'block');
+                                    $('#alert_id_forgot2').css('display', 'none');
+                                    $('#alert_id_forgot').html(data.error);
+                                    // alert(data.error);
+                                } else if (data.status == 302) {
+                                    $('#alert_id_forgot').css('display', 'block');
+                                    $('#alert_id_forgot2').css('display', 'none');
+                                    $('#alert_id_forgot').html(data.error);
+                                } else {
+                                    //console.log(data.error)
+                                }
+                            }
+                        });
+                    } else {
+                        // alert('There are error in the form. Please check your submissions');
+                    }
+                });
+/* -------------------------- forgot_password functionality end ------------------------- */
+
+        // ---------------------- step signin form  to download file functionality ----------//
         $('#pop_up_signin').on("click", function() {
             var email = $("#Form_email_signin").val();
             var password = $("#Form_pass_signin").val();
@@ -2146,7 +2292,7 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
                             $('#alert_id_signin').html(data.error);
-                            alert(data.error);
+                            // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signin').css('display', 'block');
                             $('#alert_id_signin').html(data.error);
@@ -2181,6 +2327,16 @@ session_start();
                 $('#sign_up_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
                 // alert("My name is sign up");
+            });
+            $('#forgot_password_link').click(function() {
+
+                $('#forgot_password_page').css('display', 'block');
+                $('#sign_in_page').css('display', 'none');
+                // alert("My name is sign up");
+            });
+            $('#signin_link_forgot').click(function(){
+                $('#forgot_password_page').css('display', 'none');
+                $('#sign_in_page').css('display', 'block');
             });
         }
         model_sign_up_sign_in();
