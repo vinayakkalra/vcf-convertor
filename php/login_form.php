@@ -1,8 +1,11 @@
 <?php
+require_once 'link.php';
 require_once 'PHPMailer.php';
 require_once 'Exception.php';
 require_once 'SMTP.php';
-require_once 'link.php';
+if (mysqli_connect_error()){
+    die("<script>console.log('There is a problem with mysql connection')</script>");
+}
 
 if(isset($_POST['email'])){
     $data = array();  
@@ -10,7 +13,6 @@ if(isset($_POST['email'])){
     $from_browser = $_SERVER['HTTP_USER_AGENT'];
     date_default_timezone_set("Asia/Calcutta");
     $date_now = date("r");
-
     $email = mysqli_real_escape_string($link, $_POST['email']) ;
     $password = mysqli_real_escape_string($link, $_POST['password']) ;
     $hashed_password = hash("sha512", $password);
