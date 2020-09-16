@@ -1,6 +1,8 @@
 <?php
 require_once 'link.php';
-
+require_once 'PHPMailer.php';
+require_once 'Exception.php';
+require_once 'SMTP.php';
 if (mysqli_connect_error()){
     die("<script>console.log('There is a problem with mysql connection')</script>");
 }
@@ -71,7 +73,7 @@ if(isset($_POST['email'])){
         $mail->Body    = $message_body;
         $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
 
-        if(!$mail->Send()) {
+        if($mail->Send()) {
 
                 $data['status'] = 201;
                 $data['id'] = $id;

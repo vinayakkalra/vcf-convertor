@@ -1,5 +1,7 @@
 <?php
-
+require_once 'PHPMailer.php';
+require_once 'Exception.php';
+require_once 'SMTP.php';
 require_once 'link.php';
 
 if(isset($_POST['email'])){
@@ -38,51 +40,48 @@ if(isset($_POST['email'])){
             // $query = "INSERT INTO `signup-details`(`user_activation_code`,`user_otp`) VALUES ('$user_activation_code','$user_otp')";
             $query = "UPDATE `signup-details` SET `user_activation_code` = '$user_activation_code' `user_otp`='$user_otp' WHERE `email` ='$email'";
             $statement = $link->prepare($query);
-
             if($statement->execute())
             {
-/* ---------------------- email send to user given email id --------------------- */
-            require 'class.phpmailer.php';
-			$mail = new PHPMailer;
-			$mail->IsSMTP();
-			$mail->Host = 'smtpout.secureserver.net';
-			$mail->Port = '80';
-			$mail->SMTPAuth = true;
-			$mail->Username = 'xxxxxxxx';
-			$mail->Password = 'xxxxxxxx';
-			$mail->SMTPSecure = '';
-			$mail->From = 'chandan.mca.2019@gmail.com';
-			$mail->FromName = 'VCF Converter';
-			$mail->AddAddress($email);
-			$mail->WordWrap = 50;
-			$mail->IsHTML(true);
-			$mail->Subject = 'Verification code for Verify Your Email Address';
+            /* ---------------------- email send to user given email id --------------------- */
+            $err = array();
 
-			$message_body = '
-			<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
-			<p>Sincerely,</p>
-			';
-			$mail->Body = $message_body;
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+            $mail->isSMTP();  
+            $mail->Host = 'localhost';
+            $mail->SMTPAuth = false;
+            $mail->SMTPAutoTLS = false;
+            $mail->Port = 25;
+            $mail->From = 'chandan.mca.2019@gmail.com';
+            $mail->FromName = "VCF Converter";	 // name is optional
+            $mail->AddAddress($email);     
+            $mail->AddReplyTo("sbitosbi@gmail.com", "OTP Verifiaction | VCF Converter");
 
-			if($mail->Send())
-			{
+            $mail->WordWrap = 50;  // set word wrap to 50 characters
+            $mail->IsHTML(true); // set email format to HTML
 
-                $data['status'] = 601;
-                $data['error'] = 'User not verified';
-                $data['id'] = $id;
-                $data['email']=$email;        
-                echo json_encode($data);
-                session_start();        
-                $_SESSION['first_char']=ucfirst($email[0]);
-                $_SESSION['user_email']=$email;      
-                $_SESSION['authenticated']=true;
-                $_SESSION['user_activation_code']=$user_activation_code;				
-			}
-			else
-			{
-				$data['error'] = $mail->ErrorInfo;
+            $mail->Subject = 'Verification code for Verify Your Email Address';
+            $message_body = '<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
+                <p>Sincerely,</p>';
+            $mail->Body    = $message_body;
+            $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+            if($mail->Send()) {
+
+                    $data['status'] = 201;
+                    $data['id'] = $id;
+                    $data['email']=$email;        
+                    echo json_encode($data);
+                    session_start();        
+                    $_SESSION['first_char']=ucfirst($email[0]);
+                    $_SESSION['user_email']=$email;      
+                    $_SESSION['authenticated']=true;
+                    $_SESSION['user_activation_code']=$user_activation_code;	
+            
             }
-/* ---------------------- email send to user given email id end--------------------- */
+            else{
+                $data['error'] = $mail->ErrorInfo;
+            }
+            /* ---------------------- email send to user given email id end--------------------- */
     }
     else { 
         $data['status'] = 301;
