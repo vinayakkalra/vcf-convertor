@@ -1111,7 +1111,7 @@ html [type="button"],
 }
 
 #alert_id_signin,
-#alert_id_signup,#alert_id_forgot,#alert_id_forgot2,#sign_up_Otp{
+#alert_id_signup,#alert_id_forgot,#alert_id_forgot2,#sign_up_Otp,#alert_id_otp{
     display: none;
 }
 
