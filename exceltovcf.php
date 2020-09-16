@@ -142,6 +142,11 @@ session_start();
     .hr_tag_style {
         width: 70%;
     }
+    .alert-danger {
+        color: #721c24;
+     background-color: #fff !important;
+     border-color: #fff !important;
+    }
     </style>
 </head>
 
@@ -2264,6 +2269,7 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show.php',
+                                data:{},
                                 success: function(response) {
                                     $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
@@ -2273,6 +2279,7 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show2.php',
+                                data:{},
                                 success: function(response) {
                                     $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
@@ -2294,7 +2301,7 @@ session_start();
                             console.log(data.error);
                             user_id = data.id;
                             user_email=data.email;
-                            $('#sign_in_page').css('display', 'none');
+                            $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
                             //     alert("problem with query");
@@ -2339,9 +2346,11 @@ session_start();
                     success: function(data) {
                             console.log(data);
                             if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
                             $.ajax({
                             type: 'POST',
                             url: 'php/login_show.php',
+                            data:{},
                             success: function(response) {
                                     $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
@@ -2351,23 +2360,17 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show2.php',
+                                data:{},
                                 success: function(response) {
                                     $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            });
-                            $('#pop_up_desktop').modal('hide');
+                            });                            
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                         .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                            // window.dataLayer = window.dataLayer || [];
-                            // window.dataLayer.push({
-                            // 'event': 'signup-form',
-                            // 'mobile': mobile,
-                            // 'password': password,
-                            // 'email': email
-                            // });
+                        
                         }
                         else if (data.status == 601) {
                             console.log(data.error);
@@ -2443,7 +2446,7 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            window.location.replace(data.url);
+                            window.location.replace('/');                          
                         } else {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -2456,6 +2459,7 @@ session_start();
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',
+            data:{},
             success: function(response) {
                 // console.log(response);
                 $(".set_id_one").html(response);
@@ -2466,6 +2470,7 @@ session_start();
         $.ajax({
             type: 'POST',
             url: 'php/login_show2.php',
+            data:{},
             success: function(response) {
                 $(".set_id_two").html(response);
                 model_sign_up_sign_in();

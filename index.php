@@ -47,6 +47,11 @@ session_start();
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
+        .alert-danger {
+        color: #721c24;
+     background-color: #fff !important;
+     border-color: #fff !important;
+    }
     </style>
 </head>
 
@@ -891,7 +896,7 @@ session_start();
                         if (data.status == 201) {
                             user_id = data.id;
                             user_email=data.email;
-                            $('#sign_in_page').css('display', 'none');
+                            $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
                             
                         } else if (data.status == 601) {
@@ -933,11 +938,12 @@ session_start();
                     dataType: "json",
                     data: {                                    
                         'email': user_email,
-                        'otp':otp_row
+                        otp: otp_row
                     },
                     success: function(data) {
                             console.log(data);
                             if (data.status == 201) {
+                            $('#pop_up_desktop').modal('hide');
                             $.ajax({
                             type: 'POST',
                             url: 'php/login_show.php',
@@ -955,18 +961,11 @@ session_start();
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            });
-                            $('#pop_up_desktop').modal('hide');
+                            });                            
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                         .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                            // window.dataLayer = window.dataLayer || [];
-                            // window.dataLayer.push({
-                            // 'event': 'signup-form',
-                            // 'mobile': mobile,
-                            // 'password': password,
-                            // 'email': email
-                            // });
+                        
                         }
                         else if (data.status == 601) {
                             console.log(data.error);
@@ -1079,7 +1078,6 @@ session_start();
             var email = $("#Form_email_signin").val();
             var password = $("#Form_pass_signin").val();
             var error = "";
-
             function validateEmail(email) {
                 var re =
                     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -1102,6 +1100,7 @@ session_start();
                 $("#Form_email_signin").css('border-width', '1px');
             }
             if (error == "") {
+                uploaded_user_name = email;
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -1113,11 +1112,11 @@ session_start();
                     },
                     success: function(data) {
                         console.log(data);
-                        if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');
+                        if (data.status == 201) {                            
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show.php',
+                                data:{},
                                 success: function(response) {
                                     $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
@@ -1127,20 +1126,19 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show2.php',
+                                data:{},
                                 success: function(response) {
                                     $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
                             });
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                'event': 'signin-form',
-                                'password': password,
-                                'email': email
-                            });
+                            $('#pop_up_desktop').modal('hide');                            
                         } else if (data.status == 601) {
                             console.log(data.error);
+                            user_email=data.email;
+                            $('#sign_in_page').css('display', 'none');
+                            $('#sign_up_Otp').css('display', 'block');
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
@@ -1221,7 +1219,7 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            window.location.replace(data.url);
+                            window.location.replace('/');   
                         } else {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -1232,29 +1230,30 @@ session_start();
         }
         logout_signup_signin();
         /* ------------------------------- logout call mobile------------------------------ */
-        $('.popup_logout_mobile').click(function() {
-            var logout_var = 'logout';
-            $.ajax({
-                type: 'POST',
-                url: 'php/logout.php',
-                dataType: "json",
-                data: {
-                    'logout_var': logout_var
-                },
-                success: function(data) {
-                    console.log(data);
-                    if (data.status == 201) {
-                        window.location.replace(data.url);
-                    } else {
-                        console.log(data.error);
-                        //     alert("problem with query");
-                    }
-                }
-            });
-        });
+        // $('.popup_logout_mobile').click(function() {
+        //     var logout_var = 'logout';
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: 'php/logout.php',
+        //         dataType: "json",
+        //         data: {
+        //             'logout_var': logout_var
+        //         },
+        //         success: function(data) {
+        //             console.log(data);
+        //             if (data.status == 201) {
+        //                 window.location.replace('/');   
+        //             } else {
+        //                 console.log(data.error);
+        //                 //     alert("problem with query");
+        //             }
+        //         }
+        //     });
+        // });
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',
+            data:{},
             success: function(response) {
                 // console.log(response);
                 $(".set_id_one").html(response);
@@ -1265,6 +1264,7 @@ session_start();
         $.ajax({
             type: 'POST',
             url: 'php/login_show2.php',
+            data:{},
             success: function(response) {
                 $(".set_id_two").html(response);
                 model_sign_up_sign_in();

@@ -5,7 +5,6 @@ require_once 'SMTP.php';
 require_once 'link.php';
 
 if(isset($_POST['email'])){
-
     $data = array();  
     $from_ip = $_SERVER['REMOTE_ADDR'];
     $from_browser = $_SERVER['HTTP_USER_AGENT'];
@@ -19,8 +18,8 @@ if(isset($_POST['email'])){
     $user_activation_code = md5(rand());
     $user_otp = rand(100000, 999999);
 /* ---------------------------- otp generate end ---------------------------- */
-    $result = mysqli_query($link, "SELECT * FROM `signup-details` WHERE `email` = '$email' AND `password` = '$hashed_password' ");
-
+    $query ="SELECT * FROM `signup-details` WHERE `email` = '$email' AND `password` = '$hashed_password'";
+    $result = mysqli_query($link,$query);
     if (mysqli_num_rows($result) !=0 ) {
         $row=mysqli_fetch_array($result);        
             if($row['user_email_status']=="verified")
@@ -36,12 +35,10 @@ if(isset($_POST['email'])){
                 $_SESSION['user_id'] = $row['id'];
                 echo json_encode($data); 
                 }
-            }else{
-            // $query = "INSERT INTO `signup-details`(`user_activation_code`,`user_otp`) VALUES ('$user_activation_code','$user_otp')";
-            $query = "UPDATE `signup-details` SET `user_activation_code` = '$user_activation_code' `user_otp`='$user_otp' WHERE `email` ='$email'";
-            $statement = $link->prepare($query);
-            if($statement->execute())
-            {
+            else{
+            $query2 = "UPDATE `signup-details` SET `user_otp`='$user_otp' WHERE `email` ='$email'";
+            if($result = mysqli_query($link, $query2))  
+            {            
             /* ---------------------- email send to user given email id --------------------- */
             $err = array();
 
@@ -67,8 +64,7 @@ if(isset($_POST['email'])){
 
             if($mail->Send()) {
 
-                    $data['status'] = 201;
-                    $data['id'] = $id;
+                    $data['status'] = 601;
                     $data['email']=$email;        
                     echo json_encode($data);
                     session_start();        
@@ -83,13 +79,12 @@ if(isset($_POST['email'])){
             }
             /* ---------------------- email send to user given email id end--------------------- */
     }
-    else { 
-        $data['status'] = 301;
-        $data['error'] = 'Invalid Email or Password';
-        echo json_encode($data);
-    }
+    
 
+}else { 
+    $data['status'] = 301;
+    $data['error'] = 'email or password not found';
+    echo json_encode($data);
 }
 }
-
 ?>
