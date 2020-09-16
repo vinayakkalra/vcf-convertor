@@ -882,9 +882,9 @@ session_start();
                     url: 'php/signup_form.php',
                     dataType: "json",
                     data: {
+                        'email': email,
                         'mobile': mobile,
-                        'password': password,
-                        'email': email
+                        'password': password
                     },
                     success: function(data) {
                         console.log(data);
@@ -916,6 +916,7 @@ session_start();
         /* ------------------------- otp verification start ------------------------- */
 
         $('#pop_up_otp').click(function(){
+            var error="";
             var otp_row = $("#Form_pass_Otp").val();
             if (otp_row == "") {
                 $("#Form_pass_Otp").css('border-color', 'red');
@@ -1040,9 +1041,10 @@ session_start();
                     url: 'php/forgot_password.php',
                     dataType: "json",
                     data: {
+                        'email': email,
                         'mobile': mobile,
-                        'password': password,
-                        'email': email
+                        'password': password
+                        
                     },
                     success: function(data) {
                         console.log(data);
@@ -1105,8 +1107,9 @@ session_start();
                     url: 'php/login_form.php',
                     dataType: "json",
                     data: {
+                        'email': email,
                         'password': password,
-                        'email': email
+                        
                     },
                     success: function(data) {
                         console.log(data);
@@ -1206,8 +1209,7 @@ session_start();
         });
         /* ------------------------------- logout call ------------------------------ */
         function logout_signup_signin() {
-            $('.pop_up_logout_header').click(function() {
-                console.log('chanduwa');
+            $('.pop_up_logout_header').click(function() {               
                 var logout_var = 'logout';
                 $.ajax({
                     type: 'POST',

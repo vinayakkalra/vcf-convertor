@@ -2254,8 +2254,8 @@ session_start();
                     url: 'php/login_form.php',
                     dataType: "json",
                     data: {
-                        'password': password,
-                        'email': email
+                        'email': email,
+                        'password': password
                     },
                     success: function(data) {
                         // console.log(data);
@@ -2284,12 +2284,12 @@ session_start();
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                'event': 'signin-form',
-                                'password': password,
-                                'email': email
-                            });
+                            // window.dataLayer = window.dataLayer || [];
+                            // window.dataLayer.push({
+                            //     'event': 'signin-form',
+                            //     'password': password,
+                            //     'email': email
+                            // });
                         } else if (data.status == 601) {
                             console.log(data.error);
                             user_id = data.id;
@@ -2317,6 +2317,7 @@ session_start();
 /* ------------------------- otp verification start ------------------------- */
 
         $('#pop_up_otp').click(function(){
+            var error="";
             var otp_row = $("#Form_pass_Otp").val();
             if (otp_row == "") {
                 $("#Form_pass_Otp").css('border-color', 'red');
