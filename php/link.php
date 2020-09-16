@@ -1,7 +1,7 @@
 <?php
 //localhost server
 // $link = mysqli_connect("localhost", "root", "", "vcfconverter");
-// live server
+// test server
 $link = mysqli_connect("localhost", "vcf_conv", "lvkMcrlVCqCV", "test_vcf");
 
 if (mysqli_connect_error()){
