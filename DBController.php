@@ -1,10 +1,16 @@
 <?php
 class DBController {
-	private $host = "localhost";
-	private $user = "root";
-	private $password = "";
-	private $database = "vcf_database";
-	private $conn;
+	// private $host = "localhost";
+	// private $user = "root";
+	// private $password = "";
+	// private $database = "vcf_database";
+    // private $conn;
+    //live server
+    private $host = "localhost";
+	private $user = "vcf_conv";
+	private $password = "lvkMcrlVCqCV";
+	private $database = "test_vcf";
+    private $conn;
 	
     function __construct() {
         $this->conn = $this->connectDB();

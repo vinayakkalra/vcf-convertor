@@ -15,7 +15,14 @@ if(isset($_POST['email'])){
     $email = mysqli_real_escape_string($link, $_POST['email']) ;
     $password = mysqli_real_escape_string($link, $_POST['password']) ;
     $mobile = mysqli_real_escape_string($link, $_POST['mobile']) ;
-    $hashed_password = hash("sha512", $password); 
+    $hashed_password = hash("sha512", $password);
+
+/* ------------------------------ otp generate ------------------------------ */
+        $user_activation_code = md5(rand());
+        $user_otp = rand(100000, 999999);
+        $user_email_status=	'not verified';
+/* ---------------------------- otp generate end ---------------------------- */
+
     if($mobile == ""){
         $mobile = 0;
     }
@@ -38,16 +45,52 @@ if(isset($_POST['email'])){
         echo json_encode($data);
     }    
     else{
-        $query = "INSERT INTO `signup-details`(`id`,`email`,`mobile`,`password`,`time`,`from_ip`,`from_browser`) VALUES ($id,'$email','$mobile','$hashed_password','$date_now','$from_ip', '$from_browser')";
-        if($result = mysqli_query($link, $query)) {   
-    $data['status'] = 201;
-        $data['id'] = $id;
-        $data['email']=$email;        
-        echo json_encode($data);
-        session_start();
-        $_SESSION['first_char']=ucfirst($email[0]);
-        $_SESSION['user_email']=$email;      
-        $_SESSION['authenticated']=true;
+        $query = "INSERT INTO `signup-details`(`id`,`email`,`mobile`,`password`,`user_activation_code`,`user_otp`,`user_email_status`,`time`,`from_ip`,`from_browser`) VALUES ($id,'$email','$mobile','$hashed_password','$user_activation_code','$user_otp','$user_email_status','$date_now','$from_ip', '$from_browser')";
+        if($result = mysqli_query($link, $query)) { 
+
+/* ---------------------- email send to user given email id --------------------- */
+
+            require 'class.phpmailer.php';
+			$mail = new PHPMailer;
+			$mail->IsSMTP();
+			$mail->Host = 'smtpout.secureserver.net';
+			$mail->Port = '80';
+			$mail->SMTPAuth = true;
+			$mail->Username = 'xxxxxxxx';
+			$mail->Password = 'xxxxxxxx';
+			$mail->SMTPSecure = '';
+			$mail->From = 'chandan.mca.2019@gmail.com';
+			$mail->FromName = 'VCF Converter';
+			$mail->AddAddress($email);
+			$mail->WordWrap = 50;
+			$mail->IsHTML(true);
+			$mail->Subject = 'Verification code for Verify Your Email Address';
+
+			$message_body = '
+			<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
+			<p>Sincerely,</p>
+			';
+			$mail->Body = $message_body;
+
+			if($mail->Send())
+			{
+
+                $data['status'] = 201;
+                $data['id'] = $id;
+                $data['email']=$email;        
+                echo json_encode($data);
+                session_start();
+        
+                $_SESSION['first_char']=ucfirst($email[0]);
+                $_SESSION['user_email']=$email;      
+                $_SESSION['authenticated']=true;
+                $_SESSION['user_activation_code']=$user_activation_code;				
+			}
+			else
+			{
+				$data['error'] = $mail->ErrorInfo;
+            }
+/* ---------------------- email send to user given email id end--------------------- */
         }
     else  
     {  

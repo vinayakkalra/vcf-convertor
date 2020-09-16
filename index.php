@@ -393,8 +393,8 @@ session_start();
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
-                        <p class="font-small blue-text d-flex justify-content-end mt-3" id="forgot_password_link">Forgot <a href="#"
-                                class="blue-text ml-1">
+                        <p class="font-small blue-text d-flex justify-content-end mt-3"><a href="#"
+                                class="blue-text ml-1"  id="forgot_password_link">Forgot 
                                 Password?</a></p>
                     </div>
                     <div class="text-center mb-5">
@@ -459,6 +459,35 @@ session_start();
                             Sign In</a></p>
                 </div>
             </div>
+            <!-- ------------------------------- verify otp start------------------------------- -->
+            <div class="modal-content form-elegant" id="sign_up_Otp">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Email Verification</strong></h3>                
+                </div>
+                <p class="d-flex justify-content-center">Please Check Your Email for Verification Code</p>
+                <!--Body-->
+                <form data-name="otp_form" name="otp-form">
+                    <div class="modal-body mx-5">
+                        <div class="alert alert-danger" role="alert" id="alert_id_Otp">
+                        </div>
+                        <!--Body-->                      
+                        
+                        <div class="md-form mb-5">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <input type="password" id="Form_pass_Otp" class="form-control validate"
+                                placeholder="Enter OTP Number">
+                        </div>
+                        
+                        <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="pop_up_otp">Verify OTP</button>
+                        </div>
+                    </div>
+                </form>
+                <!--Footer-->                
+            </div>
+<!-- ------------------------------- verify otp end------------------------------- -->
             <!-- ------------------------------ Forgot password start ------------------------------ -->
 
             <div class="modal-content form-elegant" id="forgot_password_page">
@@ -860,32 +889,11 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');
-                            $.ajax({
-                                type: 'POST',
-                                url: 'php/login_show.php',
-                                success: function(response) {
-                                    $(".set_id_one").html(response);
-                                    model_sign_up_sign_in();
-                                    logout_signup_signin();
-                                }
-                            });
-                            $.ajax({
-                                type: 'POST',
-                                url: 'php/login_show2.php',
-                                success: function(response) {
-                                    $(".set_id_two").html(response);
-                                    model_sign_up_sign_in();
-                                    logout_signup_signin();
-                                }
-                            });
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                'event': 'signup-form',
-                                'mobile': mobile,
-                                'password': password,
-                                'email': email
-                            });
+                            user_id = data.id;
+                            user_email=data.email;
+                            $('#sign_in_page').css('display', 'none');
+                            $('#sign_up_Otp').css('display', 'block');
+                            
                         } else if (data.status == 601) {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -905,6 +913,74 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
+        /* ------------------------- otp verification start ------------------------- */
+
+        $('#pop_up_otp').click(function(){
+            var otp_row = $("#Form_pass_Otp").val();
+            if (otp_row == "") {
+                $("#Form_pass_Otp").css('border-color', 'red');
+                $("#Form_pass_Otp").css('border-width', '2px');
+                error = error + 'otp_row';
+            } else {
+                $("#Form_pass_Otp").css('border-color', '#C0BBBB');
+                $("#Form_pass_Otp").css('border-width', '1px');
+            }
+            if (error == "") {
+            $.ajax({
+                    type: 'POST',
+                    url: 'php/email_verify.php',
+                    dataType: "json",
+                    data: {                                    
+                        'email': user_email,
+                        'otp':otp_row
+                    },
+                    success: function(data) {
+                            console.log(data);
+                            if (data.status == 201) {
+                            $.ajax({
+                            type: 'POST',
+                            url: 'php/login_show.php',
+                            success: function(response) {
+                                    $(".set_id_one").html(response);
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/login_show2.php',
+                                success: function(response) {
+                                    $(".set_id_two").html(response);
+                                    model_sign_up_sign_in();
+                                    logout_signup_signin();
+                                }
+                            });
+                            $('#pop_up_desktop').modal('hide');
+                            var file_first_char = (uploaded_user_name.substring(0, 1))
+                        .toUpperCase();
+                            $('.show_user_name').attr('data-letters', file_first_char);
+                            // window.dataLayer = window.dataLayer || [];
+                            // window.dataLayer.push({
+                            // 'event': 'signup-form',
+                            // 'mobile': mobile,
+                            // 'password': password,
+                            // 'email': email
+                            // });
+                        }
+                        else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        }else{
+                                //     alert("problem with query");
+                        }
+                    }
+                });
+            }
+            else{
+
+            }
+        });
+/* ------------------------- otp verification end ------------------------- */
         /* -------------------------- forgot_password functionality start ------------------------- */
         $('#pop_up_forgot').on("click", function() {
             var mobile = $("#Form_phone_forgot").val();
