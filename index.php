@@ -52,6 +52,9 @@ session_start();
      background-color: #fff !important;
      border-color: #fff !important;
     }
+    #alert_id_Otp{
+        display:none;
+    }
     </style>
 </head>
 
@@ -753,7 +756,7 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col footer_text d-flex justify-content-center">
-                                <div class="social">
+                                <div class="social_mobile social">
                                     <a href="#" title="Like Zamzar on Facebook" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
                                             data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
@@ -892,7 +895,7 @@ session_start();
                         'password': password
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
                             user_email=data.email;
@@ -941,7 +944,7 @@ session_start();
                         otp: otp_row
                     },
                     success: function(data) {
-                            console.log(data);
+                            // console.log(data);
                             if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
@@ -966,12 +969,15 @@ session_start();
                         .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
                         
-                        }
-                        else if (data.status == 601) {
+                        } else if (data.status == 601) {
                             console.log(data.error);
-                            //     alert("problem with query");
+                            $('#alert_id_Otp').css('display', 'block');
+                            $('#alert_id_Otp').html(data.error); 
+                        } else if(data.status==301) {
+                            $('#alert_id_Otp').css('display', 'block');
+                            $('#alert_id_Otp').html(data.error); 
                         }else{
-                                //     alert("problem with query");
+                            //     alert("problem with query");
                         }
                     }
                 });
@@ -1046,7 +1052,7 @@ session_start();
                         
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#alert_id_forgot2').css('display', 'block');
                             $('#alert_id_forgot').css('display', 'none');
@@ -1111,7 +1117,7 @@ session_start();
                         
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {                            
                             $.ajax({
                                 type: 'POST',
@@ -1217,7 +1223,7 @@ session_start();
                         'logout_var': logout_var
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             window.location.replace('/');   
                         } else {
@@ -1229,27 +1235,6 @@ session_start();
             });
         }
         logout_signup_signin();
-        /* ------------------------------- logout call mobile------------------------------ */
-        // $('.popup_logout_mobile').click(function() {
-        //     var logout_var = 'logout';
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: 'php/logout.php',
-        //         dataType: "json",
-        //         data: {
-        //             'logout_var': logout_var
-        //         },
-        //         success: function(data) {
-        //             console.log(data);
-        //             if (data.status == 201) {
-        //                 window.location.replace('/');   
-        //             } else {
-        //                 console.log(data.error);
-        //                 //     alert("problem with query");
-        //             }
-        //         }
-        //     });
-        // });
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',

@@ -1172,3 +1172,6 @@ html [type="button"],
     color: #52ad9c;
 }
 /* ------------------------ payment_form_style end ------------------------ */
+.social_mobile{
+    display: inherit !important;
+}

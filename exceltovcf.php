@@ -148,6 +148,9 @@ session_start();
         background-color: #fff !important;
         border-color: #fff !important;
     }
+    #alert_id_file_not_select,#alert_id_Otp{
+        display:none;
+    }
     </style>
 </head>
 
@@ -289,6 +292,8 @@ session_start();
                                     <div class="col-7">
                                         <form method="post" enctype="multipart/form-data" name="upload_excel"
                                             id="upload_excel" data-name="upload_excel">
+                                            <div class="alert alert-danger" role="alert" id="alert_id_file_not_select">
+                                            </div>
                                             <label class="row">
                                                 <div class="wrap-col select_file_text"> Step 1: Select file to convert
                                                 </div>
@@ -1127,6 +1132,8 @@ session_start();
                                     <div class="col">
                                         <form method="post" enctype="multipart/form-data" name="form2"
                                             id="upload_excel_mobile">
+                                            <div class="alert alert-danger" role="alert" id="alert_id_file_not_select_mobile">
+                                            </div>
                                             <label class="row">
                                                 <div class="wrap-col select_file_text"> Step 1: Select file to convert
                                                 </div>
@@ -1509,7 +1516,7 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col footer_text d-flex justify-content-center">
-                                <div class="social">
+                                <div class="social_mobile social">
                                     <a href="#" title="Like Zamzar on Facebook" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
                                             data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
@@ -1616,7 +1623,8 @@ session_start();
             event.preventDefault();
             var file_name = $('#fileToUpload').val();
             if (file_name == '') {
-                alert("Please Select excel file");
+                $('#alert_id_file_not_select').css('display', 'block');
+                $('#alert_id_file_not_select').html("* Please Select excel file"); 
                 return false;
             } else {
                 $.ajax({
@@ -1651,7 +1659,8 @@ session_start();
             event.preventDefault();
             var file_name = $('#fileToUpload_mobile').val();
             if (file_name == '') {
-                alert("Please Select excel file");
+                $('#alert_id_file_not_select_mobile').css('display', 'block');
+                $('#alert_id_file_not_select_mobile').html("* Please Select excel file");                
                 return false;
             } else {
                 $.ajax({
@@ -1708,7 +1717,7 @@ session_start();
                     // console.log(JSON.parse(json_object));
                     // console.log(JSON.parse(json_object).length);
                     total_data_length = (JSON.parse(json_object).length) + 1;
-                    console.log(total_data_length);
+                    // console.log(total_data_length);
 
                     //submit step 2 by dekstop
                     $("#submit2_desktop").click(function() {
@@ -1987,11 +1996,11 @@ session_start();
                     async : false,
                     data: {},
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         user_email = data.email;
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                         } else if (data.status == 301) {
@@ -2101,23 +2110,23 @@ session_start();
                     async : false,
                     data: {},
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile=data.mobile;
                             $('#pop_up_desktop').modal('hide');
                             num_end = data.row_end;
-                            console.log(num_end);
+                            // console.log(num_end);
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             num_end = data.row_end;
-                            console.log(num_end);
+                            // console.log(num_end);
                         }else if (data.status == 701) {
                             $('#pop_up_desktop').modal('show');
                             num_end = data.row_end;
@@ -2125,7 +2134,7 @@ session_start();
                         else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
-                            console.log(num_end);
+                            // console.log(num_end);
                         }
                         for (var j = num_start; j <= num_end; j++) {
                             // console.log(json_array[j-1]);
@@ -2235,18 +2244,18 @@ session_start();
                         'email': email
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
                             user_email = data.email;                           
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
                         } else if (data.status == 601) {
-                            console.log(data.error);
+                            // console.log(data.error);
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
@@ -2328,7 +2337,7 @@ session_start();
                         'email': email
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#alert_id_forgot2').css('display', 'block');
                             $('#alert_id_forgot').css('display', 'none');
@@ -2429,8 +2438,8 @@ session_start();
                             user_id = data.id;
                             user_email = data.email;
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                             $('#sign_in_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
@@ -2474,7 +2483,7 @@ session_start();
                         'otp': otp_row
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
@@ -2502,9 +2511,13 @@ session_start();
                             $('.show_user_name').attr('data-letters', file_first_char);
 
                         } else if (data.status == 601) {
-                            console.log(data.error);
-                            //     alert("problem with query");
-                        } else {
+                            // console.log(data.error);
+                            $('#alert_id_Otp').css('display', 'block');
+                            $('#alert_id_Otp').html(data.error); 
+                        } else if(data.status==301) {
+                            $('#alert_id_Otp').css('display', 'block');
+                            $('#alert_id_Otp').html(data.error); 
+                        }else{
                             //     alert("problem with query");
                         }
                     }
@@ -2572,7 +2585,7 @@ session_start();
                         'logout_var': logout_var
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             window.location.replace('/');
                         } else {
