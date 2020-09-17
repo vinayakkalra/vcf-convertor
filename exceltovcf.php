@@ -1803,7 +1803,7 @@ session_start();
                                         show_data +
                                         ' : </label><div class="col-7"><select name="last_column" id="column' +
                                         (i - 64) +
-                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option> <option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option> <option value="address">Address</option> <option value="website">Website</option></select></div>'
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
@@ -1899,7 +1899,7 @@ session_start();
                                         show_data +
                                         ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="column_mobile' +
                                         (i - 64) +
-                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Tel. Office</option> <option value="tel_home">Tel. Home</option> <option value="fax">Fax</option> <option value="city">City</option> <option value="nickname">Nickname</option> <option value="company">Company Name</option> <option value="address">Address</option> <option value="website">Website</option> <option value="birthday">Birthday</option></select></div>'
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option><option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option><option value="address">Address</option> <option value="website">Website</option></select></div>'
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
