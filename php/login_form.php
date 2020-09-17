@@ -6,7 +6,6 @@ require_once 'SMTP.php';
 if (mysqli_connect_error()){
     die("<script>console.log('There is a problem with mysql connection')</script>");
 }
-
 if(isset($_POST['email'])){
     $data = array();  
     $from_ip = $_SERVER['REMOTE_ADDR'];
@@ -36,10 +35,10 @@ if(isset($_POST['email'])){
                 //  $_SESSION['user_name'] = $row['email'];
                 $_SESSION['user_id'] = $row['id'];
                 echo json_encode($data); 
-                }
+            }
             else{
             $query2 = "UPDATE `signup-details` SET `user_otp`='$user_otp' WHERE `email` ='$email'";
-            if($result = mysqli_query($link, $query2))  
+            if($result = mysqli_query($link,$query2))  
             {            
             /* ---------------------- email send to user given email id --------------------- */
             $err = array();
@@ -83,10 +82,11 @@ if(isset($_POST['email'])){
     }
     
 
-}else { 
-    $data['status'] = 301;
-    $data['error'] = 'email or password not found';
-    echo json_encode($data);
-}
+    }
+    }else { 
+        $data['status'] = 301;
+        $data['error'] = 'email or password not found';
+        echo json_encode($data);
+    }
 }
 ?>

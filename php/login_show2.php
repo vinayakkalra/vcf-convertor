@@ -16,6 +16,6 @@ if(isset($_SESSION["user_email"])){
     }
   }
 }else{    
-  echo'<a class="nav-link btn_active pop_up_login_header"  style="background: #e0e0e0;margin-left: 1rem;">Login</a>'; 
+  echo'<a class="nav-link btn_active pop_up_login_header"  style="background: #e0e0e0;margin-left: 1rem;cursor:pointer;">Login</a>'; 
 }
 ?>

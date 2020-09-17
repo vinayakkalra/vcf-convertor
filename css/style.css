@@ -1116,6 +1116,6 @@ html [type="button"],
 }
 
 /* --------------------------- forgot password css -------------------------- */
-#forgot_password_page{
+#forgot_password_page,#payment_pro,#payment_enterprise{
     display: none;
 }

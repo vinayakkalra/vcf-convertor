@@ -142,11 +142,13 @@ session_start();
     .hr_tag_style {
         width: 70%;
     }
+
     .alert-danger {
         color: #721c24;
-     background-color: #fff !important;
-     border-color: #fff !important;
+        background-color: #fff !important;
+        border-color: #fff !important;
     }
+     
     </style>
 </head>
 
@@ -510,7 +512,7 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a  id="basic1"
+                                                                        <a id="basic1"
                                                                             class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -556,7 +558,8 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#" id="pro"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro"
+                                                                            >
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -600,7 +603,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#" id="enterprise"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full enterprise">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -719,7 +722,7 @@ session_start();
         aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
         <div class="modal-dialog modal-dialog-centered" role="document">
 
-<!-- --------------------------- sign_in start here --------------------------- -->
+            <!-- --------------------------- sign_in start here --------------------------- -->
 
             <!--Content-->
             <div class="modal-content form-elegant" id="sign_in_page">
@@ -743,7 +746,7 @@ session_start();
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
                         <p class="font-small blue-text d-flex justify-content-end mt-3"><a href="#"
-                                class="blue-text ml-1" id="forgot_password_link">Forgot 
+                                class="blue-text ml-1" id="forgot_password_link">Forgot
                                 Password?</a></p>
                     </div>
                     <div class="text-center mb-5">
@@ -759,8 +762,8 @@ session_start();
                             Sign Up</a></p>
                 </div>
             </div>
-<!-- --------------------------- sign_in start end --------------------------- -->
-<!-- ------------------------------ Sign_up_start ----------------------------- -->
+            <!-- --------------------------- sign_in start end --------------------------- -->
+            <!-- ------------------------------ Sign_up_start ----------------------------- -->
 
             <div class="modal-content form-elegant" id="sign_up_page">
                 <!--Header-->
@@ -810,12 +813,13 @@ session_start();
                             Sign In</a></p>
                 </div>
             </div>
-<!-- ------------------------------ Sign_up_start end----------------------------- -->
-<!-- ------------------------------- verify otp start------------------------------- -->
-<div class="modal-content form-elegant" id="sign_up_Otp">
+            <!-- ------------------------------ Sign_up_start end----------------------------- -->
+            <!-- ------------------------------- verify otp start------------------------------- -->
+            <div class="modal-content form-elegant" id="sign_up_Otp">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Email Verification</strong></h3>                
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Email
+                            Verification</strong></h3>
                 </div>
                 <p class="d-flex justify-content-center">Please Check Your Email for Verification Code</p>
                 <!--Body-->
@@ -823,29 +827,30 @@ session_start();
                     <div class="modal-body mx-5">
                         <div class="alert alert-danger" role="alert" id="alert_id_Otp">
                         </div>
-                        <!--Body-->                      
-                        
+                        <!--Body-->
+
                         <div class="md-form mb-5">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_Otp" class="form-control validate"
                                 placeholder="Enter OTP Number">
                         </div>
-                        
+
                         <div class="text-center mb-5">
                             <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
                                 id="pop_up_otp">Verify OTP</button>
                         </div>
                     </div>
                 </form>
-                <!--Footer-->                
+                <!--Footer-->
             </div>
-<!-- ------------------------------- verify otp end------------------------------- -->
-<!-- ------------------------------ Forgot password start ------------------------------ -->
+            <!-- ------------------------------- verify otp end------------------------------- -->
+            <!-- ------------------------------ Forgot password start ------------------------------ -->
 
             <div class="modal-content form-elegant" id="forgot_password_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot Password ?</strong></h3>
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot
+                            Password ?</strong></h3>
 
                 </div>
                 <!--Body-->
@@ -885,17 +890,56 @@ session_start();
                 </form>
                 <!--Footer-->
                 <div class="modal-footer mx-5 pt-5 pb-5">
-                    <p class="font-small grey-text d-flex justify-content-end">Go Back to &nbsp;<a id="signin_link_forgot"
-                            class="blue-text ml-1" style="cursor: pointer;">
+                    <p class="font-small grey-text d-flex justify-content-end">Go Back to &nbsp;<a
+                            id="signin_link_forgot" class="blue-text ml-1" style="cursor: pointer;">
                             Log In </a> &nbsp;page</p>
                 </div>
             </div>
-<!-- ------------------------------ Forgot password end ------------------------------ -->
+            <!-- ------------------------------ Forgot password end ------------------------------ -->
             <!--/.Content-->
         </div>
     </div>
     <!-- Modal -->
     <!-- ----------------------- popup desktop end here ------------------------ -->
+
+    <!-- --------------------- model for payment option start --------------------- -->
+    <!-- The Modal -->
+    <div class="modal fade myModal_payment" id="myModal_payment">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="pro_payment">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                <!-- payment form -->
+                <!-- payment form for both 50 and 100 start-->
+                <!-- payment form for both 50 and 100 end-->
+                <!-- payment button for 50 INR -->
+                <div class="text-center mb-5">
+                <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="payment_pro">50 INR</button>
+                </div>
+                <!-- payment button for 50 INR -->  
+                <!-- payment button for 100 INR -->    
+                <div class="text-center mb-5">
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                                id="payment_enterprise">300 INR</button>
+                </div>
+                <!-- payment button for 100 INR -->
+                <!-- payment form end -->
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- --------------------- model for payment option end --------------------- -->
+
 
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
@@ -1490,16 +1534,16 @@ session_start();
         var product_name = "";
         var keys_change;
         var json_array;
-        var data_key=[];
-        var data_value=[];
+        var data_key = [];
+        var data_value = [];
         var row_start;
-        var row_end;  
-        var all_data=[];
-        var total_data_length=0;  
-        var result=[];
-        var num_start=0;
-        var num_end=0;
-        var user_email="";
+        var row_end;
+        var all_data = [];
+        var total_data_length = 0;
+        var result = [];
+        var num_start = 0;
+        var num_end = 0;
+        var user_email = "";
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1590,18 +1634,18 @@ session_start();
                     var json_object_length = workbook.SheetNames.length;
                     sheet = workbook.SheetNames[0];
                     // console.log(sheet);                        
-                //     console.log(json_object_length);//check the no. of sheet
-                //     workbook.SheetNames.forEach(function (sheetName) {                  
-                //     console.log(sheetName);
-                // });
+                    //     console.log(json_object_length);//check the no. of sheet
+                    //     workbook.SheetNames.forEach(function (sheetName) {                  
+                    //     console.log(sheetName);
+                    // });
                     var sheetName = sheet;
                     var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[
                         sheetName]);
                     var json_object = JSON.stringify(XL_row_object);
-                    
+
                     // console.log(JSON.parse(json_object));
                     // console.log(JSON.parse(json_object).length);
-                    total_data_length=(JSON.parse(json_object).length)+1;
+                    total_data_length = (JSON.parse(json_object).length) + 1;
                     console.log(total_data_length);
 
                     //submit step 2 by dekstop
@@ -1630,53 +1674,53 @@ session_start();
                             $("#last_row").css('border-width', '1px');
                         }
 
-/* ----------------------------- row bound check ---------------------------- */
+                        /* ----------------------------- row bound check ---------------------------- */
 
-                        var row_check_start=parseInt(first_row, 10);
-                        var row_check_end=parseInt(last_row, 10);
-                        if(row_check_start>total_data_length){
+                        var row_check_start = parseInt(first_row, 10);
+                        var row_check_end = parseInt(last_row, 10);
+                        if (row_check_start > total_data_length) {
                             $("#first_row").css('border-color', 'red');
                             $("#first_row").css('border-width', '2px');
                             error = error + 'first_row';
-                        }else{
+                        } else {
                             $("#first_row").css('border-color', '#C0BBBB');
                             $("#first_row").css('border-width', '1px');
                         }
-                        if(row_check_end>total_data_length){
+                        if (row_check_end > total_data_length) {
                             $("#last_row").css('border-color', 'red');
                             $("#last_row").css('border-width', '2px');
                             error = error + 'last_row';
-                        }else{
+                        } else {
                             $("#last_row").css('border-color', '#C0BBBB');
                             $("#last_row").css('border-width', '1px');
                         }
 
-/* --------------------------- row bound check end -------------------------- */
+                        /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
-                            row_start=first_row;
-                            row_end=last_row;
+                            row_start = first_row;
+                            row_end = last_row;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
                                 XL_row_object = XLSX.utils.sheet_to_row_object_array(
                                     workbook.Sheets[sheetName]);
-                                json_object = JSON.stringify(XL_row_object);                    
+                                json_object = JSON.stringify(XL_row_object);
                                 // console.log(JSON.parse(json_object));
                                 //   console.log(XL_row_object);                            
                                 keys_change = XL_row_object;
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
-                                var string_raw="";
-                                if(first_column.charCodeAt(0)>last_column
-                                    .charCodeAt(0)){
-                                    string_raw=first_column;
-                                    first_column=last_column;
-                                    last_column=string_raw;
-                                    string_raw=""; 
-                                    }
-                                    // console.log("first_column="+first_column);
-                                    // console.log("last_column="+last_column);
+                                var string_raw = "";
+                                if (first_column.charCodeAt(0) > last_column
+                                    .charCodeAt(0)) {
+                                    string_raw = first_column;
+                                    first_column = last_column;
+                                    last_column = string_raw;
+                                    string_raw = "";
+                                }
+                                // console.log("first_column="+first_column);
+                                // console.log("last_column="+last_column);
                                 for (var i = first_column.charCodeAt(0); i <= last_column
                                     .charCodeAt(0); i++
                                 ) { //alphabetical loop selected according to user
@@ -1684,7 +1728,8 @@ session_start();
                                     total_data_come = (last_column.charCodeAt(0) - 64);
 
                                     var show_data = Object.keys(JSON.parse(json_object)[0])[
-                                        i - 65]; //give alphabet indexing                                        
+                                        i - 65
+                                        ]; //give alphabet indexing                                        
                                     if (show_data ==
                                         undefined) { //if row not found than show blank
                                         show_data = "";
@@ -1700,7 +1745,7 @@ session_start();
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
-                                
+
                             } else {
                                 alert("Sheet not found in file");
                             }
@@ -1714,8 +1759,8 @@ session_start();
                         var last_column = $("#last_column_mobile").val();
                         var first_row = $("#first_row_mobile").val();
                         var last_row = $("#last_row_mobile").val();
-                        var show_data = "";                        
-                        var error = "";                          
+                        var show_data = "";
+                        var error = "";
                         if (first_row == "") {
                             $("#first_row_mobile").css('border-color', 'red');
                             $("#first_row_mobile").css('border-width', '2px');
@@ -1734,28 +1779,28 @@ session_start();
                         }
                         /* ----------------------------- row bound check mobile ---------------------------- */
 
-                        var row_check_start=parseInt(first_row, 10);
-                        var row_check_end=parseInt(last_row, 10);
-                        if(row_check_start>total_data_length){
+                        var row_check_start = parseInt(first_row, 10);
+                        var row_check_end = parseInt(last_row, 10);
+                        if (row_check_start > total_data_length) {
                             $("#first_row_mobile").css('border-color', 'red');
                             $("#first_row_mobile").css('border-width', '2px');
                             error = error + 'first_row';
-                        }else{
+                        } else {
                             $("#first_row_mobile").css('border-color', '#C0BBBB');
                             $("#first_row_mobile").css('border-width', '1px');
                         }
-                        if(row_check_end>total_data_length){
+                        if (row_check_end > total_data_length) {
                             $("#last_row_mobile").css('border-color', 'red');
                             $("#last_row_mobile").css('border-width', '2px');
                             error = error + 'last_row';
-                        }else{
+                        } else {
                             $("#last_row_mobile").css('border-color', '#C0BBBB');
                             $("#last_row_mobile").css('border-width', '1px');
                         }
-/* --------------------------- row bound check end mobile-------------------------- */
+                        /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
-                            row_start=first_row;
-                            row_end=last_row;
+                            row_start = first_row;
+                            row_end = last_row;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1766,16 +1811,16 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
-                                var string_raw="";
-                                if(first_column.charCodeAt(0)>last_column
-                                    .charCodeAt(0)){
-                                    string_raw=first_column;
-                                    first_column=last_column;
-                                    last_column=string_raw;
-                                    string_raw=""; 
-                                    }
-                                    // console.log("first_column="+first_column);
-                                    // console.log("last_column="+last_column);
+                                var string_raw = "";
+                                if (first_column.charCodeAt(0) > last_column
+                                    .charCodeAt(0)) {
+                                    string_raw = first_column;
+                                    first_column = last_column;
+                                    last_column = string_raw;
+                                    string_raw = "";
+                                }
+                                // console.log("first_column="+first_column);
+                                // console.log("last_column="+last_column);
                                 for (var i = first_column.charCodeAt(0); i <= last_column
                                     .charCodeAt(0); i++) {
                                     // var j=(i.charCodeAt(0)-97);
@@ -1836,7 +1881,7 @@ session_start();
             var column_array2 = [];
             var error = "";
             var take;
-            var take2 = [];            
+            var take2 = [];
             json_array = keys_change;
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column" + i).val();
@@ -1844,21 +1889,21 @@ session_start();
                     0])[i - 1] + '":').join('"' + column_array[i] + '":'));
                 take = json_array[0];
                 take2[i - 1] = column_array[i];
-                data_key[i]=take2[i - 1];
-                data_value[i]=take[data_key[i]];                              
-            } 
-/* ----------------------------get  data value to make VCF---------------------------- */
-                num_start=parseInt(row_start, 10);
-                num_end=parseInt(row_end, 10);
-                var num_raw_data=0;
-                if(num_start>num_end){
-                    num_raw_data=num_start;
-                    num_start=num_end;
-                    num_end=num_raw_data;
-                    num_raw_data=0;
-                }
+                data_key[i] = take2[i - 1];
+                data_value[i] = take[data_key[i]];
+            }
+            /* ----------------------------get  data value to make VCF---------------------------- */
+            num_start = parseInt(row_start, 10);
+            num_end = parseInt(row_end, 10);
+            var num_raw_data = 0;
+            if (num_start > num_end) {
+                num_raw_data = num_start;
+                num_start = num_end;
+                num_end = num_raw_data;
+                num_raw_data = 0;
+            }
 
-/* -------------------------- get data value to make VCF end -------------------------- */
+            /* -------------------------- get data value to make VCF end -------------------------- */
 
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
@@ -1877,40 +1922,38 @@ session_start();
                     type: 'POST',
                     url: 'php/auth.php',
                     dataType: "json",
-                    data: {
-                    },
+                    data: {},
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            $('#pop_up_desktop').modal('hide');                            
-                        }
-                        else if(data.status == 301){
-                        $('#pop_up_desktop').modal('hide');
-                        num_end=data.row_end;                       
+                            $('#pop_up_desktop').modal('hide');
+                        } else if (data.status == 301) {
+                            $('#pop_up_desktop').modal('hide');
+                            num_end = data.row_end;
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
-                            num_end=data.row_end;                            
+                            num_end = data.row_end;
                         } else {
                             $('#pop_up_desktop').modal('show');
-                            num_end=1;
-                        }   
-                        for(var j=num_start;j<=num_end;j++){
+                            num_end = 1;
+                        }
+                        for (var j = num_start; j <= num_end; j++) {
                             // console.log(json_array[j-1]);
-                            all_data[(num_end)-(j)]=json_array[j-1];                
-                        }; 
-/* --------------------- data send for to make vcf files start-------------------- */
+                            all_data[(num_end) - (j)] = json_array[j - 1];
+                        };
+                        /* --------------------- data send for to make vcf files start-------------------- */
                         $.ajax({
-                                contentType: "application/json; charset=utf-8",
-                                type: 'POST',
-                                url: 'index2.php',                   
-                                data: JSON.stringify(all_data),
-                                success: function(data) {                   
-                                    
-                                    // window.location.href = 'index.php';                        
-                                    
-                                }
-                            });
- /* --------------------- data send for to make vcf files end-------------------- */
+                            contentType: "application/json; charset=utf-8",
+                            type: 'POST',
+                            url: 'index2.php',
+                            data: JSON.stringify(all_data),
+                            success: function(data) {
+
+                                // window.location.href = 'index.php';                        
+
+                            }
+                        });
+                        /* --------------------- data send for to make vcf files end-------------------- */
                     }
                 });
                 $('#step4').css('display', 'block');
@@ -1936,15 +1979,15 @@ session_start();
                 // alert("My name is sign up");
             });
 
-        });       
+        });
         // ---------------------- step 3 to 4 functionality for mobile---------------------- //
 
-        $('#submit3_mobile').click(function() {          
+        $('#submit3_mobile').click(function() {
             var column_array = [];
             var column_array2 = [];
             var error = "";
             var take;
-            var take2 = [];            
+            var take2 = [];
             json_array = keys_change;
             for (var i = 1; i <= total_data_come; i++) {
                 column_array[i] = $("#column_mobile" + i).val();
@@ -1952,21 +1995,21 @@ session_start();
                     0])[i - 1] + '":').join('"' + column_array[i] + '":'));
                 take = json_array[0];
                 take2[i - 1] = column_array[i];
-                data_key[i]=take2[i - 1];
-                data_value[i]=take[data_key[i]];                              
-            } 
+                data_key[i] = take2[i - 1];
+                data_value[i] = take[data_key[i]];
+            }
 
-/* ----------------------------get  data value to make VCF for mobile start---------------------------- */
-                num_start=parseInt(row_start, 10);
-                num_end=parseInt(row_end, 10);
-                var num_raw_data=0;
-                if(num_start>num_end){
-                    num_raw_data=num_start;
-                    num_start=num_end;
-                    num_end=num_raw_data;
-                    num_raw_data=0;
-                }
-/* -------------------------- get data value to make VCF for mobile end -------------------------- */           
+            /* ----------------------------get  data value to make VCF for mobile start---------------------------- */
+            num_start = parseInt(row_start, 10);
+            num_end = parseInt(row_end, 10);
+            var num_raw_data = 0;
+            if (num_start > num_end) {
+                num_raw_data = num_start;
+                num_start = num_end;
+                num_end = num_raw_data;
+                num_raw_data = 0;
+            }
+            /* -------------------------- get data value to make VCF for mobile end -------------------------- */
             for (var i = 1; i <= total_data_come; i++) {
                 if (column_array[i] == "") {
                     $("#column_mobile" + i).css('border-color', 'red');
@@ -1987,39 +2030,38 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
-                        }else if(data.status == 301){
+                        } else if (data.status == 301) {
                             $('#pop_up_desktop').modal('hide');
-                            num_end=data.row_end;
+                            num_end = data.row_end;
                             console.log(num_end);
-                        }
-                        else if (data.status == 601) {
+                        } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
-                                num_end=data.row_end;
-                                console.log(num_end);
+                            num_end = data.row_end;
+                            console.log(num_end);
                         } else {
                             $('#pop_up_desktop').modal('show');
-                                num_end=1;
-                                console.log(num_end);
+                            num_end = 1;
+                            console.log(num_end);
                         }
-                        for(var j=num_start;j<=num_end;j++){
+                        for (var j = num_start; j <= num_end; j++) {
                             // console.log(json_array[j-1]);
-                            all_data[(num_end)-(j)]=json_array[j-1];                
-                        }; 
-/* --------------------- data send for to make vcf files start-------------------- */
+                            all_data[(num_end) - (j)] = json_array[j - 1];
+                        };
+                        /* --------------------- data send for to make vcf files start-------------------- */
                         $.ajax({
-                                contentType: "application/json; charset=utf-8",
-                                type: 'POST',
-                                url: 'index2.php',                   
-                                data: JSON.stringify(all_data),
-                                success: function(data) {                   
-                                    
-                                    // window.location.href = 'index.php';                        
-                                    
-                                }
-                            });
- /* --------------------- data send for to make vcf files end-------------------- */
+                            contentType: "application/json; charset=utf-8",
+                            type: 'POST',
+                            url: 'index2.php',
+                            data: JSON.stringify(all_data),
+                            success: function(data) {
+
+                                // window.location.href = 'index.php';                        
+
+                            }
+                        });
+                        /* --------------------- data send for to make vcf files end-------------------- */
                     }
-                    
+
                 });
                 $('#step4_mobile').css('display', 'block');
                 $('#step3_mobile').css('display', 'none');
@@ -2111,10 +2153,10 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
-                            user_email=data.email;
+                            user_email = data.email;
                             $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
-                            
+
                         } else if (data.status == 601) {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -2134,97 +2176,97 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
-/* -------------------------- forgot_password functionality start ------------------------- */
+        /* -------------------------- forgot_password functionality start ------------------------- */
         $('#pop_up_forgot').on("click", function() {
-                    var mobile = $("#Form_phone_forgot").val();
-                    var password = $("#Form_pass_forgot").val();
-                    var con_password = $("#Form_pass2_forgot").val();
-                    var email = $("#Form_email_forgot").val();
-                    var error = "";            
+            var mobile = $("#Form_phone_forgot").val();
+            var password = $("#Form_pass_forgot").val();
+            var con_password = $("#Form_pass2_forgot").val();
+            var email = $("#Form_email_forgot").val();
+            var error = "";
 
-                    function validateEmail(email) {
-                        var re =
-                            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                        return re.test(String(email).toLowerCase());
-                    }
-                    if (mobile == "") {
-                        $("#Form_phone_forgot").css('border-color', 'red');
-                        $("#Form_phone_forgot").css('border-width', '2px');
-                        error = error + 'mobile';
-                    } else {
-                        $("#Form_phone_forgot").css('border-color', '#C0BBBB');
-                        $("#Form_phone_forgot").css('border-width', '1px');
-                    }
-                    if (password == "") {
-                        $("#Form_pass_forgot").css('border-color', 'red');
-                        $("#Form_pass_forgot").css('border-width', '2px');
-                        error = error + 'password';
-                    } else {
-                        $("#Form_pass_forgot").css('border-color', '#C0BBBB');
-                        $("#Form_pass_forgot").css('border-width', '1px');
-                    }
-                    if (con_password == "") {
-                        $("#Form_pass2_forgot").css('border-color', 'red');
-                        $("#Form_pass2_forgot").css('border-width', '2px');
-                        error = error + 'Class';
-                    } else {
-                        $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
-                        $("#Form_pass2_forgot").css('border-width', '1px');
-                    }
-                    if (!validateEmail(email)) {
-                        $("#Form_email_forgot").css('border-color', 'red');
-                        $("#Form_email_forgot").css('border-width', '2px');
-                        error = error + 'email';
-                    } else {
-                        $("#Form_email_forgot").css('border-color', '#C0BBBB');
-                        $("#Form_email_forgot").css('border-width', '1px');
-                    }
-                    if (password != con_password) {
-                        $("#Form_pass2_forgot").css('border-color', 'red');
-                        $("#Form_pass2_forgot").css('border-width', '2px');
-                        $("#Form_pass_forgot").css('border-color', 'red');
-                        $("#Form_pass_forgot").css('border-width', '2px');
-                        // alert('Password not match !');
-                        error = error + 'password not matched';
-                    }
-                    if (error == "") {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'php/forgot_password.php',
-                            dataType: "json",
-                            data: {
-                                'mobile': mobile,
-                                'password': password,
-                                'email': email
-                            },
-                            success: function(data) {
-                                console.log(data);
-                                if (data.status == 201) {                                   
-                                    $('#alert_id_forgot2').css('display', 'block');
-                                    $('#alert_id_forgot').css('display', 'none');
-                                    $('#alert_id_forgot2').html(data.success);
-                                } else if (data.status == 601) {
-                                    console.log(data.error);
-                                    //     alert("problem with query");
-                                } else if (data.status == 301) {
-                                    $('#alert_id_forgot').css('display', 'block');
-                                    $('#alert_id_forgot2').css('display', 'none');
-                                    $('#alert_id_forgot').html(data.error);
-                                    // alert(data.error);
-                                } else if (data.status == 302) {
-                                    $('#alert_id_forgot').css('display', 'block');
-                                    $('#alert_id_forgot2').css('display', 'none');
-                                    $('#alert_id_forgot').html(data.error);
-                                } else {
-                                    //console.log(data.error)
-                                }
-                            }
-                        });
-                    } else {
-                        // alert('There are error in the form. Please check your submissions');
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_forgot").css('border-color', 'red');
+                $("#Form_phone_forgot").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_forgot").css('border-color', '#C0BBBB');
+                $("#Form_phone_forgot").css('border-width', '1px');
+            }
+            if (password == "") {
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass_forgot").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');
+                error = error + 'Class';
+            } else {
+                $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass2_forgot").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_forgot").css('border-color', 'red');
+                $("#Form_email_forgot").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_forgot").css('border-color', '#C0BBBB');
+                $("#Form_email_forgot").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                // alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/forgot_password.php',
+                    dataType: "json",
+                    data: {
+                        'mobile': mobile,
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {
+                            $('#alert_id_forgot2').css('display', 'block');
+                            $('#alert_id_forgot').css('display', 'none');
+                            $('#alert_id_forgot2').html(data.success);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                            // alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
                     }
                 });
-/* -------------------------- forgot_password functionality end ------------------------- */
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
+        /* -------------------------- forgot_password functionality end ------------------------- */
 
         // ---------------------- step signin form  to download file functionality ----------//
         $('#pop_up_signin').on("click", function() {
@@ -2269,7 +2311,7 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show.php',
-                                data:{},
+                                data: {},
                                 success: function(response) {
                                     $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
@@ -2279,7 +2321,7 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show2.php',
-                                data:{},
+                                data: {},
                                 success: function(response) {
                                     $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
@@ -2290,17 +2332,11 @@ session_start();
                             $('#pop_up_desktop').modal('hide');
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);
-                            // window.dataLayer = window.dataLayer || [];
-                            // window.dataLayer.push({
-                            //     'event': 'signin-form',
-                            //     'password': password,
-                            //     'email': email
-                            // });
+                            $('.show_user_name').attr('data-letters', file_first_char);                            
                         } else if (data.status == 601) {
                             console.log(data.error);
                             user_id = data.id;
-                            user_email=data.email;
+                            user_email = data.email;
                             $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
@@ -2321,10 +2357,10 @@ session_start();
                 // alert('There are error in the form. Please check your submissions');
             }
         });
-/* ------------------------- otp verification start ------------------------- */
+        /* ------------------------- otp verification start ------------------------- */
 
-        $('#pop_up_otp').click(function(){
-            var error="";
+        $('#pop_up_otp').click(function() {
+            var error = "";
             var otp_row = $("#Form_pass_Otp").val();
             if (otp_row == "") {
                 $("#Form_pass_Otp").css('border-color', 'red');
@@ -2335,23 +2371,23 @@ session_start();
                 $("#Form_pass_Otp").css('border-width', '1px');
             }
             if (error == "") {
-            $.ajax({
+                $.ajax({
                     type: 'POST',
                     url: 'php/email_verify.php',
                     dataType: "json",
-                    data: {                                    
+                    data: {
                         'email': user_email,
-                        'otp':otp_row
+                        'otp': otp_row
                     },
                     success: function(data) {
-                            console.log(data);
-                            if (data.status == 201) {
+                        console.log(data);
+                        if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
-                            type: 'POST',
-                            url: 'php/login_show.php',
-                            data:{},
-                            success: function(response) {
+                                type: 'POST',
+                                url: 'php/login_show.php',
+                                data: {},
+                                success: function(response) {
                                     $(".set_id_one").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
@@ -2360,32 +2396,30 @@ session_start();
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show2.php',
-                                data:{},
+                                data: {},
                                 success: function(response) {
                                     $(".set_id_two").html(response);
                                     model_sign_up_sign_in();
                                     logout_signup_signin();
                                 }
-                            });                            
+                            });
                             var file_first_char = (uploaded_user_name.substring(0, 1))
-                        .toUpperCase();
+                                .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                        
-                        }
-                        else if (data.status == 601) {
+
+                        } else if (data.status == 601) {
                             console.log(data.error);
                             //     alert("problem with query");
-                        }else{
-                                //     alert("problem with query");
+                        } else {
+                            //     alert("problem with query");
                         }
                     }
                 });
-            }
-            else{
+            } else {
 
             }
         });
-/* ------------------------- otp verification end ------------------------- */
+        /* ------------------------- otp verification end ------------------------- */
         // ---------------- header pop up login and signup button ---------------- //
         function model_sign_up_sign_in() {
             $('.pop_up_login_header').click(function() {
@@ -2415,7 +2449,7 @@ session_start();
                 $('#sign_in_page').css('display', 'none');
                 // alert("My name is sign up");
             });
-            $('#signin_link_forgot').click(function(){
+            $('#signin_link_forgot').click(function() {
                 $('#forgot_password_page').css('display', 'none');
                 $('#sign_in_page').css('display', 'block');
             });
@@ -2446,7 +2480,7 @@ session_start();
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
-                            window.location.replace('/');                          
+                            window.location.replace('/');
                         } else {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -2459,7 +2493,7 @@ session_start();
         $.ajax({
             type: 'POST',
             url: 'php/login_show.php',
-            data:{},
+            data: {},
             success: function(response) {
                 // console.log(response);
                 $(".set_id_one").html(response);
@@ -2470,14 +2504,27 @@ session_start();
         $.ajax({
             type: 'POST',
             url: 'php/login_show2.php',
-            data:{},
+            data: {},
             success: function(response) {
                 $(".set_id_two").html(response);
                 model_sign_up_sign_in();
                 logout_signup_signin();
             }
         });
-        
+
+/* ---------------------- payment option open and close function start--------------------- */
+
+        $('.pro').click(function(){
+            $('.myModal_payment').modal('show');
+            $('#payment_pro').css('display','block');
+            $('#payment_enterprise').css('display','none');
+        });
+        $('.enterprise').click(function(){
+            $('.myModal_payment').modal('show');
+            $('#payment_enterprise').css('display','block');
+            $('#payment_pro').css('display','none');
+        });
+/* ---------------------- payment option open and close function end--------------------- */
     });
     </script>
 </body>

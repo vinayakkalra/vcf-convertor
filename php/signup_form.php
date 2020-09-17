@@ -88,7 +88,7 @@ if(isset($_POST['email'])){
         else{
             $data['error'] = $mail->ErrorInfo;
         }
-/* ---------------------- email send to user given email id end--------------------- */
+// /* ---------------------- email send to user given email id end--------------------- */
         }
     else  
     {  
