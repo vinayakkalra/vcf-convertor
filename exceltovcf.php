@@ -305,7 +305,7 @@ session_start();
                                                     (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
                                                 </div>
                                             </label>
-                                            <input class="sendButton btn blue-gradient" type="submit" name="submit"
+                                            <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                 value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;">
                                         </form>
                                     </div>
@@ -402,7 +402,7 @@ session_start();
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
-                                                    <input class="sendButton btn blue-gradient" type="button"
+                                                    <input class="sendButton btn btn-primary" type="button"
                                                         name="submit2_desktop" id="submit2_desktop" value="Submit"
                                                         style="font-size:1.6rem;padding: 1rem 6rem;">
                                                 </div>
@@ -426,7 +426,7 @@ session_start();
 
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
-                                                <input class="sendButton btn blue-gradient" type="button"
+                                                <input class="sendButton btn btn-primary" type="button"
                                                     name="submit3_desktop" id="submit3_desktop" value="Submit"
                                                     style="font-size:1.6rem;padding: 1rem 6rem;">
                                             </div>
@@ -512,7 +512,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a id="basic1"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -557,7 +557,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#" id="pro"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro">
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full pro">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -601,7 +601,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#" id="enterprise"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full enterprise">
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full enterprise">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -748,7 +748,7 @@ session_start();
                                 Password?</a></p>
                     </div>
                     <div class="text-center mb-5">
-                        <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                        <button type="button" class="btn sendButton bg-primary text-white btn-block btn-rounded z-depth-1a"
                             id="pop_up_signin">Sign
                             in</button>
                     </div>
@@ -798,7 +798,7 @@ session_start();
 
                         </div>
                         <div class="text-center mb-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_signup">Sign
                                 Up</button>
                         </div>
@@ -834,7 +834,7 @@ session_start();
                         </div>
 
                         <div class="text-center mb-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_otp">Verify OTP</button>
                         </div>
                     </div>
@@ -881,7 +881,7 @@ session_start();
 
                         </div>
                         <div class="text-center mb-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_forgot">Change Password</button>
                         </div>
                     </div>
