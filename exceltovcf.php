@@ -1988,15 +1988,25 @@ session_start();
                     data: {},
                     success: function(data) {
                         console.log(data);
+                        user_email = data.email;
+                            user_mobile=data.mobile;
+                            console.log(data.email);
+                            console.log(data.mobile);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                         } else if (data.status == 301) {
+                            user_email = data.email;
+                            user_mobile=data.mobile;
                             $('#pop_up_desktop').modal('hide');
                             num_end = data.row_end;
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             num_end = data.row_end;
-                        } else {
+                        }else if (data.status == 701) {
+                            $('#pop_up_desktop').modal('show');
+                            num_end = data.row_end;
+                        }
+                         else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
                         }
@@ -2108,7 +2118,11 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                             num_end = data.row_end;
                             console.log(num_end);
-                        } else {
+                        }else if (data.status == 701) {
+                            $('#pop_up_desktop').modal('show');
+                            num_end = data.row_end;
+                        }
+                        else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
                             console.log(num_end);
