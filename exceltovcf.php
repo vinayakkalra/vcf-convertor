@@ -1145,7 +1145,7 @@ session_start();
                                                 </div>
                                             </label>
                                             <div class="row d-flex justify-content-center">
-                                                <input class="sendButton btn blue-gradient" type="submit" name="submit"
+                                                <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                     value="submit" style="font-size: 1.6rem;padding: 1rem 5rem;">
                                             </div>
                                         </form>
@@ -1257,7 +1257,7 @@ session_start();
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
-                                                    <input class="sendButton btn blue-gradient" type="button"
+                                                    <input class="sendButton btn btn-primary" type="button"
                                                         name="submit2_mobile" id="submit2_mobile" value="Submit"
                                                         style="font-size:1.6rem;padding: 1rem 5rem;">
                                                 </div>
@@ -1280,7 +1280,7 @@ session_start();
 
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
-                                                <input class="sendButton btn blue-gradient" type="button"
+                                                <input class="sendButton btn btn-primary" type="button"
                                                     name="submit3_mobile" id="submit3_mobile" value="Submit"
                                                     style="font-size:1.6rem;padding: 1rem 5rem;">
                                             </div>
@@ -1372,7 +1372,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1417,7 +1417,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro">
+                                                                            class="btn btn-primary  text-white font-bold py-2 px-10 rounded-full pro">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1461,7 +1461,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full enterprise">
+                                                                            class="btn btn-primary  text-white font-bold py-2 px-10 rounded-full enterprise">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
