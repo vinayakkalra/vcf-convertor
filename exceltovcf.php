@@ -1984,6 +1984,7 @@ session_start();
                     type: 'POST',
                     url: 'php/auth.php',
                     dataType: "json",
+                    async : false,
                     data: {},
                     success: function(data) {
                         console.log(data);
