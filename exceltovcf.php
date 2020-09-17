@@ -148,7 +148,6 @@ session_start();
         background-color: #fff !important;
         border-color: #fff !important;
     }
-     
     </style>
 </head>
 
@@ -558,8 +557,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#" id="pro"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro"
-                                                                            >
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -905,37 +903,100 @@ session_start();
     <!-- --------------------- model for payment option start --------------------- -->
     <!-- The Modal -->
     <div class="modal fade myModal_payment" id="myModal_payment">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content" id="pro_payment">
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
+                <div class="modal-header payment_modal_header">
+                    <h2 class="modal-title" style="font-weight:700">Product Order Form</h2>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
-                <div class="modal-body">
-                <!-- payment form -->
-                <!-- payment form for both 50 and 100 start-->
-                <!-- payment form for both 50 and 100 end-->
-                <!-- payment button for 50 INR -->
-                <div class="text-center mb-5">
-                <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
-                                id="payment_pro">50 INR</button>
-                </div>
-                <!-- payment button for 50 INR -->  
-                <!-- payment button for 100 INR -->    
-                <div class="text-center mb-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
-                                id="payment_enterprise">300 INR</button>
-                </div>
-                <!-- payment button for 100 INR -->
-                <!-- payment form end -->
+                <div class="modal-body payment_modal_body">
+                    <!-- payment form -->
+                    <!-- payment form for both 50 and 100 start-->
+                    <div class="container">
+                        <div class="d-flex row payment_info_row">
+                            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2">
+                                <form>
+                                    <div class="form-group row pb-4">
+                                        <label for="inputPassword" class="col-sm-2 col-form-label">Name<span
+                                                class="required_star">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row pb-4">
+                                        <label for="staticEmail" class="col-sm-2 col-form-label">Email<span
+                                                class="required_star">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" readonly class="form-control" id="staticEmail" name="payment_email"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row pb-4">
+                                        <label for="inputPassword" class="col-sm-2 col-form-label">Phone<span
+                                                class="required_star">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPhone" name="payment_mobile"
+                                                readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row pb-4">
+                                        <label for="inputAddress" class="col-sm-2 col-form-label">Address<span
+                                                class="required_star">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword"
+                                                placeholder="Address">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 Yorder">
+                                <div class="d-flex justify-content-center">
+                                    <table class="Order_table" style=" width: 90% !important;">
+                                        <tr>
+                                            <th colspan="2" style="text-align: center;">Your order</th>
+                                        </tr>
+                                        <tr>
+                                            <td>VCF</td>
+                                            <td>$88.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subtotal</td>
+                                            <td>$88.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping</td>
+                                            <td>Free shipping</td>
+                                        </tr>
+                                    </table><br>
+                                </div>
+                                <!-- payment button for 50 INR -->
+                                <div class="text-center mt-5">
+                                    <button type="button"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
+                                        id="payment_pro" style="color:#fff;">Place Order</button>
+                                </div>
+                                <!-- payment button for 50 INR -->
+                                <!-- payment button for 100 INR -->
+                                <div class="text-center mt-5">
+                                    <button type="button"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
+                                        id="payment_enterprise"style="color:#fff;">300 INR</button>
+                                </div>
+                                <!-- payment button for 100 INR -->
+                            </div><!-- Yorder -->
+                        </div>
+                    </div>
+                    <!-- payment form for both 50 and 100 end-->
+
+                    <!-- payment form end -->
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
     <!-- --------------------- model for payment option end --------------------- -->
@@ -1356,7 +1417,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full pro">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1400,7 +1461,7 @@ session_start();
                                                                             </li>
                                                                         </ul>
                                                                         <a href="#"
-                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full">
+                                                                            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-10 rounded-full enterprise">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1543,7 +1604,8 @@ session_start();
         var result = [];
         var num_start = 0;
         var num_end = 0;
-        var user_email = "";
+        var user_email="";
+        var user_mobile="";
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1729,7 +1791,7 @@ session_start();
 
                                     var show_data = Object.keys(JSON.parse(json_object)[0])[
                                         i - 65
-                                        ]; //give alphabet indexing                                        
+                                    ]; //give alphabet indexing                                        
                                     if (show_data ==
                                         undefined) { //if row not found than show blank
                                         show_data = "";
@@ -2025,12 +2087,19 @@ session_start();
                     type: 'POST',
                     url: 'php/auth.php',
                     dataType: "json",
+                    async : false,
                     data: {},
                     success: function(data) {
                         console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
+                            user_email = data.email;
+                            user_mobile=data.mobile;
+                            console.log(data.email);
+                            console.log(data.mobile);
                         } else if (data.status == 301) {
+                            user_email = data.email;
+                            user_mobile=data.mobile;
                             $('#pop_up_desktop').modal('hide');
                             num_end = data.row_end;
                             console.log(num_end);
@@ -2144,6 +2213,7 @@ session_start();
                     type: 'POST',
                     url: 'php/signup_form.php',
                     dataType: "json",
+                    async : false,
                     data: {
                         'mobile': mobile,
                         'password': password,
@@ -2153,7 +2223,10 @@ session_start();
                         console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
-                            user_email = data.email;
+                            user_email = data.email;                           
+                            user_mobile=data.mobile;
+                            console.log(data.email);
+                            console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
@@ -2300,6 +2373,7 @@ session_start();
                     type: 'POST',
                     url: 'php/login_form.php',
                     dataType: "json",
+                    async : false,
                     data: {
                         'email': email,
                         'password': password
@@ -2308,6 +2382,8 @@ session_start();
                         // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
+                            user_email = data.email;
+                            user_mobile=data.mobile;
                             $.ajax({
                                 type: 'POST',
                                 url: 'php/login_show.php',
@@ -2332,12 +2408,15 @@ session_start();
                             $('#pop_up_desktop').modal('hide');
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);                            
+                            $('.show_user_name').attr('data-letters', file_first_char);
                         } else if (data.status == 601) {
                             console.log(data.error);
                             user_id = data.id;
                             user_email = data.email;
-                            $('#sign_up_page').css('display', 'none');
+                            user_mobile=data.mobile;
+                            console.log(data.email);
+                            console.log(data.mobile);
+                            $('#sign_in_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
                             //     alert("problem with query");
@@ -2512,19 +2591,24 @@ session_start();
             }
         });
 
-/* ---------------------- payment option open and close function start--------------------- */
+        /* ---------------------- payment option open and close function start--------------------- */
 
-        $('.pro').click(function(){
+        $('.pro').click(function() {           
             $('.myModal_payment').modal('show');
-            $('#payment_pro').css('display','block');
-            $('#payment_enterprise').css('display','none');
+            $('#payment_pro').css('display', 'block');
+            $('#payment_enterprise').css('display', 'none');
+            $('input[name="payment_email"]').val(user_email);
+            $('input[name="payment_mobile"]').val(user_mobile);
         });
-        $('.enterprise').click(function(){
+        $('.enterprise').click(function() {
             $('.myModal_payment').modal('show');
-            $('#payment_enterprise').css('display','block');
-            $('#payment_pro').css('display','none');
+            $('#payment_enterprise').css('display', 'block');
+            $('#payment_pro').css('display', 'none');
+            $('input[name="payment_email"]').val(user_email);
+            $('input[name="payment_mobile"]').val(user_mobile);
         });
-/* ---------------------- payment option open and close function end--------------------- */
+        /* ---------------------- payment option open and close function end--------------------- */
+
     });
     </script>
 </body>

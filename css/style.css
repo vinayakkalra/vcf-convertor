@@ -1119,3 +1119,56 @@ html [type="button"],
 #forgot_password_page,#payment_pro,#payment_enterprise{
     display: none;
 }
+
+/* ------------------------ payment_form_style start ------------------------ */
+
+.payment_modal_header{
+    background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);
+    border-radius: 5px 5px 0 0;
+    padding: 2rem;
+    color: #f6f6f6;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #5195A8), color-stop(100, #70EAFF));
+}
+.payment_modal_header h2{
+    font-size: 2.3rem !important;
+}
+.payment_info_row{
+   
+        display: flex;
+        flex-direction: row;
+        background: #f6f6f6;
+        border-radius: 0 0 5px 5px;
+        padding: 25px;
+  
+}
+.payment_modal_body{
+    padding: 0 !important;
+}
+.Yorder {  
+    padding: 20px;
+    border: 1px solid #dadada;
+}
+
+.Order_table th {
+    border-bottom: 1px solid #dadada;
+    padding: 10px 0;
+}
+.Order_table td {
+    border-bottom: 1px solid #dadada;
+    padding: 1rem 1rem 1rem 0;
+}
+@media (min-width: 992px)
+{
+.modal-lg, .modal-xl {
+    max-width: 1000px !important;
+}
+}
+.required_star{
+    color: red;
+    padding: 0.3rem;
+}
+.Order_table tr>td:nth-child(2) {
+    text-align: right;
+    color: #52ad9c;
+}
+/* ------------------------ payment_form_style end ------------------------ */

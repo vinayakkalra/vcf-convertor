@@ -15,6 +15,7 @@ if(isset($_POST['email'])){
     $email = mysqli_real_escape_string($link, $_POST['email']) ;
     $password = mysqli_real_escape_string($link, $_POST['password']) ;
     $hashed_password = hash("sha512", $password);
+    $mobile="";
     /* ------------------------------ otp generate ------------------------------ */
     $user_activation_code = md5(rand());
     $user_otp = rand(100000, 999999);
@@ -25,12 +26,15 @@ if(isset($_POST['email'])){
         $row=mysqli_fetch_array($result);        
             if($row['user_email_status']=="verified")
             {
+                $mobile=$row['mobile'];
                 $data['status'] = 201;
                 $data['email']=$email;
                 $data['id']= $row['id']; 
+                $data['mobile']=$mobile;
                 session_start();
                 $_SESSION['first_char']=ucfirst($email[0]);
                 $_SESSION['user_email']=$email;
+                $_SESSION['user_mobile']=$mobile; 
                 $_SESSION['authenticated']=true;               
                 //  $_SESSION['user_name'] = $row['email'];
                 $_SESSION['user_id'] = $row['id'];
@@ -39,7 +43,13 @@ if(isset($_POST['email'])){
             else{
             $query2 = "UPDATE `signup-details` SET `user_otp`='$user_otp' WHERE `email` ='$email'";
             if($result = mysqli_query($link,$query2))  
-            {            
+            {  
+             $query3 ="SELECT * FROM `signup-details` WHERE `email` = '$email' AND `password` = '$hashed_password'";
+             $result2 = mysqli_query($link,$query3);
+             if (mysqli_num_rows($result2) !=0 ) {
+                $row2=mysqli_fetch_array($result2);
+                $mobile=$row2['mobile'];                
+             }
             /* ---------------------- email send to user given email id --------------------- */
             $err = array();
 
@@ -66,11 +76,13 @@ if(isset($_POST['email'])){
             if($mail->Send()) {
 
                     $data['status'] = 601;
-                    $data['email']=$email;        
+                    $data['email']=$email; 
+                    $data['mobile']=$mobile;       
                     echo json_encode($data);
                     session_start();        
                     $_SESSION['first_char']=ucfirst($email[0]);
-                    $_SESSION['user_email']=$email;      
+                    $_SESSION['user_email']=$email;
+                    $_SESSION['user_mobile']=$mobile;       
                     $_SESSION['authenticated']=true;
                     $_SESSION['user_activation_code']=$user_activation_code;	
             

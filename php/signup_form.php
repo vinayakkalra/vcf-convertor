@@ -77,10 +77,12 @@ if(isset($_POST['email'])){
 
                 $data['status'] = 201;
                 $data['id'] = $id;
-                $data['email']=$email;       
+                $data['email']=$email; 
+                $data['mobile']=$mobile;       
                 session_start();        
                 $_SESSION['first_char']=ucfirst($email[0]);
-                $_SESSION['user_email']=$email;      
+                $_SESSION['user_email']=$email;
+                $_SESSION['user_mobile']=$mobile;      
                 $_SESSION['authenticated']=true;
                 $_SESSION['user_activation_code']=$user_activation_code;
                 echo json_encode($data);	
