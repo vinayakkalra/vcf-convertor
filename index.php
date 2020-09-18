@@ -756,7 +756,7 @@ session_start();
                         </div>
                         <div class="row">
                             <div class="col footer_text d-flex justify-content-center">
-                                <div class="social_mobile social">
+                                <div class="social_mobile social d-flex">
                                     <a href="#" title="Like Zamzar on Facebook" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
                                             data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
