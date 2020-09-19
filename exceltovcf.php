@@ -179,17 +179,11 @@ session_start();
 
                                     <ul class="nav navbar-right">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="#">Home</a>
+                                            <a class="nav-link" href="/">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Tools +</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Services +</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Downloads</a>
-                                        </li>
+                                            <a class="nav-link" href="exceltovcf">Excel to VCF</a>
+                                        </li>                                       
                                         <li class="nav-item">
                                             <a class="nav-link " href="#">Policy</a>
                                         </li>
@@ -1084,10 +1078,8 @@ session_start();
                 <div class="header_inner_logo"><a href="/" style="border: none;padding: 0;margin: 0;"><img
                             src="images/zamzar-logo.png"></a></div>
                 <div class="overlay-content-inner myNavbar_mobile">
-                    <a href="#" id="mobile_home_button">Home</a>
-                    <a href="#" id="mobile_tools_button">Tools +</a>
-                    <a href="#" id="mobile_services_button">Services +</a>
-                    <a href="#" id="mobile_downloads_button">Downloads</a>
+                    <a href="/" id="mobile_home_button">Home</a>
+                    <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
                     <a href="#" id="mobile_policy_button">Policy</a>
                     <a href="#" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
