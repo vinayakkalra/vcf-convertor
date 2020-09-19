@@ -76,6 +76,9 @@ session_start();
         background-color: #4d5cff;
         color: #fff;
     }
+    #order-success{
+        display:none;
+    }
 
     img {
         display: inline !important;
@@ -547,7 +550,10 @@ session_start();
                                                                         </p>
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
-                                                                            50 INR
+                                                                            <div class="d-flex justify-content-center">
+                                                                                <div class="set_price_pro"></div><span
+                                                                                    class="ml-2">INR</span>
+                                                                            </div>
                                                                         </h3>
                                                                         <ul class="my-10">
                                                                             <li
@@ -591,7 +597,10 @@ session_start();
                                                                         </p>
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
-                                                                            300 INR
+                                                                            <div class="d-flex justify-content-center">
+                                                                                <div class="set_price_enterprise"></div>
+                                                                                <span class="ml-2">INR</span>
+                                                                            </div>
                                                                         </h3>
                                                                         <ul class="my-10">
                                                                             <li
@@ -926,7 +935,8 @@ session_start();
                     <!-- payment form -->
                     <!-- payment form for both 50 and 100 start-->
                     <div class="container">
-                        <div class="d-flex row payment_info_row" id="checkout-form">
+                    <div id="checkout-form">
+                        <div class="d-flex row payment_info_row">
                             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2">
                                 <form>
                                     <div class="form-group row pb-4">
@@ -998,15 +1008,18 @@ session_start();
                                 <!-- payment button for 100 INR -->
                             </div><!-- Yorder -->
                         </div>
-                        <div class="d-flex row payment_info_row" id="order-success" style="display:none;">
+                        </div>
+                        <div id="order-success">
+                        <div class="d-flex row payment_info_row">
                             <div>
                                 <p>Payment Successfully</p>
                                 <div class="text-center mt-5">
-                                    <button type="button"
+                                    <a href="download.php" type="button"
                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file"
-                                        id="VCF-file"style="color:#fff;">Click Here to download VCF</button>
+                                        id="VCF-file" style="color:#fff;">Click Here to download VCF</a>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <!-- payment form for both 50 and 100 end-->
@@ -1424,7 +1437,10 @@ session_start();
                                                                         </p>
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
-                                                                            50 INR
+                                                                            <div class="d-flex justify-content-center">
+                                                                                <div class="set_price_pro"></div><span
+                                                                                    class="ml-2">INR</span>
+                                                                            </div>
                                                                         </h3>
                                                                         <ul class="my-10">
                                                                             <li
@@ -1468,7 +1484,10 @@ session_start();
                                                                         </p>
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
-                                                                            300 INR
+                                                                            <div class="d-flex justify-content-center">
+                                                                                <div class="set_price_enterprise"></div>
+                                                                                <span class="ml-2">INR</span>
+                                                                            </div>
                                                                         </h3>
                                                                         <ul class="my-10">
                                                                             <li
@@ -1629,6 +1648,7 @@ session_start();
         var result = [];
         var num_start = 0;
         var num_end = 0;
+        var num_end1 = 0;
         var num_end2 = 0;
         var user_email = "";
         var user_mobile = "";
@@ -1991,6 +2011,7 @@ session_start();
             }
             /* ----------------------------get  data value to make VCF---------------------------- */
             num_start = parseInt(row_start, 10);
+            num_end1 = parseInt(row_end, 10);
             num_end = parseInt(row_end, 10);
             var num_raw_data = 0;
             if (num_start > num_end) {
@@ -2018,7 +2039,7 @@ session_start();
                 $.ajax({
                     type: 'POST',
                     url: 'php/auth.php',
-                    async : false,
+                    async: false,
                     dataType: "json",
                     async: false,
                     data: {},
@@ -2031,7 +2052,7 @@ session_start();
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
-                            user_mobile=data.mobile;
+                            user_mobile = data.mobile;
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
@@ -2053,22 +2074,27 @@ session_start();
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
                         }
-                        for (var j = num_start; j <= num_end; j++) {
-                            // console.log(json_array[j-1]);
-                            all_data[(num_end) - (j)] = json_array[j - 1];
-                        };
-                        /* --------------------- data send for to make vcf files start-------------------- */
-                        $.ajax({
-                            contentType: "application/json; charset=utf-8",
-                            type: 'POST',
-                            url: 'index2.php',
-                            data: JSON.stringify(all_data),
-                            success: function(data) {
+                        vcf()
 
-                                // window.location.href = 'index.php';                        
+                        /* --------------------------- comment now 3 start -------------------------- */
 
-                            }
-                        });
+                        // for (var j = num_start; j <= num_end; j++) {
+                        //     // console.log(json_array[j-1]);
+                        //     all_data[(num_end) - (j)] = json_array[j - 1];
+                        // };
+                        // /* --------------------- data send for to make vcf files start-------------------- */
+                        // $.ajax({
+                        //     contentType: "application/json; charset=utf-8",
+                        //     type: 'POST',
+                        //     url: 'index2.php',
+                        //     data: JSON.stringify(all_data),
+                        //     success: function(data) {
+
+                        //         // window.location.href = 'index.php';                        
+
+                        //     }
+                        // });
+                        /* --------------------------- comment now 3 end -------------------------- */
                         /* --------------------- data send for to make vcf files end-------------------- */
                     }
                 });
@@ -2117,6 +2143,7 @@ session_start();
 
             /* ----------------------------get  data value to make VCF for mobile start---------------------------- */
             num_start = parseInt(row_start, 10);
+            num_end1 = parseInt(row_end, 10);
             num_end = parseInt(row_end, 10);
             var num_raw_data = 0;
             if (num_start > num_end) {
@@ -2176,22 +2203,26 @@ session_start();
                             num_end = 1;
                             // console.log(num_end);
                         }
-                        for (var j = num_start; j <= num_end; j++) {
-                            // console.log(json_array[j-1]);
-                            all_data[(num_end) - (j)] = json_array[j - 1];
-                        };
-                        /* --------------------- data send for to make vcf files start-------------------- */
-                        $.ajax({
-                            contentType: "application/json; charset=utf-8",
-                            type: 'POST',
-                            url: 'index2.php',
-                            data: JSON.stringify(all_data),
-                            success: function(data) {
+                        vcf()
+                        /* ------------------------------ comment now 2 start----------------------------- */
 
-                                // window.location.href = 'index.php';                        
+                        // for (var j = num_start; j <= num_end; j++) {
+                        //     // console.log(json_array[j-1]);
+                        //     all_data[(num_end) - (j)] = json_array[j - 1];
+                        // };
+                        // /* --------------------- data send for to make vcf files start-------------------- */
+                        // $.ajax({
+                        //     contentType: "application/json; charset=utf-8",
+                        //     type: 'POST',
+                        //     url: 'index2.php',
+                        //     data: JSON.stringify(all_data),
+                        //     success: function(data) {
 
-                            }
-                        });
+                        //         // window.location.href = 'index.php';                        
+
+                        //     }
+                        // });
+                        /* ------------------------------ comment now 2 end----------------------------- */
                         /* --------------------- data send for to make vcf files end-------------------- */
                     }
 
@@ -2412,7 +2443,8 @@ session_start();
             var error = "";
 
             function validateEmail(email) {
-                var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(email).toLowerCase());
             }
             if (password == "") {
@@ -2506,23 +2538,27 @@ session_start();
                                         num_end = 1;
                                         console.log(num_end);
                                     }
-                                    for (var j = num_start; j <= num_end; j++) {
-                                        // console.log(json_array[j-1]);
-                                        all_data[(num_end) - (j)] = json_array[
-                                            j - 1];
-                                    };
-                                    /* --------------------- data send for to make vcf files start-------------------- */
-                                    $.ajax({
-                                        contentType: "application/json; charset=utf-8",
-                                        type: 'POST',
-                                        url: 'index2.php',
-                                        data: JSON.stringify(all_data),
-                                        success: function(data) {
+                                    vcf()
+                                    /* ------------------------------ comment now 1 start----------------------------- */
 
-                                            // window.location.href = 'index.php';                        
+                                    // for (var j = num_start; j <= num_end; j++) {
+                                    //     // console.log(json_array[j-1]);
+                                    //     all_data[(num_end) - (j)] = json_array[
+                                    //         j - 1];
+                                    // };
+                                    // /* --------------------- data send for to make vcf files start-------------------- */
+                                    // $.ajax({
+                                    //     contentType: "application/json; charset=utf-8",
+                                    //     type: 'POST',
+                                    //     url: 'index2.php',
+                                    //     data: JSON.stringify(all_data),
+                                    //     success: function(data) {
 
-                                        }
-                                    });
+                                    //         // window.location.href = 'index.php';                        
+
+                                    //     }
+                                    // });
+                                    /* ------------------------------ comment now 1 end----------------------------- */
                                     /* --------------------- data send for to make vcf files end-------------------- */
                                 }
 
@@ -2739,7 +2775,7 @@ session_start();
         var error = "";
 
         // validation razorpay 
-        $("#payment_pro").on("click", function () {  
+        $("#payment_pro").on("click", function() {
             if ($("#inputName").val() == "") {
                 $("#inputName").css('border-color', 'red');
                 $("#inputName").css('border-width', '2px');
@@ -2755,7 +2791,7 @@ session_start();
             } else {
                 $("#inputAddress").css('border-color', '#C0BBBB');
                 $("#inputAddress").css('border-width', '1px');
-            }            
+            }
             if (error == "") {
                 value = 50;
                 // ajax call
@@ -2764,37 +2800,40 @@ session_start();
                     url: 'php/checkout-form.php',
                     dataType: "json",
                     data: {
-                        type : "50",
-                        name:$("#inputName").val(),
+                        type: "50",
+                        name: $("#inputName").val(),
                         email: user_email,
                         phone: user_mobile,
-                        address:$("#inputAddress").val(),
-                        eventname:"VCF50",
+                        address: $("#inputAddress").val(),
+                        eventname: "VCF50",
                         amount: value,
                     },
-                    success: function (data) {
+                    success: function(data) {
                         if (data.status == 201) {
                             window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({ 
-                                'event' : 'payment initiated',
-                                'name'  : $("#inputName").val(),
-                                'phone' : user_mobile,
-                                'email' : user_email
+                            window.dataLayer.push({
+                                'event': 'payment initiated',
+                                'name': $("#inputName").val(),
+                                'phone': user_mobile,
+                                'email': user_email
 
                             });
                             // alert("checked out");
                             var order_id = data.id;
                             var options = {
                                 "key": "rzp_test_dePlubEU9z2Fn8",
-                                "amount": parseInt(value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "amount": parseInt(value *
+                                    100
+                                    ), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                 "currency": "INR",
                                 "name": "VCF 50",
                                 "description": "Convert your csv/excel file into VCF",
                                 "image": "images/zamzar-logo.png",
                                 //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
-                                "handler": function (response) {
+                                "handler": function(response) {
                                     // alert(response.razorpay_payment_id);
-                                    var razorpay_payment_id = response.razorpay_payment_id;
+                                    var razorpay_payment_id = response
+                                        .razorpay_payment_id;
                                     // console.log(response);
                                     $.ajax({
                                         type: 'POST',
@@ -2807,23 +2846,37 @@ session_start();
                                             // amount: result.value,
                                             email: user_email
                                         },
-                                        success: function (data) {
+                                        success: function(data) {
                                             if (data.status == 'ok') {
                                                 //window.location = "thankyou.html";
                                                 // alert("Your payment has been successful");
-                                                $("#checkout-form").css('display','none !important');
-                                                $("#order-success").css('display','block !important');
-                                                $("#order-id").html('#'+ data.id);
+                                                num_end = num_end1;
+                                                vcf()
+                                                $("#checkout-form").css(
+                                                    'display',
+                                                    'none'
+                                                );
+                                                $("#order-success").css(
+                                                    'display',
+                                                    'block'
+                                                );
+                                                $("#order-id").html(
+                                                    '#' + data.id);
                                                 // window.scrollTo(0,0);
-                                                window.dataLayer = window.dataLayer || [];
-                                                window.dataLayer.push({ 
+                                                window.dataLayer =
+                                                    window.dataLayer ||
+                                                    [];
+                                                window.dataLayer.push({
                                                     'event': 'payment success',
-                                                    'name' : $("#inputName").val(),
-                                                    'phone' : user_mobile,
-                                                    'email' : user_email
+                                                    'name': $(
+                                                            "#inputName"
+                                                        )
+                                                        .val(),
+                                                    'phone': user_mobile,
+                                                    'email': user_email
 
                                                 });
-                                                
+
                                             } else {
                                                 console.log("error");
                                             }
@@ -2831,18 +2884,21 @@ session_start();
                                     });
 
 
-                                }, "prefill": {
+                                },
+                                "prefill": {
                                     "name": $("#inputName").val(),
                                     "email": user_email,
                                     "contact": user_mobile
-                                }, "notes": {
+                                },
+                                "notes": {
                                     // "country": $("#country").val(),
                                     // "address": $("#Address").val(),
                                     // "state": $("#state").val(),
                                     // "postcode": $("#postcode").val(),
                                     // "productName": "Crypto-Nite 2020",
 
-                                }, "theme": {
+                                },
+                                "theme": {
                                     "color": "#2487eb"
                                 }
                             };
@@ -2851,16 +2907,16 @@ session_start();
                             rzp1.open();
 
 
-                        }else if (data.status == 601) {
+                        } else if (data.status == 601) {
                             console.log(data.error);
                             // alert("problem with query");
-                        
-                        // }else if (data.status == 701){
+
+                            // }else if (data.status == 701){
                             // $(".order-success").css('display', 'block');
                             // $(".checkout-form").css('display', 'none');
                             // $('#exampleModalCenter').modal('show')
-                        
-                        }else{
+
+                        } else {
 
                         }
                     }
@@ -2870,10 +2926,49 @@ session_start();
             }
         });
 
-        $("#razorpay").on('show.bs.modal', function (e) {
+        $("#razorpay").on('show.bs.modal', function(e) {
             window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({ 'event': 'buy ticket' });
-        })
+            window.dataLayer.push({
+                'event': 'buy ticket'
+            });
+        });
+
+        // our price start
+        $.ajax({
+            type: 'POST',
+            url: 'php/price.php',
+            dataType: "json",
+            data: {},
+            success: function(data) {
+                // console.log(data);              
+                if (data.status == 201) {
+                    $(".set_price_pro").html(data.price_pro);
+                    $(".set_price_enterprise").html(data.price_enterprise);
+                } else {
+                    // alert('no price found');
+                }
+            }
+        });
+        //our price end
+        // vcf
+        function vcf() {
+            for (var j = num_start; j <= num_end; j++) {
+                // console.log(json_array[j-1]);
+                all_data[(num_end) - (j)] = json_array[j - 1];
+            };
+            /* --------------------- data send for to make vcf files start-------------------- */
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                type: 'POST',
+                url: 'index2.php',
+                data: JSON.stringify(all_data),
+                success: function(data) {
+
+                    // window.location.href = 'index.php';                        
+
+                }
+            });
+        }
     });
     </script>
 </body>
