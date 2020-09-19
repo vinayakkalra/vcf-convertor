@@ -2900,7 +2900,7 @@ session_start();
                         phone: user_mobile,
                         address: $("#inputAddress").val(),
                         eventname: "VCF50",
-                        amount: value,
+                        amount: result1.price_pro,
                     },
                     success: function(data) {
                         if (data.status == 201) {
@@ -2944,26 +2944,16 @@ session_start();
                                                 // alert("Your payment has been successful");
                                                 num_end = num_end1;
                                                 vcf()
-                                                $("#checkout-form").css(
-                                                    'display',
-                                                    'none'
-                                                );
-                                                $("#order-success").css(
-                                                    'display',
-                                                    'block'
-                                                );
-                                                $("#order-id").html(
-                                                    '#' + data.id);
+                                                $("#checkout-form").css('display','none');
+                                                $("#order-success").css('display','block');
+                                                $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
                                                     window.dataLayer ||
                                                     [];
                                                 window.dataLayer.push({
                                                     'event': 'payment success',
-                                                    'name': $(
-                                                            "#inputName"
-                                                        )
-                                                        .val(),
+                                                    'name': $("#inputName").val(),
                                                     'phone': user_mobile,
                                                     'email': user_email
 
