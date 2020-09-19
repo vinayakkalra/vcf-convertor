@@ -11,17 +11,17 @@ class VcardExport
         // add personal data    
         $send="";  
         $vcardObj->addName($complete_array[0]. " " .$complete_array[1]);
-        $vcardObj->addBirthday('1994-08-27');
+        // $vcardObj->addBirthday('1994-08-27');
         $vcardObj->addEmail($complete_array[2]);
         $vcardObj->addPhoneNumber($complete_array[3]);
-        $vcardObj->addAddress($complete_array[4]);       
-        $vcardObj->addImpp('abc@gmail.com'); 
-        $vcardObj->addNickName('Aarya');       
-        $vcardObj->addRole('intern');  
-        $vcardObj->addCompany('QuadB','QuadbTech');   
-        $vcardObj->addJobtitle('WebDeveloper'); 
-        $vcardObj->addUrl('http://vcfconvertor.quadbtech.com/'); 
-        $vcardObj->addNote('Hwllo freinds welcome to our vcf converter');        
+        $vcardObj->addAddress($complete_array[10]);       
+        // $vcardObj->addImpp('abc@gmail.com'); 
+        $vcardObj->addNickName($complete_array[8]);       
+        $vcardObj->addRole($complete_array[5]);  
+        $vcardObj->addCompany($complete_array[9],$complete_array[6]);   
+        $vcardObj->addJobtitle($complete_array[4]); 
+        $vcardObj->addUrl($complete_array[11]); 
+        $vcardObj->addNote($complete_array[7]);        
         $vcardObj->download();
 }
 }

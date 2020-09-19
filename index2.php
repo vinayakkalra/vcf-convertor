@@ -67,12 +67,9 @@ $address=$value;
 else if($key=="website"){
 $website=$value; 
 }
-else if($key=="birthday"){
-$birthday=$value;
-}// print_r($first_name);
 
  }
- $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$birthday);
+ $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website);
  }
   // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
   for($i=0;$i<($json_length);$i++){   

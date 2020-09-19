@@ -1034,10 +1034,10 @@ html [type="button"],
     background: #2487eb;
 }
 
-.sendButton:hover {
+/* .sendButton:hover { */
     /* background: linear-gradient(-40deg, #45cafc, #303f9f) !important; */
-    background: #16a085;
-}
+    /* background: #16a085;
+} */
 
 .btn {
     text-transform: uppercase;
@@ -1172,3 +1172,6 @@ html [type="button"],
     color: #52ad9c;
 }
 /* ------------------------ payment_form_style end ------------------------ */
+.social_mobile{
+    display: inherit !important;
+}
