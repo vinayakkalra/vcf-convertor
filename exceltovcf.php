@@ -156,6 +156,9 @@ session_start();
     #alert_id_Otp {
         display: none;
     }
+    .preloader ,.preloader_mobile{
+        display:none;
+    }
     </style>
 </head>
 
@@ -315,6 +318,11 @@ session_start();
                                                     (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
                                                 </div>
                                             </label>
+                                            <div class="preloader">
+                                                <div class="row pl-4 ml-5">
+                                                    <img src="images/preloader.gif" alt="preloader" width="20%">
+                                                </div>
+                                            </div>
                                             <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                 value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;">
                                         </form>
@@ -410,6 +418,11 @@ session_start();
                                                         max="9999" autocomplete="off" class="form-control">
                                                 </div>
                                             </div>
+                                            <div class="preloader">
+                                                <div class="row d-flex justify-content-center">
+                                                    <img src="images/preloader.gif" alt="preloader" width="10%">
+                                                </div>
+                                            </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
                                                     <input class="sendButton btn btn-primary" type="button"
@@ -434,6 +447,11 @@ session_start();
                                             </div>
                                             <div id="step3_dyanamic_data">
 
+                                            </div>
+                                            <div class="preloader">
+                                                <div class="row d-flex justify-content-center">
+                                                    <img src="images/preloader.gif" alt="preloader" width="10%">
+                                                </div>
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
                                                 <input class="sendButton btn btn-primary" type="button"
@@ -755,7 +773,7 @@ session_start();
                         <input type="email" id="Form_email_signin" class="form-control validate"
                             placeholder="Your email">
                     </div>
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
@@ -763,7 +781,12 @@ session_start();
                                 class="blue-text ml-1" id="forgot_password_link">Forgot
                                 Password?</a></p>
                     </div>
-                    <div class="text-center mb-5">
+                    <div class="preloader">
+                        <div class="row d-flex justify-content-center">
+                            <img src="images/preloader.gif" alt="preloader" width="20%">
+                        </div>
+                    </div>
+                    <div class="text-center mb-5 mt-3">
                         <button type="button"
                             class="btn sendButton bg-primary text-white btn-block btn-rounded z-depth-1a"
                             id="pop_up_signin">Sign
@@ -808,13 +831,18 @@ session_start();
                             <input type="password" id="Form_pass_signup" class="form-control validate"
                                 placeholder="Your password">
                         </div>
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass2_signup" class="form-control validate"
                                 placeholder="Confirm password">
 
                         </div>
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button"
                                 class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_signup">Sign
@@ -845,13 +873,17 @@ session_start();
                         </div>
                         <!--Body-->
 
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_Otp" class="form-control validate"
                                 placeholder="Enter OTP Number">
                         </div>
-
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button"
                                 class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_otp">Verify OTP</button>
@@ -893,13 +925,18 @@ session_start();
                             <input type="password" id="Form_pass_forgot" class="form-control validate"
                                 placeholder="New password">
                         </div>
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass2_forgot" class="form-control validate"
                                 placeholder="Confirm password">
 
                         </div>
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button"
                                 class="btn sendButton bg-primary text-white  btn-block btn-rounded z-depth-1a"
                                 id="pop_up_forgot">Change Password</button>
@@ -1181,6 +1218,11 @@ session_start();
                                                     (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
                                                 </div>
                                             </label>
+                                            <div class="preloader_mobile">
+                                                <div class="row d-flex justify-content-center">
+                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                </div>
+                                            </div>
                                             <div class="row d-flex justify-content-center">
                                                 <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                     value="submit" style="font-size: 1.6rem;padding: 1rem 5rem;">
@@ -1292,6 +1334,11 @@ session_start();
                                                         class="form-control">
                                                 </div>
                                             </div>
+                                            <div class="preloader_mobile">
+                                                <div class="row d-flex justify-content-center">
+                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                </div>
+                                            </div>
                                             <div class="form-group row">
                                                 <div class="col d-flex justify-content-center mt-3">
                                                     <input class="sendButton btn btn-primary" type="button"
@@ -1315,6 +1362,11 @@ session_start();
                                             </div>
                                             <div id="step3_dyanamic_data_mobile">
 
+                                            </div>
+                                            <div class="preloader_mobile">
+                                                <div class="row d-flex justify-content-center">
+                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                </div>
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
                                                 <input class="sendButton btn btn-primary" type="button"
@@ -1666,6 +1718,7 @@ session_start();
                 $('#alert_id_file_not_select').html("* Please Select excel file");
                 return false;
             } else {
+                $('.preloader').css('display','block');
                 $.ajax({
                     url: "php/insert.php",
                     type: "POST",
@@ -1683,6 +1736,7 @@ session_start();
                             });
                             $("#step2").css('display', 'block');
                             $("#step1").css('display', 'none');
+                            $('.preloader').css('display','none');
                             $("#read_file").val(data.filename);
                             uploaded_file_name = data.filename;
                         } else if (data.status == 601) {
@@ -1702,6 +1756,7 @@ session_start();
                 $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
                 return false;
             } else {
+                $('.preloader_mobile').css('display','block');
                 $.ajax({
                     url: "php/insert_mobile.php",
                     method: "POST",
@@ -1719,6 +1774,7 @@ session_start();
                             });
                             $("#step2_mobile").css('display', 'block');
                             $("#step1_mobile").css('display', 'none');
+                            $('.preloader_mobile').css('display','none');
                             $("#read_file_mobile").val(data.filename);
                         } else if (data.status == 601) {
                             console.log(data.error);
@@ -1808,6 +1864,7 @@ session_start();
                         /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
+                            $('.preloader').css('display','block');
                             row_start = first_row;
                             row_end = last_row;
                             if (json_object_length >= sheet) {
@@ -1821,6 +1878,7 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
+                                $('.preloader').css('display','none');
                                 var string_raw = "";
                                 if (first_column.charCodeAt(0) > last_column
                                     .charCodeAt(0)) {
@@ -1916,6 +1974,7 @@ session_start();
                         }
                         /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
+                            $('.preloader_mobile').css('display','block');
                             row_start = first_row;
                             row_end = last_row;
                             if (json_object_length >= sheet) {
@@ -1928,6 +1987,7 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
+                                $('.preloader_mobile').css('display','none');
                                 var string_raw = "";
                                 if (first_column.charCodeAt(0) > last_column
                                     .charCodeAt(0)) {
@@ -2034,6 +2094,7 @@ session_start();
                 }
             }
             if (error == "") {
+                $('.preloader').css('display','block');
                 $('.collapseSignup').removeClass('col-8');
                 $('.collapseSignup').addClass('col-10');
                 $.ajax({
@@ -2100,12 +2161,14 @@ session_start();
                 });
                 $('#step4').css('display', 'block');
                 $('#step3').css('display', 'none');
+                $('.preloader').css('display','none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
                 $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
             } else {
                 $('.collapseSignup').removeClass('col-10');
                 $('.collapseSignup').addClass('col-8');
                 $('#pop_up_desktop').modal('hide');
+                $('.preloader').css('display','none');
                 $('#step3').css('display', 'block');
                 $('#step4').css('display', 'none');
             }
@@ -2165,6 +2228,7 @@ session_start();
                 }
             }
             if (error == "") {
+                $('.preloader_mobile').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/auth.php',
@@ -2229,11 +2293,13 @@ session_start();
                 });
                 $('#step4_mobile').css('display', 'block');
                 $('#step3_mobile').css('display', 'none');
+                $('.preloader_mobile').css('display','none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
                 $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
             } else {
                 $('#pop_up_desktop').modal('hide');
                 $('#step3_mobile').css('display', 'block');
+                $('.preloader_mobile').css('display','none');
                 $('#step4_mobile').css('display', 'none');
             }
             $('#signin_link').click(function() {
@@ -2304,6 +2370,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
+                $('.preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -2323,6 +2390,7 @@ session_start();
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
+                            $('.preloader').css('display','none');
                             $('#sign_up_Otp').css('display', 'block');
 
                         } else if (data.status == 601) {
@@ -2330,10 +2398,12 @@ session_start();
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_signup').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_signup').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -2398,6 +2468,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
+                $('.preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/forgot_password.php',
@@ -2412,6 +2483,7 @@ session_start();
                         if (data.status == 201) {
                             $('#alert_id_forgot2').css('display', 'block');
                             $('#alert_id_forgot').css('display', 'none');
+                            $('.preloader').css('display','none');
                             $('#alert_id_forgot2').html(data.success);
                         } else if (data.status == 601) {
                             console.log(data.error);
@@ -2419,11 +2491,13 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_forgot').css('display', 'block');
                             $('#alert_id_forgot2').css('display', 'none');
+                            $('.preloader').css('display','none');
                             $('#alert_id_forgot').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_forgot').css('display', 'block');
                             $('#alert_id_forgot2').css('display', 'none');
+                            $('.preloader').css('display','none');
                             $('#alert_id_forgot').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -2464,6 +2538,7 @@ session_start();
                 $("#Form_email_signin").css('border-width', '1px');
             }
             if (error == "") {
+                $('.preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -2576,15 +2651,18 @@ session_start();
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_in_page').css('display', 'none');
+                            $('.preloader').css('display','none');
                             $('#sign_up_Otp').css('display', 'block');
 
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_signin').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signin').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_signin').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -2609,6 +2687,7 @@ session_start();
                 $("#Form_pass_Otp").css('border-width', '1px');
             }
             if (error == "") {
+                $('.preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/email_verify.php',
@@ -2620,6 +2699,7 @@ session_start();
                     success: function(data) {
                         // console.log(data);
                         if (data.status == 201) {
+                            $('.preloader').css('display','none');
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
                                 type: 'POST',
@@ -2648,9 +2728,11 @@ session_start();
                         } else if (data.status == 601) {
                             // console.log(data.error);
                             $('#alert_id_Otp').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_Otp').html(data.error);
                         } else if (data.status == 301) {
                             $('#alert_id_Otp').css('display', 'block');
+                            $('.preloader').css('display','none');
                             $('#alert_id_Otp').html(data.error);
                         } else {
                             //     alert("problem with query");
