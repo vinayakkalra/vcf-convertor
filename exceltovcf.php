@@ -521,7 +521,7 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a id="basic1"
+                                                                        <a  href="download.php" id="basic1"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
@@ -1002,7 +1002,7 @@ session_start();
                                 <!-- payment button for 100 INR -->
                                 <div class="text-center mt-5">
                                     <button type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
                                         id="payment_enterprise" style="color:#fff;">300 INR</button>
                                 </div>
                                 <!-- payment button for 100 INR -->
@@ -1408,7 +1408,7 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="#"
+                                                                        <a href="download.php"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
                                                                             Get Started
                                                                         </a>
