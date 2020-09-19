@@ -992,13 +992,8 @@ session_start();
                                 <!-- payment button for 100 INR -->
                                 <div class="text-center mt-5">
                                     <button type="button"
-<<<<<<< HEAD
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
-                                        id="payment_enterprise"style="color:#fff;">300 INR</button>
-=======
                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
                                         id="payment_enterprise" style="color:#fff;">300 INR</button>
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                                 </div>
                                 <!-- payment button for 100 INR -->
                             </div><!-- Yorder -->
@@ -2029,13 +2024,10 @@ session_start();
                     data: {},
                     success: function(data) {
                         // console.log(data);
-<<<<<<< HEAD
-=======
                         user_email = data.email;
                         user_mobile = data.mobile;
                         // console.log(data.email);
                         // console.log(data.mobile);
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
@@ -2044,15 +2036,9 @@ session_start();
                             user_email = data.email;
                             user_mobile = data.mobile;
                             $('#pop_up_desktop').modal('hide');
-<<<<<<< HEAD
-                            user_email = data.email;
-                            user_mobile=data.mobile;
-                            num_end = data.row_end;
-=======
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             if (num_end > 5) {
@@ -2163,25 +2149,13 @@ session_start();
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
-<<<<<<< HEAD
-                            user_mobile=data.mobile;
-=======
                             user_mobile = data.mobile;
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                             // console.log(data.email);
                             // console.log(data.mobile);
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
                             $('#pop_up_desktop').modal('hide');
-<<<<<<< HEAD
-                            num_end = data.row_end;
-                            // console.log(num_end);
-                        } else if (data.status == 601) {
-                            $('#pop_up_desktop').modal('show');
-                            num_end = data.row_end;
-                            // console.log(num_end);
-=======
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
@@ -2197,7 +2171,6 @@ session_start();
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                         } else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
@@ -2314,13 +2287,8 @@ session_start();
                         // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
-<<<<<<< HEAD
-                            user_email = data.email;                           
-                            user_mobile=data.mobile;
-=======
                             user_email = data.email;
                             user_mobile = data.mobile;
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
@@ -2568,11 +2536,7 @@ session_start();
                             console.log(data.error);
                             user_id = data.id;
                             user_email = data.email;
-<<<<<<< HEAD
-                            user_mobile=data.mobile;
-=======
                             user_mobile = data.mobile;
->>>>>>> 49f34e009ae079878ea2ddd2ec10a0c5f50efdda
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_in_page').css('display', 'none');
