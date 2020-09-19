@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once "VcardExport.php";
 if($_SERVER['REQUEST_METHOD']=='POST'){
 $data=array();

@@ -915,11 +915,11 @@ session_start();
                     <!-- payment form -->
                     <!-- payment form for both 50 and 100 start-->
                     <div class="container">
-                        <div class="d-flex row payment_info_row">
+                        <div class="d-flex row payment_info_row" id="checkout-form">
                             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2">
                                 <form>
                                     <div class="form-group row pb-4">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Name<span
+                                        <label for="inputName" class="col-sm-2 col-form-label">Name<span
                                                 class="required_star">*</span></label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="inputName" placeholder="Name">
@@ -934,7 +934,7 @@ session_start();
                                         </div>
                                     </div>
                                     <div class="form-group row pb-4">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Phone<span
+                                        <label for="inputPhone" class="col-sm-2 col-form-label">Phone<span
                                                 class="required_star">*</span></label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="inputPhone" name="payment_mobile"
@@ -945,7 +945,7 @@ session_start();
                                         <label for="inputAddress" class="col-sm-2 col-form-label">Address<span
                                                 class="required_star">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputPassword"
+                                            <input type="text" class="form-control" id="inputAddress"
                                                 placeholder="Address">
                                         </div>
                                     </div>
@@ -974,18 +974,28 @@ session_start();
                                 <!-- payment button for 50 INR -->
                                 <div class="text-center mt-5">
                                     <button type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_pro"
                                         id="payment_pro" style="color:#fff;">Place Order</button>
                                 </div>
                                 <!-- payment button for 50 INR -->
                                 <!-- payment button for 100 INR -->
                                 <div class="text-center mt-5">
                                     <button type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
                                         id="payment_enterprise"style="color:#fff;">300 INR</button>
                                 </div>
                                 <!-- payment button for 100 INR -->
                             </div><!-- Yorder -->
+                        </div>
+                        <div class="d-flex row payment_info_row" id="order-success" style="display:none;">
+                            <div>
+                                <p>Payment Successfully</p>
+                                <div class="text-center mt-5">
+                                    <button type="button"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file"
+                                        id="VCF-file"style="color:#fff;">Click Here to download VCF</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- payment form for both 50 and 100 end-->
@@ -993,9 +1003,9 @@ session_start();
                     <!-- payment form end -->
                 </div>
                 <!-- Modal footer -->
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -1585,6 +1595,7 @@ session_start();
     <script src="js/xlsx.js"></script> -->
     <!-- we can use this perticuler for read xlsx file only end-->
     <script src="js/xlsx.full.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
     $(document).ready(function() {
         var name_user = '';
@@ -1983,14 +1994,19 @@ session_start();
                 $.ajax({
                     type: 'POST',
                     url: 'php/auth.php',
+                    async : false,
                     dataType: "json",
                     data: {},
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
+                            user_email = data.email;
+                            user_mobile=data.mobile;
                         } else if (data.status == 301) {
                             $('#pop_up_desktop').modal('hide');
+                            user_email = data.email;
+                            user_mobile=data.mobile;
                             num_end = data.row_end;
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
@@ -2090,27 +2106,27 @@ session_start();
                     async : false,
                     data: {},
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile=data.mobile;
                             $('#pop_up_desktop').modal('hide');
                             num_end = data.row_end;
-                            console.log(num_end);
+                            // console.log(num_end);
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             num_end = data.row_end;
-                            console.log(num_end);
+                            // console.log(num_end);
                         } else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
-                            console.log(num_end);
+                            // console.log(num_end);
                         }
                         for (var j = num_start; j <= num_end; j++) {
                             // console.log(json_array[j-1]);
@@ -2220,13 +2236,13 @@ session_start();
                         'email': email
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
                             user_email = data.email;                           
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
@@ -2348,8 +2364,7 @@ session_start();
             var error = "";
 
             function validateEmail(email) {
-                var re =
-                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(email).toLowerCase());
             }
             if (password == "") {
@@ -2414,8 +2429,8 @@ session_start();
                             user_id = data.id;
                             user_email = data.email;
                             user_mobile=data.mobile;
-                            console.log(data.email);
-                            console.log(data.mobile);
+                            // console.log(data.email);
+                            // console.log(data.mobile);
                             $('#sign_in_page').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
@@ -2459,7 +2474,7 @@ session_start();
                         'otp': otp_row
                     },
                     success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
@@ -2595,20 +2610,158 @@ session_start();
 
         $('.pro').click(function() {           
             $('.myModal_payment').modal('show');
-            $('#payment_pro').css('display', 'block');
-            $('#payment_enterprise').css('display', 'none');
+            $('.payment_pro').css('display', 'block');
+            $('.payment_enterprise').css('display', 'none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
         });
         $('.enterprise').click(function() {
             $('.myModal_payment').modal('show');
-            $('#payment_enterprise').css('display', 'block');
-            $('#payment_pro').css('display', 'none');
+            $('.payment_enterprise').css('display', 'block');
+            $('.payment_pro').css('display', 'none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
         });
         /* ---------------------- payment option open and close function end--------------------- */
 
+        var error = "";
+
+        // validation razorpay 
+        $("#payment_pro").on("click", function () {  
+            if ($("#inputName").val() == "") {
+                $("#inputName").css('border-color', 'red');
+                $("#inputName").css('border-width', '2px');
+                error = error + 'name';
+            } else {
+                $("#inputName").css('border-color', '#C0BBBB');
+                $("#inputName").css('border-width', '1px');
+            }
+            if ($("#inputAddress").val() == "") {
+                $("#inputAddress").css('border-color', 'red');
+                $("#inputAddress").css('border-width', '2px');
+                error = error + 'address';
+            } else {
+                $("#inputAddress").css('border-color', '#C0BBBB');
+                $("#inputAddress").css('border-width', '1px');
+            }            
+            if (error == "") {
+                value = 50;
+                // ajax call
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/checkout-form.php',
+                    dataType: "json",
+                    data: {
+                        type : "50",
+                        name:$("#inputName").val(),
+                        email: user_email,
+                        phone: user_mobile,
+                        address:$("#inputAddress").val(),
+                        eventname:"VCF50",
+                        amount: value,
+                    },
+                    success: function (data) {
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ 
+                                'event' : 'payment initiated',
+                                'name'  : $("#inputName").val(),
+                                'phone' : user_mobile,
+                                'email' : user_email
+
+                            });
+                            // alert("checked out");
+                            var order_id = data.id;
+                            var options = {
+                                "key": "rzp_test_dePlubEU9z2Fn8",
+                                "amount": parseInt(value * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "currency": "INR",
+                                "name": "VCF 50",
+                                "description": "Convert your csv/excel file into VCF",
+                                "image": "images/zamzar-logo.png",
+                                //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
+                                "handler": function (response) {
+                                    // alert(response.razorpay_payment_id);
+                                    var razorpay_payment_id = response.razorpay_payment_id;
+                                    // console.log(response);
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'php/checkout-update-form.php',
+                                        dataType: "json",
+                                        data: {
+                                            id: data.id,
+                                            // productName: "Finstreet",
+                                            razorpay_payment_id: razorpay_payment_id,
+                                            // amount: result.value,
+                                            email: user_email
+                                        },
+                                        success: function (data) {
+                                            if (data.status == 'ok') {
+                                                //window.location = "thankyou.html";
+                                                // alert("Your payment has been successful");
+                                                $("#checkout-form").css('display','none !important');
+                                                $("#order-success").css('display','block !important');
+                                                $("#order-id").html('#'+ data.id);
+                                                // window.scrollTo(0,0);
+                                                window.dataLayer = window.dataLayer || [];
+                                                window.dataLayer.push({ 
+                                                    'event': 'payment success',
+                                                    'name' : $("#inputName").val(),
+                                                    'phone' : user_mobile,
+                                                    'email' : user_email
+
+                                                });
+                                                
+                                            } else {
+                                                console.log("error");
+                                            }
+                                        }
+                                    });
+
+
+                                }, "prefill": {
+                                    "name": $("#inputName").val(),
+                                    "email": user_email,
+                                    "contact": user_mobile
+                                }, "notes": {
+                                    // "country": $("#country").val(),
+                                    // "address": $("#Address").val(),
+                                    // "state": $("#state").val(),
+                                    // "postcode": $("#postcode").val(),
+                                    // "productName": "Crypto-Nite 2020",
+
+                                }, "theme": {
+                                    "color": "#2487eb"
+                                }
+                            };
+
+                            var rzp1 = new Razorpay(options);
+                            rzp1.open();
+
+
+                        }else if (data.status == 601) {
+                            console.log(data.error);
+                            // alert("problem with query");
+                        
+                        // }else if (data.status == 701){
+                            // $(".order-success").css('display', 'block');
+                            // $(".checkout-form").css('display', 'none');
+                            // $('#exampleModalCenter').modal('show')
+                        
+                        }else{
+
+                        }
+                    }
+                });
+            } else {
+                // return true;
+            }
+        });
+
+        $("#razorpay").on('show.bs.modal', function (e) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'event': 'buy ticket' });
+        })
     });
     </script>
 </body>
