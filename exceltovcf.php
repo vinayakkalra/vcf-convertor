@@ -1690,6 +1690,7 @@ session_start();
         var all_data = [];
         var total_data_length = 0;
         var result = [];
+        var result1 = "";
         var num_start = 0;
         var num_end = 0;
         var num_end1 = 0;
@@ -2828,6 +2829,26 @@ session_start();
             }
         });
 
+        // our price start
+        $.ajax({
+            type: 'POST',
+            url: 'php/price.php',
+            async: false,
+            dataType: "json",
+            data: {},
+            success: function(data) {
+                // console.log(data);              
+                if (data.status == 201) {
+                    result1 = data;
+                    $(".set_price_pro").html(data.price_pro);
+                    $(".set_price_enterprise").html(data.price_enterprise);
+                } else {
+                    // alert('no price found');
+                }
+            }
+        });
+        //our price end
+
         /* ---------------------- payment option open and close function start--------------------- */
 
         $('.pro').click(function() {
@@ -2867,7 +2888,6 @@ session_start();
                 $("#inputAddress").css('border-width', '1px');
             }
             if (error == "") {
-                value = 50;
                 // ajax call
                 $.ajax({
                     type: 'POST',
@@ -2896,9 +2916,7 @@ session_start();
                             var order_id = data.id;
                             var options = {
                                 "key": "rzp_test_dePlubEU9z2Fn8",
-                                "amount": parseInt(value *
-                                    100
-                                    ), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "amount": parseInt(result1.price_pro * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                 "currency": "INR",
                                 "name": "VCF 50",
                                 "description": "Convert your csv/excel file into VCF",
@@ -3007,23 +3025,6 @@ session_start();
             });
         });
 
-        // our price start
-        $.ajax({
-            type: 'POST',
-            url: 'php/price.php',
-            dataType: "json",
-            data: {},
-            success: function(data) {
-                // console.log(data);              
-                if (data.status == 201) {
-                    $(".set_price_pro").html(data.price_pro);
-                    $(".set_price_enterprise").html(data.price_enterprise);
-                } else {
-                    // alert('no price found');
-                }
-            }
-        });
-        //our price end
         // vcf
         function vcf() {
             for (var j = num_start; j <= num_end; j++) {
