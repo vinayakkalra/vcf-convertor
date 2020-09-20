@@ -550,7 +550,7 @@ session_start();
                 style="border: none !important;font-weight: 350 !important;">&times;</a>
             <div class="overlay-content">
                 <div class="header_inner_logo"><a href="/" style="border: none;padding: 0;margin: 0;"><img
-                            src="images/zamzar-logo.png"></a></div>
+                            src="images/zamzar-logo2.png"></a></div>
                 <div class="overlay-content-inner myNavbar_mobile">
                     <a href="/" id="mobile_home_button">Home</a>
                     <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
