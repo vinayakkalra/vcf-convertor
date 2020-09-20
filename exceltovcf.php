@@ -470,8 +470,8 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="download.php"
-                                                        style="color: #007bff;" id="basic">Click
+                                                    VCF files you can choose our paid version . <a href="#"
+                                                        style="color: #007bff;" id="basic" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -533,8 +533,8 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a  href="download.php" id="basic1"
-                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
+                                                                        <a  href="#" id="basic1"
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1045,8 +1045,8 @@ session_start();
                             <div>
                                 <p>Payment Successfully</p>
                                 <div class="text-center mt-5">
-                                    <a href="download.php" type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file"
+                                    <a href="#" type="button"
+                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
                                         id="VCF-file" style="color:#fff;">Click Here to download VCF</a>
                                 </div>
                             </div>
@@ -1389,8 +1389,8 @@ session_start();
                                             "></h3>
                                                 <p>You can download only 5 VCF files in demo version if you want to
                                                     download all
-                                                    VCF files you can choose our paid version . <a href="download.php"
-                                                        style="color: #007bff;">Click
+                                                    VCF files you can choose our paid version . <a href="#"
+                                                        style="color: #007bff;" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
                                             </div>
@@ -1452,8 +1452,8 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a href="download.php"
-                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full">
+                                                                        <a href="#"
+                                                                            class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
                                                                             Get Started
                                                                         </a>
                                                                     </div>
@@ -1662,6 +1662,7 @@ session_start();
             </div>
         </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -1673,6 +1674,7 @@ session_start();
     <!-- we can use this perticuler for read xlsx file only end-->
     <script src="js/xlsx.full.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="js/FileSaver.js"></script>
     <script>
     $(document).ready(function() {
         var name_user = '';
@@ -3034,6 +3036,25 @@ session_start();
                 }
             });
         }
+
+/* ---------------------- download functionality start ---------------------- */
+
+        $(".download").click(function(){
+            $.ajax({
+                type: 'POST',
+                url: 'download.php',
+                async: false,
+                dataType: "json",
+                data: {},
+                success: function(data) {
+                // console.log(data.file);
+                var blob = new Blob([data.file], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "contact.vcf");              
+                    
+                }
+            });
+        });  
+/* ---------------------- download functionality end ---------------------- */            
     });
     </script>
 </body>
