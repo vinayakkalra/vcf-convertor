@@ -1011,11 +1011,11 @@ session_start();
                                         </tr>
                                         <tr>
                                             <td>VCF</td>
-                                            <td>$88.00</td>
+                                            <td>&#x20B9;<span class="price">00</span></td>
                                         </tr>
                                         <tr>
                                             <td>Subtotal</td>
-                                            <td>$88.00</td>
+                                            <td>&#x20B9;<span class="price">00</span></td>
                                         </tr>
                                         <tr>
                                             <td>Shipping</td>
@@ -1034,7 +1034,7 @@ session_start();
                                 <div class="text-center mt-5">
                                     <button type="button"
                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
-                                        id="payment_enterprise" style="color:#fff;">300 INR</button>
+                                        id="payment_enterprise" style="color:#fff;">Buy</button>
                                 </div>
                                 <!-- payment button for 100 INR -->
                             </div><!-- Yorder -->
@@ -1699,6 +1699,7 @@ session_start();
         var num_end2 = 0;
         var user_email = "";
         var user_mobile = "";
+        var GetSubscriberId_Basic = "";
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -2859,6 +2860,8 @@ session_start();
             $('.payment_enterprise').css('display', 'none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
+            $(".price").html(result1.price_pro);
+
         });
         $('.enterprise').click(function() {
             $('.myModal_payment').modal('show');
@@ -2866,12 +2869,13 @@ session_start();
             $('.payment_pro').css('display', 'none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
+            $(".price").html(result1.price_enterprise);
         });
         /* ---------------------- payment option open and close function end--------------------- */
 
         var error = "";
 
-        // validation razorpay 
+        // razorpay payment 
         $("#payment_pro").on("click", function() {
             if ($("#inputName").val() == "") {
                 $("#inputName").css('border-color', 'red');
@@ -2926,8 +2930,7 @@ session_start();
                                 //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
                                 "handler": function(response) {
                                     // alert(response.razorpay_payment_id);
-                                    var razorpay_payment_id = response
-                                        .razorpay_payment_id;
+                                    var razorpay_payment_id = response.razorpay_payment_id;
                                     // console.log(response);
                                     $.ajax({
                                         type: 'POST',
@@ -2948,7 +2951,7 @@ session_start();
                                                 vcf()
                                                 $("#checkout-form").css('display','none');
                                                 $("#order-success").css('display','block');
-                                                $("#order-id").html('#' + data.id);
+                                                // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
                                                     window.dataLayer ||
@@ -2989,6 +2992,159 @@ session_start();
 
                             var rzp1 = new Razorpay(options);
                             rzp1.open();
+
+
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            // alert("problem with query");
+
+                            // }else if (data.status == 701){
+                            // $(".order-success").css('display', 'block');
+                            // $(".checkout-form").css('display', 'none');
+                            // $('#exampleModalCenter').modal('show')
+
+                        } else {
+
+                        }
+                    }
+                });
+            } else {
+                // return true;
+            }
+        });
+
+        $("#razorpay").on('show.bs.modal', function(e) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buy ticket'
+            });
+        });
+
+        // razorpay Subscrption 
+        $("#payment_enterprise").on("click", function() {
+            if ($("#inputName").val() == "") {
+                $("#inputName").css('border-color', 'red');
+                $("#inputName").css('border-width', '2px');
+                error = error + 'name';
+            } else {
+                $("#inputName").css('border-color', '#C0BBBB');
+                $("#inputName").css('border-width', '1px');
+            }
+            if ($("#inputAddress").val() == "") {
+                $("#inputAddress").css('border-color', 'red');
+                $("#inputAddress").css('border-width', '2px');
+                error = error + 'address';
+            } else {
+                $("#inputAddress").css('border-color', '#C0BBBB');
+                $("#inputAddress").css('border-width', '1px');
+            }
+            if (error == "") {
+                // ajax call
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/checkout-form.php',
+                    dataType: "json",
+                    async: false,
+                    data: {
+                        type: "100",
+                        name: $("#inputName").val(),
+                        email: user_email,
+                        phone: user_mobile,
+                        address: $("#inputAddress").val(),
+                        eventname: "VCF100",
+                        amount: result1.price_enterprise,
+                    },
+                    success: function(data) {
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'payment initiated',
+                                'name': $("#inputName").val(),
+                                'phone': user_mobile,
+                                'email': user_email
+
+                            });
+                            $.ajax({
+                                type: 'POST',
+                                url: 'php/get-sub.php',
+                                async: false,
+                                dataType: "json",
+                                data: {},
+                                success: function(response) {
+                                    GetSubscriberId_Basic = response.id;
+                                }
+
+                            });
+                            // alert("checked out");
+                            var options1 = {
+                                "key": "rzp_test_dePlubEU9z2Fn8",
+                                "subscription_id": GetSubscriberId_Basic,
+                                "name": "VCF 100",
+                                "description": "100RS Subscription for VCF ",
+                                "image": "images/zamzar-logo.png",
+                                "handler": function (response){
+                                    var razorpay_payment_id = response.razorpay_payment_id;
+                                    // console.log(response.razorpay_payment_id);
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'php/checkout-update-form.php',
+                                        dataType: "json",
+                                        data: {
+                                            id: data.id,
+                                            // productName: "Finstreet",
+                                            razorpay_payment_id: razorpay_payment_id,
+                                            // amount: result.value,
+                                            email: user_email
+                                        },
+                                        success: function(data) {
+                                            if (data.status == 'ok') {
+                                                //window.location = "thankyou.html";
+                                                // alert("Your payment has been successful");
+                                                num_end = num_end1;
+                                                vcf()
+                                                $("#checkout-form").css('display','none');
+                                                $("#order-success").css('display','block');
+                                                // $("#order-id").html('#' + data.id);
+                                                // window.scrollTo(0,0);
+                                                window.dataLayer =
+                                                    window.dataLayer ||
+                                                    [];
+                                                window.dataLayer.push({
+                                                    'event': 'payment success',
+                                                    'name': $("#inputName").val(),
+                                                    'phone': user_mobile,
+                                                    'email': user_email
+
+                                                });
+
+                                            } else {
+                                                console.log("error");
+                                            }
+                                        }
+                                    });
+
+
+                                },
+                                "prefill": {
+                                    "name": $("#inputName").val(),
+                                    "email": user_email,
+                                    "contact": user_mobile
+                                },
+                                "notes": {
+                                    // "country": $("#country").val(),
+                                    // "address": $("#Address").val(),
+                                    // "state": $("#state").val(),
+                                    // "postcode": $("#postcode").val(),
+                                    // "productName": "Crypto-Nite 2020",
+
+                                },
+                                "theme": {
+                                    "color": "#2487eb"
+                                }
+                            };
+                            
+                            var rzp2 = new Razorpay(options1);
+                            rzp2.open();
 
 
                         } else if (data.status == 601) {
