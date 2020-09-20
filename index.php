@@ -81,10 +81,10 @@ session_start();
                                             <a class="nav-link" href="exceltovcf">Excel to VCF</a>
                                         </li>                                       
                                         <li class="nav-item">
-                                            <a class="nav-link " href="/#our_team">Policy</a>
+                                            <a class="nav-link " href="policy">Policy</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="/#our_team">Contact</a>
+                                            <a class="nav-link " href="contact">Contact</a>
                                         </li>
                                         <li class="nav-item set_id_one">
                                         </li>
@@ -554,8 +554,8 @@ session_start();
                 <div class="overlay-content-inner myNavbar_mobile">
                     <a href="/" id="mobile_home_button">Home</a>
                     <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
-                    <a href="#" id="mobile_policy_button">Policy</a>
-                    <a href="#" id="mobile_contact_button">Contact</a>
+                    <a href="policy" id="mobile_policy_button">Policy</a>
+                    <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
                     <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
                 </div>
