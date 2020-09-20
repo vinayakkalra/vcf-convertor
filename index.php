@@ -55,6 +55,10 @@ session_start();
     #alert_id_Otp{
         display:none;
     }
+    .preloader,
+    .preloader_mobile {
+        display: none;
+    }
     </style>
 </head>
 
@@ -81,10 +85,10 @@ session_start();
                                             <a class="nav-link" href="exceltovcf">Excel to VCF</a>
                                         </li>                                       
                                         <li class="nav-item">
-                                            <a class="nav-link " href="policy">Policy</a>
+                                            <a class="nav-link " href="/#our_team">Policy</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="contact">Contact</a>
+                                            <a class="nav-link " href="/#our_team">Contact</a>
                                         </li>
                                         <li class="nav-item set_id_one">
                                         </li>
@@ -385,7 +389,7 @@ session_start();
                         <input type="email" id="Form_email_signin" class="form-control validate"
                             placeholder="Your email">
                     </div>
-                    <div class="md-form mb-5">
+                    <div class="md-form mb-3">
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="Form_pass_signin" class="form-control validate"
                             placeholder="Your password">
@@ -393,7 +397,16 @@ session_start();
                                 class="blue-text ml-1"  id="forgot_password_link">Forgot 
                                 Password?</a></p>
                     </div>
-                    <div class="text-center mb-5">
+                    <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="text-center mb-5 mt-5">
                         <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
                             id="pop_up_signin">Sign
                             in</button>
@@ -435,13 +448,22 @@ session_start();
                             <input type="password" id="Form_pass_signup" class="form-control validate"
                                 placeholder="Your password">
                         </div>
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass2_signup" class="form-control validate"
                                 placeholder="Confirm password">
 
                         </div>
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
                                 id="pop_up_signup">Sign
                                 Up</button>
@@ -469,13 +491,21 @@ session_start();
                         </div>
                         <!--Body-->                      
                         
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_Otp" class="form-control validate"
                                 placeholder="Enter OTP Number">
                         </div>
-                        
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
                                 id="pop_up_otp">Verify OTP</button>
                         </div>
@@ -516,13 +546,22 @@ session_start();
                             <input type="password" id="Form_pass_forgot" class="form-control validate"
                                 placeholder="New password">
                         </div>
-                        <div class="md-form mb-5">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass2_forgot" class="form-control validate"
                                 placeholder="Confirm password">
 
                         </div>
-                        <div class="text-center mb-5">
+                        <div class="preloader">
+                            <div class="row d-flex justify-content-center">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mb-5 mt-5">
                             <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
                                 id="pop_up_forgot">Change Password</button>
                         </div>
@@ -554,8 +593,8 @@ session_start();
                 <div class="overlay-content-inner myNavbar_mobile">
                     <a href="/" id="mobile_home_button">Home</a>
                     <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
-                    <a href="policy" id="mobile_policy_button">Policy</a>
-                    <a href="contact" id="mobile_contact_button">Contact</a>
+                    <a href="#" id="mobile_policy_button">Policy</a>
+                    <a href="#" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
                     <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
                 </div>
@@ -871,6 +910,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -886,6 +926,7 @@ session_start();
                             user_id = data.id;
                             user_email=data.email;
                             $('#sign_up_page').css('display', 'none');
+                            $('.preloader').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
                             
                         } else if (data.status == 601) {
@@ -893,10 +934,12 @@ session_start();
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signup').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signup').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -921,6 +964,7 @@ session_start();
                 $("#Form_pass_Otp").css('border-width', '1px');
             }
             if (error == "") {
+                $('.preloader').css('display', 'block');
             $.ajax({
                     type: 'POST',
                     url: 'php/email_verify.php',
@@ -954,13 +998,15 @@ session_start();
                             var file_first_char = (uploaded_user_name.substring(0, 1))
                         .toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
-                        
+                            $('.preloader').css('display', 'none');
                         } else if (data.status == 601) {
                             console.log(data.error);
                             $('#alert_id_Otp').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_Otp').html(data.error); 
                         } else if(data.status==301) {
                             $('#alert_id_Otp').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_Otp').html(data.error); 
                         }else{
                             //     alert("problem with query");
@@ -1027,6 +1073,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/forgot_password.php',
@@ -1041,6 +1088,7 @@ session_start();
                         // console.log(data);
                         if (data.status == 201) {
                             $('#alert_id_forgot2').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot').css('display', 'none');
                             $('#alert_id_forgot2').html(data.success);
                         } else if (data.status == 601) {
@@ -1048,11 +1096,13 @@ session_start();
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_forgot').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot2').css('display', 'none');
                             $('#alert_id_forgot').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_forgot').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot2').css('display', 'none');
                             $('#alert_id_forgot').html(data.error);
                         } else {
@@ -1092,6 +1142,7 @@ session_start();
                 $("#Form_email_signin").css('border-width', '1px');
             }
             if (error == "") {
+                $('.preloader').css('display', 'block');
                 uploaded_user_name = email;
                 $.ajax({
                     type: 'POST',
@@ -1125,19 +1176,23 @@ session_start();
                                     logout_signup_signin();
                                 }
                             });
-                            $('#pop_up_desktop').modal('hide');                            
+                            $('#pop_up_desktop').modal('hide'); 
+                            $('.preloader').css('display', 'none');                           
                         } else if (data.status == 601) {
                             console.log(data.error);
                             user_email=data.email;
                             $('#sign_in_page').css('display', 'none');
+                            $('.preloader').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signin').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signin').css('display', 'block');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signin').html(data.error);
                         } else {
                             //console.log(data.error)
