@@ -156,8 +156,9 @@ session_start();
     #alert_id_Otp {
         display: none;
     }
-    .preloader ,.preloader_mobile{
-        display:none;
+    .preloader,
+    .preloader_mobile {
+        display: none;
     }
     </style>
 </head>
@@ -314,7 +315,11 @@ session_start();
                                             </label>
                                             <div class="preloader">
                                                 <div class="row pl-4 ml-5">
-                                                    <img src="images/preloader.gif" alt="preloader" width="20%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <input class="sendButton btn btn-primary" type="submit" name="submit"
@@ -414,7 +419,11 @@ session_start();
                                             </div>
                                             <div class="preloader">
                                                 <div class="row d-flex justify-content-center">
-                                                    <img src="images/preloader.gif" alt="preloader" width="10%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -444,7 +453,11 @@ session_start();
                                             </div>
                                             <div class="preloader">
                                                 <div class="row d-flex justify-content-center">
-                                                    <img src="images/preloader.gif" alt="preloader" width="10%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
@@ -777,7 +790,11 @@ session_start();
                     </div>
                     <div class="preloader">
                         <div class="row d-flex justify-content-center">
-                            <img src="images/preloader.gif" alt="preloader" width="20%">
+                            <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                <div class="ldio-538wm7ir56h">
+                                    <div></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center mb-5 mt-3">
@@ -833,7 +850,11 @@ session_start();
                         </div>
                         <div class="preloader">
                             <div class="row d-flex justify-content-center">
-                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
@@ -874,7 +895,11 @@ session_start();
                         </div>
                         <div class="preloader">
                             <div class="row d-flex justify-content-center">
-                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
@@ -927,7 +952,11 @@ session_start();
                         </div>
                         <div class="preloader">
                             <div class="row d-flex justify-content-center">
-                                <img src="images/preloader.gif" alt="preloader" width="20%">
+                                <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                    <div class="ldio-538wm7ir56h">
+                                        <div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
@@ -1212,7 +1241,11 @@ session_start();
                                             </label>
                                             <div class="preloader_mobile">
                                                 <div class="row d-flex justify-content-center">
-                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row d-flex justify-content-center">
@@ -1328,7 +1361,11 @@ session_start();
                                             </div>
                                             <div class="preloader_mobile">
                                                 <div class="row d-flex justify-content-center">
-                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -1357,7 +1394,11 @@ session_start();
                                             </div>
                                             <div class="preloader_mobile">
                                                 <div class="row d-flex justify-content-center">
-                                                    <img src="images/preloader.gif" alt="preloader" width="25%">
+                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
+                                                        <div class="ldio-538wm7ir56h">
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-center mt-5">
