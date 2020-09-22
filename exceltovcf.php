@@ -3053,8 +3053,20 @@ session_start();
                 // return true;
             }
         });
+        $.ajax({
+            type: 'POST',
+            url: 'php/get-sub.php',
+            async: false,
+            dataType: "json",
+            data: {},
+            success: function(response) {
+                GetSubscriberId_Basic = response.id;
+            }
 
-        $("#razorpay").on('show.bs.modal', function(e) {
+        });
+
+
+        $("#payment_pro").on('show.bs.modal', function(e) {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'buy ticket'
@@ -3105,17 +3117,6 @@ session_start();
                                 'email': user_email
 
                             });
-                            $.ajax({
-                                type: 'POST',
-                                url: 'php/get-sub.php',
-                                async: false,
-                                dataType: "json",
-                                data: {},
-                                success: function(response) {
-                                    GetSubscriberId_Basic = response.id;
-                                }
-
-                            });
                             // alert("checked out");
                             var options1 = {
                                 "key": "rzp_test_dePlubEU9z2Fn8",
@@ -3123,18 +3124,19 @@ session_start();
                                 "name": "VCF 100",
                                 "description": "100RS Subscription for VCF ",
                                 "image": "images/zamzar-logo.png",
+                                "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
                                 "handler": function (response){
                                     var razorpay_payment_id = response.razorpay_payment_id;
                                     // console.log(response.razorpay_payment_id);
                                     $.ajax({
                                         type: 'POST',
-                                        url: 'php/checkout-update-form.php',
+                                        url: 'php/checkout-update1-form.php',
                                         dataType: "json",
                                         data: {
                                             id: data.id,
                                             // productName: "Finstreet",
                                             razorpay_payment_id: razorpay_payment_id,
-                                            // amount: result.value,
+                                            amount: result1.price_enterprise,
                                             email: user_email
                                         },
                                         success: function(data) {
@@ -3207,10 +3209,10 @@ session_start();
             }
         });
 
-        $("#razorpay").on('show.bs.modal', function(e) {
+        $("#payment_enterprise").on('show.bs.modal', function(e) {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'buy ticket'
+                'event': 'buy Subscription'
             });
         });
 
