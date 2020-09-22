@@ -605,7 +605,7 @@ session_start();
                         <div class="row mt-5 mb-5">
                             <div class="col d-flex justify-content-center"><a
                                     href="https://g.page/coworking-space-chandigarh?share" target="_blank"><img
-                                        src="images/map.png" alt="map_image" class="map_image"></a></div>
+                                        src="images/mapp.png" alt="map_image" class="map_image"></a></div>
                         </div>
                         <div class="row  mt-5">
                             <div class="col">
