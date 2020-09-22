@@ -2686,6 +2686,7 @@ session_start();
                             });
                             // window.location = "exceltovcf"; 
                             $('#pop_up_desktop').modal('hide');
+                            $('.preloader').css('display','none');
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);
