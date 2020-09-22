@@ -6,7 +6,7 @@ session_start();
 
 <head>
     <!-- Enter a proper page title here -->
-    <title>VCF Converter| Example with all standards</title>
+    <title>CSVTOVCF | #1 VCF Converter</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
