@@ -46,15 +46,15 @@ session_start();
     <!-- <link rel="icon" href="ENTER_FAVICON_LOCATION"> -->
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
-        <!-- ------------------------------ favicon start ----------------------------- -->
+    <!-- ------------------------------ favicon start ----------------------------- -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<!-- ------------------------------ favicon end ----------------------------- -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ------------------------------ favicon end ----------------------------- -->
     <style>
     .form-group label {
         font-weight: 500 !important;
@@ -85,8 +85,9 @@ session_start();
         background-color: #4d5cff;
         color: #fff;
     }
-    #order-success{
-        display:none;
+
+    #order-success {
+        display: none;
     }
 
     img {
@@ -165,9 +166,13 @@ session_start();
     #alert_id_Otp {
         display: none;
     }
+
     .preloader,
     .preloader_mobile {
         display: none;
+    }
+    .paid_person{
+        display:none;
     }
     </style>
 </head>
@@ -193,7 +198,7 @@ session_start();
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="exceltovcf">Excel to VCF</a>
-                                        </li>                                       
+                                        </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
                                         </li>
@@ -486,19 +491,21 @@ session_start();
                                                 <div class="d-flex justify-content-center">
                                                     <hr class="hr_tag_style">
                                                 </div>
-                                                <h3 id="vcf_filename" style="
-                                                font-size: 3rem;
-                                                font-weight: 500;
-                                            "></h3>
-                                                <p>You can download only 5 VCF files in demo version if you want to
+                                                <h3 class="vcf_filename" style="font-size: 3rem;font-weight: 500;"></h3>
+                                                <p class="basic_download_info">You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="#"
                                                         style="color: #007bff;" id="basic" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
+                                                <div class="text-center mt-5 paid_person">
+                                                    <a href="#" type="button"
+                                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download col-5"
+                                                        style="color:#fff;">Click Here to download VCF</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row our_subscription">
                                             <div class="col">
                                                 <div class="pt-4 pb-4 bg-white">
                                                     <div
@@ -555,7 +562,7 @@ session_start();
                                                                                 2 Sub-domains
                                                                             </li>
                                                                         </ul>
-                                                                        <a  href="#" id="basic1"
+                                                                        <a href="#" id="basic1"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
                                                                             Get Started
                                                                         </a>
@@ -1004,91 +1011,92 @@ session_start();
                     <!-- payment form -->
                     <!-- payment form for both 50 and 100 start-->
                     <div class="container">
-                    <div id="checkout-form">
-                        <div class="d-flex row payment_info_row">
-                            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2">
-                                <form>
-                                    <div class="form-group row pb-4">
-                                        <label for="inputName" class="col-sm-2 col-form-label">Name<span
-                                                class="required_star">*</span></label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                        <div id="checkout-form">
+                            <div class="d-flex row payment_info_row">
+                                <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-2">
+                                    <form>
+                                        <div class="form-group row pb-4">
+                                            <label for="inputName" class="col-sm-2 col-form-label">Name<span
+                                                    class="required_star">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputName"
+                                                    placeholder="Name">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row pb-4">
-                                        <label for="staticEmail" class="col-sm-2 col-form-label">Email<span
-                                                class="required_star">*</span></label>
-                                        <div class="col-sm-10">
-                                            <input type="text" readonly class="form-control" id="staticEmail"
-                                                name="payment_email" value="">
+                                        <div class="form-group row pb-4">
+                                            <label for="staticEmail" class="col-sm-2 col-form-label">Email<span
+                                                    class="required_star">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" readonly class="form-control" id="staticEmail"
+                                                    name="payment_email" value="">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row pb-4">
-                                        <label for="inputPhone" class="col-sm-2 col-form-label">Phone<span
-                                                class="required_star">*</span></label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputPhone"
-                                                name="payment_mobile" readonly>
+                                        <div class="form-group row pb-4">
+                                            <label for="inputPhone" class="col-sm-2 col-form-label">Phone<span
+                                                    class="required_star">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputPhone"
+                                                    name="payment_mobile" readonly>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row pb-4">
-                                        <label for="inputAddress" class="col-sm-2 col-form-label">Address<span
-                                                class="required_star">*</span></label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputAddress"
-                                                placeholder="Address">
+                                        <div class="form-group row pb-4">
+                                            <label for="inputAddress" class="col-sm-2 col-form-label">Address<span
+                                                    class="required_star">*</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                    placeholder="Address">
+                                            </div>
                                         </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 Yorder">
+                                    <div class="d-flex justify-content-center">
+                                        <table class="Order_table" style=" width: 90% !important;">
+                                            <tr>
+                                                <th colspan="2" style="text-align: center;">Your order</th>
+                                            </tr>
+                                            <tr>
+                                                <td>VCF</td>
+                                                <td>&#x20B9;<span class="price">00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Subtotal</td>
+                                                <td>&#x20B9;<span class="price">00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shipping</td>
+                                                <td>Free shipping</td>
+                                            </tr>
+                                        </table><br>
                                     </div>
-                                </form>
+                                    <!-- payment button for 50 INR -->
+                                    <div class="text-center mt-5">
+                                        <button type="button"
+                                            class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_pro"
+                                            id="payment_pro" style="color:#fff;">Place Order</button>
+                                    </div>
+                                    <!-- payment button for 50 INR -->
+                                    <!-- payment button for 100 INR -->
+                                    <div class="text-center mt-5">
+                                        <button type="button"
+                                            class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
+                                            id="payment_enterprise" style="color:#fff;">Buy</button>
+                                    </div>
+                                    <!-- payment button for 100 INR -->
+                                </div><!-- Yorder -->
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-2 Yorder">
-                                <div class="d-flex justify-content-center">
-                                    <table class="Order_table" style=" width: 90% !important;">
-                                        <tr>
-                                            <th colspan="2" style="text-align: center;">Your order</th>
-                                        </tr>
-                                        <tr>
-                                            <td>VCF</td>
-                                            <td>&#x20B9;<span class="price">00</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Subtotal</td>
-                                            <td>&#x20B9;<span class="price">00</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping</td>
-                                            <td>Free shipping</td>
-                                        </tr>
-                                    </table><br>
-                                </div>
-                                <!-- payment button for 50 INR -->
-                                <div class="text-center mt-5">
-                                    <button type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_pro"
-                                        id="payment_pro" style="color:#fff;">Place Order</button>
-                                </div>
-                                <!-- payment button for 50 INR -->
-                                <!-- payment button for 100 INR -->
-                                <div class="text-center mt-5">
-                                    <button type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a payment_enterprise"
-                                        id="payment_enterprise" style="color:#fff;">Buy</button>
-                                </div>
-                                <!-- payment button for 100 INR -->
-                            </div><!-- Yorder -->
-                        </div>
                         </div>
                         <div id="order-success">
-                        <div class="d-flex row payment_info_row">
-                            <div>
-                                <p>Payment Successfully</p>
-                                <div class="text-center mt-5">
-                                    <a href="#" type="button"
-                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
-                                        id="VCF-file" style="color:#fff;">Click Here to download VCF</a>
+                            <div class="d-flex row payment_info_row">
+                                <div>
+                                    <p>Payment Successfully</p>
+                                    <div class="text-center mt-5">
+                                        <a href="#" type="button"
+                                            class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
+                                            id="VCF-file" style="color:#fff;">Click Here to download VCF</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                     <!-- payment form for both 50 and 100 end-->
@@ -1117,7 +1125,7 @@ session_start();
                             src="images/zamzar-logo2.png"></a></div>
                 <div class="overlay-content-inner myNavbar_mobile">
                     <a href="/" id="mobile_home_button">Home</a>
-                    <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
+                    <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>
                     <a href="policy" id="mobile_policy_button">Policy</a>
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
@@ -1433,19 +1441,21 @@ session_start();
                                                 <div class="d-flex justify-content-center">
                                                     <hr class="hr_tag_style">
                                                 </div>
-                                                <h3 id="vcf_filename" style="
-                                                font-size: 3rem;
-                                                font-weight: 500;
-                                            "></h3>
-                                                <p>You can download only 5 VCF files in demo version if you want to
+                                                <h3 class="vcf_filename" style="font-size: 3rem;font-weight: 500;"></h3>
+                                                <p class="basic_download_info">You can download only 5 VCF files in demo version if you want to
                                                     download all
                                                     VCF files you can choose our paid version . <a href="#"
                                                         style="color: #007bff;" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
+                                                <div class="text-center mt-5 paid_person">
+                                                    <a href="#" type="button"
+                                                        class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
+                                                        style="color:#fff;">Click Here to download VCF</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row our_subscription">
                                             <div class="col">
                                                 <div class="pt-4 pb-4 bg-white">
                                                     <div
@@ -1764,7 +1774,7 @@ session_start();
                 $('#alert_id_file_not_select').html("* Please Select excel file");
                 return false;
             } else {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     url: "php/insert.php",
                     type: "POST",
@@ -1782,7 +1792,7 @@ session_start();
                             });
                             $("#step2").css('display', 'block');
                             $("#step1").css('display', 'none');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $("#read_file").val(data.filename);
                             uploaded_file_name = data.filename;
                         } else if (data.status == 601) {
@@ -1802,7 +1812,7 @@ session_start();
                 $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
                 return false;
             } else {
-                $('.preloader_mobile').css('display','block');
+                $('.preloader_mobile').css('display', 'block');
                 $.ajax({
                     url: "php/insert_mobile.php",
                     method: "POST",
@@ -1820,8 +1830,9 @@ session_start();
                             });
                             $("#step2_mobile").css('display', 'block');
                             $("#step1_mobile").css('display', 'none');
-                            $('.preloader_mobile').css('display','none');
+                            $('.preloader_mobile').css('display', 'none');
                             $("#read_file_mobile").val(data.filename);
+                            uploaded_file_name = data.filename;
                         } else if (data.status == 601) {
                             console.log(data.error);
                             //     alert("problem with query");
@@ -1910,7 +1921,7 @@ session_start();
                         /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
-                            $('.preloader').css('display','block');
+                            $('.preloader').css('display', 'block');
                             row_start = first_row;
                             row_end = last_row;
                             if (json_object_length >= sheet) {
@@ -1924,7 +1935,7 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
-                                $('.preloader').css('display','none');
+                                $('.preloader').css('display', 'none');
                                 var string_raw = "";
                                 if (first_column.charCodeAt(0) > last_column
                                     .charCodeAt(0)) {
@@ -2020,7 +2031,7 @@ session_start();
                         }
                         /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
-                            $('.preloader_mobile').css('display','block');
+                            $('.preloader_mobile').css('display', 'block');
                             row_start = first_row;
                             row_end = last_row;
                             if (json_object_length >= sheet) {
@@ -2033,7 +2044,7 @@ session_start();
                                 keys_change = XL_row_object;
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
-                                $('.preloader_mobile').css('display','none');
+                                $('.preloader_mobile').css('display', 'none');
                                 var string_raw = "";
                                 if (first_column.charCodeAt(0) > last_column
                                     .charCodeAt(0)) {
@@ -2140,7 +2151,7 @@ session_start();
                 }
             }
             if (error == "") {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $('.collapseSignup').removeClass('col-8');
                 $('.collapseSignup').addClass('col-10');
                 $.ajax({
@@ -2160,6 +2171,9 @@ session_start();
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
                             user_mobile = data.mobile;
+                            $('.our_subscription').css('display', 'none');
+                            $('.basic_download_info').css('display', 'none');
+                            $('.paid_person').css('display', 'block');
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
@@ -2167,19 +2181,31 @@ session_start();
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else if (data.status == 701) {
                             $('#pop_up_desktop').modal('show');
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         }
                         vcf()
 
@@ -2207,14 +2233,14 @@ session_start();
                 });
                 $('#step4').css('display', 'block');
                 $('#step3').css('display', 'none');
-                $('.preloader').css('display','none');
+                $('.preloader').css('display', 'none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
-                $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
+                $('.vcf_filename').html(file_start_char + '****.vcf is ready to download');                
             } else {
                 $('.collapseSignup').removeClass('col-10');
                 $('.collapseSignup').addClass('col-8');
                 $('#pop_up_desktop').modal('hide');
-                $('.preloader').css('display','none');
+                $('.preloader').css('display', 'none');
                 $('#step3').css('display', 'block');
                 $('#step4').css('display', 'none');
             }
@@ -2274,7 +2300,7 @@ session_start();
                 }
             }
             if (error == "") {
-                $('.preloader_mobile').css('display','block');
+                $('.preloader_mobile').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/auth.php',
@@ -2286,9 +2312,12 @@ session_start();
                         if (data.status == 201) {
                             $('#pop_up_desktop').modal('hide');
                             user_email = data.email;
-                            user_mobile = data.mobile;
+                            user_mobile = data.mobile;                                                                                   
                             // console.log(data.email);
                             // console.log(data.mobile);
+                            $('.our_subscription').css('display', 'none');
+                            $('.basic_download_info').css('display', 'none');
+                            $('.paid_person').css('display', 'block');
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
@@ -2297,21 +2326,33 @@ session_start();
                                 num_end = data.row_end;
                             }
                             // console.log(num_end);
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else if (data.status == 601) {
                             $('#pop_up_desktop').modal('show');
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
                             // console.log(num_end);
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else if (data.status == 701) {
                             $('#pop_up_desktop').modal('show');
                             if (num_end > 5) {
                                 num_end = data.row_end;
                             }
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         } else {
                             $('#pop_up_desktop').modal('show');
                             num_end = 1;
                             // console.log(num_end);
+                            $('.our_subscription').css('display', 'block');
+                            $('.basic_download_info').css('display', 'block');
+                            $('.paid_person').css('display', 'none');
                         }
                         vcf()
                         /* ------------------------------ comment now 2 start----------------------------- */
@@ -2339,13 +2380,13 @@ session_start();
                 });
                 $('#step4_mobile').css('display', 'block');
                 $('#step3_mobile').css('display', 'none');
-                $('.preloader_mobile').css('display','none');
+                $('.preloader_mobile').css('display', 'none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
-                $('#vcf_filename').html(file_start_char + '****.vcf is ready to download');
+                $('.vcf_filename').html(file_start_char + '****.vcf is ready to download');               
             } else {
                 $('#pop_up_desktop').modal('hide');
                 $('#step3_mobile').css('display', 'block');
-                $('.preloader_mobile').css('display','none');
+                $('.preloader_mobile').css('display', 'none');
                 $('#step4_mobile').css('display', 'none');
             }
             $('#signin_link').click(function() {
@@ -2416,7 +2457,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/signup_form.php',
@@ -2436,7 +2477,7 @@ session_start();
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_up_page').css('display', 'none');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
 
                         } else if (data.status == 601) {
@@ -2444,12 +2485,12 @@ session_start();
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signup').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signup').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signup').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -2514,7 +2555,7 @@ session_start();
                 error = error + 'password not matched';
             }
             if (error == "") {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/forgot_password.php',
@@ -2529,7 +2570,7 @@ session_start();
                         if (data.status == 201) {
                             $('#alert_id_forgot2').css('display', 'block');
                             $('#alert_id_forgot').css('display', 'none');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot2').html(data.success);
                         } else if (data.status == 601) {
                             console.log(data.error);
@@ -2537,13 +2578,13 @@ session_start();
                         } else if (data.status == 301) {
                             $('#alert_id_forgot').css('display', 'block');
                             $('#alert_id_forgot2').css('display', 'none');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot').html(data.error);
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_forgot').css('display', 'block');
                             $('#alert_id_forgot2').css('display', 'none');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_forgot').html(data.error);
                         } else {
                             //console.log(data.error)
@@ -2584,7 +2625,7 @@ session_start();
                 $("#Form_email_signin").css('border-width', '1px');
             }
             if (error == "") {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/login_form.php',
@@ -2635,6 +2676,9 @@ session_start();
                                         user_mobile = data.mobile;
                                         console.log(data.email);
                                         console.log(data.mobile);
+                                        $('.our_subscription').css('display', 'none');
+                                        $('.basic_download_info').css('display', 'none');
+                                        $('.paid_person').css('display', 'block');
                                     } else if (data.status == 301) {
                                         user_email = data.email;
                                         user_mobile = data.mobile;
@@ -2643,21 +2687,33 @@ session_start();
                                             num_end = data.row_end;
                                         }
                                         console.log(num_end);
+                                        $('.our_subscription').css('display', 'block');
+                                        $('.basic_download_info').css('display', 'block');
+                                        $('.paid_person').css('display', 'none');
                                     } else if (data.status == 601) {
                                         $('#pop_up_desktop').modal('show');
                                         if (num_end > 5) {
                                             num_end = data.row_end;
                                         }
                                         console.log(num_end);
+                                        $('.our_subscription').css('display', 'block');
+                                        $('.basic_download_info').css('display', 'block');
+                                        $('.paid_person').css('display', 'none');
                                     } else if (data.status == 701) {
                                         $('#pop_up_desktop').modal('show');
                                         if (num_end > 5) {
                                             num_end = data.row_end;
                                         }
+                                        $('.our_subscription').css('display', 'block');
+                                        $('.basic_download_info').css('display', 'block');
+                                        $('.paid_person').css('display', 'none');
                                     } else {
                                         $('#pop_up_desktop').modal('show');
                                         num_end = 1;
                                         console.log(num_end);
+                                        $('.our_subscription').css('display', 'block');
+                                        $('.basic_download_info').css('display', 'block');
+                                        $('.paid_person').css('display', 'none');
                                     }
                                     vcf()
                                     /* ------------------------------ comment now 1 start----------------------------- */
@@ -2686,10 +2742,10 @@ session_start();
                             });
                             // window.location = "exceltovcf"; 
                             $('#pop_up_desktop').modal('hide');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');                            
                             name_user = data.email;
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
-                            $('.show_user_name').attr('data-letters', file_first_char);
+                            $('.show_user_name').attr('data-letters', file_first_char);                           
                         } else if (data.status == 601) {
                             console.log(data.error);
                             user_id = data.id;
@@ -2698,19 +2754,21 @@ session_start();
                             // console.log(data.email);
                             // console.log(data.mobile);
                             $('#sign_in_page').css('display', 'none');
-                            $('.preloader').css('display','none');
-                            $('#sign_up_Otp').css('display', 'block');
+                            $('.preloader').css('display', 'none');
+                            $('#sign_up_Otp').css('display', 'block');                          
 
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signin').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signin').html(data.error);
+                            
                             // alert(data.error);
                         } else if (data.status == 302) {
                             $('#alert_id_signin').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_signin').html(data.error);
+                            
                         } else {
                             //console.log(data.error)
                         }
@@ -2734,7 +2792,7 @@ session_start();
                 $("#Form_pass_Otp").css('border-width', '1px');
             }
             if (error == "") {
-                $('.preloader').css('display','block');
+                $('.preloader').css('display', 'block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/email_verify.php',
@@ -2746,7 +2804,7 @@ session_start();
                     success: function(data) {
                         // console.log(data);
                         if (data.status == 201) {
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#pop_up_desktop').modal('hide');
                             $.ajax({
                                 type: 'POST',
@@ -2775,11 +2833,11 @@ session_start();
                         } else if (data.status == 601) {
                             // console.log(data.error);
                             $('#alert_id_Otp').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_Otp').html(data.error);
                         } else if (data.status == 301) {
                             $('#alert_id_Otp').css('display', 'block');
-                            $('.preloader').css('display','none');
+                            $('.preloader').css('display', 'none');
                             $('#alert_id_Otp').html(data.error);
                         } else {
                             //     alert("problem with query");
@@ -2973,7 +3031,8 @@ session_start();
                             var order_id = data.id;
                             var options = {
                                 "key": "rzp_test_dePlubEU9z2Fn8",
-                                "amount": parseInt(result1.price_pro * 100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "amount": parseInt(result1.price_pro *
+                                100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                 "currency": "INR",
                                 "name": "VCF 50",
                                 "description": "Convert your csv/excel file into VCF",
@@ -2981,7 +3040,8 @@ session_start();
                                 //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
                                 "handler": function(response) {
                                     // alert(response.razorpay_payment_id);
-                                    var razorpay_payment_id = response.razorpay_payment_id;
+                                    var razorpay_payment_id = response
+                                        .razorpay_payment_id;
                                     // console.log(response);
                                     $.ajax({
                                         type: 'POST',
@@ -3000,8 +3060,12 @@ session_start();
                                                 // alert("Your payment has been successful");
                                                 num_end = num_end1;
                                                 vcf()
-                                                $("#checkout-form").css('display','none');
-                                                $("#order-success").css('display','block');
+                                                $("#checkout-form").css(
+                                                    'display',
+                                                    'none');
+                                                $("#order-success").css(
+                                                    'display',
+                                                    'block');
                                                 // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
@@ -3009,7 +3073,10 @@ session_start();
                                                     [];
                                                 window.dataLayer.push({
                                                     'event': 'payment success',
-                                                    'name': $("#inputName").val(),
+                                                    'name': $(
+                                                            "#inputName"
+                                                            )
+                                                        .val(),
                                                     'phone': user_mobile,
                                                     'email': user_email
 
@@ -3135,8 +3202,9 @@ session_start();
                                 "description": "100RS Subscription for VCF ",
                                 "image": "images/zamzar-logo.png",
                                 "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
-                                "handler": function (response){
-                                    var razorpay_payment_id = response.razorpay_payment_id;
+                                "handler": function(response) {
+                                    var razorpay_payment_id = response
+                                        .razorpay_payment_id;
                                     // console.log(response.razorpay_payment_id);
                                     $.ajax({
                                         type: 'POST',
@@ -3146,7 +3214,8 @@ session_start();
                                             id: data.id,
                                             // productName: "Finstreet",
                                             razorpay_payment_id: razorpay_payment_id,
-                                            amount: result1.price_enterprise,
+                                            amount: result1
+                                                .price_enterprise,
                                             email: user_email
                                         },
                                         success: function(data) {
@@ -3155,8 +3224,12 @@ session_start();
                                                 // alert("Your payment has been successful");
                                                 num_end = num_end1;
                                                 vcf()
-                                                $("#checkout-form").css('display','none');
-                                                $("#order-success").css('display','block');
+                                                $("#checkout-form").css(
+                                                    'display',
+                                                    'none');
+                                                $("#order-success").css(
+                                                    'display',
+                                                    'block');
                                                 // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
@@ -3164,7 +3237,10 @@ session_start();
                                                     [];
                                                 window.dataLayer.push({
                                                     'event': 'payment success',
-                                                    'name': $("#inputName").val(),
+                                                    'name': $(
+                                                            "#inputName"
+                                                            )
+                                                        .val(),
                                                     'phone': user_mobile,
                                                     'email': user_email
 
@@ -3195,7 +3271,7 @@ session_start();
                                     "color": "#2487eb"
                                 }
                             };
-                            
+
                             var rzp2 = new Razorpay(options1);
                             rzp2.open();
 
@@ -3246,9 +3322,9 @@ session_start();
             });
         }
 
-/* ---------------------- download functionality start ---------------------- */
+        /* ---------------------- download functionality start ---------------------- */
 
-        $(".download").click(function(){
+        $(".download").click(function() {
             $.ajax({
                 type: 'POST',
                 url: 'download.php',
@@ -3256,16 +3332,18 @@ session_start();
                 dataType: "json",
                 data: {},
                 success: function(data) {
-                if((JSON.parse(data.status))==201){
-                var blob = new Blob([data.file], {type: "text/plain;charset=utf-8"});
-                saveAs(blob, "contact.vcf");              
-                }else{
-                    //  alert('data not found')
-                }  
+                    if ((JSON.parse(data.status)) == 201) {
+                        var blob = new Blob([data.file], {
+                            type: "text/plain;charset=utf-8"
+                        });
+                        saveAs(blob, "contact.vcf");
+                    } else {
+                        //  alert('data not found')
+                    }
                 }
             });
-        });  
-/* ---------------------- download functionality end ---------------------- */            
+        });
+        /* ---------------------- download functionality end ---------------------- */
     });
     </script>
 </body>
