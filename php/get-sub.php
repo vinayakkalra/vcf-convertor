@@ -27,7 +27,6 @@
     if ($err) {
         echo "cURL Error #:" . $err;
     } else {
-        // echo $response;
-        echo json_encode($response);
+        echo $response;
     }
 ?>

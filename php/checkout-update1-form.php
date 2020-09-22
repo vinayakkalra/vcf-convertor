@@ -5,14 +5,14 @@
 //require_once 'SMTP.php';
 
 require_once 'link.php';
-
 if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
-
     $data = array();  
     $id = $_POST['id'];
     // $productName =$_POST['productName'];
     // $amount =  $_POST['amount'];
     $razorpay_payment_id = $_POST['razorpay_payment_id'];
+    $amount = $_POST['amount'];
+    $email =$_POST['email'];
     $product_description = "";
     $body = "";
     $custom_string = "";
@@ -24,18 +24,15 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
     // }
     
     $query = "UPDATE `orders_event_razorpay` SET `status` = 'paid', `razorpay_payment_id` = '$razorpay_payment_id' WHERE `id` = $id";
+    $query1 = "UPDATE `signup-details` SET `subscription` = '$amount' WHERE `email` = '$email'";
     
-    if($result = mysqli_query($link, $query))  
-    {  
-
+    if($result = mysqli_query($link, $query)) {  
         // $query = "UPDATE `inventory` SET `left_inventory` = `left_inventory` - 1 WHERE `productName` = $productName ";
         // $result = mysqli_query($link, $query);
         $data['status'] = 'ok';
         $data['id'] = $id;
         // session_start();
         // $_SESSION['useremail'] = $_POST['email'];
-        echo json_encode($data);
-
 
         // $err = array();
 
@@ -96,8 +93,14 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
     //     echo json_encode($data);
 
     }else {  
-       echo "<script>console.log('error','problem with query after signup1')</script>"; 
+       echo "<script>console.log('error','problem with query after signup3')</script>"; 
     } 
+    if($result1 = mysqli_query($link, $query1)) {  
+        $data['subscription'] =  "addeded Sucessfully";
+    }else{
+        echo "<script>console.log('error','contact to VCF Assistance')</script>"; 
+    }
+    echo json_encode($data);
 }
 
 ?>
