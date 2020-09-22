@@ -1657,14 +1657,14 @@ session_start();
                         </div>
                         <div class="row pt-5">
                             <div class="col-6 footer_text">
-                                <h3 class="text-left">INFO</h3>
+                                <h3 class="text-left ml-0">INFO</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
                                     <li><a href="#" title="Formats">Formats</a></li>
                                 </ul>
                             </div>
                             <div class="col-6 footer_text">
-                                <h3 class="text-left">HELP</h3>
+                                <h3 class="text-left ml-0">HELP</h3>
                                 <ul>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
                                     <li><a href="#" title="Status" target="_blank">Status</a></li>
@@ -1673,7 +1673,7 @@ session_start();
                         </div>
                         <div class="row mt-5">
                             <div class="col-6 footer_text">
-                                <h3 class="text-left">resources</h3>
+                                <h3 class="text-left ml-0">resources</h3>
                                 <ul>
                                     <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
                                     <li><a href="#" title="Tools">Tools</a></li>
@@ -1681,7 +1681,7 @@ session_start();
                                 </ul>
                             </div>
                             <div class="col-6 footer_text">
-                                <h3 class="text-left">Company</h3>
+                                <h3 class="text-left ml-0">Company</h3>
                                 <ul>
                                     <li><a href="#" title="About">About Us</a></li>
                                     <li><a href="#" title="Advertise">Advertise</a></li>

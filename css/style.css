@@ -879,6 +879,7 @@ p {
 }
 #set_id_one_mobile,#set_id_two_mobile{
     list-style: none;
+    margin-top: 1rem !important;
 }
 
 #set_id_one_mobile a{
