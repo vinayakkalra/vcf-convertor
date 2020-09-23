@@ -562,7 +562,7 @@ session_start();
                                                                         </ul>
                                                                         <a href="#" id="basic1"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
-                                                                            Get Started
+                                                                            Download
                                                                         </a>
                                                                     </div>
                                                                 </li>
@@ -759,7 +759,7 @@ session_start();
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 VCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -1510,7 +1510,7 @@ session_start();
                                                                         </ul>
                                                                         <a href="#"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
-                                                                            Get Started
+                                                                            Download
                                                                         </a>
                                                                     </div>
                                                                 </li>
@@ -1709,7 +1709,7 @@ session_start();
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 VCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>

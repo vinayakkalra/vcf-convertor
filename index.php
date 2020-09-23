@@ -369,7 +369,7 @@ session_start();
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 VCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -653,7 +653,7 @@ session_start();
                     <div class="row pb-5">
                         <div class="col service_type_mobile topset">
                             <div class="row d-flex justify-content-center">
-                                <div class="col-8">
+                                <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
                                         <div class="item-container">
                                             <a href="exceltovcf">
@@ -674,7 +674,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-8">
+                                <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
                                         <div class="item-container">
                                             <a href="#">
@@ -695,7 +695,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
-                                <div class="col-8">
+                                <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
                                         <div class="item-container">
                                             <a href="#">
@@ -851,7 +851,7 @@ session_start();
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 VCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>

@@ -475,6 +475,12 @@ p {
     height: 4.5rem;
     width: 70%;
 }
+@media(max-width:991px)and (min-width:651px){
+    .header_inner_logo img {
+        height: 4.5rem;
+        width: 40% !important;
+    }
+}
 
 .header_inner_logo {
     padding: 30px 20px;

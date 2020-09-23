@@ -52,7 +52,7 @@ $target_file = $target_dir .$newfilename;
     $from_browser = $_SERVER['HTTP_USER_AGENT'];
     date_default_timezone_set("Asia/Calcutta");
     $date_now = date("r");
-    $filename= $_FILES["fileToUpload_mobile"]["name"];
+    $filename= $newfilename;
     $id = 0;
     $result = mysqli_query($link, "SELECT max(id) FROM `table_excel`");
     while ($row = mysqli_fetch_array($result)) {
@@ -64,7 +64,7 @@ $target_file = $target_dir .$newfilename;
     {
       $data['status'] = 201;
       $data['id'] = $id;
-      $data['filename']=$filename;
+      $data['filename']=$_FILES["fileToUpload_mobile"]["name"];
       echo json_encode($data);
       // $_SESSION['authenticated']=true;
     }
