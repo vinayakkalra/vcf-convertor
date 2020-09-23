@@ -68,6 +68,10 @@ session_start();
     .preloader_mobile {
         display: none;
     }
+    h1{
+        font-weight:500;
+        font-size:2em;
+    }
     </style>
 </head>
 
@@ -237,7 +241,7 @@ session_start();
                     <div class="container">
                         <div class="row">
                             <div class="col pt-5">
-                                <h1 class="text-center">About Us</h1>
+                                <h1 class="text-center pb-3">About Us</h1>
                                 <p class="pt-2 paragraph_style">We are essentially developers. More interested in Cloud
                                     development, IT solutions, Payment Gateway integration, SMS services, eCommerce.
                                     Basically, everything that can be developed and deployed online. Reach out to us for
@@ -340,19 +344,19 @@ session_start();
                                 <div class="row">
                                     <div class="col">
                                         <div class="social d-flex justify-content-center">
-                                            <a href="#" title="Like Zamzar on Facebook" target="_blank"
+                                            <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-facebook-icon.png"
                                                     data-lazy-src="images/social-facebook-icon.png" width="32"
                                                     height="34" alt="Facebook icon"></a>
 
-                                            <a href="#" title="Follow Zamzar on Twitter" target="_blank"
+                                            <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-twitter-icon.png"
                                                     data-lazy-src="images/social-twitter-icon.png" width="32"
                                                     height="34" alt="Twitter icon"></a>
 
-                                            <a href="#" title="Check out Zamzar on Instagram" target="_blank"
+                                            <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-instagram-icon.png"
                                                     data-lazy-src="images/social-instagram-icon.png" width="32"
@@ -791,17 +795,17 @@ session_start();
                         <div class="row">
                             <div class="col footer_text d-flex justify-content-center">
                                 <div class="social_mobile social d-flex">
-                                    <a href="#" title="Like Zamzar on Facebook" target="_blank"
+                                    <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
                                             data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
                                             alt="Facebook icon"></a>
 
-                                    <a href="#" title="Follow Zamzar on Twitter" target="_blank"
+                                    <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
                                             data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
                                             alt="Twitter icon"></a>
 
-                                    <a href="#" title="Check out Zamzar on Instagram" target="_blank"
+                                    <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
                                             data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
                                             alt="Instagram icon"></a>

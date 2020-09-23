@@ -268,14 +268,12 @@ session_start();
                                 </div>
                             </div>
                             <div class="col-8 exceltovcf_text">
-                                <p>This is a simple, 3-step tool where you can convert your contact details in excel /
+                                <p>CSVTOVCF is a simple, 3-step tool where you can convert your contact details in excel /
                                     spreadsheet to vCard (3.0) format. Supported formats are: xls, xlsx and csv. This
                                     format is most suitable for importing contacts in mobile devices. Although it is a
                                     general contact format which can be opened in any computer. But you should note that
                                     MS Outlook will display only single contact even if your vcf file has multiple
-                                    contacts. Video Tutorial on How we can Convert excel csv to vcf using this online
-                                    tool: https://www.youtube.com/watch?v=sn7ROzt9YRA. If you wish to convert contacts
-                                    in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
+                                    contacts.If you wish to convert contacts in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
                                     how to Convert Excel xlsx to Vcard vcf File online:</p>
                                 <p>
                                 <h4 style="font-weight: 500;">Follow these steps to convert Excel (xls/xslx/csv) to
@@ -736,19 +734,19 @@ session_start();
                                 <div class="row">
                                     <div class="col">
                                         <div class="social d-flex justify-content-center">
-                                            <a href="#" title="Like Zamzar on Facebook" target="_blank"
+                                            <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-facebook-icon.png"
                                                     data-lazy-src="images/social-facebook-icon.png" width="32"
                                                     height="34" alt="Facebook icon"></a>
 
-                                            <a href="#" title="Follow Zamzar on Twitter" target="_blank"
+                                            <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-twitter-icon.png"
                                                     data-lazy-src="images/social-twitter-icon.png" width="32"
                                                     height="34" alt="Twitter icon"></a>
 
-                                            <a href="#" title="Check out Zamzar on Instagram" target="_blank"
+                                            <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
                                                 rel="noopener noreferrer"><img
                                                     src="images/social/social-instagram-icon.png"
                                                     data-lazy-src="images/social-instagram-icon.png" width="32"
@@ -1192,14 +1190,12 @@ session_start();
             </div>
             <div class="row pt-5 pb-5">
                 <div class="col exceltovcf_text">
-                    <p>This is a simple, 3-step tool where you can convert your contact details in excel /
+                    <p>CSVTOVCF a simple, 3-step tool where you can convert your contact details in excel /
                         spreadsheet to vCard (3.0) format. Supported formats are: xls, xlsx and csv. This
                         format is most suitable for importing contacts in mobile devices. Although it is a
                         general contact format which can be opened in any computer. But you should note that
                         MS Outlook will display only single contact even if your vcf file has multiple
-                        contacts. Video Tutorial on How we can Convert excel csv to vcf using this online
-                        tool: https://www.youtube.com/watch?v=sn7ROzt9YRA. If you wish to convert contacts
-                        in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
+                        contacts.If you wish to convert contacts in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
                         how to Convert Excel xlsx to Vcard vcf File online:</p>
                     <p>
                     <h4 style="font-weight:500">Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
@@ -1657,17 +1653,17 @@ session_start();
                         <div class="row">
                             <div class="col footer_text d-flex justify-content-center">
                                 <div class="social_mobile social">
-                                    <a href="#" title="Like Zamzar on Facebook" target="_blank"
+                                    <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
                                             data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
                                             alt="Facebook icon"></a>
 
-                                    <a href="#" title="Follow Zamzar on Twitter" target="_blank"
+                                    <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
                                             data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
                                             alt="Twitter icon"></a>
 
-                                    <a href="#" title="Check out Zamzar on Instagram" target="_blank"
+                                    <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
                                         rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
                                             data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
                                             alt="Instagram icon"></a>
@@ -2674,8 +2670,8 @@ session_start();
                                         num_end = num_end2;
                                         user_email = data.email;
                                         user_mobile = data.mobile;
-                                        console.log(data.email);
-                                        console.log(data.mobile);
+                                        // console.log(data.email);
+                                        // console.log(data.mobile);
                                         $('.our_subscription').css('display', 'none');
                                         $('.basic_download_info').css('display', 'none');
                                         $('.paid_person').css('display', 'block');
@@ -2686,7 +2682,7 @@ session_start();
                                         if (num_end > 5) {
                                             num_end = data.row_end;
                                         }
-                                        console.log(num_end);
+                                        // console.log(num_end);
                                         $('.our_subscription').css('display', 'block');
                                         $('.basic_download_info').css('display', 'block');
                                         $('.paid_person').css('display', 'none');
@@ -2695,7 +2691,7 @@ session_start();
                                         if (num_end > 5) {
                                             num_end = data.row_end;
                                         }
-                                        console.log(num_end);
+                                        // console.log(num_end);
                                         $('.our_subscription').css('display', 'block');
                                         $('.basic_download_info').css('display', 'block');
                                         $('.paid_person').css('display', 'none');
@@ -2710,7 +2706,7 @@ session_start();
                                     } else {
                                         $('#pop_up_desktop').modal('show');
                                         num_end = 1;
-                                        console.log(num_end);
+                                        // console.log(num_end);
                                         $('.our_subscription').css('display', 'block');
                                         $('.basic_download_info').css('display', 'block');
                                         $('.paid_person').css('display', 'none');
@@ -2747,7 +2743,7 @@ session_start();
                             var file_first_char = (name_user.substring(0, 1)).toUpperCase();
                             $('.show_user_name').attr('data-letters', file_first_char);                           
                         } else if (data.status == 601) {
-                            console.log(data.error);
+                            // console.log(data.error);
                             user_id = data.id;
                             user_email = data.email;
                             user_mobile = data.mobile;
