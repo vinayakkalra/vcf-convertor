@@ -202,8 +202,7 @@ session_start();
 
                                 <h2 id="ip" class="privacy_policy_heading mt-5">Intellectual Properties</h2>
                                 <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>Name and Logo of <em>The Web Vendor</em>, are registered copyrights of The Web
-                                        Vendor firm established in 2015. Copy and use of the name and logo without
+                                    <li>Name and Logo of <em>CSVTOVCF</em>, are registered copyrights of CSVTOVCF firm established in 2016. Copy and use of the name and logo without
                                         permissions, is strictly prohibited and liable to court action.</li>
                                 </ol>
                             </div>
@@ -648,8 +647,7 @@ session_start();
 
                                 <h2 id="ip" class="privacy_policy_heading mt-5">Intellectual Properties</h2>
                                 <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>Name and Logo of <em>The Web Vendor</em>, are registered copyrights of The Web
-                                        Vendor firm established in 2015. Copy and use of the name and logo without
+                                    <li>Name and Logo of <em>CSVTOVCF</em>, are registered copyrights of CSVTOVCF firm established in 2016. Copy and use of the name and logo without
                                         permissions, is strictly prohibited and liable to court action.</li>
                                 </ol>
                             </div>
