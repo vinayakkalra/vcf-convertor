@@ -547,18 +547,9 @@ session_start();
                                                                             Free
                                                                         </h3>
                                                                         <ul class="my-10">
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                3GB Storage
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                10 Emails
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                2 Sub-domains
-                                                                            </li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">5 Contacts</li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">One Time Use</li>
+                                                                            
                                                                         </ul>
                                                                         <a href="#" id="basic1"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full download">
@@ -590,27 +581,17 @@ session_start();
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
                                                                             <div class="d-flex justify-content-center">
-                                                                                <div class="set_price_pro"></div><span
+                                                                                <div class="set_price_pro">0</div><span
                                                                                     class="ml-2">INR</span>
                                                                             </div>
                                                                         </h3>
                                                                         <ul class="my-10">
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                20GB Storage
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                50 Emails
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                20 Sub-domains
-                                                                            </li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">Unlimtied Contacts</li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">One Time Use</li>  
                                                                         </ul>
                                                                         <a href="#" id="pro"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full pro">
-                                                                            Get Started
+                                                                            Buy Now
                                                                         </a>
                                                                     </div>
                                                                 </li>
@@ -637,27 +618,17 @@ session_start();
                                                                         <h3
                                                                             class="mt-2 mb-4 text-5xl leading-6 text-gray-900 font-bold product_heading">
                                                                             <div class="d-flex justify-content-center">
-                                                                                <div class="set_price_enterprise"></div>
+                                                                                <div class="set_price_enterprise">0</div>
                                                                                 <span class="ml-2">INR</span>
                                                                             </div>
                                                                         </h3>
                                                                         <ul class="my-10">
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                Unlimited Storage
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                Unlimited Emails
-                                                                            </li>
-                                                                            <li
-                                                                                class="my-3 text-base leading-6 text-gray-500">
-                                                                                Unlimited Sub-domains
-                                                                            </li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">Unlimtied Contacts</li>
+                                                                            <li class="my-3 text-base leading-6 text-gray-500">Unlimtied Use Till Subscrption</li>  
                                                                         </ul>
                                                                         <a href="#" id="enterprise"
                                                                             class="btn btn-primary text-white font-bold py-2 px-10 rounded-full enterprise">
-                                                                            Get Started
+                                                                            Buy Now
                                                                         </a>
                                                                     </div>
                                                                 </li>
