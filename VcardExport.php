@@ -12,8 +12,11 @@ class VcardExport
         $send="";  
         $vcardObj->addName($complete_array[0]. " " .$complete_array[1]);
         // $vcardObj->addBirthday('1994-08-27');
-        $vcardObj->addEmail($complete_array[2]);
-        $vcardObj->addPhoneNumber($complete_array[3]);
+        $vcardObj->addEmail($complete_array[2],'WORK');
+        $vcardObj->addEmail($complete_array[12],'HOME');        
+        $vcardObj->addPhoneNumber($complete_array[13],'HOME');
+        $vcardObj->addPhoneNumber($complete_array[14],'WORK');
+        $vcardObj->addPhoneNumber($complete_array[3],'CELL');
         $vcardObj->addAddress($complete_array[10]);       
         // $vcardObj->addImpp('abc@gmail.com'); 
         $vcardObj->addNickName($complete_array[8]);       

@@ -20,6 +20,9 @@ $city="";
 $company="";
 $birthday="";
 $website="";
+$email_personal="";
+$phone_home="";
+$phone_office="";
 $data=array();
 $complete_array=array();
  for($i=0;$i<($json_length);$i++)
@@ -67,9 +70,18 @@ $address=$value;
 else if($key=="website"){
 $website=$value; 
 }
+else if($key=="email_personal"){
+  $email_personal=$value; 
+}
+else if($key=="phone_office"){
+  $phone_office=$value; 
+}
+else if($key=="phone_home"){
+  $phone_home=$value; 
+}
 
  }
- $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website);
+ $complete_array[]=array($first_name,$last_name,$email,$mobile,$tel_office,$tel_home,$fax,$city,$nickname,$company,$address,$website,$email_personal,$phone_home,$phone_office);
  }
   // $complete_array=array($first_name,$last_name,$email,$mobile,$address,'456','0000','aarya');
   for($i=0;$i<($json_length);$i++){   

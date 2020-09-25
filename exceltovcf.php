@@ -386,6 +386,19 @@ session_start();
                                                         <option value="K">K</option>
                                                         <option value="L">L</option>
                                                         <option value="M">M</option>
+                                                        <option value="N">N</option>
+                                                        <option value="O">O</option>
+                                                        <option value="P">P</option>
+                                                        <option value="Q">Q</option>
+                                                        <option value="R">R</option>
+                                                        <option value="S">S</option>
+                                                        <option value="T">T</option>
+                                                        <option value="U">U</option>
+                                                        <option value="V">V</option>
+                                                        <option value="W">W</option>
+                                                        <option value="X">X</option>
+                                                        <option value="Y">Y</option>
+                                                        <option value="Z">Z</option>
 
                                                     </select>
                                                 </div>
@@ -409,6 +422,18 @@ session_start();
                                                         <option value="L">L</option>
                                                         <option value="M">M</option>
                                                         <option value="N">N</option>
+                                                        <option value="O">O</option>
+                                                        <option value="P">P</option>
+                                                        <option value="Q">Q</option>
+                                                        <option value="R">R</option>
+                                                        <option value="S">S</option>
+                                                        <option value="T">T</option>
+                                                        <option value="U">U</option>
+                                                        <option value="V">V</option>
+                                                        <option value="W">W</option>
+                                                        <option value="X">X</option>
+                                                        <option value="Y">Y</option>
+                                                        <option value="Z">Z</option>
 
                                                     </select>
                                                 </div>
@@ -1293,7 +1318,19 @@ session_start();
                                                         <option value="K">K</option>
                                                         <option value="L">L</option>
                                                         <option value="M">M</option>
-
+                                                        <option value="N">N</option>
+                                                        <option value="O">O</option>
+                                                        <option value="P">P</option>
+                                                        <option value="Q">Q</option>
+                                                        <option value="R">R</option>
+                                                        <option value="S">S</option>
+                                                        <option value="T">T</option>
+                                                        <option value="U">U</option>
+                                                        <option value="V">V</option>
+                                                        <option value="W">W</option>
+                                                        <option value="X">X</option>
+                                                        <option value="Y">Y</option>
+                                                        <option value="Z">Z</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -1318,6 +1355,18 @@ session_start();
                                                         <option value="L">L</option>
                                                         <option value="M">M</option>
                                                         <option value="N">N</option>
+                                                        <option value="O">O</option>
+                                                        <option value="P">P</option>
+                                                        <option value="Q">Q</option>
+                                                        <option value="R">R</option>
+                                                        <option value="S">S</option>
+                                                        <option value="T">T</option>
+                                                        <option value="U">U</option>
+                                                        <option value="V">V</option>
+                                                        <option value="W">W</option>
+                                                        <option value="X">X</option>
+                                                        <option value="Y">Y</option>
+                                                        <option value="Z">Z</option>
 
                                                     </select>
                                                 </div>
@@ -1910,7 +1959,7 @@ session_start();
                                         show_data +
                                         ' : </label><div class="col-7"><select name="last_column" id="column' +
                                         (i - 64) +
-                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option> <option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option> <option value="address">Address</option> <option value="website">Website</option></select></div>'
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email (Work)</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option> <option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option> <option value="address">Address</option> <option value="website">Website</option><option value="email_personal">Email (Personal)</option><option value="phone_home">Tel (Home)</option><option value="phone_office">Tel (Office)</option></select></div>'
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
@@ -2008,7 +2057,7 @@ session_start();
                                         show_data +
                                         ' : </label></div><div class="form-group row"><div class="col"><select name="last_column" id="column_mobile' +
                                         (i - 64) +
-                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option><option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option><option value="address">Address</option> <option value="website">Website</option></select></div>'
+                                        '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email (Work)</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option><option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option><option value="address">Address</option> <option value="website">Website</option><option value="email_personal">Email (Personal)</option><option value="phone_home">Tel (Home)</option><option value="phone_office">Tel (Office)</option></select></div>'
                                     );
                                     // console.log(String.fromCharCode(i));
                                 }
