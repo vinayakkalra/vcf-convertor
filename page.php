@@ -109,7 +109,7 @@ if (!empty($_FILES['_vcards']))
 			$header = $_POST['_header'] === '1' ? true : false;
 			$delimiter = $_POST['_delimiter'] == 'tab' ? "\t" : $_POST['_delimiter'];
 								
-			print $conv->toCSV('tab', true,"UTF-8", "lf");
+			print $conv->toCSV($delimiter, true,"UTF-8", "lf");
 
 			exit;
 		}

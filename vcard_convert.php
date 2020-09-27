@@ -698,14 +698,13 @@ class vcard_convert extends Contact_Vcard_Parse
 	{
 		$delm = ',';
 		$this->export_count = 0;
-		$out = "Name,E-mail,Notes,Section 1 - Description,Section 1 - Email,".
-					 "Section 1 - IM,Section 1 - Phone,Section 1 - Mobile,".
-					 "Section 1 - Pager,Section 1 - Fax,Section 1 - Company,".
-					 "Section 1 - Title,Section 1 - Other,Section 1 - Address,".
-					 "Section 2 - Description,Section 2 - Email,Section 2 - IM,".
-					 "Section 2 - Phone,Section 2 - Mobile,Section 2 - Pager,".
-					 "Section 2 - Fax,Section 2 - Company,Section 2 - Title,".
-					 "Section 2 - Other,Section 2 - Address\n";
+		$out = "Name,E-mail,Notes,".
+					 "Phone(HOME),Mobile,".					 
+					 "Address(HOME),".
+					 "Email(Work),".
+					 "Phone(Office),".
+					 "Company,Professtion,".
+					 "Department,Address(Office),Nickname,URL\n";
 
 		foreach ($this->cards as $card)
 		{
@@ -730,33 +729,32 @@ class vcard_convert extends Contact_Vcard_Parse
 			$out .= $this->csv_encode($card->email, $delm); // main
 			$out .= $this->csv_encode($card->notes, $delm); // Notes
 
-			$out .= $this->csv_encode('Home', $delm);
-			$out .= $this->csv_encode('', $delm); // home email ?
-			$out .= $this->csv_encode($im[0], $delm); // IM
+			// $out .= $this->csv_encode('Home', $delm);
+			// $out .= $this->csv_encode('', $delm); // home email ?
+			// $out .= $this->csv_encode($im[0], $delm); // IM
 			$out .= $this->csv_encode($this->normalize_phone($card->home['phone']), $delm);
 			$out .= $this->csv_encode($this->normalize_phone($card->mobile), $delm);
-			$out .= $this->csv_encode($this->normalize_phone($card->pager), $delm);
-			$out .= $this->csv_encode($this->normalize_phone($card->home['fax']), $delm);
-			$out .= $this->csv_encode('', $delm); //
-			$out .= /* $card['title'] . */ $delm;
-			$out .= $this->csv_encode('', $delm); // other
+			// $out .= $this->csv_encode($this->normalize_phone($card->pager), $delm);
+			// $out .= $this->csv_encode($this->normalize_phone($card->home['fax']), $delm);
+			// $out .= $this->csv_encode('', $delm); //
+			// $out .= /* $card['title'] . */ $delm;
+			// $out .= $this->csv_encode('', $delm); // other
 			$out .= $this->csv_encode(join(' ', $home), $delm);
 
-			$out .= $this->csv_encode('Work', $delm);
+			// $out .= $this->csv_encode('Work', $delm);
 			$out .= $this->csv_encode($card->email2, $delm); // work email
-			$out .= $this->csv_encode($im[1], $delm); // IM
+			// $out .= $this->csv_encode($im[1], $delm); // IM
 			$out .= $this->csv_encode($this->normalize_phone($card->work['phone']), $delm);
-			$out .= $this->csv_encode('', $delm); //
-			$out .= $this->csv_encode('', $delm); //
-			$out .= $this->csv_encode($this->normalize_phone($card->work['fax']), $delm); // work fax
+			// $out .= $this->csv_encode('', $delm); //
+			// $out .= $this->csv_encode('', $delm); //
+			// $out .= $this->csv_encode($this->normalize_phone($card->work['fax']), $delm); // work fax
 			$out .= $this->csv_encode($card->organization, $delm);
 			$out .= $this->csv_encode($card->jobtitle, $delm); // title
 			$out .= $this->csv_encode($card->department, $delm);
 			$out .= $this->csv_encode(join(' ', $work), $delm);
-
-			//$out .= $this->csv_encode($card->nick, $delm);
-			//$out .= $this->csv_encode($card->home['url'], $delm);
-			//$out .= $this->csv_encode($card->work['url'], $delm, FALSE);
+			$out .= $this->csv_encode($card->nickname, $delm);
+			// $out .= $this->csv_encode($card->home['url'], $delm);
+			$out .= $this->csv_encode($card->work['url'], $delm, FALSE);
 
 			$out .= "\n";
 			$this->export_count++;
