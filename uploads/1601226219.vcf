@@ -1,0 +1,20 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2020-09-14 01:00:04
+PRODID:-//class_vcard from thewebvendor.com//NONSGML Version 1//EN
+EMAIL;TYPE=internet,pref:Aachman 
+TEL;TYPE=home,voice:9874561122
+N:;1;;;;
+FN:1 
+ADR;TYPE=work:;;;varanasi;;;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+REV:2020-09-14 01:00:04
+PRODID:-//class_vcard from thewebvendor.com//NONSGML Version 1//EN
+EMAIL;TYPE=internet,pref:Aadesh 
+TEL;TYPE=home,voice:9874561122
+N:;2;;;;
+FN:2 
+ADR;TYPE=work:;;;varanasi;;;
+END:VCARD

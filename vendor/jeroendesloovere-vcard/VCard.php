@@ -67,13 +67,13 @@ class VCard
      *                                     or any combination of these: e.g. "WORK;PARCEL;POSTAL"
      * @return $this
      */
-    public function addAddress($address = '')
+    public function addAddress($address = '',$type='')
     {
         // set property
         $this->setProperty(
             'address',
-            'ADR',
-            $address
+            'ADR;TYPE='.(($type != '') ? ';' . $type : ''),
+            ';;;'.$address.';;;'
         );
 
         return $this;
