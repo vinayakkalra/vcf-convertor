@@ -2127,7 +2127,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                         success: function (data) {
                             // console.log(data);
                             if (data.status == 201) {
-                                window.location.replace('vcftoxls');
+                                window.location.replace('/');
                             } else {
                                 console.log(data.error);
                                 //     alert("problem with query");
