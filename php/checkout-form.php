@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'link.php';
 
 if(isset($_POST['type']) == '50'){
@@ -43,6 +43,7 @@ if(isset($_POST['type']) == '50'){
     if($result = mysqli_query($link, $query))  
     {  
         $data['status'] = 201;
+        $_SESSION['user']="Paid_User";
         $data['id'] = $id;
         echo json_encode($data);
     }  
@@ -91,6 +92,7 @@ if(isset($_POST['type']) == '50'){
     
     if($result = mysqli_query($link, $query)) {  
         $data['status'] = 201;
+        $_SESSION['user']="Paid_User";
         $data['id'] = $id;
         echo json_encode($data);
     }else{  

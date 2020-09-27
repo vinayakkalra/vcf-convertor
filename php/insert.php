@@ -66,6 +66,7 @@ $target_file = $target_dir.$newfilename;
       $data['status'] = 201;
       $data['id'] = $id;
       $data['filename']=$_FILES["fileToUpload"]["name"];
+      $data['newfilename']=$filename;
       echo json_encode($data);
       // $_SESSION['authenticated']=true;
     }

@@ -16,6 +16,7 @@ if(isset($_SESSION['user_email'])) {
         $data['status'] = 201;
         $data['mobile']=$user_mobile;
         $data['email']=$user_email;
+        $_SESSION['user']="Paid_User";
         echo json_encode($data); 
         }else{
             $data['row_end']=5;
