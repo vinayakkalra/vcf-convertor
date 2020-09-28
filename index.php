@@ -71,7 +71,10 @@ session_start();
     h1{
         font-weight:500;
         font-size:2em;
-    }
+    } 
+    nav ul li ul {
+  padding-top: 1.8rem;
+}   
     </style>
 </head>
 
@@ -95,7 +98,12 @@ session_start();
                                             <a class="nav-link" href="/">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="exceltovcf">Excel to VCF</a>
+                                            <a class="nav-link" style="cursor:pointer;">Tools<i class='fa fa-angle-down'></i></a>
+                                            <ul>
+                                                <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
+                                                <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
+                                                <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
+                                            </ul>
                                         </li>                                       
                                         <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
@@ -131,7 +139,12 @@ session_start();
                                             <a class="nav-link" href="/">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="exceltovcf">Excel to VCF</a>
+                                            <a class="nav-link" style="cursor:pointer;">Tools<i class='fa fa-angle-down'></i></a>
+                                            <ul>
+                                                <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
+                                                <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
+                                                <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
+                                            </ul>
                                         </li>                                       
                                         <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
@@ -604,8 +617,13 @@ session_start();
                 <div class="header_inner_logo"><a href="/" style="border: none;padding: 0;margin: 0;"><img
                             src="images/zamzar-logo2.png"></a></div>
                 <div class="overlay-content-inner myNavbar_mobile">
-                    <a href="/" id="mobile_home_button">Home</a>
-                    <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>                   
+                    <a href="/" id="mobile_home_button">Home</a>                     
+                    <a class="nav-link" style="cursor:pointer;" id="flip">Tools<i class='fa fa-angle-down ml-3'></i></a>
+                    <div id="panel">
+                            <a href="exceltovcf" style="color:#f1f1f1;" id="mobile_tools_button">Excel to VCF</a>
+                            <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
+                            <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
+                    </div>
                     <a href="policy" id="mobile_policy_button">Policy</a>
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
@@ -1310,6 +1328,7 @@ session_start();
                 logout_signup_signin();
             }
         });
+
     });
     </script>
 </body>

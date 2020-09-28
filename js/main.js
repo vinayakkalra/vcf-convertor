@@ -84,4 +84,18 @@ setTimeout(function(){
 	$(".navshowtext").show(); 
 },1000);
 
+/* ----------------------------- navbar dropdown ---------------------------- */
+
+$('nav li').hover(
+  function() {
+	  $('ul', this).stop().slideDown(200);
+  },
+	function() {
+    $('ul', this).stop().slideUp(200);
+  }
+);
+$("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+
 });

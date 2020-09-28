@@ -217,7 +217,12 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                             <a class="nav-link" href="/">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="exceltovcf">Excel to VCF</a>
+                                            <a class="nav-link" style="cursor:pointer;">Tools<i class='fa fa-angle-down'></i></a>
+                                            <ul>
+                                                <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
+                                                <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
+                                                <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
+                                            </ul>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
@@ -327,7 +332,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                             <label for="Format">Format:</label>
                                             <select name="_format" onChange="set_form_fields(this)" class="form-control">                                                   
                                                 <option value="gmail">CSV (TAB)</option>
-                                                <option value="csv">CSV</option>
+                                                <!-- <option value="csv">CSV</option> -->
                                             </select>                                            
                                         </div>
                                                 <div id="ldaprootdn" style="display:none" class="form-group">
@@ -976,7 +981,12 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                             src="images/zamzar-logo2.png"></a></div>
                 <div class="overlay-content-inner myNavbar_mobile">
                     <a href="/" id="mobile_home_button">Home</a>
-                    <a href="exceltovcf" id="mobile_tools_button">Excel to VCF</a>
+                    <a class="nav-link" style="cursor:pointer;" id="flip">Tools<i class='fa fa-angle-down ml-3'></i></a>
+                    <div id="panel">
+                            <a href="exceltovcf" style="color:#f1f1f1;" id="mobile_tools_button">Excel to VCF</a>
+                            <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
+                            <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
+                    </div>
                     <a href="policy" id="mobile_policy_button">Policy</a>
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
@@ -1086,7 +1096,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                             <label for="Format">Format:</label>
                                             <select name="_format" onChange="set_form_fields(this)" class="form-control">                                                   
                                                 <option value="gmail">CSV (TAB)</option>
-                                                <option value="csv">CSV</option>
+                                                <!-- <option value="csv">CSV</option> -->
                                             </select>                                            
                                         </div>
                                                 <div id="ldaprootdn" style="display:none" class="form-group">
@@ -1407,9 +1417,9 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
     <!-- <script src="js/jszip.js"></script>
     <script src="js/xlsx.js"></script> -->
     <!-- we can use this perticuler for read xlsx file only end-->
-    <script src="js/xlsx.full.min.js"></script>
+    <!-- <script src="js/xlsx.full.min.js"></script> -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="js/FileSaver.js"></script>
+    <!-- <script src="js/FileSaver.js"></script> -->
     <script>
         $(document).ready(function () {
             var name_user = '';
