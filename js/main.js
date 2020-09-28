@@ -95,7 +95,7 @@ $('nav li').hover(
   }
 );
 $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
+    $("#panel").slideToggle(200);
   });
 
 });
