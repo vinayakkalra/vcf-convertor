@@ -315,79 +315,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                             <div class="col-8 collapseSignup">
                                 <!-- ----------------------------- step 1 code ----------------------------- -->
                                 <div class="row" id="step1">
-                                    <div class="col-7">
-                                        <!-- <form method="post" enctype="multipart/form-data" name="upload_excel"
-                                            id="upload_excel" data-name="upload_excel">
-                                            <div class="alert alert-danger" role="alert" id="alert_id_file_not_select">
-                                            </div>
-                                            <label class="row">
-                                                <div class="wrap-col select_file_text"> Step 1: Select file to convert
-                                                </div>
-                                            </label>
-                                            <label class="row">
-                                                <div class="wrap-col">Select file:
-                                                    <input type="file" name="fileToUpload"
-                                                        accept="text/x-vcard"
-                                                        id="fileToUpload">
-                                                </div>
-                                            </label>
-                                            <label class="row">
-                                                <div class="wrap-col" style="color: #808080;margin-top: 0.1rem;">
-                                                    (Only .xls .xlsx and .csv formats allowed. Max file size: 2mb)
-                                                </div>
-                                            </label>
-                                            <div class="preloader">
-                                                <div class="row pl-4 ml-5">
-                                                    <div class="loadingio-spinner-rolling-n1r2sb8my0m">
-                                                        <div class="ldio-538wm7ir56h">
-                                                            <div></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input class="sendButton btn btn-primary" type="submit" name="submit"
-                                                value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;">
-                                        </form> -->
-                                        <!-- <form method="post" enctype="multipart/form-data" id="upload_excel" action="page.php">
-                                        <div class="alert alert-danger" role="alert" id="alert_id_file_not_select"></div>                                           
-                                            <table border="0" cellspacing="1" cellpadding="2">
-                                                <tr>
-                                                    <td class="cell label">vCard-File:</td>
-                                                    <td class="cell"><input type="file" size="30" name="_vcards" id="fileToUpload">
-                                                        
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="cell label">Format:</td>
-                                                    <td class="cell">
-                                                        <select name="_format" onChange="set_form_fields(this)">                                                   
-                                                            <option value="gmail">Excel</option>
-                                                            <option value="csv">CSV</option>
-                                                        </select>                                                                                                            
-                                                        </td>
-                                                </tr>
-                                                <tr id="ldaprootdn" style="display:none">
-
-                                                    <td class="cell label">Root DN:</td>
-                                                    <td class="cell">
-                                                        <input type="text" name="_dn" id="dnID" style="width:30em;"
-                                                            disabled>&nbsp;
-                                                        <label for="accessCode"><br>Use as Root DN LDAP identifier, to
-                                                            add it at the end of the "dn:" LDIF
-                                                            line <br>(for example: dc=Users, dc=nodomain)</label>
-                                                        <span class="hint" style="padding-left:1em">(max. 255
-                                                            chars)</span>
-                                                    </td>
-
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><br>
-                                                    <div class="sendButton btn btn-primary" style="font-size: 1.6rem;padding: 1rem 6rem;" id="SubmitBtn">Submit</div></td>
-                                                    
-                                                </tr>
-                                            </table>
-                                        </form> -->
+                                    <div class="col-7">                                      
                                         <form method="post" enctype="multipart/form-data" id="upload_excel" action="page.php">
                                         <div class="alert alert-danger" role="alert" id="alert_id_file_not_select"></div> 
                                         <div class="form-group">
@@ -398,7 +326,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                         <div class="form-group">
                                             <label for="Format">Format:</label>
                                             <select name="_format" onChange="set_form_fields(this)" class="form-control">                                                   
-                                                <option value="gmail">Excel</option>
+                                                <option value="gmail">CSV (TAB)</option>
                                                 <option value="csv">CSV</option>
                                             </select>                                            
                                         </div>
@@ -1157,7 +1085,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                         <div class="form-group">
                                             <label for="Format">Format:</label>
                                             <select name="_format" onChange="set_form_fields(this)" class="form-control">                                                   
-                                                <option value="gmail">Excel</option>
+                                                <option value="gmail">CSV (TAB)</option>
                                                 <option value="csv">CSV</option>
                                             </select>                                            
                                         </div>
