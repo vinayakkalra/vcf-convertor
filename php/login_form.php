@@ -59,10 +59,10 @@ if(isset($_POST['email'])){
             // $mail->SMTPAuth = false;
             // $mail->SMTPAutoTLS = false;
             // $mail->Port = 25;
-            // $mail->From = 'chandan.mca.2019@gmail.com';
+            // $mail->From = 'support@quadtech.com';
             // $mail->FromName = "VCF Converter";	 // name is optional
             // $mail->AddAddress($email);     
-            // $mail->AddReplyTo("sbitosbi@gmail.com", "OTP Verifiaction | VCF Converter");
+            // $mail->AddReplyTo("info@quadtech.com", "OTP Verifiaction | VCF Converter");
 
             // $mail->WordWrap = 50;  // set word wrap to 50 characters
             // $mail->IsHTML(true); // set email format to HTML

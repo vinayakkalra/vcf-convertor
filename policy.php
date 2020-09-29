@@ -218,37 +218,47 @@ session_start();
 
             <!-- ---------------------------- policy content end ---------------------------  -->
             <!-- ------------------------ desktop footer start ------------------------- -->
-            <div class="row footer pt-5">
+            <div class="container-fluid">
+            <div class="row footer">
                 <div class="col">
-                    <div class="container">
+                    <div class="container">                      
                         <div class="row pt-5">
-                            <div class="col-6 footer_text">
-                                <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
-                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                            <div class="col footer_text">
+                            <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png" alt="footer logo" style="width:60%"></div>
+                                <div class="row justify-content-center d-flex"><div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div></div>
                             </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left pb-2">Get in Touch</h3>
-                                <ul>
+                            
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                                <h3 class="text-center pb-3">Get In Touch</h3>
+                                <ul class="text-center">
                                     <li><a href="#" title="Pricing">Pricing</a></li>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>
-                                <h5 class="text-white  Subscribe mb-3 mt-3">Subscribe to our newsletter</h5>
-                                        <form class="form-inline" action="" method="post"
-                                            target="_blank">
-                                            <div class="form-group">
-
-                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
-                                                    name="EMAIL" placeholder="Your email" type="email"
-                                                    style="font-size:1.2rem">
-                                            </div>
-
-                                            <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;">Subscribe</button>
-                                        </form>
-                            </div>                            
+                            </div>
+                            
                         </div>
-                        <div class="row d-flex justify-content-center pt-5">
+                        <div class="row mt-3 mb-5">
+                            <div class="col">
+                                <h5 class="text-center Subscribe" id="mobile_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3 mt-3 text-center" id="mobile_newsletter_success"></h5>
+                                <form class="form-inline d-flex justify-content-center">
+                                    <div class="form-group">
+
+                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
+                                            name="EMAIL" placeholder="Your email" type="email"
+                                            style="font-size:1.2rem;width: 20rem;">
+                                    </div>
+
+                                    <div class="btn btn-success ml-2 mt-sm-3"
+                                        style="font-size: 1.2rem;"id="mobile_newsletter">Subscribe</div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
                                 <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
@@ -258,6 +268,7 @@ session_start();
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <!-- -------------------------- popup desktop start hear --------------------------- -->
@@ -1132,6 +1143,108 @@ session_start();
                     logout_signup_signin();
                 }
             });
+            /* --------------------- news letter functionality start -------------------- */
+$('#desktop_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_desktop").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_desktop").css('border-color', 'red');
+        $("#footer-subscribe-email_desktop").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_desktop").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* --------------------- news letter functionality end -------------------- */
+
+/* ------------------------- mobile newsletter start ------------------------ */
+
+$('#mobile_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_mobile").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_mobile").css('border-color', 'red');
+        $("#footer-subscribe-email_mobile").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_mobile").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* ------------------------- mobile newsletter end ------------------------ */
         });
     </script>
 </body>

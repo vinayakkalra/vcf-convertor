@@ -1295,3 +1295,6 @@ nav ul li ul li a:hover{
     display:none;
 }
 /* ---------------------------- nav dropdown menu end--------------------------- */
+#desktop_newsletter_success,#mobile_newsletter_success{
+    display: none;
+}

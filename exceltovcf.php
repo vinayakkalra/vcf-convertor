@@ -693,9 +693,9 @@ session_start();
                                     <li><a href="#" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>
-                                <h5 class="text-white  Subscribe mb-3 mt-3">Subscribe to our newsletter</h5>
-                                        <form class="form-inline" action="" method="post"
-                                            target="_blank">
+                                <h5 class="text-white  Subscribe mb-3 mt-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3 mt-3" id="desktop_newsletter_success"></h5>
+                                        <form class="form-inline">
                                             <div class="form-group">
 
                                                 <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
@@ -703,8 +703,8 @@ session_start();
                                                     style="font-size:1.2rem">
                                             </div>
 
-                                            <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;">Subscribe</button>
+                                            <div  class="btn btn-success ml-2 mt-2"
+                                                style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
                                         </form>
                             </div>                            
                         </div>
@@ -1604,9 +1604,9 @@ session_start();
                         </div>
                         <div class="row mt-3 mb-5">
                             <div class="col">
-                                <h5 class="text-center Subscribe">Subscribe to our newsletter</h5>
-                                <form class="form-inline d-flex justify-content-center" action="" method="post"
-                                    target="_blank">
+                                <h5 class="text-center Subscribe" id="mobile_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3 mt-3 text-center" id="mobile_newsletter_success"></h5>
+                                <form class="form-inline d-flex justify-content-center">
                                     <div class="form-group">
 
                                         <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
@@ -1614,8 +1614,8 @@ session_start();
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
-                                    <button type="submit" class="btn btn-success ml-2 mt-sm-3"
-                                        style="font-size: 1.2rem;">Subscribe</button>
+                                    <div class="btn btn-success ml-2 mt-sm-3"
+                                        style="font-size: 1.2rem;"id="mobile_newsletter">Subscribe</div>
                                 </form>
                             </div>
                         </div>
@@ -3254,6 +3254,108 @@ session_start();
             });
         });
         /* ---------------------- download functionality end ---------------------- */
+        /* --------------------- news letter functionality start -------------------- */
+$('#desktop_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_desktop").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_desktop").css('border-color', 'red');
+        $("#footer-subscribe-email_desktop").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_desktop").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* --------------------- news letter functionality end -------------------- */
+
+/* ------------------------- mobile newsletter start ------------------------ */
+
+$('#mobile_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_mobile").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_mobile").css('border-color', 'red');
+        $("#footer-subscribe-email_mobile").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_mobile").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* ------------------------- mobile newsletter end ------------------------ */
     });
     </script>
 </body>
