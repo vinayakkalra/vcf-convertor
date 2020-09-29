@@ -249,7 +249,7 @@ session_start();
 
             <!-- ----------------------- desktop about us start ------------------------ -->
 
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col">
                     <div class="container">
                         <div class="row">
@@ -300,7 +300,7 @@ session_start();
 
             <!-- ------------------------ desktop footer start ------------------------- -->
 
-            <div class="row footer pt-5">
+            <div class="row footer pt-5 mt-5">
                 <div class="col">
                     <div class="container">
                         <div class="row pt-5">

@@ -534,7 +534,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                 </div>
             </div>
             <!-- ------------------------ desktop footer start ------------------------- -->
-            <div class="row footer pt-5">
+            <div class="row footer pt-5 mt-5">
                 <div class="col">
                     <div class="container">
                         <div class="row pt-5">
