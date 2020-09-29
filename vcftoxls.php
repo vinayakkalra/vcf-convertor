@@ -1368,7 +1368,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
         var file_name = $('#fileToUpload').val();
                 if (file_name == '') {
                     $('#alert_id_file_not_select').css('display', 'block');
-                    $('#alert_id_file_not_select').html("* Please Select excel file");
+                    $('#alert_id_file_not_select').html("* Please Select vcf file");
                     return false;
                 } else {
                     selected_file_desktop=file_name;
@@ -1437,7 +1437,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
         var file_name = $('#fileToUpload_mobile').val();
                 if (file_name == '') {
                     $('#alert_id_file_not_select_mobile').css('display', 'block');
-                    $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
+                    $('#alert_id_file_not_select_mobile').html("* Please Select vcf file");
                     return false;
                 } else {
                     selected_file_mobile=file_name;
