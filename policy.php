@@ -226,15 +226,17 @@ session_start();
                                 <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
                                 <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
                             </div>
-                            <div class="col-6 footer_text">
+                            <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
-                                </ul>
-                                <h5 class="text-white  Subscribe mb-3 mt-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
-                                <h5 class="text-white  Subscribe mb-3 mt-3" id="desktop_newsletter_success"></h5>
+                                </ul>                                
+                            </div>
+                            <div class="col-4 footer_text">                                
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_success"></h5>
                                         <form class="form-inline">
                                             <div class="form-group">
 
@@ -246,12 +248,12 @@ session_start();
                                             <div  class="btn btn-success ml-2 mt-2"
                                                 style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
                                         </form>
-                            </div>                            
+                            </div>                             
                         </div>
                         <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
