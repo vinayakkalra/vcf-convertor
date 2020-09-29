@@ -96,7 +96,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
             vertical-align: middle !important;
         }
 
-        blockquote,
+        /* blockquote,
         dd,
         dl,
         figure,
@@ -110,7 +110,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
         p,
         pre {
             margin: 1rem;
-        }
+        } */
 
         .text-base {
             font-size: 1.6rem;
@@ -224,9 +224,9 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                                 <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item">
                                             <a class="nav-link " href="contact">Contact</a>
                                         </li>
@@ -534,90 +534,40 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                 </div>
             </div>
             <!-- ------------------------ desktop footer start ------------------------- -->
-            <div class="row footer">
+            <div class="row footer pt-5">
                 <div class="col">
                     <div class="container">
-                        <div class="row pt-5 ">
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">INFO</h3>
+                        <div class="row pt-5">
+                            <div class="col-6 footer_text">
+                                <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                            </div>
+                            <div class="col-6 footer_text">
+                                <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">HELP</h3>
-                                <ul>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="text-white text-center Subscribe">Subscribe to our newsletter</h5>
-                                        <form class="form-inline d-flex justify-content-center" action="" method="post"
+                                <h5 class="text-white  Subscribe mb-3 mt-3">Subscribe to our newsletter</h5>
+                                        <form class="form-inline" action="" method="post"
                                             target="_blank">
                                             <div class="form-group">
 
-                                                <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-2"
+                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
                                                     name="EMAIL" placeholder="Your email" type="email"
                                                     style="font-size:1.2rem">
                                             </div>
 
                                             <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.2rem;">Subscribe</button>
+                                                style="font-size: 1.5rem;">Subscribe</button>
                                         </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="social d-flex justify-content-center">
-                                            <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-facebook-icon.png"
-                                                    data-lazy-src="images/social-facebook-icon.png" width="32"
-                                                    height="34" alt="Facebook icon"></a>
-
-                                            <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-twitter-icon.png"
-                                                    data-lazy-src="images/social-twitter-icon.png" width="32"
-                                                    height="34" alt="Twitter icon"></a>
-
-                                            <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-instagram-icon.png"
-                                                    data-lazy-src="images/social-instagram-icon.png" width="32"
-                                                    height="32" alt="Instagram icon"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
-                                    Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -987,7 +937,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                             <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
                             <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
                     </div>
-                    <a href="policy" id="mobile_policy_button">Policy</a>
+                    <!-- <a href="policy" id="mobile_policy_button">Policy</a> -->
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
                     <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
@@ -1320,85 +1270,47 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
         <div class="container-fluid">
             <div class="row footer">
                 <div class="col">
-                    <div class="container">
-                        <div class="row mt-5">
+                    <div class="container">                      
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                            <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png" alt="footer logo" style="width:60%"></div>
+                                <div class="row justify-content-center d-flex"><div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div></div>
+                            </div>
+                            
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                                <h3 class="text-center pb-3">Get In Touch</h3>
+                                <ul class="text-center">
+                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="row mt-3 mb-5">
                             <div class="col">
                                 <h5 class="text-center Subscribe">Subscribe to our newsletter</h5>
                                 <form class="form-inline d-flex justify-content-center" action="" method="post"
                                     target="_blank">
                                     <div class="form-group">
 
-                                        <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-3"
+                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
                                             name="EMAIL" placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
                                     <button type="submit" class="btn btn-success ml-2 mt-sm-3"
-                                        style="font-size: 1.6rem;">Subscribe</button>
+                                        style="font-size: 1.2rem;">Subscribe</button>
                                 </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col footer_text d-flex justify-content-center">
-                                <div class="social_mobile social">
-                                    <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
-                                            data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
-                                            alt="Facebook icon"></a>
-
-                                    <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
-                                            data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
-                                            alt="Twitter icon"></a>
-
-                                    <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
-                                            data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
-                                            alt="Instagram icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">INFO</h3>
-                                <ul>
-                                    <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">HELP</h3>
-                                <ul>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
-                                    Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
