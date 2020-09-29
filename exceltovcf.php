@@ -1835,8 +1835,7 @@ session_start();
                             $('#alert_id_total_data').html("You have total "+total_data_length+" data");
                         } else {
                             $("#last_row").css('border-color', '#C0BBBB');
-                            $("#last_row").css('border-width', '1px');
-                            $('#alert_id_total_data').css('display', 'none');
+                            $("#last_row").css('border-width', '1px');                            
                         }
 
                         // /* --------------------------- row bound check end -------------------------- */
@@ -1954,7 +1953,7 @@ session_start();
                         } else {
                             $("#last_row_mobile").css('border-color', '#C0BBBB');
                             $("#last_row_mobile").css('border-width', '1px');
-                            $('#alert_id_total_data_mobile').css('display', 'none');
+                            
                         }
                         /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
