@@ -163,7 +163,7 @@ session_start();
     }
 
     #alert_id_file_not_select,
-    #alert_id_Otp {
+    #alert_id_Otp,#alert_id_total_data,#alert_id_total_data_mobile{
         display: none;
     }
 
@@ -351,12 +351,13 @@ session_start();
                                 <div class="row" id="step2">
                                     <div class="col">
                                         <form name="step2" id="step2form">
-                                            <div class="form-row">
-
+                                            <div class="form-row">                                           
                                                 <div class="wrap-col select_file_text">
                                                     Step 2 : Open your excel sheet, and tell us where the data starts
                                                     from:
                                                 </div>
+                                            </div>
+                                            <div class="alert alert-danger text-center" role="alert" id="alert_id_total_data">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="upload_file" class="col-3">Uploaded file:</label>
@@ -1241,6 +1242,8 @@ session_start();
                                                     from:
                                                 </div>
                                             </div>
+                                            <div class="alert alert-danger text-center" role="alert" id="alert_id_total_data_mobile">
+                                            </div>
                                             <div class="form-group row">
                                                 <label for="upload_file_mobile" class="col">Uploaded file:</label>
                                             </div>
@@ -1813,26 +1816,32 @@ session_start();
 
                         var row_check_start = parseInt(first_row, 10);
                         var row_check_end = parseInt(last_row, 10);
-                        // if (row_check_start > total_data_length) {
-                        //     $("#first_row").css('border-color', 'red');
-                        //     $("#first_row").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        // } else {
-                        //     $("#first_row").css('border-color', '#C0BBBB');
-                        //     $("#first_row").css('border-width', '1px');
-                        // }
-                        // if (row_check_end > total_data_length) {
-                        //     $("#last_row").css('border-color', 'red');
-                        //     $("#last_row").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        // } else {
-                        //     $("#last_row").css('border-color', '#C0BBBB');
-                        //     $("#last_row").css('border-width', '1px');
-                        // }
+                        if (row_check_start > total_data_length) {
+                            $("#first_row").css('border-color', 'red');
+                            $("#first_row").css('border-width', '2px');
+                            error = error + 'first_row';
+                            $('#alert_id_total_data').css('display', 'block');
+                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
+                        } else {
+                            $("#first_row").css('border-color', '#C0BBBB');
+                            $("#first_row").css('border-width', '1px');
+                            $('#alert_id_total_data').css('display', 'none');
+                        }
+                        if (row_check_end > total_data_length) {
+                            $("#last_row").css('border-color', 'red');
+                            $("#last_row").css('border-width', '2px');
+                            error = error + 'last_row';
+                            $('#alert_id_total_data').css('display', 'block');
+                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
+                        } else {
+                            $("#last_row").css('border-color', '#C0BBBB');
+                            $("#last_row").css('border-width', '1px');
+                            $('#alert_id_total_data').css('display', 'none');
+                        }
 
                         // /* --------------------------- row bound check end -------------------------- */
 
-                        // if (error == "") {
+                        if (error == "") {
                             $('.preloader').css('display', 'block');
                             row_start = first_row;
                             row_end = last_row;
@@ -1893,7 +1902,7 @@ session_start();
                             } else {
                                 alert("Sheet not found in file");
                             }
-                        // }
+                        }
                     });
 
                     //submit step 2 by mobile
@@ -1925,24 +1934,30 @@ session_start();
 
                         var row_check_start = parseInt(first_row, 10);
                         var row_check_end = parseInt(last_row, 10);
-                        // if (row_check_start > total_data_length) {
-                        //     $("#first_row_mobile").css('border-color', 'red');
-                        //     $("#first_row_mobile").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        // } else {
-                        //     $("#first_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#first_row_mobile").css('border-width', '1px');
-                        // }
-                        // if (row_check_end > total_data_length) {
-                        //     $("#last_row_mobile").css('border-color', 'red');
-                        //     $("#last_row_mobile").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        // } else {
-                        //     $("#last_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#last_row_mobile").css('border-width', '1px');
-                        // }
+                        if (row_check_start > total_data_length) {
+                            $("#first_row_mobile").css('border-color', 'red');
+                            $("#first_row_mobile").css('border-width', '2px');
+                            error = error + 'first_row';
+                            $('#alert_id_total_data_mobile').css('display', 'block');
+                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
+                        } else {
+                            $("#first_row_mobile").css('border-color', '#C0BBBB');
+                            $("#first_row_mobile").css('border-width', '1px');
+                            $('#alert_id_total_data_mobile').css('display', 'none');
+                        }
+                        if (row_check_end > total_data_length) {
+                            $("#last_row_mobile").css('border-color', 'red');
+                            $("#last_row_mobile").css('border-width', '2px');
+                            error = error + 'last_row';
+                            $('#alert_id_total_data_mobile').css('display', 'block');
+                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
+                        } else {
+                            $("#last_row_mobile").css('border-color', '#C0BBBB');
+                            $("#last_row_mobile").css('border-width', '1px');
+                            $('#alert_id_total_data_mobile').css('display', 'none');
+                        }
                         /* --------------------------- row bound check end mobile-------------------------- */
-                        // if (error == "") {
+                        if (error == "") {
                             $('.preloader_mobile').css('display', 'block');
                             row_start = first_row;
                             row_end = last_row;
@@ -1990,7 +2005,7 @@ session_start();
                             } else {
                                 alert("Sheet not found in file");
                             }
-                        // }
+                        }
                     });
                     jQuery('#xlx_json').val(json_object);
                     // })
