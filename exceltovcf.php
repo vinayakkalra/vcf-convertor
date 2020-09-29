@@ -1821,7 +1821,7 @@ session_start();
                             $("#first_row").css('border-width', '2px');
                             error = error + 'first_row';
                             $('#alert_id_total_data').css('display', 'block');
-                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
+                            $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
                         } else {
                             $("#first_row").css('border-color', '#C0BBBB');
                             $("#first_row").css('border-width', '1px');
@@ -1832,7 +1832,7 @@ session_start();
                             $("#last_row").css('border-width', '2px');
                             error = error + 'last_row';
                             $('#alert_id_total_data').css('display', 'block');
-                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
+                            $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
                         } else {
                             $("#last_row").css('border-color', '#C0BBBB');
                             $("#last_row").css('border-width', '1px');                            
@@ -1938,7 +1938,7 @@ session_start();
                             $("#first_row_mobile").css('border-width', '2px');
                             error = error + 'first_row';
                             $('#alert_id_total_data_mobile').css('display', 'block');
-                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
+                            $('#alert_id_total_data_mobile').html("You have total "+(total_data_length-1)+" data");
                         } else {
                             $("#first_row_mobile").css('border-color', '#C0BBBB');
                             $("#first_row_mobile").css('border-width', '1px');
@@ -1949,7 +1949,7 @@ session_start();
                             $("#last_row_mobile").css('border-width', '2px');
                             error = error + 'last_row';
                             $('#alert_id_total_data_mobile').css('display', 'block');
-                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
+                            $('#alert_id_total_data_mobile').html("You have total "+(total_data_length-1)+" data");
                         } else {
                             $("#last_row_mobile").css('border-color', '#C0BBBB');
                             $("#last_row_mobile").css('border-width', '1px');
