@@ -53,6 +53,7 @@ if(isset($_POST['email'])){
 /* ---------------------- email send to user given email id --------------------- */
             $err = array();
 
+<<<<<<< HEAD
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->isSMTP();  
         $mail->Host = 'localhost';
@@ -63,6 +64,18 @@ if(isset($_POST['email'])){
         $mail->FromName = "VCF Converter";	 // name is optional
         $mail->AddAddress($email);     
         $mail->AddReplyTo("sbitosbi@gmail.com", "OTP Verifiaction | VCF Converter");
+=======
+        // $mail = new PHPMailer\PHPMailer\PHPMailer();
+        // $mail->isSMTP();  
+        // $mail->Host = 'localhost';
+        // $mail->SMTPAuth = false;
+        // $mail->SMTPAutoTLS = false;
+        // $mail->Port = 25;
+        // $mail->From = 'support@quadtech.com';
+        // $mail->FromName = "VCF Converter";	 // name is optional
+        // $mail->AddAddress($email);     
+        // $mail->AddReplyTo("info@quadtech.com", "OTP Verifiaction | VCF Converter");
+>>>>>>> master81
 
         $mail->WordWrap = 50;  // set word wrap to 50 characters
         $mail->IsHTML(true); // set email format to HTML

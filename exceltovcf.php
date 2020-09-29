@@ -95,7 +95,7 @@ session_start();
         vertical-align: middle !important;
     }
 
-    blockquote,
+    /* blockquote,
     dd,
     dl,
     figure,
@@ -109,7 +109,7 @@ session_start();
     p,
     pre {
         margin: 1rem;
-    }
+    } */
 
     .text-base {
         font-size: 1.6rem;
@@ -163,7 +163,7 @@ session_start();
     }
 
     #alert_id_file_not_select,
-    #alert_id_Otp {
+    #alert_id_Otp,#alert_id_total_data,#alert_id_total_data_mobile{
         display: none;
     }
 
@@ -204,9 +204,9 @@ session_start();
                                                 <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item">
                                             <a class="nav-link " href="contact">Contact</a>
                                         </li>
@@ -351,12 +351,13 @@ session_start();
                                 <div class="row" id="step2">
                                     <div class="col">
                                         <form name="step2" id="step2form">
-                                            <div class="form-row">
-
+                                            <div class="form-row">                                           
                                                 <div class="wrap-col select_file_text">
                                                     Step 2 : Open your excel sheet, and tell us where the data starts
                                                     from:
                                                 </div>
+                                            </div>
+                                            <div class="alert alert-danger text-center" role="alert" id="alert_id_total_data">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="upload_file" class="col-3">Uploaded file:</label>
@@ -678,89 +679,42 @@ session_start();
                 </div>
             </div>
             <!-- ------------------------ desktop footer start ------------------------- -->
-            <div class="row footer">
+            <div class="row footer pt-5 mt-5">
                 <div class="col">
                     <div class="container">
-                        <div class="row pt-5 ">
+                        <div class="row pt-5">
+                            <div class="col-6 footer_text">
+                                <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                            </div>
                             <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">INFO</h3>
+                                <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">HELP</h3>
-                                <ul>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
-                                </ul>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
+                                </ul>                                
                             </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left ml-0">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="text-white text-center Subscribe">Subscribe to our newsletter</h5>
-                                        <form class="form-inline d-flex justify-content-center" action="" method="post"
-                                            target="_blank">
+                            <div class="col-4 footer_text">                                
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_success"></h5>
+                                        <form class="form-inline">
                                             <div class="form-group">
 
-                                                <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-2"
+                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
                                                     name="EMAIL" placeholder="Your email" type="email"
                                                     style="font-size:1.2rem">
                                             </div>
 
-                                            <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.2rem;">Subscribe</button>
+                                            <div  class="btn btn-success ml-2 mt-2"
+                                                style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
                                         </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="social d-flex justify-content-center">
-                                            <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-facebook-icon.png"
-                                                    data-lazy-src="images/social-facebook-icon.png" width="32"
-                                                    height="34" alt="Facebook icon"></a>
-
-                                            <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-twitter-icon.png"
-                                                    data-lazy-src="images/social-twitter-icon.png" width="32"
-                                                    height="34" alt="Twitter icon"></a>
-
-                                            <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-instagram-icon.png"
-                                                    data-lazy-src="images/social-instagram-icon.png" width="32"
-                                                    height="32" alt="Instagram icon"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                             
                         </div>
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -1130,7 +1084,7 @@ session_start();
                             <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
                             <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
                     </div>
-                    <a href="policy" id="mobile_policy_button">Policy</a>
+                    <!-- <a href="policy" id="mobile_policy_button">Policy</a> -->
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
                     <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
@@ -1287,6 +1241,8 @@ session_start();
                                                     Step 2 : Open your excel sheet, and tell us where the data starts
                                                     from:
                                                 </div>
+                                            </div>
+                                            <div class="alert alert-danger text-center" role="alert" id="alert_id_total_data_mobile">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="upload_file_mobile" class="col">Uploaded file:</label>
@@ -1632,80 +1588,43 @@ session_start();
         <div class="container-fluid">
             <div class="row footer">
                 <div class="col">
-                    <div class="container">
-                        <div class="row mt-5">
+                    <div class="container">                      
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                            <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png" alt="footer logo" style="width:60%"></div>
+                                <div class="row justify-content-center d-flex"><div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div></div>
+                            </div>
+                            
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                                <h3 class="text-center pb-3">Get In Touch</h3>
+                                <ul class="text-center">
+                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="row mt-3 mb-5">
                             <div class="col">
-                                <h5 class="text-center Subscribe">Subscribe to our newsletter</h5>
-                                <form class="form-inline d-flex justify-content-center" action="" method="post"
-                                    target="_blank">
+                                <h5 class="text-center Subscribe" id="mobile_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3 mt-3 text-center" id="mobile_newsletter_success"></h5>
+                                <form class="form-inline d-flex justify-content-center">
                                     <div class="form-group">
 
-                                        <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-3"
+                                        <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
                                             name="EMAIL" placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>
 
-                                    <button type="submit" class="btn btn-success ml-2 mt-sm-3"
-                                        style="font-size: 1.6rem;">Subscribe</button>
+                                    <div class="btn btn-success ml-2 mt-sm-3"
+                                        style="font-size: 1.2rem;"id="mobile_newsletter">Subscribe</div>
                                 </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col footer_text d-flex justify-content-center">
-                                <div class="social_mobile social">
-                                    <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
-                                            data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
-                                            alt="Facebook icon"></a>
-
-                                    <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
-                                            data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
-                                            alt="Twitter icon"></a>
-
-                                    <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
-                                            data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
-                                            alt="Instagram icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">INFO</h3>
-                                <ul>
-                                    <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">HELP</h3>
-                                <ul>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left ml-0">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
@@ -1876,24 +1795,24 @@ session_start();
                         var last_row = $("#last_row").val();
                         var show_data = "";
                         var error = "";
-                        if (first_row == "") {
-                            $("#first_row").css('border-color', 'red');
-                            $("#first_row").css('border-width', '2px');
-                            error = error + 'first_row';
-                        } else {
-                            $("#first_row").css('border-color', '#C0BBBB');
-                            $("#first_row").css('border-width', '1px');
-                        }
-                        if (last_row == "") {
-                            $("#last_row").css('border-color', 'red');
-                            $("#last_row").css('border-width', '2px');
-                            error = error + 'last_row';
-                        } else {
-                            $("#last_row").css('border-color', '#C0BBBB');
-                            $("#last_row").css('border-width', '1px');
-                        }
+                        // if (first_row == "") {
+                        //     $("#first_row").css('border-color', 'red');
+                        //     $("#first_row").css('border-width', '2px');
+                        //     error = error + 'first_row';
+                        // } else {
+                        //     $("#first_row").css('border-color', '#C0BBBB');
+                        //     $("#first_row").css('border-width', '1px');
+                        // }
+                        // if (last_row == "") {
+                        //     $("#last_row").css('border-color', 'red');
+                        //     $("#last_row").css('border-width', '2px');
+                        //     error = error + 'last_row';
+                        // } else {
+                        //     $("#last_row").css('border-color', '#C0BBBB');
+                        //     $("#last_row").css('border-width', '1px');
+                        // }
 
-                        /* ----------------------------- row bound check ---------------------------- */
+                        // /* ----------------------------- row bound check ---------------------------- */
 
                         var row_check_start = parseInt(first_row, 10);
                         var row_check_end = parseInt(last_row, 10);
@@ -1901,20 +1820,26 @@ session_start();
                             $("#first_row").css('border-color', 'red');
                             $("#first_row").css('border-width', '2px');
                             error = error + 'first_row';
+                            $('#alert_id_total_data').css('display', 'block');
+                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
                         } else {
                             $("#first_row").css('border-color', '#C0BBBB');
                             $("#first_row").css('border-width', '1px');
+                            $('#alert_id_total_data').css('display', 'none');
                         }
                         if (row_check_end > total_data_length) {
                             $("#last_row").css('border-color', 'red');
                             $("#last_row").css('border-width', '2px');
                             error = error + 'last_row';
+                            $('#alert_id_total_data').css('display', 'block');
+                            $('#alert_id_total_data').html("You have total "+total_data_length+" data");
                         } else {
                             $("#last_row").css('border-color', '#C0BBBB');
                             $("#last_row").css('border-width', '1px');
+                            $('#alert_id_total_data').css('display', 'none');
                         }
 
-                        /* --------------------------- row bound check end -------------------------- */
+                        // /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
                             $('.preloader').css('display', 'block');
@@ -1989,22 +1914,22 @@ session_start();
                         var last_row = $("#last_row_mobile").val();
                         var show_data = "";
                         var error = "";
-                        if (first_row == "") {
-                            $("#first_row_mobile").css('border-color', 'red');
-                            $("#first_row_mobile").css('border-width', '2px');
-                            error = error + 'first_row';
-                        } else {
-                            $("#first_row_mobile").css('border-color', '#C0BBBB');
-                            $("#first_row_mobile").css('border-width', '1px');
-                        }
-                        if (last_row == "") {
-                            $("#last_row_mobile").css('border-color', 'red');
-                            $("#last_row_mobile").css('border-width', '2px');
-                            error = error + 'last_row';
-                        } else {
-                            $("#last_row_mobile").css('border-color', '#C0BBBB');
-                            $("#last_row_mobile").css('border-width', '1px');
-                        }
+                        // if (first_row == "") {
+                        //     $("#first_row_mobile").css('border-color', 'red');
+                        //     $("#first_row_mobile").css('border-width', '2px');
+                        //     error = error + 'first_row';
+                        // } else {
+                        //     $("#first_row_mobile").css('border-color', '#C0BBBB');
+                        //     $("#first_row_mobile").css('border-width', '1px');
+                        // }
+                        // if (last_row == "") {
+                        //     $("#last_row_mobile").css('border-color', 'red');
+                        //     $("#last_row_mobile").css('border-width', '2px');
+                        //     error = error + 'last_row';
+                        // } else {
+                        //     $("#last_row_mobile").css('border-color', '#C0BBBB');
+                        //     $("#last_row_mobile").css('border-width', '1px');
+                        // }
                         /* ----------------------------- row bound check mobile ---------------------------- */
 
                         var row_check_start = parseInt(first_row, 10);
@@ -2013,17 +1938,23 @@ session_start();
                             $("#first_row_mobile").css('border-color', 'red');
                             $("#first_row_mobile").css('border-width', '2px');
                             error = error + 'first_row';
+                            $('#alert_id_total_data_mobile').css('display', 'block');
+                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
                         } else {
                             $("#first_row_mobile").css('border-color', '#C0BBBB');
                             $("#first_row_mobile").css('border-width', '1px');
+                            $('#alert_id_total_data_mobile').css('display', 'none');
                         }
                         if (row_check_end > total_data_length) {
                             $("#last_row_mobile").css('border-color', 'red');
                             $("#last_row_mobile").css('border-width', '2px');
                             error = error + 'last_row';
+                            $('#alert_id_total_data_mobile').css('display', 'block');
+                            $('#alert_id_total_data_mobile').html("You have total "+total_data_length+" data");
                         } else {
                             $("#last_row_mobile").css('border-color', '#C0BBBB');
                             $("#last_row_mobile").css('border-width', '1px');
+                            $('#alert_id_total_data_mobile').css('display', 'none');
                         }
                         /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
@@ -2136,17 +2067,17 @@ session_start();
             num_end2 = num_end;
             /* -------------------------- get data value to make VCF end -------------------------- */
 
-            for (var i = 1; i <= total_data_come; i++) {
-                if (column_array[i] == "") {
-                    $("#column" + i).css('border-color', 'red');
-                    $("#column" + i).css('border-width', '2px');
-                    error = error + 'column_array[' + i + ']';
-                } else {
-                    $("#column" + i).css('border-color', '#C0BBBB');
-                    $("#column" + i).css('border-width', '1px');
-                }
-            }
-            if (error == "") {
+            // for (var i = 1; i <= total_data_come; i++) {
+            //     if (column_array[i] == "") {
+            //         $("#column" + i).css('border-color', 'red');
+            //         $("#column" + i).css('border-width', '2px');
+            //         error = error + 'column_array[' + i + ']';
+            //     } else {
+            //         $("#column" + i).css('border-color', '#C0BBBB');
+            //         $("#column" + i).css('border-width', '1px');
+            //     }
+            // }
+            // if (error == "") {
                 $('.preloader').css('display', 'block');
                 $('.collapseSignup').removeClass('col-8');
                 $('.collapseSignup').addClass('col-10');
@@ -2232,14 +2163,14 @@ session_start();
                 $('.preloader').css('display', 'none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
                 $('.vcf_filename').html(file_start_char + '****.vcf is ready to download');                
-            } else {
-                $('.collapseSignup').removeClass('col-10');
-                $('.collapseSignup').addClass('col-8');
-                $('#pop_up_desktop').modal('hide');
-                $('.preloader').css('display', 'none');
-                $('#step3').css('display', 'block');
-                $('#step4').css('display', 'none');
-            }
+            // } else {
+            //     $('.collapseSignup').removeClass('col-10');
+            //     $('.collapseSignup').addClass('col-8');
+            //     $('#pop_up_desktop').modal('hide');
+            //     $('.preloader').css('display', 'none');
+            //     $('#step3').css('display', 'block');
+            //     $('#step4').css('display', 'none');
+            // }
             $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
@@ -2285,17 +2216,17 @@ session_start();
             }
             num_end2 = num_end;
             /* -------------------------- get data value to make VCF for mobile end -------------------------- */
-            for (var i = 1; i <= total_data_come; i++) {
-                if (column_array[i] == "") {
-                    $("#column_mobile" + i).css('border-color', 'red');
-                    $("#column_mobile" + i).css('border-width', '2px');
-                    error = error + 'column_array[' + i + ']';
-                } else {
-                    $("#column_mobile" + i).css('border-color', '#C0BBBB');
-                    $("#column_mobile" + i).css('border-width', '1px');
-                }
-            }
-            if (error == "") {
+            // for (var i = 1; i <= total_data_come; i++) {
+            //     if (column_array[i] == "") {
+            //         $("#column_mobile" + i).css('border-color', 'red');
+            //         $("#column_mobile" + i).css('border-width', '2px');
+            //         error = error + 'column_array[' + i + ']';
+            //     } else {
+            //         $("#column_mobile" + i).css('border-color', '#C0BBBB');
+            //         $("#column_mobile" + i).css('border-width', '1px');
+            //     }
+            // }
+            // if (error == "") {
                 $('.preloader_mobile').css('display', 'block');
                 $.ajax({
                     type: 'POST',
@@ -2379,12 +2310,12 @@ session_start();
                 $('.preloader_mobile').css('display', 'none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
                 $('.vcf_filename').html(file_start_char + '****.vcf is ready to download');               
-            } else {
-                $('#pop_up_desktop').modal('hide');
-                $('#step3_mobile').css('display', 'block');
-                $('.preloader_mobile').css('display', 'none');
-                $('#step4_mobile').css('display', 'none');
-            }
+            // } else {
+            //     $('#pop_up_desktop').modal('hide');
+            //     $('#step3_mobile').css('display', 'block');
+            //     $('.preloader_mobile').css('display', 'none');
+            //     $('#step4_mobile').css('display', 'none');
+            // }
             $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
@@ -3340,6 +3271,108 @@ session_start();
             });
         });
         /* ---------------------- download functionality end ---------------------- */
+        /* --------------------- news letter functionality start -------------------- */
+$('#desktop_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_desktop").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_desktop").css('border-color', 'red');
+        $("#footer-subscribe-email_desktop").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_desktop").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* --------------------- news letter functionality end -------------------- */
+
+/* ------------------------- mobile newsletter start ------------------------ */
+
+$('#mobile_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_mobile").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_mobile").css('border-color', 'red');
+        $("#footer-subscribe-email_mobile").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_mobile").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* ------------------------- mobile newsletter end ------------------------ */
     });
     </script>
 </body>

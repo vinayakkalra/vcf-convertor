@@ -102,9 +102,9 @@ session_start();
                                                 <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link " href="policy">Policy</a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item">
                                             <a class="nav-link " href="contact">Contact</a>
                                         </li>
@@ -218,49 +218,26 @@ session_start();
 
             <!-- ---------------------------- policy content end ---------------------------  -->
             <!-- ------------------------ desktop footer start ------------------------- -->
-            <div class="row footer">
+            <div class="row footer pt-5 mt-5">
                 <div class="col">
                     <div class="container">
-                        <div class="row pt-5 ">
+                        <div class="row pt-5">
+                            <div class="col-6 footer_text">
+                                <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                            </div>
                             <div class="col-2 footer_text">
-                                <h3 class="text-left">INFO</h3>
+                                <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left">HELP</h3>
-                                <ul>
                                     <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
-                                </ul>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
+                                </ul>                                
                             </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-2 footer_text">
-                                <h3 class="text-left">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="text-white text-center Subscribe">Subscribe to our newsletter
-                                        </h5>
-                                        <form class="form-inline d-flex justify-content-center" action="" method="post"
-                                            target="_blank">
+                            <div class="col-4 footer_text">                                
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_success"></h5>
+                                        <form class="form-inline">
                                             <div class="form-group">
 
                                                 <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
@@ -268,41 +245,15 @@ session_start();
                                                     style="font-size:1.2rem">
                                             </div>
 
-                                            <button type="submit" class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;">Subscribe</button>
+                                            <div  class="btn btn-success ml-2 mt-2"
+                                                style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
                                         </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="social d-flex justify-content-center">
-                                            <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-facebook-icon.png"
-                                                    data-lazy-src="images/social-facebook-icon.png" width="32"
-                                                    height="34" alt="Facebook icon"></a>
-
-                                            <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-twitter-icon.png"
-                                                    data-lazy-src="images/social-twitter-icon.png" width="32"
-                                                    height="34" alt="Twitter icon"></a>
-
-                                            <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                                rel="noopener noreferrer"><img
-                                                    src="images/social/social-instagram-icon.png"
-                                                    data-lazy-src="images/social-instagram-icon.png" width="32"
-                                                    height="32" alt="Instagram icon"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                             
                         </div>
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
-                                    Reserved
+                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -314,7 +265,7 @@ session_start();
     <!-- -------------------------- popup desktop start hear --------------------------- -->
     <!-- Modal -->
     <div class="modal fade" id="pop_up_desktop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" data-backdrop="static" data-keyboard="false" style="overflow: hidden;">
+        aria-hidden="true"  style="overflow: hidden;">
         <div class="modal-dialog modal-dialog-centered" role="document">
 
             <!--Content-->
@@ -325,7 +276,9 @@ session_start();
                         <strong>Sign
                             In</strong>
                     </h3>
-
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                            </button>
                 </div>
                 <!--Body-->
                 <div class="modal-body mx-5">
@@ -375,7 +328,9 @@ session_start();
                         <strong>Sign
                             Up</strong>
                     </h3>
-
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                            </button>
                 </div>
                 <!--Body-->
                 <form data-name="signup_form" name="signup-form">
@@ -434,6 +389,9 @@ session_start();
                     <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel">
                         <strong>Email Verification</strong>
                     </h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                            </button>
                 </div>
                 <p class="d-flex justify-content-center">Please Check Your Email for Verification Code</p>
                 <!--Body-->
@@ -475,7 +433,9 @@ session_start();
                         <strong>Forgot
                             Password ?</strong>
                     </h3>
-
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                            </button>
                 </div>
                 <!--Body-->
                 <form data-name="forgot_password_form" name="forgot_password_form">
@@ -552,7 +512,7 @@ session_start();
                             <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
                             <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
                     </div>
-                    <a href="policy" id="mobile_policy_button">Policy</a>
+                    <!-- <a href="policy" id="mobile_policy_button">Policy</a> -->
                     <a href="contact" id="mobile_contact_button">Contact</a>
                     <li class="nav-item set_id_one" id="set_id_one_mobile"></li>
                     <li class="nav-item set_id_two" id="set_id_two_mobile"></li>
@@ -674,8 +634,26 @@ session_start();
         <div class="container-fluid">
             <div class="row footer">
                 <div class="col">
-                    <div class="container">
-                        <div class="row mt-5">
+                    <div class="container">                      
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                            <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png" alt="footer logo" style="width:60%"></div>
+                                <div class="row justify-content-center d-flex"><div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div></div>
+                            </div>
+                            
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col footer_text">
+                                <h3 class="text-center pb-3">Get In Touch</h3>
+                                <ul class="text-center">
+                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="policy" title="Privacy">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="row mt-3 mb-5">
                             <div class="col">
                                 <h5 class="text-center Subscribe">Subscribe to our newsletter</h5>
                                 <form class="form-inline d-flex justify-content-center" action="" method="post"
@@ -692,67 +670,11 @@ session_start();
                                 </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col footer_text d-flex justify-content-center">
-                                <div class="social_mobile social d-flex">
-                                    <a href="#" title="Like CSVTOVCF on Facebook" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-facebook-icon.png"
-                                            data-lazy-src="images/social-facebook-icon.png" width="32" height="34"
-                                            alt="Facebook icon"></a>
-
-                                    <a href="#" title="Follow CSVTOVCF on Twitter" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-twitter-icon.png"
-                                            data-lazy-src="images/social-twitter-icon.png" width="32" height="34"
-                                            alt="Twitter icon"></a>
-
-                                    <a href="#" title="Check out CSVTOVCF on Instagram" target="_blank"
-                                        rel="noopener noreferrer"><img src="images/social/social-instagram-icon.png"
-                                            data-lazy-src="images/social-instagram-icon.png" width="32" height="32"
-                                            alt="Instagram icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left">INFO</h3>
-                                <ul>
-                                    <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="Formats">Formats</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left">HELP</h3>
-                                <ul>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
-                                    <li><a href="#" title="Status" target="_blank">Status</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left">resources</h3>
-                                <ul>
-                                    <li><a href="#" title="Developer API" target="_blank">Developer API</a></li>
-                                    <li><a href="#" title="Tools">Tools</a></li>
-                                    <li><a href="#" title="Blog" target="_blank">Blog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 footer_text">
-                                <h3 class="text-left">Company</h3>
-                                <ul>
-                                    <li><a href="#" title="About">About Us</a></li>
-                                    <li><a href="#" title="Advertise">Advertise</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="Terms">Terms of Service</a></li>
-                                    <li><a href="#" title="Privacy">Privacy</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
-                                    Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -1212,6 +1134,108 @@ session_start();
                     logout_signup_signin();
                 }
             });
+            /* --------------------- news letter functionality start -------------------- */
+$('#desktop_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_desktop").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_desktop").css('border-color', 'red');
+        $("#footer-subscribe-email_desktop").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_desktop").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#desktop_newsletter_head').css('display','none');
+                            $('#desktop_newsletter_success').css('display','block');
+                            $('#desktop_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* --------------------- news letter functionality end -------------------- */
+
+/* ------------------------- mobile newsletter start ------------------------ */
+
+$('#mobile_newsletter').click(function(){
+
+var email = $("#footer-subscribe-email_mobile").val();
+var error="";
+function validateEmail(email) {
+    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+            }
+    if (!validateEmail(email)) {
+        $("#footer-subscribe-email_mobile").css('border-color', 'red');
+        $("#footer-subscribe-email_mobile").css('border-width', '2px');
+        error = error + 'email';
+    } else {
+        $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
+        $("#footer-subscribe-email_mobile").css('border-width', '1px');
+            }
+            if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/newsletter.php',
+                    dataType: "json",
+                    data: {
+                        'email': email 
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data.status == 201) {                            
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else if (data.status == 301) {
+                            $('#mobile_newsletter_head').css('display','none');
+                            $('#mobile_newsletter_success').css('display','block');
+                            $('#mobile_newsletter_success').html(data.error);
+                        } else {
+                            //console.log(data.error)
+                        }
+                    }
+                }); 
+            }else{
+
+            }
+        });
+/* ------------------------- mobile newsletter end ------------------------ */
         });
     </script>
 </body>
