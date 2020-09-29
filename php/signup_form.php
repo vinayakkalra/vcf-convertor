@@ -51,29 +51,29 @@ if(isset($_POST['email'])){
         if($result = mysqli_query($link, $query)) { 
 
 /* ---------------------- email send to user given email id --------------------- */
-            $err = array();
+        //     $err = array();
 
-        $mail = new PHPMailer\PHPMailer\PHPMailer();
-        $mail->isSMTP();  
-        $mail->Host = 'localhost';
-        $mail->SMTPAuth = false;
-        $mail->SMTPAutoTLS = false;
-        $mail->Port = 25;
-        $mail->From = 'chandan.mca.2019@gmail.com';
-        $mail->FromName = "VCF Converter";	 // name is optional
-        $mail->AddAddress($email);     
-        $mail->AddReplyTo("sbitosbi@gmail.com", "OTP Verifiaction | VCF Converter");
+        // $mail = new PHPMailer\PHPMailer\PHPMailer();
+        // $mail->isSMTP();  
+        // $mail->Host = 'localhost';
+        // $mail->SMTPAuth = false;
+        // $mail->SMTPAutoTLS = false;
+        // $mail->Port = 25;
+        // $mail->From = 'chandan.mca.2019@gmail.com';
+        // $mail->FromName = "VCF Converter";	 // name is optional
+        // $mail->AddAddress($email);     
+        // $mail->AddReplyTo("sbitosbi@gmail.com", "OTP Verifiaction | VCF Converter");
 
-        $mail->WordWrap = 50;  // set word wrap to 50 characters
-        $mail->IsHTML(true); // set email format to HTML
+        // $mail->WordWrap = 50;  // set word wrap to 50 characters
+        // $mail->IsHTML(true); // set email format to HTML
 
-        $mail->Subject = 'Verification code for Verify Your Email Address';
-        $message_body = '<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
-			<p>Sincerely,</p>';
-        $mail->Body    = $message_body;
-        $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+        // $mail->Subject = 'Verification code for Verify Your Email Address';
+        // $message_body = '<p>For verify your email address, enter this verification code when prompted: <b>'.$user_otp.'</b>.</p>
+		// 	<p>Sincerely,</p>';
+        // $mail->Body    = $message_body;
+        // $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
 
-        if($mail->Send()) {
+        // if($mail->Send()) {
 
                 $data['status'] = 201;
                 $data['id'] = $id;
@@ -86,10 +86,10 @@ if(isset($_POST['email'])){
                 $_SESSION['authenticated']=true;
                 $_SESSION['user_activation_code']=$user_activation_code;
                 echo json_encode($data);	
-        }
-        else{
-            $data['error'] = $mail->ErrorInfo;
-        }
+        // }
+        // else{
+        //     $data['error'] = $mail->ErrorInfo;
+        // }
 // /* ---------------------- email send to user given email id end--------------------- */
         }
     else  

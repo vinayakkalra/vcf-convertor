@@ -39,37 +39,37 @@ if(isset($_POST['email'])){
         
         if($result = mysqli_query($link, $query))  
         {
-                 $err = array();
+        // $err = array();
 
-        $mail = new PHPMailer\PHPMailer\PHPMailer();
-        $mail->isSMTP();  
-        $mail->Host = 'localhost';
-        $mail->SMTPAuth = false;
-        $mail->SMTPAutoTLS = false;
-        $mail->Port = 25;
-        $mail->From = 'support@quadtech.com';
-        $mail->FromName = "VCF Converter";	 // name is optional
-        $mail->AddAddress($email);     
-        $mail->AddReplyTo("info@quadtech.com", "Newsletter | VCF Converter");
+        // $mail = new PHPMailer\PHPMailer\PHPMailer();
+        // $mail->isSMTP();  
+        // $mail->Host = 'localhost';
+        // $mail->SMTPAuth = false;
+        // $mail->SMTPAutoTLS = false;
+        // $mail->Port = 25;
+        // $mail->From = 'support@quadtech.com';
+        // $mail->FromName = "VCF Converter";	 // name is optional
+        // $mail->AddAddress($email);     
+        // $mail->AddReplyTo("info@quadtech.com", "Newsletter | VCF Converter");
 
-        $mail->WordWrap = 50;  // set word wrap to 50 characters
-        $mail->IsHTML(true); // set email format to HTML
+        // $mail->WordWrap = 50;  // set word wrap to 50 characters
+        // $mail->IsHTML(true); // set email format to HTML
 
-        $mail->Subject = 'Thanks for signing up our newsletter';
-        $message_body = '<p>Thank you for subscribing our newsletter. You can get here our latest product details and pricing news</p>
-			<p>Sincerely,</p>';
-        $mail->Body    = $message_body;
-        $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+        // $mail->Subject = 'Thanks for signing up our newsletter';
+        // $message_body = '<p>Thank you for subscribing our newsletter. You can get here our latest product details and pricing news</p>
+		// 	<p>Sincerely,</p>';
+        // $mail->Body    = $message_body;
+        // $mail->AltBody = "This is the body in plain text for non-HTML mail clients";
 
-        if($mail->Send()) {
+        // if($mail->Send()) {
 
             $data['status'] = 201;   
             $data['error'] = 'Thank you !';      
             echo json_encode($data);	
-    }
-    else{
-        $data['error'] = $mail->ErrorInfo;
-    }
+    // }
+    // else{
+    //     $data['error'] = $mail->ErrorInfo;
+    // }
         
         }  
         else  
