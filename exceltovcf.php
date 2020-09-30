@@ -2893,6 +2893,8 @@ session_start();
             $('.myModal_payment').modal('show');
             $('.payment_pro').css('display', 'block');
             $('.payment_enterprise').css('display', 'none');
+            $("#checkout-form").css('display','block');
+            $("#order-success").css('display','none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
             $(".price").html(result1.price_pro);
@@ -2902,6 +2904,8 @@ session_start();
             $('.myModal_payment').modal('show');
             $('.payment_enterprise').css('display', 'block');
             $('.payment_pro').css('display', 'none');
+            $("#checkout-form").css('display','block');
+            $("#order-success").css('display','none');
             $('input[name="payment_email"]').val(user_email);
             $('input[name="payment_mobile"]').val(user_mobile);
             $(".price").html(result1.price_enterprise);
@@ -2986,12 +2990,8 @@ session_start();
                                                 // alert("Your payment has been successful");
                                                 num_end = num_end1;
                                                 vcf()
-                                                $("#checkout-form").css(
-                                                    'display',
-                                                    'none');
-                                                $("#order-success").css(
-                                                    'display',
-                                                    'block');
+                                                $("#checkout-form").css('display','none');
+                                                $("#order-success").css('display','block');
                                                 // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
@@ -3056,17 +3056,6 @@ session_start();
                 // return true;
             }
         });
-        $.ajax({
-            type: 'POST',
-            url: 'php/get-sub.php',
-            async: false,
-            dataType: "json",
-            data: {},
-            success: function(response) {
-                GetSubscriberId_Basic = response.id;
-            }
-
-        });
 
 
         $("#payment_pro").on('show.bs.modal', function(e) {
@@ -3095,6 +3084,17 @@ session_start();
                 $("#inputAddress").css('border-width', '1px');
             }
             if (error == "") {
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/get-sub.php',
+                    async: false,
+                    dataType: "json",
+                    data: {},
+                    success: function(response) {
+                        GetSubscriberId_Basic = response.id;
+                    }
+
+                });
                 // ajax call
                 $.ajax({
                     type: 'POST',
