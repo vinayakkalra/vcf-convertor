@@ -331,7 +331,7 @@ session_start();
                                                 </div>
                                             </label>
                                             <div class="preloader">
-                                                <div class="row pl-4 ml-5">
+                                                <div class="row pl-5 ml-5">
                                                     <div class="loadingio-spinner-rolling-n1r2sb8my0m">
                                                         <div class="ldio-538wm7ir56h">
                                                             <div></div>
