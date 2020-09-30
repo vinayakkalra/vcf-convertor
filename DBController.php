@@ -5,11 +5,19 @@ class DBController {
 	private $password = "";
 	private $database = "vcf_database";
     private $conn;
-            //live server
+    
+    //test server
     // private $host = "localhost";
 	// private $user = "vcf_conv";
 	// private $password = "lvkMcrlVCqCV";
 	// private $database = "test_vcf";
+    // private $conn;
+    
+    //live server
+    // private $host = "localhost";
+	// private $user = "vcf";
+	// private $password = "lLtAaaMl52j8";
+	// private $database = "vcf";
     // private $conn;
 	
     function __construct() {
