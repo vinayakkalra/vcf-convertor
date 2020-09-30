@@ -78,7 +78,6 @@
 
 html {
     font-size: 62.5%;
-
 }
 
 body {
@@ -88,11 +87,11 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     background: #f7f7f7;
+    font-family: montserrat-r;
 }
 
 .navbar ul li {
     font-size: 1.4rem;
-
 }
 
 p {

@@ -166,7 +166,7 @@ session_start();
                         <div class=" navshowtext">
                             <div class="row mt-5">
                                 <div class="col d-flex justify-content-center">
-                                    <h1 class="main_heading">Welcome to The <span>VCF Converter!</span></h1>
+                                    <h1 class="main_heading ">Welcome to The <span>VCF Converter!</span></h1>
                                 </div>
                             </div>
                             <div class="row mt-2 d-flex justify-content-center">
@@ -254,7 +254,7 @@ session_start();
                     <div class="container">
                         <div class="row">
                             <div class="col pt-5">
-                                <h1 class="text-center pb-3">About Us</h1>
+                                <h1 class="text-center pb-3 font-montserrat-b">About Us</h1>
                                 <p class="pt-2 paragraph_style">We are essentially developers. More interested in Cloud
                                     development, IT solutions, Payment Gateway integration, SMS services, eCommerce.
                                     Basically, everything that can be developed and deployed online. Reach out to us for
@@ -269,7 +269,7 @@ session_start();
 
                         <div class="row">
                             <div class="col pt-5 pb-5">
-                                <h1 class="text-center">Why use <span style="color: #2487EC;">VCF Converter</span> ?
+                                <h1 class="text-center font-montserrat-b">Why use <span style="color: #2487EC;">VCF Converter</span> ?
                                 </h1>
 
                             </div>
@@ -306,7 +306,7 @@ session_start();
                         <div class="row pt-5">
                             <div class="col-6 footer_text">
                                 <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
-                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
                             </div>
                             <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
@@ -324,11 +324,11 @@ session_start();
 
                                                 <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
                                                     name="EMAIL" placeholder="Your email" type="email"
-                                                    style="font-size:1.2rem">
+                                                    style="font-size:1.4rem !important;">
                                             </div>
 
                                             <div  class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
+                                                style="font-size: 1.4rem;" id="desktop_newsletter">Subscribe</div>
                                         </form>
                             </div>                             
                         </div>
@@ -354,7 +354,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_in_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Sign
                             In</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -388,7 +388,7 @@ session_start();
                             </div>
                         </div>
                     <div class="text-center mb-5 mt-5">
-                        <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                        <button type="button" class="btn sendButton blue-gradient btn-block btn-primary btn-rounded z-depth-1a"
                             id="pop_up_signin">Sign
                             in</button>
                     </div>
@@ -404,7 +404,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_up_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Sign
                             Up</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -447,7 +447,7 @@ session_start();
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton blue-gradient btn-primary btn-block btn-rounded z-depth-1a"
                                 id="pop_up_signup">Sign
                                 Up</button>
                         </div>
@@ -464,7 +464,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_up_Otp">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Email Verification</strong></h3> 
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Email Verification</strong></h3> 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
                             </button>               
@@ -492,7 +492,7 @@ session_start();
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton blue-gradient btn-primary btn-block btn-rounded z-depth-1a"
                                 id="pop_up_otp">Verify OTP</button>
                         </div>
                     </div>
@@ -505,7 +505,7 @@ session_start();
             <div class="modal-content form-elegant" id="forgot_password_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Forgot
                             Password ?</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -551,7 +551,7 @@ session_start();
                             </div>
                         </div>
                         <div class="text-center mb-5 mt-5">
-                            <button type="button" class="btn sendButton blue-gradient btn-block btn-rounded z-depth-1a"
+                            <button type="button" class="btn sendButton blue-gradient btn-block btn-primary btn-rounded z-depth-1a"
                                 id="pop_up_forgot">Change Password</button>
                         </div>
                     </div>
@@ -1169,32 +1169,38 @@ session_start();
                 $('#pop_up_desktop').modal('show');
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
+                $('#forgot_password_page').css('display', 'none');
             });
             $('.pop_up_signup_header').click(function() {
                 $('#pop_up_desktop').modal('show');
                 $('#sign_in_page').css('display', 'none');
                 $('#sign_up_page').css('display', 'block');
+                $('#forgot_password_page').css('display', 'none');
             });
             $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
+                $('#forgot_password_page').css('display', 'none');
                 // alert("My name is sign in");
             });
             $('#signup_link').click(function() {
 
                 $('#sign_up_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
+                $('#forgot_password_page').css('display', 'none');
                 // alert("My name is sign up");
             });
             $('#forgot_password_link').click(function() {
 
                 $('#forgot_password_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
+                $('#sign_up_page').css('display', 'none');
                 // alert("My name is sign up");
             });
             $('#signin_link_forgot').click(function() {
                 $('#forgot_password_page').css('display', 'none');
                 $('#sign_in_page').css('display', 'block');
+                $('#sign_up_page').css('display', 'none');
             });
         }
         model_sign_up_sign_in();
@@ -1203,11 +1209,13 @@ session_start();
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'block');
             $('#sign_up_page').css('display', 'none');
+            $('#forgot_password_page').css('display', 'none');
         });
         $('.pop_up_signup_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'none');
             $('#sign_up_page').css('display', 'block');
+            $('#forgot_password_page').css('display', 'none');
         });
         /* ------------------------------- logout call ------------------------------ */
         function logout_signup_signin() {
