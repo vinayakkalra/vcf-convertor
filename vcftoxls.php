@@ -545,7 +545,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                             <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
-                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="pricing" title="Pricing">Pricing</a></li>
                                     <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>                                
@@ -1290,7 +1290,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                             <div class="col footer_text">
                                 <h3 class="text-center pb-3">Get In Touch</h3>
                                 <ul class="text-center">
-                                    <li><a href="#" title="Pricing">Pricing</a></li>
+                                    <li><a href="pricing" title="Pricing">Pricing</a></li>
                                     <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>
