@@ -1490,6 +1490,9 @@ session_start();
                 }
             });
             /* ------------------------- mobile newsletter end ------------------------ */
+            window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 120);
+});
         });
     </script>
 </body>
