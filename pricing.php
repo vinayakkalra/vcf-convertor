@@ -879,7 +879,7 @@ session_start();
             <div class="row">
                 <div class="container">
                     <div class="row d-flex justify-content-center mt-5 mb-5">
-                    <div class="col-11 collapseSignup">
+                    <div class="col collapseSignup">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">                                   
                                         <div class="row our_subscription">
