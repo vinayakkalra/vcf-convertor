@@ -46,31 +46,53 @@ session_start();
     <!-- <link rel="icon" href="ENTER_FAVICON_LOCATION"> -->
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
-        <!-- ------------------------------ favicon start ----------------------------- -->
+    <!-- ------------------------------ favicon start ----------------------------- -->
 
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<!-- ------------------------------ favicon end ----------------------------- -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ------------------------------ favicon end ----------------------------- -->
     <style>
         .text_color {
             color: #808080;
         }
+
         .alert-danger {
-        color: #721c24;
-     background-color: #fff !important;
-     border-color: #fff !important;
-    }
-    #alert_id_Otp{
-        display:none;
-    }
-    .preloader,
-    .preloader_mobile {
-        display: none;
-    }
+            color: #721c24;
+            background-color: #fff !important;
+            border-color: #fff !important;
+        }
+
+        #alert_id_Otp {
+            display: none;
+        }
+
+        .preloader,
+        .preloader_mobile {
+            display: none;
+        }
+
+        .faq_heading {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        .list-unstyled {
+            color: #2487eb;
+
+        }
+
+        .list-unstyled a:hover {
+            text-decoration: none;
+        }
+        
+        .medium{
+            font-size: 2rem;
+            color: #000;
+        }        
     </style>
 </head>
 
@@ -95,7 +117,8 @@ session_start();
                                             <a class="nav-link" href="/">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" style="cursor:pointer;">Tools<i class='fa fa-angle-down'></i></a>
+                                            <a class="nav-link" style="cursor:pointer;">Tools<i
+                                                    class='fa fa-angle-down'></i></a>
                                             <ul>
                                                 <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
                                                 <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
@@ -130,7 +153,7 @@ session_start();
                     <div class="container">
                         <div class="row">
                             <div class="col d-flex justify-content-start mt-5 pt-5 exceltovcf_heading">
-                                <h3><span>Policies</span> & <span>More</span></h3>
+                                <h3><span>FAQ</span></h3>
                             </div>
                         </div>
                     </div>
@@ -141,75 +164,185 @@ session_start();
                 <div class="col">
                     <div class="container">
                         <div class="row pt-5 pb-5 mb-5 mt-5">
-                            <div class="col-3">
+                            <div class="col">
                                 <div class="wrap-col">
-                                    <ol style="list-style-type: upper-roman;" class="text_color">
-                                        <li>Privacy Policy</li>
-                                        <li>Disclaimers</li>
-                                        <li>Limitations of Liabilities</li>
-                                        <li>Intellectual Properties</li>
-                                    </ol><br>
+                                    <div class="col-sm-12 col-md-8" style="font-size: 2.1rem; font-weight: 300;">
+                                        <p>Have a query? Click on the question below to see our answer.</p>
+
+                                        <p>If you can't find a solution to your query here then please fill in our <a
+                                                href="contact.php" style="color: #067aee;">contact form</a> and we'll
+                                            do our best to help.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-9">
-                                <h2 class="privacy_policy_heading">Privacy Policy</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-8 faq-toc">
+                                <div class="card px-12 py-8">
+                                    <div class="mb-20">
+                                        <h3 class="book mb-5 faq_heading">File Conversions</h3>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-6"><a href="#Q1">What different file formats do you
+                                                    support?</a></li>
+                                            <li class="mb-6"><a href="#Q2">I converted a file and didn't download it - What happened?</a></li>
+                                            <li class="mb-6"><a href="#Q3">Can I convert the same file twice?</a></li>                                            
+                                            <li class="mb-6"><a href="#Q4">I'm having problems opening my converted file
+                                                after downloading - Can you help?</a></li>
+                                            <li class="mb-6"><a href="#Q5">How many files can I convert at one time?</a></li>
+                                            <li class="mb-6"><a href="#Q6">How can I convert Excel/CSV to VCF files?</a></li>
+                                            <li class="mb-6"><a href="#Q7">How can I convert VCF to CSV files?</a></li>                                            
+                                        </ul>
+                                    </div>
+                                    <div class="mb-20">
+                                        <h3 class="book mb-5 faq_heading">Upload / Downloads</h3>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-6"><a href="#Q8">What's the maximum size of files that I can
+                                                upload?</a></li>
+                                            <li class="mb-6"><a href="#Q9">How many times can I download my converted
+                                                file?</a></li>
+                                            <li class="mb-6"><a href="#Q10">How long should it take to upload or
+                                                download my file?</a></li>
+                                            <li class="mb-6"><a href="#Q11">I can't find my downloaded file - Where did
+                                                it download to?</a></li>                                            
+                                        </ul>
+                                    </div>                                 
+                                    <div class="mb-20">
+                                        <h3 class="book mb-5 faq_heading">Account Management</h3>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-6"><a href="#Q12">How can I sign up for an account?</a></li>
+                                            <li class="mb-6"><a href="#Q13">How do I login?</a></li>
+                                            <li class="mb-6"><a href="#Q14">How can I pay?</a></li>
+                                            <li class="mb-6"><a href="#Q15">I haven't received my verification email?</a></li>                                            
+                                        </ul>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5 pt-5">
+                            <div class="col-sm-12 col-md-8 faq-content">
+                                <div class="card px-12 py-10">
+                                    <div class="mb-20">
+                                        <h3 class="pull-left faq_heading mb-5">File Conversions</h3>
+                                        <div class="clearfix"></div>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-16">
+                                                <h4 id="Q1" class="medium">What different file formats do you support?
+                                                </h4>
+                                                <p>You can use CSVTOVCF to convert Excel/CSV to VCF and VCF to CSV file formats </p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q2" class="medium">I converted a file and didn't download it - What happened?</h4>
+                                                <p>In step 2 you must have fill start row and end row to convert your file.</p>
+                                            </li>                                            
+                                            <li class="mb-16">
+                                                <h4 id="Q3" class="medium">Can I convert the same file twice?</h4>
+                                                <p>You can convert the same file as many times as you want.</p>
+                                            </li>                                       
+                                            
+                                            <li class="mb-16">
+                                                <h4 id="Q4" class="medium">I'm having problems opening my converted file
+                                                    after downloading - Can you help?</h4>
+                                                <p>If you find after your conversion that the file will not open, please
+                                                    ensure you have the correct software in order to open your file. If
+                                                    you have the correct software, and the file still does not open then
+                                                    please report the issue to our support team <a
+                                                        href="mailto:support@csvtovcf.com"
+                                                        title="Email us about any support" style="color: #2487eb;">support@csvtovcf.com</a>
+                                                    attaching the affected file.</p>
+                                            </li>                                            
+                                            <li class="mb-16">
+                                                <h4 id="Q5" class="medium">How many files can I convert at one time?
+                                                </h4>
+                                                <p>With our free service you can convert up to 5 files. However if you want to convert your all file you can choose our paid plan.</p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q6" class="medium">How can I convert Excel/CSV to VCF files?</h4>
+                                                <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
+                                                        title="Go to the main conversion page">main conversion page</a>
+                                                    by clicking the "Excel/CSV to VCF" image or Goto header and click on Tools and select ExceltoVCf,Now you on Step-1 click on "choose file" to browsing your file, selecting
+                                                    the relevant file click on  the "SUBMIT" button.
+                                                    Now you on Step-2 here you can fill your sheet number start column,end column and you must have fill start row and end row,than click on submit.
+                                                    Now you on Step-3 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
+                                                    </p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q7" class="medium">How can I convert VCF to CSV files?</h4>
+                                                <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
+                                                        title="Go to the main conversion page">main conversion page</a>
+                                                    by clicking the "VCFtoCSV" image or Goto header and click on Tools and select VCFtoCSV,Now you  click on "choose file" to browsing your file, selecting
+                                                    the relevant file click on  the "SUBMIT" button.
+                                                    If you are already login than click on download or first login than download your files.
+                                                    </p>
+                                            </li>                                            
+                                        </ul>
+                                    </div>
+                                    <hr class="mb-12">
+                                    <div class="mb-20">
+                                        <h3 class="pull-left faq_heading mb-5">Upload / Downloads</h3>
+                                        <div class="clearfix"></div>
+                                        <ul class="list-unstyled">                                            
+                                            <li class="mb-16">
+                                                <h4 id="Q8" class="medium">What's the maximum size of files that I can
+                                                    upload?</h4>
+                                                <p>Currently on the CSVTOVCF service you can upload a maximum of 2 MB of file </p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q9" class="medium">How many times can I download my converted
+                                                    file?</h4>
+                                                <p>You can download your converted file as many times as you like without refreshing/close your page.If you refresh or close your page you can't to download file again.</p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q10" class="medium">How long should it take to upload or
+                                                    download my file?</h4>
+                                                <p>This is dependent on the type of internet connection you have. If you
+                                                    are experiencing slow upload speeds remember that many broadband and
+                                                    ADSL providers allow for fast download speeds but limit users on
+                                                    upload speeds. Check with your provider for more detailed
+                                                    information.</p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q11" class="medium">I can't find my downloaded file - Where did
+                                                    it download to?</h4>
+                                                <p>You specify where you want to download your file to on your computer,we have no default directory to download converted files.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                <span class="text_color mt-5 mb-3 d-flex">Users, Kindly take a note of the following
-                                    things: </span>
-                                <ol style="list-style-type: upper-roman;" class="text_color">
-                                    <li>For all tools dealing with VCF format, we do not store your private data,
-                                        contacts or any other information.</li>
-                                    <li><em>Why do we charge for few services?</em> Because unlike other websites
-                                        providing 'free' services, we do not sell our users' data for money! And so to
-                                        recover our expenses, we charge a small fee from users.</li>
-                                    <li>All your uploaded files and generated files are deleted after 48 hours. Even if
-                                        you do not pay for our services. We store only those data, whose consent is
-                                        given by the user against free download.</li>
-                                    <li>We store only payment transaction information for any refund related issues.
-                                    </li>
-                                    <li>To clarify on any privacy issue, users can communicate with us using our contact
-                                        form.</li>
-                                    <li>If you buy any product on our website, your contact information and addresses
-                                        will not be shared to any 3rd party except for logistics company.</li>
-                                    <li>We use 3rd party payment systems, and thus do not store any credit card/debit
-                                        card/banking information.</li>
-                                </ol>
+                                    <hr class="mb-12">                                   
+                                    
+                                    <div class="mb-20">
+                                        <h3 class="pull-left faq_heading mb-5">Account Management</h3>
+                                        <div class="clearfix"></div>
+                                        <ul class="list-unstyled">                                            
+                                            <li class="mb-16">
+                                                <h4 id="Q12" class="medium">How can I sign up for an account?</h4>
+                                                <p>Just click on signup button and fill your details and hit the signup button we send an otp on your given email id fill your otp and verify your email now your account create successfully.</p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q13" class="medium">How do I login?</h4>
+                                                <p>If you already have an account with us just click on login button and enter your email address and
+                                                    password before clicking the login button. If you have forgotten
+                                                    your password just click on forgot password to reset it.</p>
+                                            </li>
+                                            <li class="mb-16">
+                                                <h4 id="Q14" class="medium">How can I pay?</h4>
+                                                <p>You can use Visa or Mastercard - we accept both credit and debit cards.</p>
+                                            </li>                        
+                                            <li class="mb-16">
+                                                <h4 id="Q15" class="medium">I haven't received my verification email?
+                                                </h4>
+                                                <p>If you have signed up but not yet received your verification email then
+                                                    please check your bulk or spam folders, as on occasion CSVTOVCF emails
+                                                    are placed here. Should you still not be able to find your email,
+                                                    then please attempt to log in with your signup email and password.
+                                                    If this still does not work as expected then please contact us.
+                                                </p>
+                                            </li>                                         
+                                        </ul>
+                                    </div>                              
+                                    
 
-                                <h2 id="disclaimers" class="privacy_policy_heading mt-5">Disclaimers</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>If you are using our online services, you must follow instructions written in
-                                        order to execute the service properly. Make sure you check demo file properly
-                                        before you make payment for full service, if service is paid service. After
-                                        making payment, if you are not satisfied with service because of any mistake on
-                                        your end, no refund will be initiated.</li>
-                                    <li>For paid services, you must check if demo files meets your requirements. Refund
-                                        shall not be given if you fail to verify your demo file at your end.</li>
-                                    <li>All paid services are on pay-per-use basis. For annual subscription, API or bulk
-                                        discounts; you must contact us directly.</li>
-                                    <li>For products bought on our website, if the delivery fails due to incomplete
-                                        address and returns to our warehouse, user shall pay extra for re-delivery with
-                                        new address.</li>
-                                    <li>We do not "repair" any of our products sold. Products shall be replaced if under
-                                        warranty period. </li>
-                                </ol>
-
-                                <h2 id="liabilities" class="privacy_policy_heading mt-5">Limitations of Liabilities</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>For paid services, if our system fails to deliver, you need to contact us within
-                                        48 hours after payment in order to investigate in matter. If contacted within 48
-                                        hours, we will be able to complete your service. If contacted after 48 hours, no
-                                        refund will be initiated as all of the user files are deleted after 48 hours of
-                                        service.</li>
-                                    <li>For products sold online, returns will be accepted within one month after date
-                                        of purchase. Refund amount will be given to buyer after deducting standard
-                                        shipping charges.</li>
-                                </ol>
-
-                                <h2 id="ip" class="privacy_policy_heading mt-5">Intellectual Properties</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>Name and Logo of <em>CSVTOVCF</em>, are registered copyrights of CSVTOVCF firm established in 2016. Copy and use of the name and logo without
-                                        permissions, is strictly prohibited and liable to court action.</li>
-                                </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -224,7 +357,10 @@ session_start();
                         <div class="row pt-5">
                             <div class="col-6 footer_text">
                                 <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
-                                <div class="col-10 mt-3"><p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                                <div class="col-10 mt-3">
+                                    <p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF
+                                        Splitter - 100% Secure</P>
+                                </div>
                             </div>
                             <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
@@ -232,28 +368,29 @@ session_start();
                                     <li><a href="#" title="Pricing">Pricing</a></li>
                                     <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
-                                </ul>                                
+                                </ul>
                             </div>
-                            <div class="col-4 footer_text">                                
-                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
+                            <div class="col-4 footer_text">
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our
+                                    newsletter</h5>
                                 <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_success"></h5>
-                                        <form class="form-inline">
-                                            <div class="form-group">
+                                <form class="form-inline">
+                                    <div class="form-group">
 
-                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
-                                                    name="EMAIL" placeholder="Your email" type="email"
-                                                    style="font-size:1.2rem">
-                                            </div>
+                                        <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
+                                            name="EMAIL" placeholder="Your email" type="email" style="font-size:1.2rem">
+                                    </div>
 
-                                            <div  class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.5rem;" id="desktop_newsletter">Subscribe</div>
-                                        </form>
-                            </div>                             
+                                    <div class="btn btn-success ml-2 mt-2" style="font-size: 1.5rem;"
+                                        id="desktop_newsletter">Subscribe</div>
+                                </form>
+                            </div>
                         </div>
                         <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
+                                    Reserved
                                 </h3>
                             </div>
                         </div>
@@ -265,7 +402,7 @@ session_start();
     <!-- -------------------------- popup desktop start hear --------------------------- -->
     <!-- Modal -->
     <div class="modal fade" id="pop_up_desktop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true"  style="overflow: hidden;">
+        aria-hidden="true" style="overflow: hidden;">
         <div class="modal-dialog modal-dialog-centered" role="document">
 
             <!--Content-->
@@ -277,8 +414,8 @@ session_start();
                             In</strong>
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
-                            </button>
+                        <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                    </button>
                 </div>
                 <!--Body-->
                 <div class="modal-body mx-5">
@@ -329,8 +466,8 @@ session_start();
                             Up</strong>
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
-                            </button>
+                        <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                    </button>
                 </div>
                 <!--Body-->
                 <form data-name="signup_form" name="signup-form">
@@ -390,8 +527,8 @@ session_start();
                         <strong>Email Verification</strong>
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
-                            </button>
+                        <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                    </button>
                 </div>
                 <p class="d-flex justify-content-center">Please Check Your Email for Verification Code</p>
                 <!--Body-->
@@ -434,8 +571,8 @@ session_start();
                             Password ?</strong>
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" style="font-size:3rem;">&times;</span>
-                            </button>
+                        <span aria-hidden="true" style="font-size:3rem;">&times;</span>
+                    </button>
                 </div>
                 <!--Body-->
                 <form data-name="forgot_password_form" name="forgot_password_form">
@@ -508,9 +645,9 @@ session_start();
                     <a href="/" id="mobile_home_button">Home</a>
                     <a class="nav-link" style="cursor:pointer;" id="flip">Tools<i class='fa fa-angle-down ml-3'></i></a>
                     <div id="panel">
-                            <a href="exceltovcf" style="color:#f1f1f1;" id="mobile_tools_button">Excel to VCF</a>
-                            <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
-                            <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
+                        <a href="exceltovcf" style="color:#f1f1f1;" id="mobile_tools_button">Excel to VCF</a>
+                        <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
+                        <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
                     </div>
                     <!-- <a href="policy" id="mobile_policy_button">Policy</a> -->
                     <a href="contact" id="mobile_contact_button">Contact</a>
@@ -535,7 +672,7 @@ session_start();
                     <div class="container">
                         <div class="row pb-3">
                             <div class="col exceltovcf_heading_mobile d-flex justify-content-start">
-                                <h3><span>Policies</span> & <span>More</span></h3>
+                                <h3><span>FAQ</span></h3>
                             </div>
                         </div>
                     </div>
@@ -543,85 +680,187 @@ session_start();
             </div>
         </div>
 
-        <!-- ---------------------- policy content start here ---------------------- -->
+        <!-- ---------------------- FAQ start here ---------------------- -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <div class="container">
-                        <div class="row  mt-5">
-                            <div class="col">
-                                <div class="wrap-col">
-                                    <ol style="list-style-type: upper-roman;" class="text_color">
-                                        <li>Privacy Policy</li>
-                                        <li>Disclaimers</li>
-                                        <li>Limitations of Liabilities</li>
-                                        <li>Intellectual Properties</li>
-                                    </ol><br>
-                                </div>
-                            </div>
+                    <div class="wrap-col">
+                        <div class="col-sm-12 col-md-8" style="font-size: 1.8rem; font-weight: 300;">
+                            <p>Have a query? Click on the question below to see our answer.</p>
+
+                            <p>If you can't find a solution to your query here then please fill in our <a
+                                    href="contact.php" style="color: #067aee;">contact form</a> and we'll
+                                do our best to help.</p>
                         </div>
-                        <div class="row mb-5 pb-5">
-                            <div class="col">
-                                <h2 class="privacy_policy_heading">Privacy Policy</h2>
-
-                                <span class="text_color mt-5 mb-3 d-flex">Users, Kindly take a note of the following
-                                    things: </span>
-                                <ol style="list-style-type: upper-roman;" class="text_color">
-                                    <li>For all tools dealing with VCF format, we do not store your private data,
-                                        contacts or any other information.</li>
-                                    <li><em>Why do we charge for few services?</em> Because unlike other websites
-                                        providing 'free' services, we do not sell our users' data for money! And so to
-                                        recover our expenses, we charge a small fee from users.</li>
-                                    <li>All your uploaded files and generated files are deleted after 48 hours. Even if
-                                        you do not pay for our services. We store only those data, whose consent is
-                                        given by the user against free download.</li>
-                                    <li>We store only payment transaction information for any refund related issues.
-                                    </li>
-                                    <li>To clarify on any privacy issue, users can communicate with us using our contact
-                                        form.</li>
-                                    <li>If you buy any product on our website, your contact information and addresses
-                                        will not be shared to any 3rd party except for logistics company.</li>
-                                    <li>We use 3rd party payment systems, and thus do not store any credit card/debit
-                                        card/banking information.</li>
-                                </ol>
-
-                                <h2 id="disclaimers" class="privacy_policy_heading mt-5">Disclaimers</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>If you are using our online services, you must follow instructions written in
-                                        order to execute the service properly. Make sure you check demo file properly
-                                        before you make payment for full service, if service is paid service. After
-                                        making payment, if you are not satisfied with service because of any mistake on
-                                        your end, no refund will be initiated.</li>
-                                    <li>For paid services, you must check if demo files meets your requirements. Refund
-                                        shall not be given if you fail to verify your demo file at your end.</li>
-                                    <li>All paid services are on pay-per-use basis. For annual subscription, API or bulk
-                                        discounts; you must contact us directly.</li>
-                                    <li>For products bought on our website, if the delivery fails due to incomplete
-                                        address and returns to our warehouse, user shall pay extra for re-delivery with
-                                        new address.</li>
-                                    <li>We do not "repair" any of our products sold. Products shall be replaced if under
-                                        warranty period. </li>
-                                </ol>
-
-                                <h2 id="liabilities" class="privacy_policy_heading mt-5">Limitations of Liabilities</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>For paid services, if our system fails to deliver, you need to contact us within
-                                        48 hours after payment in order to investigate in matter. If contacted within 48
-                                        hours, we will be able to complete your service. If contacted after 48 hours, no
-                                        refund will be initiated as all of the user files are deleted after 48 hours of
-                                        service.</li>
-                                    <li>For products sold online, returns will be accepted within one month after date
-                                        of purchase. Refund amount will be given to buyer after deducting standard
-                                        shipping charges.</li>
-                                </ol>
-
-                                <h2 id="ip" class="privacy_policy_heading mt-5">Intellectual Properties</h2>
-                                <ol style="list-style-type: upper-roman;" class="text_color mt-4">
-                                    <li>Name and Logo of <em>CSVTOVCF</em>, are registered copyrights of CSVTOVCF firm established in 2016. Copy and use of the name and logo without
-                                        permissions, is strictly prohibited and liable to court action.</li>
-                                </ol>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-8 faq-toc">
+                    <div class="card px-12 py-8">
+                        <div class="mb-20">
+                            <h3 class="book mb-5 faq_heading">File Conversions</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-6"><a href="#Q1_mobile">What different file formats do you
+                                        support?</a></li>
+                                <li class="mb-6"><a href="#Q2_mobile">I converted a file and didn't download it - What happened?</a></li>
+                                <li class="mb-6"><a href="#Q3_mobile">Can I convert the same file twice?</a></li>                                            
+                                <li class="mb-6"><a href="#Q4_mobile">I'm having problems opening my converted file
+                                    after downloading - Can you help?</a></li>
+                                <li class="mb-6"><a href="#Q5_mobile">How many files can I convert at one time?</a></li>
+                                <li class="mb-6"><a href="#Q6_mobile">How can I convert Excel/CSV to VCF files?</a></li>
+                                <li class="mb-6"><a href="#Q7_mobile">How can I convert VCF to CSV files?</a></li>                                            
+                            </ul>
                         </div>
+                        <div class="mb-20">
+                            <h3 class="book mb-5 faq_heading">Upload / Downloads</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-6"><a href="#Q8_mobile">What's the maximum size of files that I can
+                                    upload?</a></li>
+                                <li class="mb-6"><a href="#Q9_mobile">How many times can I download my converted
+                                    file?</a></li>
+                                <li class="mb-6"><a href="#Q10_mobile">How long should it take to upload or
+                                    download my file?</a></li>
+                                <li class="mb-6"><a href="#Q11_mobile">I can't find my downloaded file - Where did
+                                    it download to?</a></li>                                            
+                            </ul>
+                        </div>                                 
+                        <div class="mb-20">
+                            <h3 class="book mb-5 faq_heading">Account Management</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-6"><a href="#Q12_mobile">How can I sign up for an account?</a></li>
+                                <li class="mb-6"><a href="#Q13_mobile">How do I login?</a></li>
+                                <li class="mb-6"><a href="#Q14_mobile">How can I pay?</a></li>
+                                <li class="mb-6"><a href="#Q15_mobile">I haven't received my verification email?</a></li>                                            
+                            </ul>
+                        </div>                                    
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 pt-5 mb-5 pb-5">
+                <div class="col-sm-12 col-md-8 faq-content">
+                    <div class="card px-12 py-10">
+                        <div class="mb-20">
+                            <h3 class="pull-left faq_heading mb-5">File Conversions</h3>
+                            <div class="clearfix"></div>
+                            <ul class="list-unstyled">
+                                <li class="mb-16">
+                                    <h4 id="Q1_mobile" class="medium">What different file formats do you support?
+                                    </h4>
+                                    <p>You can use CSVTOVCF to convert Excel/CSV to VCF and VCF to CSV file formats </p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q2_mobile" class="medium">I converted a file and didn't download it - What happened?</h4>
+                                    <p>In step 2 you must have fill start row and end row to convert your file.</p>
+                                </li>                                            
+                                <li class="mb-16">
+                                    <h4 id="Q3_mobile" class="medium">Can I convert the same file twice?</h4>
+                                    <p>You can convert the same file as many times as you want.</p>
+                                </li>                                       
+                                
+                                <li class="mb-16">
+                                    <h4 id="Q4_mobile" class="medium">I'm having problems opening my converted file
+                                        after downloading - Can you help?</h4>
+                                    <p>If you find after your conversion that the file will not open, please
+                                        ensure you have the correct software in order to open your file. If
+                                        you have the correct software, and the file still does not open then
+                                        please report the issue to our support team <a
+                                            href="mailto:support@csvtovcf.com"
+                                            title="Email us about any support" style="color: #2487eb;">support@csvtovcf.com</a>
+                                        attaching the affected file.</p>
+                                </li>                                            
+                                <li class="mb-16">
+                                    <h4 id="Q5_mobile" class="medium">How many files can I convert at one time?
+                                    </h4>
+                                    <p>With our free service you can convert up to 5 files. However if you want to convert your all file you can choose our paid plan.</p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q6_mobile" class="medium">How can I convert Excel/CSV to VCF files?</h4>
+                                    <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
+                                            title="Go to the main conversion page">main conversion page</a>
+                                        by clicking the "Excel/CSV to VCF" image or Goto header and click on Tools and select ExceltoVCf,Now you on Step-1 click on "choose file" to browsing your file, selecting
+                                        the relevant file click on  the "SUBMIT" button.
+                                        Now you on Step-2 here you can fill your sheet number start column,end column and you must have fill start row and end row,than click on submit.
+                                        Now you on Step-3 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
+                                        </p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q7_mobile" class="medium">How can I convert VCF to CSV files?</h4>
+                                    <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
+                                            title="Go to the main conversion page">main conversion page</a>
+                                        by clicking the "VCFtoCSV" image or Goto header and click on Tools and select VCFtoCSV,Now you  click on "choose file" to browsing your file, selecting
+                                        the relevant file click on  the "SUBMIT" button.
+                                        If you are already login than click on download or first login than download your files.
+                                        </p>
+                                </li>                                            
+                            </ul>
+                        </div>
+                        <hr class="mb-12">
+                        <div class="mb-20">
+                            <h3 class="pull-left faq_heading mb-5">Upload / Downloads</h3>
+                            <div class="clearfix"></div>
+                            <ul class="list-unstyled">                                            
+                                <li class="mb-16">
+                                    <h4 id="Q8_mobile" class="medium">What's the maximum size of files that I can
+                                        upload?</h4>
+                                    <p>Currently on the CSVTOVCF service you can upload a maximum of 2 MB of file </p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q9_mobile" class="medium">How many times can I download my converted
+                                        file?</h4>
+                                    <p>You can download your converted file as many times as you like without refreshing/close your page.If you refresh or close your page you can't to download file again.</p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q10_mobile" class="medium">How long should it take to upload or
+                                        download my file?</h4>
+                                    <p>This is dependent on the type of internet connection you have. If you
+                                        are experiencing slow upload speeds remember that many broadband and
+                                        ADSL providers allow for fast download speeds but limit users on
+                                        upload speeds. Check with your provider for more detailed
+                                        information.</p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q11_mobile" class="medium">I can't find my downloaded file - Where did
+                                        it download to?</h4>
+                                    <p>You specify where you want to download your file to on your computer,we have no default directory to download converted files.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr class="mb-12">                                   
+                        
+                        <div class="mb-20">
+                            <h3 class="pull-left faq_heading mb-5">Account Management</h3>
+                            <div class="clearfix"></div>
+                            <ul class="list-unstyled">                                            
+                                <li class="mb-16">
+                                    <h4 id="Q12_mobile" class="medium">How can I sign up for an account?</h4>
+                                    <p>Just click on signup button and fill your details and hit the signup button we send an otp on your given email id fill your otp and verify your email now your account create successfully.</p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q13_mobile" class="medium">How do I login?</h4>
+                                    <p>If you already have an account with us just click on login button and enter your email address and
+                                        password before clicking the login button. If you have forgotten
+                                        your password just click on forgot password to reset it.</p>
+                                </li>
+                                <li class="mb-16">
+                                    <h4 id="Q14_mobile" class="medium">How can I pay?</h4>
+                                    <p>You can use Visa or Mastercard - we accept both credit and debit cards.</p>
+                                </li>                        
+                                <li class="mb-16">
+                                    <h4 id="Q15_mobile" class="medium">I haven't received my verification email?
+                                    </h4>
+                                    <p>If you have signed up but not yet received your verification email then
+                                        please check your bulk or spam folders, as on occasion CSVTOVCF emails
+                                        are placed here. Should you still not be able to find your email,
+                                        then please attempt to log in with your signup email and password.
+                                        If this still does not work as expected then please contact us.
+                                    </p>
+                                </li>                                         
+                            </ul>
+                        </div>                              
+                        
+
                     </div>
                 </div>
             </div>
@@ -1052,58 +1291,58 @@ session_start();
 
             // ---------------- header pop up login and signup button ---------------- //
             function model_sign_up_sign_in() {
-            $('.pop_up_login_header').click(function() {
+                $('.pop_up_login_header').click(function () {
+                    $('#pop_up_desktop').modal('show');
+                    $('#sign_in_page').css('display', 'block');
+                    $('#sign_up_page').css('display', 'none');
+                    $('#forgot_password_page').css('display', 'none');
+                });
+                $('.pop_up_signup_header').click(function () {
+                    $('#pop_up_desktop').modal('show');
+                    $('#sign_in_page').css('display', 'none');
+                    $('#sign_up_page').css('display', 'block');
+                    $('#forgot_password_page').css('display', 'none');
+                });
+                $('#signin_link').click(function () {
+                    $('#sign_in_page').css('display', 'block');
+                    $('#sign_up_page').css('display', 'none');
+                    $('#forgot_password_page').css('display', 'none');
+                    // alert("My name is sign in");
+                });
+                $('#signup_link').click(function () {
+
+                    $('#sign_up_page').css('display', 'block');
+                    $('#sign_in_page').css('display', 'none');
+                    $('#forgot_password_page').css('display', 'none');
+                    // alert("My name is sign up");
+                });
+                $('#forgot_password_link').click(function () {
+
+                    $('#forgot_password_page').css('display', 'block');
+                    $('#sign_in_page').css('display', 'none');
+                    $('#sign_up_page').css('display', 'none');
+                    // alert("My name is sign up");
+                });
+                $('#signin_link_forgot').click(function () {
+                    $('#forgot_password_page').css('display', 'none');
+                    $('#sign_in_page').css('display', 'block');
+                    $('#sign_up_page').css('display', 'none');
+                });
+            }
+            model_sign_up_sign_in();
+            // ---------------- header pop up login and signup button mobile---------------- //
+            $('.pop_up_login_mobile').click(function () {
                 $('#pop_up_desktop').modal('show');
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
                 $('#forgot_password_page').css('display', 'none');
             });
-            $('.pop_up_signup_header').click(function() {
+            $('.pop_up_signup_mobile').click(function () {
                 $('#pop_up_desktop').modal('show');
                 $('#sign_in_page').css('display', 'none');
                 $('#sign_up_page').css('display', 'block');
                 $('#forgot_password_page').css('display', 'none');
             });
-            $('#signin_link').click(function() {
-                $('#sign_in_page').css('display', 'block');
-                $('#sign_up_page').css('display', 'none');
-                $('#forgot_password_page').css('display', 'none');
-                // alert("My name is sign in");
-            });
-            $('#signup_link').click(function() {
-
-                $('#sign_up_page').css('display', 'block');
-                $('#sign_in_page').css('display', 'none');
-                $('#forgot_password_page').css('display', 'none');
-                // alert("My name is sign up");
-            });
-            $('#forgot_password_link').click(function() {
-
-                $('#forgot_password_page').css('display', 'block');
-                $('#sign_in_page').css('display', 'none');
-                $('#sign_up_page').css('display', 'none');
-                // alert("My name is sign up");
-            });
-            $('#signin_link_forgot').click(function() {
-                $('#forgot_password_page').css('display', 'none');
-                $('#sign_in_page').css('display', 'block');
-                $('#sign_up_page').css('display', 'none');
-            });
-        }
-        model_sign_up_sign_in();
-        // ---------------- header pop up login and signup button mobile---------------- //
-        $('.pop_up_login_mobile').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'block');
-            $('#sign_up_page').css('display', 'none');
-            $('#forgot_password_page').css('display', 'none');
-        });
-        $('.pop_up_signup_mobile').click(function() {
-            $('#pop_up_desktop').modal('show');
-            $('#sign_in_page').css('display', 'none');
-            $('#sign_up_page').css('display', 'block');
-            $('#forgot_password_page').css('display', 'none');
-        });
             /* ------------------------------- logout call ------------------------------ */
             function logout_signup_signin() {
                 $('.pop_up_logout_header').click(function () {
@@ -1150,107 +1389,107 @@ session_start();
                 }
             });
             /* --------------------- news letter functionality start -------------------- */
-$('#desktop_newsletter').click(function(){
+            $('#desktop_newsletter').click(function () {
 
-var email = $("#footer-subscribe-email_desktop").val();
-var error="";
-function validateEmail(email) {
-    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-            }
-    if (!validateEmail(email)) {
-        $("#footer-subscribe-email_desktop").css('border-color', 'red');
-        $("#footer-subscribe-email_desktop").css('border-width', '2px');
-        error = error + 'email';
-    } else {
-        $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
-        $("#footer-subscribe-email_desktop").css('border-width', '1px');
-            }
-            if (error == "") {
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/newsletter.php',
-                    dataType: "json",
-                    data: {
-                        'email': email 
-                    },
-                    success: function(data) {
-                        console.log(data);
-                        if (data.status == 201) {                            
-                            $('#desktop_newsletter_head').css('display','none');
-                            $('#desktop_newsletter_success').css('display','block');
-                            $('#desktop_newsletter_success').html(data.error);
-                        } else if (data.status == 601) {
-                            console.log(data.error);
-                            $('#desktop_newsletter_head').css('display','none');
-                            $('#desktop_newsletter_success').css('display','block');
-                            $('#desktop_newsletter_success').html(data.error);
-                        } else if (data.status == 301) {
-                            $('#desktop_newsletter_head').css('display','none');
-                            $('#desktop_newsletter_success').css('display','block');
-                            $('#desktop_newsletter_success').html(data.error);
-                        } else {
-                            //console.log(data.error)
+                var email = $("#footer-subscribe-email_desktop").val();
+                var error = "";
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                }
+                if (!validateEmail(email)) {
+                    $("#footer-subscribe-email_desktop").css('border-color', 'red');
+                    $("#footer-subscribe-email_desktop").css('border-width', '2px');
+                    error = error + 'email';
+                } else {
+                    $("#footer-subscribe-email_desktop").css('border-color', '#C0BBBB');
+                    $("#footer-subscribe-email_desktop").css('border-width', '1px');
+                }
+                if (error == "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/newsletter.php',
+                        dataType: "json",
+                        data: {
+                            'email': email
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {
+                                $('#desktop_newsletter_head').css('display', 'none');
+                                $('#desktop_newsletter_success').css('display', 'block');
+                                $('#desktop_newsletter_success').html(data.error);
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                $('#desktop_newsletter_head').css('display', 'none');
+                                $('#desktop_newsletter_success').css('display', 'block');
+                                $('#desktop_newsletter_success').html(data.error);
+                            } else if (data.status == 301) {
+                                $('#desktop_newsletter_head').css('display', 'none');
+                                $('#desktop_newsletter_success').css('display', 'block');
+                                $('#desktop_newsletter_success').html(data.error);
+                            } else {
+                                //console.log(data.error)
+                            }
                         }
-                    }
-                }); 
-            }else{
+                    });
+                } else {
 
-            }
-        });
-/* --------------------- news letter functionality end -------------------- */
+                }
+            });
+            /* --------------------- news letter functionality end -------------------- */
 
-/* ------------------------- mobile newsletter start ------------------------ */
+            /* ------------------------- mobile newsletter start ------------------------ */
 
-$('#mobile_newsletter').click(function(){
+            $('#mobile_newsletter').click(function () {
 
-var email = $("#footer-subscribe-email_mobile").val();
-var error="";
-function validateEmail(email) {
-    var re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-            }
-    if (!validateEmail(email)) {
-        $("#footer-subscribe-email_mobile").css('border-color', 'red');
-        $("#footer-subscribe-email_mobile").css('border-width', '2px');
-        error = error + 'email';
-    } else {
-        $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
-        $("#footer-subscribe-email_mobile").css('border-width', '1px');
-            }
-            if (error == "") {
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/newsletter.php',
-                    dataType: "json",
-                    data: {
-                        'email': email 
-                    },
-                    success: function(data) {
-                        console.log(data);
-                        if (data.status == 201) {                            
-                            $('#mobile_newsletter_head').css('display','none');
-                            $('#mobile_newsletter_success').css('display','block');
-                            $('#mobile_newsletter_success').html(data.error);
-                        } else if (data.status == 601) {
-                            console.log(data.error);
-                            $('#mobile_newsletter_head').css('display','none');
-                            $('#mobile_newsletter_success').css('display','block');
-                            $('#mobile_newsletter_success').html(data.error);
-                        } else if (data.status == 301) {
-                            $('#mobile_newsletter_head').css('display','none');
-                            $('#mobile_newsletter_success').css('display','block');
-                            $('#mobile_newsletter_success').html(data.error);
-                        } else {
-                            //console.log(data.error)
+                var email = $("#footer-subscribe-email_mobile").val();
+                var error = "";
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                }
+                if (!validateEmail(email)) {
+                    $("#footer-subscribe-email_mobile").css('border-color', 'red');
+                    $("#footer-subscribe-email_mobile").css('border-width', '2px');
+                    error = error + 'email';
+                } else {
+                    $("#footer-subscribe-email_mobile").css('border-color', '#C0BBBB');
+                    $("#footer-subscribe-email_mobile").css('border-width', '1px');
+                }
+                if (error == "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'php/newsletter.php',
+                        dataType: "json",
+                        data: {
+                            'email': email
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status == 201) {
+                                $('#mobile_newsletter_head').css('display', 'none');
+                                $('#mobile_newsletter_success').css('display', 'block');
+                                $('#mobile_newsletter_success').html(data.error);
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                $('#mobile_newsletter_head').css('display', 'none');
+                                $('#mobile_newsletter_success').css('display', 'block');
+                                $('#mobile_newsletter_success').html(data.error);
+                            } else if (data.status == 301) {
+                                $('#mobile_newsletter_head').css('display', 'none');
+                                $('#mobile_newsletter_success').css('display', 'block');
+                                $('#mobile_newsletter_success').html(data.error);
+                            } else {
+                                //console.log(data.error)
+                            }
                         }
-                    }
-                }); 
-            }else{
+                    });
+                } else {
 
-            }
-        });
-/* ------------------------- mobile newsletter end ------------------------ */
+                }
+            });
+            /* ------------------------- mobile newsletter end ------------------------ */
         });
     </script>
 </body>

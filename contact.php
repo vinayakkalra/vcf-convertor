@@ -254,7 +254,7 @@ session_start();
                                 <h3 class="text-left pb-2">Get in Touch</h3>
                                 <ul>
                                     <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>                                
                             </div>
@@ -672,47 +672,54 @@ session_start();
         <div class="container-fluid">
             <div class="row footer">
                 <div class="col">
-                    <div class="container">                      
+                    <div class="container">
                         <div class="row pt-5">
                             <div class="col footer_text">
-                            <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png" alt="footer logo" style="width:60%"></div>
-                                <div class="row justify-content-center d-flex"><div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div></div>
+                                <div class="justify-content-center d-flex"> <img src="images/zamzar-logo2.png"
+                                        alt="footer logo" style="width:60%"></div>
+                                <div class="row justify-content-center d-flex">
+                                    <div class="col-10 mt-3">
+                                        <p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF,
+                                            VCF to Excel and VCF Splitter - 100% Secure</P>
+                                    </div>
+                                </div>
                             </div>
-                            
+
                         </div>
                         <div class="row pt-5">
                             <div class="col footer_text">
                                 <h3 class="text-center pb-3">Get In Touch</h3>
                                 <ul class="text-center">
                                     <li><a href="#" title="Pricing">Pricing</a></li>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                         <div class="row mt-3 mb-5">
                             <div class="col">
                                 <h5 class="text-center Subscribe" id="mobile_newsletter_head">Subscribe to our newsletter</h5>
-                                <h5 class="text-white  Subscribe mb-3 mt-3 text-center" id="mobile_newsletter_success"></h5>
-                                <form class="form-inline d-flex justify-content-center">
+                                <h5 class="text-center Subscribe" id="mobile_newsletter_success">Subscribe to our newsletter</h5>
+                                <form class="form-inline d-flex justify-content-center" action="" method="post"
+                                    target="_blank">
                                     <div class="form-group">
 
                                         <input id="footer-subscribe-email_mobile" class="form-control p-3 mt-3"
                                             name="EMAIL" placeholder="Your email" type="email"
                                             style="font-size:1.2rem;width: 20rem;">
-                                    </div>
-
-                                    <div class="btn btn-success ml-2 mt-sm-3"
-                                        style="font-size: 1.2rem;"id="mobile_newsletter">Subscribe</div>
+                                    </div>                                    
+                                        <div class="btn btn-success ml-2 mt-2" style="font-size: 1.2rem;"
+                                        id="mobile_newsletter">Subscribe</div>
                                 </form>
                             </div>
                         </div>
-                        
+
                         <div class="row d-flex justify-content-center">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
+                                <h3 class="text-center">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
+                                    Reserved
                                 </h3>
                             </div>
                         </div>
