@@ -166,7 +166,7 @@ session_start();
                         <div class=" navshowtext">
                             <div class="row mt-5">
                                 <div class="col d-flex justify-content-center">
-                                    <h1 class="main_heading ">Welcome to The <span>VCF Converter!</span></h1>
+                                    <h1 class="main_heading">Welcome to The <span>VCF Converter!</span></h1>
                                 </div>
                             </div>
                             <div class="row mt-2 d-flex justify-content-center">
@@ -254,7 +254,7 @@ session_start();
                     <div class="container">
                         <div class="row">
                             <div class="col pt-5">
-                                <h1 class="text-center pb-3 font-montserrat-b">About Us</h1>
+                                <h1 class="text-center pb-3">About Us</h1>
                                 <p class="pt-2 paragraph_style">We are essentially developers. More interested in Cloud
                                     development, IT solutions, Payment Gateway integration, SMS services, eCommerce.
                                     Basically, everything that can be developed and deployed online. Reach out to us for
@@ -269,7 +269,7 @@ session_start();
 
                         <div class="row">
                             <div class="col pt-5 pb-5">
-                                <h1 class="text-center font-montserrat-b">Why use <span style="color: #2487EC;">VCF Converter</span> ?
+                                <h1 class="text-center">Why use <span style="color: #2487EC;">VCF Converter</span> ?
                                 </h1>
 
                             </div>
@@ -354,7 +354,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_in_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Sign
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
                             In</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -404,7 +404,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_up_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Sign
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Sign
                             Up</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -464,7 +464,7 @@ session_start();
             <div class="modal-content form-elegant" id="sign_up_Otp">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Email Verification</strong></h3> 
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Email Verification</strong></h3> 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
                             </button>               
@@ -505,7 +505,7 @@ session_start();
             <div class="modal-content form-elegant" id="forgot_password_page">
                 <!--Header-->
                 <div class="modal-header text-center">
-                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3 font-montserrat-b" id="myModalLabel"><strong>Forgot
+                    <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Forgot
                             Password ?</strong></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="font-size:3rem;">&times;</span>
@@ -728,7 +728,7 @@ session_start();
 
                 </div>
             </div>
-            <div class="row pb-5">
+            <div class="row pb-5 mb-5">
                 <div class="col-sm-6">
                     <ul class="ticked">
                         <li><span class="blue">Convenience</span> - No software to download. Just select

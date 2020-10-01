@@ -2,7 +2,7 @@
 /* CSS Document */
 
 /* font css to include in your project */
-@font-face {
+/* @font-face {
     font-family: montserrat-b;
     src: url(../fonts/Montserrat-Bold.ttf);
     font-display: swap;
@@ -70,7 +70,7 @@
 
 .font-roboto-l {
     font-family: roboto-l;
-}
+} */
 
 .color-white {
     color: #FFF;
@@ -87,7 +87,8 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     background: #f7f7f7;
-    font-family: montserrat-r;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
 }
 
 .navbar ul li {

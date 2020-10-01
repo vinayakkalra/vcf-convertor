@@ -1157,9 +1157,9 @@ session_start();
                         MS Outlook will display only single contact even if your vcf file has multiple
                         contacts.If you wish to convert contacts in VCF to excel or CSV, use our VCF to Excel/CSV online Converter. Now let us see
                         how to Convert Excel xlsx to Vcard vcf File online:</p>
-                    <p>
+                    <p class="mt-5">
                     <h4 style="font-weight:500">Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
-                    <ol style="padding-left:4rem;list-style:decimal;">
+                    <ol style="padding-left:4rem;list-style:decimal;" class="mt-3">
                         <li>Upload Excel/csv file to convert. </li>
                         <li>Select first row,column and last row,column as per data in you sheet. </li>
                         <li>Select which column contains what data. Example, which column contains name?
@@ -1175,7 +1175,7 @@ session_start();
 
             <!-- ---------------------------- select file to convert----------------------------- -->
 
-            <div class="row pb-5">
+            <div class="row pb-5 mb-5">
                 <div class="col">
                     <div class="container">
                         <div class="row d-flex justify-content-center mt-2 mb-5">
@@ -1421,7 +1421,7 @@ session_start();
                                             <div class="col">
                                                 <h1 class="display-4 text-center mt-3 mb-3">Congratulation !</h1>
                                                 <div class="d-flex justify-content-center">
-                                                    <hr class="hr_tag_style">
+                                                    <hr class="hr_tag_style mb-5">
                                                 </div>
                                                 <h3 class="vcf_filename" style="font-size: 3rem;font-weight: 500;"></h3>
                                                 <p class="basic_download_info">You can download only 5 VCF files in demo version if you want to
@@ -1433,7 +1433,7 @@ session_start();
                                                 <div class="text-center mt-5 paid_person">
                                                     <a href="#" type="button"
                                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
-                                                        style="color:#fff;">Click Here to download VCF</a>
+                                                        style="color:#fff;font-size:1.4rem">Click Here to download VCF</a>
                                                 </div>
                                             </div>
                                         </div>
