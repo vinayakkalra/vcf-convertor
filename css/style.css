@@ -1298,3 +1298,7 @@ nav ul li ul li a:hover{
 #desktop_newsletter_success,#mobile_newsletter_success{
     display: none;
 }
+.subscribe_preloader{
+    display: none;
+    height: 100%;    
+}

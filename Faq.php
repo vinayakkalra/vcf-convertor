@@ -357,10 +357,7 @@ session_start();
                         <div class="row pt-5">
                             <div class="col-6 footer_text">
                                 <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
-                                <div class="col-10 mt-3">
-                                    <p style="color:#f1f1f1;">#1 Website to convert Excel to VCF, VCF to Excel and VCF
-                                        Splitter - 100% Secure</P>
-                                </div>
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
                             </div>
                             <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
@@ -368,29 +365,28 @@ session_start();
                                     <li><a href="pricing" title="Pricing">Pricing</a></li>
                                     <li><a href="Faq" title="FAQ">FAQ</a></li>
                                     <li><a href="policy" title="Privacy">Privacy Policy</a></li>
-                                </ul>
+                                </ul>                                
                             </div>
-                            <div class="col-4 footer_text">
-                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our
-                                    newsletter</h5>
+                            <div class="col-4 footer_text">                                
+                                <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_head">Subscribe to our newsletter</h5>
                                 <h5 class="text-white  Subscribe mb-3" id="desktop_newsletter_success"></h5>
-                                <form class="form-inline">
-                                    <div class="form-group">
+                                        <form class="form-inline">
+                                            <div class="form-group">
 
-                                        <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
-                                            name="EMAIL" placeholder="Your email" type="email" style="font-size:1.2rem">
-                                    </div>
+                                                <input id="footer-subscribe-email_desktop" class="form-control p-3 mt-2"
+                                                    name="EMAIL" placeholder="Your email" type="email"
+                                                    style="font-size:1.4rem !important;">
+                                            </div>
 
-                                    <div class="btn btn-success ml-2 mt-2" style="font-size: 1.5rem;"
-                                        id="desktop_newsletter">Subscribe</div>
-                                </form>
-                            </div>
+                                            <div  class="btn btn-success ml-2 mt-2"
+                                                style="font-size: 1.4rem;" id="desktop_newsletter"><div class="d-flex justify-content-center"><img src="images/ajaxloader.gif" alt="preloadergif" class="mr-2 subscribe_preloader">Subscribe</div></div>
+                                        </form>
+                            </div>                             
                         </div>
                         <div class="row d-flex justify-content-center pt-5">
                             <div class="col-9 copyright_text pb-2">
                                 <hr class="hrtag">
-                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights
-                                    Reserved
+                                <h3 class="text-center mt-3">Copyright © 2019 - 2020 CSVTOVCF Converter Ltd - All Rights Reserved
                                 </h3>
                             </div>
                         </div>
@@ -911,7 +907,7 @@ session_start();
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>                                    
                                         <div class="btn btn-success ml-2 mt-2" style="font-size: 1.2rem;"
-                                        id="mobile_newsletter">Subscribe</div>
+                                        id="mobile_newsletter"><div class="d-flex justify-content-center"><img src="images/ajaxloader.gif" alt="preloadergif" class="mr-2 subscribe_preloader">Subscribe</div></div>
                                 </form>
                             </div>
                         </div>
@@ -1406,6 +1402,7 @@ session_start();
                     $("#footer-subscribe-email_desktop").css('border-width', '1px');
                 }
                 if (error == "") {
+                    $('.subscribe_preloader').css('display','block');
                     $.ajax({
                         type: 'POST',
                         url: 'php/newsletter.php',
@@ -1431,6 +1428,7 @@ session_start();
                             } else {
                                 //console.log(data.error)
                             }
+                            $('.subscribe_preloader').css('display','none');
                         }
                     });
                 } else {
@@ -1458,6 +1456,7 @@ session_start();
                     $("#footer-subscribe-email_mobile").css('border-width', '1px');
                 }
                 if (error == "") {
+                    $('.subscribe_preloader').css('display','block');
                     $.ajax({
                         type: 'POST',
                         url: 'php/newsletter.php',
@@ -1483,6 +1482,7 @@ session_start();
                             } else {
                                 //console.log(data.error)
                             }
+                            $('.subscribe_preloader').css('display','none');
                         }
                     });
                 } else {

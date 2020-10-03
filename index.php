@@ -328,7 +328,7 @@ session_start();
                                             </div>
 
                                             <div  class="btn btn-success ml-2 mt-2"
-                                                style="font-size: 1.4rem;" id="desktop_newsletter">Subscribe</div>
+                                                style="font-size: 1.4rem;" id="desktop_newsletter"><div class="d-flex justify-content-center"><img src="images/ajaxloader.gif" alt="preloadergif" class="mr-2 subscribe_preloader">Subscribe</div></div>
                                         </form>
                             </div>                             
                         </div>
@@ -793,7 +793,7 @@ session_start();
                                             style="font-size:1.2rem;width: 20rem;">
                                     </div>                                    
                                         <div class="btn btn-success ml-2 mt-2" style="font-size: 1.2rem;"
-                                        id="mobile_newsletter">Subscribe</div>
+                                        id="mobile_newsletter"><div class="d-flex justify-content-center"><img src="images/ajaxloader.gif" alt="preloadergif" class="mr-2 subscribe_preloader">Subscribe</div></div>
                                 </form>
                             </div>
                         </div>
@@ -1288,6 +1288,7 @@ function validateEmail(email) {
         $("#footer-subscribe-email_desktop").css('border-width', '1px');
             }
             if (error == "") {
+                $('.subscribe_preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/newsletter.php',
@@ -1313,6 +1314,7 @@ function validateEmail(email) {
                         } else {
                             //console.log(data.error)
                         }
+                        $('.subscribe_preloader').css('display','none');
                     }
                 }); 
             }else{
@@ -1340,6 +1342,7 @@ function validateEmail(email) {
         $("#footer-subscribe-email_mobile").css('border-width', '1px');
             }
             if (error == "") {
+                $('.subscribe_preloader').css('display','block');
                 $.ajax({
                     type: 'POST',
                     url: 'php/newsletter.php',
@@ -1365,6 +1368,7 @@ function validateEmail(email) {
                         } else {
                             //console.log(data.error)
                         }
+                        $('.subscribe_preloader').css('display','none');
                     }
                 }); 
             }else{
