@@ -92,8 +92,8 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
         }
 
         img {
-            display: inline !important;
-            vertical-align: middle !important;
+        display: inline;
+        vertical-align: middle;
         }
 
         /* blockquote,

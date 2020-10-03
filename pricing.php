@@ -130,8 +130,8 @@ session_start();
     }
 
     img {
-        display: inline !important;
-        vertical-align: middle !important;
+        display: inline;
+        vertical-align: middle;
     }
     .text-base {
         font-size: 1.6rem;
