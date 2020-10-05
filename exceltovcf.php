@@ -2848,17 +2848,20 @@ session_start();
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
                 $('#forgot_password_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
             });
             $('.pop_up_signup_header').click(function() {
                 $('#pop_up_desktop').modal('show');
                 $('#sign_in_page').css('display', 'none');
                 $('#sign_up_page').css('display', 'block');
                 $('#forgot_password_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
             });
             $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
                 $('#forgot_password_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
                 // alert("My name is sign in");
             });
             $('#signup_link').click(function() {
@@ -2866,6 +2869,7 @@ session_start();
                 $('#sign_up_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
                 $('#forgot_password_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
                 // alert("My name is sign up");
             });
             $('#forgot_password_link').click(function() {
@@ -2873,12 +2877,14 @@ session_start();
                 $('#forgot_password_page').css('display', 'block');
                 $('#sign_in_page').css('display', 'none');
                 $('#sign_up_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
                 // alert("My name is sign up");
             });
             $('#signin_link_forgot').click(function() {
                 $('#forgot_password_page').css('display', 'none');
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
+                $('#sign_up_Otp').css('display', 'none');
             });
         }
         model_sign_up_sign_in();
@@ -2888,12 +2894,14 @@ session_start();
             $('#sign_in_page').css('display', 'block');
             $('#sign_up_page').css('display', 'none');
             $('#forgot_password_page').css('display', 'none');
+            $('#sign_up_Otp').css('display', 'none');
         });
         $('.pop_up_signup_mobile').click(function() {
             $('#pop_up_desktop').modal('show');
             $('#sign_in_page').css('display', 'none');
             $('#sign_up_page').css('display', 'block');
             $('#forgot_password_page').css('display', 'none');
+            $('#sign_up_Otp').css('display', 'none');
         });
         /* ------------------------------- logout call ------------------------------ */
         function logout_signup_signin() {
