@@ -61,16 +61,11 @@ session_start();
     }
 
 
-    /* #step1,
-        #step2,
-        #step3 {
+    
+
+        .mdtimer {
             display: none;
-
         }
-
-        #step4 {
-            display: block;
-        }  */
 
     #payment_button_monthly {
         border-radius: 20px;
@@ -527,10 +522,16 @@ session_start();
                                                         style="color: #007bff;" id="basic" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
-                                                <div class="text-center mt-5 paid_person">
+                                                <div class="text-center mt-5 paid_person" style="display:none;">
                                                     <a href="#" type="button"
                                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download col-5"
                                                         style="color:#fff;">Click Here to download VCF</a>
+                                                </div>
+                                                <div class="mdtimer">
+                                                    <b></b>
+                                                    <div style="font-size: large;">
+                                                    <b>Please Wait <span>5</span> seconds</b>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1430,10 +1431,16 @@ session_start();
                                                         style="color: #007bff;" class="download">Click
                                                         here</a> to
                                                     download your demo VCF file.</p>
-                                                <div class="text-center mt-5 paid_person">
+                                                <div class="text-center mt-5 paid_person" style="display:none;">
                                                     <a href="#" type="button"
                                                         class="btn sendButton bg-primary btn-block btn-rounded z-depth-1a VCF-file download"
                                                         style="color:#fff;font-size:1.4rem">Click Here to download VCF</a>
+                                                </div>
+                                                <div class="mdtimer">
+                                                    <b></b>
+                                                    <div style="font-size: large;">
+                                                    <b>Please Wait <span>5</span> seconds</b>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2106,7 +2113,17 @@ session_start();
                             user_mobile = data.mobile;
                             $('.our_subscription').css('display', 'none');
                             $('.basic_download_info').css('display', 'none');
-                            $('.paid_person').css('display', 'block');
+                            $(".mdtimer").css('display','block');
+/* -------------------------- download button show timer start -------------------------- */
+
+                            var sec = 5
+                            var timer = setInterval(function() {
+                            $(".mdtimer span").text(sec--);
+                            if (sec == 0) {
+                            $(".paid_person").fadeIn(1000);
+                            $(".mdtimer").css('display','none');}
+                            },1000);
+ /* -------------------------- download button show timer end-------------------------- */
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
@@ -2250,7 +2267,17 @@ session_start();
                             // console.log(data.mobile);
                             $('.our_subscription').css('display', 'none');
                             $('.basic_download_info').css('display', 'none');
-                            $('.paid_person').css('display', 'block');
+                            $(".mdtimer").css('display','block');
+/* -------------------------- download button show timer start -------------------------- */
+
+                            var sec = 5
+                            var timer = setInterval(function() {
+                            $(".mdtimer span").text(sec--);
+                            if (sec == 0) {
+                            $(".paid_person").fadeIn(1000);
+                            $(".mdtimer").css('display','none');}
+                            },1000);
+ /* -------------------------- download button show timer end-------------------------- */
                         } else if (data.status == 301) {
                             user_email = data.email;
                             user_mobile = data.mobile;
@@ -2611,7 +2638,17 @@ session_start();
                                         // console.log(data.mobile);
                                         $('.our_subscription').css('display', 'none');
                                         $('.basic_download_info').css('display', 'none');
-                                        $('.paid_person').css('display', 'block');
+                                        $(".mdtimer").css('display','block');
+/* -------------------------- download button show timer start -------------------------- */
+
+                            var sec = 5
+                            var timer = setInterval(function() {
+                            $(".mdtimer span").text(sec--);
+                            if (sec == 0) {
+                            $(".paid_person").fadeIn(1000);
+                            $(".mdtimer").css('display','none');}
+                            },1000);
+ /* -------------------------- download button show timer end-------------------------- */
                                     } else if (data.status == 301) {
                                         user_email = data.email;
                                         user_mobile = data.mobile;
