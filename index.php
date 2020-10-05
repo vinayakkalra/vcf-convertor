@@ -102,7 +102,7 @@ session_start();
                                             <ul>
                                                 <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
                                                 <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
-                                                <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
+                                                <!-- <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li> -->
                                             </ul>
                                         </li>                                       
                                         <!-- <li class="nav-item">
@@ -143,7 +143,7 @@ session_start();
                                             <ul>
                                                 <li><a href="exceltovcf" style="color:#f1f1f1;">Excel to VCF</a></li>
                                                 <li><a href="vcftoxls" style="color:#f1f1f1;">VCF to CSV</a></li>
-                                                <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li>
+                                                <!-- <li><a href="#" style="color:#f1f1f1;">VCF Splitter</a></li> -->
                                             </ul>
                                         </li>                                       
                                         <!-- <li class="nav-item">
@@ -171,19 +171,18 @@ session_start();
                             </div>
                             <div class="row mt-2 d-flex justify-content-center">
                                 <div class="col-8 d-flex justify-content-center">
-                                    <p class="main_heading_paragraph">#1 Website to convert Excel to VCF, VCF to Excel
-                                        and
-                                        VCF Splitter - 100% Secure</p>
+                                    <p class="main_heading_paragraph">#1 Website to convert Excel to VCF and VCF to CSV - 100% Secure</p>
                                 </div>
                             </div>
                         </div>
+                        <div class="row d-flex justify-content-center">
                         <div class="row d-flex justify-content-center" style="
                         position: absolute;
                         bottom: 5rem;
                     ">
                             <div class="col-9 d-flex justify-content-center service_type">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="wrap-col">
                                             <div class="item-container">
                                                 <a href="exceltovcf">
@@ -202,14 +201,14 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="wrap-col">
                                             <div class="item-container">
                                                 <a href="vcftoxls">
                                                     <div class="item-caption">
                                                         <div class="item-caption-inner">
                                                             <div class="item-caption-inner1">
-                                                                <h3>VCF to Excel</h3>
+                                                                <h3>VCF to CSV</h3>
                                                                 <span>VCF Tools</span>
                                                             </div>
                                                         </div>
@@ -221,7 +220,7 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <!-- <div class="col-4">
                                         <div class="wrap-col">
                                             <div class="item-container">
                                                 <a href="#">
@@ -239,11 +238,13 @@ session_start();
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
+                        </div>
+                        
                 </div>
             </div>
 
@@ -306,7 +307,7 @@ session_start();
                         <div class="row pt-5">
                             <div class="col-6 footer_text">
                                 <img src="images/zamzar-logo2.png" alt="footer logo" style="width:40%">
-                                <div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem">#1 Website to convert Excel to VCF, VCF to Excel and VCF Splitter - 100% Secure</P></div>
+                                <div class="col-10 mt-3"><p style="color:#f1f1f1;font-size:1.4rem">#1 Website to convert Excel to VCF and VCF to CSV- 100% Secure</P></div>
                             </div>
                             <div class="col-2 footer_text">
                                 <h3 class="text-left pb-2">Get in Touch</h3>
@@ -585,7 +586,7 @@ session_start();
                     <div id="panel">
                             <a href="exceltovcf" style="color:#f1f1f1;" id="mobile_tools_button">Excel to VCF</a>
                             <a href="vcftoxls" style="color:#f1f1f1;" id="mobile_tools_button">VCF to CSV</a>
-                            <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a>
+                            <!-- <a href="#" style="color:#f1f1f1;" id="mobile_tools_button">VCF Splitter</a> -->
                     </div>
                     <!-- <a href="policy" id="mobile_policy_button">Policy</a> -->
                     <a href="contact" id="mobile_contact_button">Contact</a>
@@ -623,8 +624,7 @@ session_start();
                             <div class="row">
                                 <div class="col">
                                     <p class="main_heading_paragraph text-center pt-3">#1 Website to convert Excel
-                                        to VCF, VCF to Excel and
-                                        VCF Splitter - 100% Secure</p>
+                                        to VCF and VCF to CSV - 100% Secure</p>
                                 </div>
                             </div>
                         </div>
@@ -662,7 +662,7 @@ session_start();
                                                 <div class="item-caption">
                                                     <div class="item-caption-inner">
                                                         <div class="item-caption-inner1">
-                                                            <h3>VCF to Excel</h3>
+                                                            <h3>VCF to CSV</h3>
                                                             <span>VCF Tools</span>
                                                         </div>
                                                     </div>
@@ -675,7 +675,7 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
+                            <!-- <div class="row d-flex justify-content-center">
                                 <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
                                         <div class="item-container">
@@ -695,7 +695,7 @@ session_start();
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -762,8 +762,7 @@ session_start();
                                         alt="footer logo" style="width:60%"></div>
                                 <div class="row justify-content-center d-flex">
                                     <div class="col-10 mt-3">
-                                        <p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF,
-                                            VCF to Excel and VCF Splitter - 100% Secure</P>
+                                        <p style="color:#f1f1f1;font-size:1.4rem;">#1 Website to convert Excel to VCF and VCF to CSV - 100% Secure</P>
                                     </div>
                                 </div>
                             </div>
