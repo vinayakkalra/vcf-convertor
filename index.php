@@ -840,6 +840,14 @@ session_start();
                 $("#Form_phone_signup").css('border-color', '#C0BBBB');
                 $("#Form_phone_signup").css('border-width', '1px');
             }
+            if(mobile.length!=10){
+                $("#Form_phone_signup").css('border-color', 'red');
+                $("#Form_phone_signup").css('border-width', '2px');
+                error = error + 'mobile';
+            }else {
+                $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                $("#Form_phone_signup").css('border-width', '1px');
+            }
             if (password == "") {
                 $("#Form_pass_signup").css('border-color', 'red');
                 $("#Form_pass_signup").css('border-width', '2px');
@@ -1002,6 +1010,14 @@ session_start();
             } else {
                 $("#Form_phone_forgot").css('border-color', '#C0BBBB');
                 $("#Form_phone_forgot").css('border-width', '1px');
+            }
+            if(mobile.length!=10){
+                    $("#Form_phone_forgot").css('border-color', 'red');
+                    $("#Form_phone_forgot").css('border-width', '2px');
+                    error = error + 'mobile';
+            }else {
+                    $("#Form_phone_forgot").css('border-color', '#C0BBBB');
+                    $("#Form_phone_forgot").css('border-width', '1px');
             }
             if (password == "") {
                 $("#Form_pass_forgot").css('border-color', 'red');
