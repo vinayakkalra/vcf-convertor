@@ -478,7 +478,7 @@ session_start();
                         </div>
                         <div class="md-form mb-5">
                             <i class="fas fa-phone prefix grey-text"></i>
-                            <input type="text" id="Form_phone_signup" class="form-control validate"
+                            <input type="number" id="Form_phone_signup" class="form-control validate"
                                 placeholder="Mobile number">
                         </div>
                         <div class="md-form mb-5">
@@ -585,7 +585,7 @@ session_start();
                         </div>
                         <div class="md-form mb-5">
                             <i class="fas fa-phone prefix grey-text"></i>
-                            <input type="text" id="Form_phone_forgot" class="form-control validate"
+                            <input type="number" id="Form_phone_forgot" class="form-control validate"
                                 placeholder="Mobile number">
                         </div>
                         <div class="md-form mb-5">
