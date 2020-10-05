@@ -1040,7 +1040,7 @@ session_start();
                                 </div><!-- Yorder -->
                             </div>
                         </div>
-                        <div id="order-success">
+                        <div id="order-success" style="display:none;">
                             <div class="d-flex row payment_info_row">
                                 <div>
                                     <p>Payment Successfully</p>
@@ -1050,6 +1050,12 @@ session_start();
                                             id="VCF-file" style="color:#fff;">Click Here to download VCF</a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="mdtimer">
+                            <b></b>
+                            <div style="font-size: large;">
+                            <b>Please Wait <span>5</span> seconds</b>
                             </div>
                         </div>
                     </div>
@@ -3043,7 +3049,18 @@ session_start();
                                                 num_end = num_end1;
                                                 vcf()
                                                 $("#checkout-form").css('display','none');
-                                                $("#order-success").css('display','block');
+                                                // $("#order-success").css('display','block');
+                                                $(".mdtimer").css('display','block');
+                    /* -------------------------- download button show timer start -------------------------- */
+
+                                                var sec = 5
+                                                var timer = setInterval(function() {
+                                                $(".mdtimer span").text(sec--);
+                                                if (sec == 0) {
+                                                $("#order-success").fadeIn(1000);
+                                                $(".mdtimer").css('display','none');}
+                                                },1000);
+                    /* -------------------------- download button show timer end-------------------------- */
                                                 // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
@@ -3201,13 +3218,20 @@ session_start();
                                                 //window.location = "thankyou.html";
                                                 // alert("Your payment has been successful");
                                                 num_end = num_end1;
-                                                vcf()
-                                                $("#checkout-form").css(
-                                                    'display',
-                                                    'none');
-                                                $("#order-success").css(
-                                                    'display',
-                                                    'block');
+                                                vcf()                                                
+                                                    $("#checkout-form").css('display','none');
+                                                // $("#order-success").css('display','block');
+                                                $(".mdtimer").css('display','block');
+                    /* -------------------------- download button show timer start -------------------------- */
+
+                                                var sec = 5
+                                                var timer = setInterval(function() {
+                                                $(".mdtimer span").text(sec--);
+                                                if (sec == 0) {
+                                                $("#order-success").fadeIn(1000);
+                                                $(".mdtimer").css('display','none');}
+                                                },1000);
+                    /* -------------------------- download button show timer end-------------------------- */
                                                 // $("#order-id").html('#' + data.id);
                                                 // window.scrollTo(0,0);
                                                 window.dataLayer =
