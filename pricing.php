@@ -1879,44 +1879,63 @@ session_start();
                                 "handler": function(response) {
                                     var razorpay_payment_id = response.razorpay_payment_id;
                                     // console.log(response.razorpay_payment_id);
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'php/checkout-update1-form.php',
-                                        dataType: "json",
-                                        data: {
-                                            id: data.id,
-                                            // productName: "Finstreet",
-                                            razorpay_payment_id: razorpay_payment_id,
-                                            amount: result1
-                                                .price_enterprise,
-                                            email: user_email
-                                        },
-                                        success: function(data) {
-                                            if (data.status == 'ok') {
-                                                //window.location = "thankyou.html";
-                                                // alert("Your payment has been successful");
-                                                $("#myModal_payment").modal('hide');
-                                                $(".already_subscriber2").css('display','block');
-                                                $(".our_subscription").css('display','none');                                                                                                
-                                                $(".already_subscriber").css('display','none'); 
-                                                // $("#order-id").html('#' + data.id);
-                                                // window.scrollTo(0,0);
-                                                window.dataLayer =window.dataLayer || [];
-                                                window.dataLayer.push({
-                                                    'event': 'payment success',
-                                                    'name': $("#inputName" ).val(),
-                                                    'phone': user_mobile,
-                                                    'email': user_email
+                                             /* --------------------------- capture code start --------------------------- */
+                            $.ajax({
+                                    type: 'POST',
+                                    url: 'php/get-cap.php',
+                                    dataType: "json",
+                                    data: {
+                                        razorpay_idpay: razorpay_payment_id,
+                                        amounts: result1.price_enterprise
+                                    },
+                                    success: function (response1) {
+                                        // console.log(response1);
+                                        if (response1.status == 201) {
+                                            // alert("GetSubscriberId_Basic");
+                                            // alert(response1.total);
+                                            // alert(response1.currency_code);
+                                            // alert(response1.capture_status);
+                                            capture_status = response1.capture_status ;
+                                            // alert(capture_status);
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'php/checkout-update1-form.php',
+                                                dataType: "json",
+                                                data: {
+                                                    id: data.id,
+                                                    // productName: "Finstreet",
+                                                    razorpay_payment_id: razorpay_payment_id,
+                                                    amount: result1.price_enterprise,
+                                                    email: user_email,
+                                                    capture_status: capture_status
+                                                },
+                                                success: function(data) {
+                                                    if (data.status == 'ok') {
+                                                        //window.location = "thankyou.html";
+                                                        // alert("Your payment has been successful");
+                                                        $("#myModal_payment").modal('hide');
+                                                        $(".already_subscriber2").css('display','block');
+                                                        $(".our_subscription").css('display','none');                                                                                                
+                                                        $(".already_subscriber").css('display','none'); 
+                                                        // $("#order-id").html('#' + data.id);
+                                                        // window.scrollTo(0,0);
+                                                        window.dataLayer =window.dataLayer || [];
+                                                        window.dataLayer.push({
+                                                            'event': 'payment success',
+                                                            'name': $("#inputName" ).val(),
+                                                            'phone': user_mobile,
+                                                            'email': user_email
 
-                                                });
+                                                        });
 
-                                            } else {
-                                                console.log("error");
-                                            }
+                                                    } else {
+                                                        console.log("error");
+                                                    }
+                                                }
+                                            });
                                         }
-                                    });
-
-
+                                    }
+                                });
                                 },
                                 "prefill": {
                                     "name": $("#inputName").val(),

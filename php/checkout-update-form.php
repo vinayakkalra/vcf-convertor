@@ -13,6 +13,7 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
     // $productName =$_POST['productName'];
     // $amount =  $_POST['amount'];
     $razorpay_payment_id = $_POST['razorpay_payment_id'];
+    $capture_status =  mysqli_real_escape_string($link, $_POST['capture_status']);
     $product_description = "";
     $body = "";
     $custom_string = "";
@@ -23,7 +24,7 @@ if(isset($_POST['razorpay_payment_id']) == 'razorpay_payment_id'){
     //     $email = $_POST['email'];
     // }
     
-    $query = "UPDATE `orders_event_razorpay` SET `status` = 'paid', `razorpay_payment_id` = '$razorpay_payment_id' WHERE `id` = $id";
+    $query = "UPDATE `orders_event_razorpay` SET `status` = 'paid', `razorpay_payment_id` = '$razorpay_payment_id',`capture_status`= '$capture_status' WHERE `id` = $id";
     
     if($result = mysqli_query($link, $query))  
     {  

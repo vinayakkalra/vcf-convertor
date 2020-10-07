@@ -2075,6 +2075,8 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                 $('.myModal_payment').modal('show');
                 $('.payment_pro').css('display', 'block');
                 $('.payment_enterprise').css('display', 'none');
+                $("#checkout-form").css('display','block');
+                $("#order-success").css('display','none');
                 $('input[name="payment_email"]').val(user_email);
                 $('input[name="payment_mobile"]').val(user_mobile);
                 $(".price").html(result1.price_pro);
@@ -2084,6 +2086,8 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                 $('.myModal_payment').modal('show');
                 $('.payment_enterprise').css('display', 'block');
                 $('.payment_pro').css('display', 'none');
+                $("#checkout-form").css('display','block');
+                $("#order-success").css('display','none');
                 $('input[name="payment_email"]').val(user_email);
                 $('input[name="payment_mobile"]').val(user_mobile);
                 $(".price").html(result1.price_enterprise);
@@ -2148,48 +2152,67 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                     //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
                                     "handler": function (response) {
                                         // alert(response.razorpay_payment_id);
-                                        var razorpay_payment_id = response
-                                            .razorpay_payment_id;
+                                        var razorpay_payment_id = response.razorpay_payment_id;
                                         // console.log(response);
                                         $.ajax({
-                                            type: 'POST',
-                                            url: 'php/checkout-update-form.php',
-                                            dataType: "json",
-                                            data: {
-                                                id: data.id,
-                                                // productName: "Finstreet",
-                                                razorpay_payment_id: razorpay_payment_id,
-                                                // amount: result.value,
-                                                email: user_email
-                                            },
-                                            success: function (data) {
-                                                if (data.status == 'ok') {
-                                                    //window.location = "thankyou.html";
-                                                    // alert("Your payment has been successful");
-                                                    num_end = num_end1;
-                                                    
-                                                    $("#checkout-form").css('display','none');
-                                                    $("#order-success").css('display','block');
-                                                    // $("#order-id").html('#' + data.id);
-                                                    // window.scrollTo(0,0);
-                                                    window.dataLayer =
-                                                        window.dataLayer ||
-                                                        [];
-                                                    window.dataLayer.push({
-                                                        'event': 'payment success',
-                                                        'name': $("#inputName").val(),
-                                                        'phone': user_mobile,
-                                                        'email': user_email
+                                    type: 'POST',
+                                    url: 'php/get-cap.php',
+                                    dataType: "json",
+                                    data: {
+                                        razorpay_idpay: razorpay_payment_id,
+                                        amounts: result1.price_pro
+                                    },
+                                    success: function (response1) {
+                                        // console.log(response1);
+                                        if (response1.status == 201) {
+                                            // alert("GetSubscriberId_Basic");
+                                            // alert(response1.total);
+                                            // alert(response1.currency_code);
+                                            // alert(response1.capture_status);
+                                            capture_status = response1.capture_status ;
+                                            // alert(capture_status);
+                                        $.ajax({
+                                                type: 'POST',
+                                                url: 'php/checkout-update-form.php',
+                                                dataType: "json",
+                                                data: {
+                                                    id: data.id,
+                                                    // productName: "Finstreet",
+                                                    razorpay_payment_id: razorpay_payment_id,
+                                                    // amount: result.value,
+                                                    email: user_email,
+                                                    capture_status: capture_status
+                                                },
+                                                success: function (data) {
+                                                    if (data.status == 'ok') {
+                                                        //window.location = "thankyou.html";
+                                                        // alert("Your payment has been successful");
+                                                        num_end = num_end1;
+                                                        
+                                                        $("#checkout-form").css('display','none');
+                                                        $("#order-success").css('display','block');
+                                                        // $("#order-id").html('#' + data.id);
+                                                        // window.scrollTo(0,0);
+                                                        window.dataLayer =
+                                                            window.dataLayer ||
+                                                            [];
+                                                        window.dataLayer.push({
+                                                            'event': 'payment success',
+                                                            'name': $("#inputName").val(),
+                                                            'phone': user_mobile,
+                                                            'email': user_email
 
-                                                    });
+                                                        });
 
-                                                } else {
-                                                    console.log("error");
+                                                    } else {
+                                                        console.log("error");
+                                                    }
                                                 }
-                                            }
-                                        });
-
-
+                                            });
+                                        }
+                                    }
+                                    });
+                                        
                                     },
                                     "prefill": {
                                         "name": $("#inputName").val(),
@@ -2307,6 +2330,23 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                         var razorpay_payment_id = response.razorpay_payment_id;
                                         // console.log(response.razorpay_payment_id);
                                         $.ajax({
+                                    type: 'POST',
+                                    url: 'php/get-cap.php',
+                                    dataType: "json",
+                                    data: {
+                                        razorpay_idpay: razorpay_payment_id,
+                                        amounts: result1.price_enterprise
+                                    },
+                                    success: function (response1) {
+                                        // console.log(response1);
+                                        if (response1.status == 201) {
+                                            // alert("GetSubscriberId_Basic");
+                                            // alert(response1.total);
+                                            // alert(response1.currency_code);
+                                            // alert(response1.capture_status);
+                                            capture_status = response1.capture_status ;
+                                            // alert(capture_status);
+                                            $.ajax({
                                             type: 'POST',
                                             url: 'php/checkout-update1-form.php',
                                             dataType: "json",
@@ -2315,7 +2355,8 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                                 // productName: "Finstreet",
                                                 razorpay_payment_id: razorpay_payment_id,
                                                 amount: result1.price_enterprise,
-                                                email: user_email
+                                                email: user_email,
+                                                capture_status: capture_status
                                             },
                                             success: function (data) {
                                                 if (data.status == 'ok') {
@@ -2340,8 +2381,9 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                                 }
                                             }
                                         });
-
-
+                                            }
+                                        }
+                                    });
                                     },
                                     "prefill": {
                                         "name": $("#inputName").val(),

@@ -3043,8 +3043,7 @@ session_start();
                             var order_id = data.id;
                             var options = {
                                 "key": "rzp_test_dePlubEU9z2Fn8",
-                                "amount": parseInt(result1.price_pro *
-                                100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
+                                "amount": parseInt(result1.price_pro *100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                 "currency": "INR",
                                 "name": "VCF 50",
                                 "description": "Convert your csv/excel file into VCF",
@@ -3052,63 +3051,77 @@ session_start();
                                 //"order_id": "order_9A33XWu170gUtm",//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order). Refer the Checkout form table given below    
                                 "handler": function(response) {
                                     // alert(response.razorpay_payment_id);
-                                    var razorpay_payment_id = response
-                                        .razorpay_payment_id;
+                                    var razorpay_payment_id = response.razorpay_payment_id;
                                     // console.log(response);
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'php/checkout-update-form.php',
-                                        dataType: "json",
-                                        data: {
-                                            id: data.id,
-                                            // productName: "Finstreet",
-                                            razorpay_payment_id: razorpay_payment_id,
-                                            // amount: result.value,
-                                            email: user_email
-                                        },
-                                        success: function(data) {
-                                            if (data.status == 'ok') {
-                                                //window.location = "thankyou.html";
-                                                // alert("Your payment has been successful");
-                                                num_end = num_end1;
-                                                vcf()
-                                                $("#checkout-form").css('display','none');
-                                                // $("#order-success").css('display','block');
-                                                $(".mdtimer").css('display','block');
-                    /* -------------------------- download button show timer start -------------------------- */
 
-                                                var sec = 5
-                                                var timer = setInterval(function() {
-                                                $(".mdtimer span").text(sec--);
-                                                if (sec == 0) {
-                                                $("#order-success").fadeIn(1000);
-                                                $(".mdtimer").css('display','none');}
-                                                },1000);
-                    /* -------------------------- download button show timer end-------------------------- */
-                                                // $("#order-id").html('#' + data.id);
-                                                // window.scrollTo(0,0);
-                                                window.dataLayer =
-                                                    window.dataLayer ||
-                                                    [];
-                                                window.dataLayer.push({
-                                                    'event': 'payment success',
-                                                    'name': $(
-                                                            "#inputName"
-                                                            )
-                                                        .val(),
-                                                    'phone': user_mobile,
-                                                    'email': user_email
+                        /* --------------------------- capture code start --------------------------- */
+                            $.ajax({
+                                    type: 'POST',
+                                    url: 'php/get-cap.php',
+                                    dataType: "json",
+                                    data: {
+                                        razorpay_idpay: razorpay_payment_id,
+                                        amounts: result1.price_pro
+                                    },
+                                    success: function (response1) {
+                                        // console.log(response1);
+                                        if (response1.status == 201) {
+                                            // alert("GetSubscriberId_Basic");
+                                            // alert(response1.total);
+                                            // alert(response1.currency_code);
+                                            // alert(response1.capture_status);
+                                            capture_status = response1.capture_status ;
+                                            // alert(capture_status);
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'php/checkout-update-form.php',
+                                                dataType: "json",
+                                                data: {
+                                                    id: data.id,
+                                                    // productName: "Finstreet",
+                                                    razorpay_payment_id: razorpay_payment_id,
+                                                    // amount: result.value,
+                                                    email: user_email,
+                                                    capture_status: capture_status
+                                                },
+                                                success: function(data) {
+                                                    if (data.status == 'ok') {
+                                                        //window.location = "thankyou.html";
+                                                        // alert("Your payment has been successful");
+                                                        num_end = num_end1;
+                                                        vcf()
+                                                        $("#checkout-form").css('display','none');
+                                                        // $("#order-success").css('display','block');
+                                                        $(".mdtimer").css('display','block');
+                            /* -------------------------- download button show timer start -------------------------- */
+                                                        var sec = 5
+                                                        var timer = setInterval(function() {
+                                                        $(".mdtimer span").text(sec--);
+                                                        if (sec == 0) {
+                                                        $("#order-success").fadeIn(1000);
+                                                        $(".mdtimer").css('display','none');}
+                                                        },1000);
+                            /* -------------------------- download button show timer end-------------------------- */
+                                                        // $("#order-id").html('#' + data.id);
+                                                        // window.scrollTo(0,0);
+                                                        window.dataLayer =window.dataLayer || [];
+                                                        window.dataLayer.push({
+                                                            'event': 'payment success','name': $("#inputName").val(),
+                                                            'phone': user_mobile,
+                                                            'email': user_email
+                                                        });
 
-                                                });
-
-                                            } else {
-                                                console.log("error");
-                                            }
+                                                    } else {
+                                                        console.log("error");
+                                                    }
+                                                }
+                                            });
                                         }
-                                    });
+                                    }
 
-
-                                },
+                                });
+                        /* --------------------------- capture code end --------------------------- */
+                            },
                                 "prefill": {
                                     "name": $("#inputName").val(),
                                     "email": user_email,
@@ -3222,63 +3235,75 @@ session_start();
                                 "image": "images/zamzar-logo.png",
                                 "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
                                 "handler": function(response) {
-                                    var razorpay_payment_id = response
-                                        .razorpay_payment_id;
+                                    var razorpay_payment_id = response.razorpay_payment_id;
                                     // console.log(response.razorpay_payment_id);
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'php/checkout-update1-form.php',
-                                        dataType: "json",
-                                        data: {
-                                            id: data.id,
-                                            // productName: "Finstreet",
-                                            razorpay_payment_id: razorpay_payment_id,
-                                            amount: result1
-                                                .price_enterprise,
-                                            email: user_email
-                                        },
-                                        success: function(data) {
-                                            if (data.status == 'ok') {
-                                                //window.location = "thankyou.html";
-                                                // alert("Your payment has been successful");
-                                                num_end = num_end1;
-                                                vcf()                                                
-                                                    $("#checkout-form").css('display','none');
-                                                // $("#order-success").css('display','block');
-                                                $(".mdtimer").css('display','block');
-                    /* -------------------------- download button show timer start -------------------------- */
+                                     /* --------------------------- capture code start --------------------------- */
+                            $.ajax({
+                                    type: 'POST',
+                                    url: 'php/get-cap.php',
+                                    dataType: "json",
+                                    data: {
+                                        razorpay_idpay: razorpay_payment_id,
+                                        amounts: result1.price_enterprise
+                                    },
+                                    success: function (response1) {
+                                        // console.log(response1);
+                                        if (response1.status == 201) {
+                                            // alert("GetSubscriberId_Basic");
+                                            // alert(response1.total);
+                                            // alert(response1.currency_code);
+                                            // alert(response1.capture_status);
+                                            capture_status = response1.capture_status ;
+                                            // alert(capture_status);
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'php/checkout-update1-form.php',
+                                                dataType: "json",
+                                                data: {
+                                                    id: data.id,
+                                                    // productName: "Finstreet",
+                                                    razorpay_payment_id: razorpay_payment_id,
+                                                    amount: result1.price_enterprise,
+                                                    email: user_email,
+                                                    capture_status: capture_status
+                                                },
+                                                success: function(data) {
+                                                    if (data.status == 'ok') {
+                                                        //window.location = "thankyou.html";
+                                                        // alert("Your payment has been successful");
+                                                        num_end = num_end1;
+                                                        vcf()                                                
+                                                            $("#checkout-form").css('display','none');
+                                                        // $("#order-success").css('display','block');
+                                                        $(".mdtimer").css('display','block');
+                            /* -------------------------- download button show timer start -------------------------- */
+                                                        var sec = 5
+                                                        var timer = setInterval(function() {
+                                                        $(".mdtimer span").text(sec--);
+                                                        if (sec == 0) {
+                                                        $("#order-success").fadeIn(1000);
+                                                        $(".mdtimer").css('display','none');}
+                                                        },1000);
+                            /* -------------------------- download button show timer end-------------------------- */
+                                                        // $("#order-id").html('#' + data.id);
+                                                        // window.scrollTo(0,0);
+                                                        window.dataLayer = window.dataLayer || [];
+                                                        window.dataLayer.push({
+                                                            'event': 'payment success',
+                                                            'name': $("#inputName").val(),
+                                                            'phone': user_mobile,
+                                                            'email': user_email
 
-                                                var sec = 5
-                                                var timer = setInterval(function() {
-                                                $(".mdtimer span").text(sec--);
-                                                if (sec == 0) {
-                                                $("#order-success").fadeIn(1000);
-                                                $(".mdtimer").css('display','none');}
-                                                },1000);
-                    /* -------------------------- download button show timer end-------------------------- */
-                                                // $("#order-id").html('#' + data.id);
-                                                // window.scrollTo(0,0);
-                                                window.dataLayer =
-                                                    window.dataLayer ||
-                                                    [];
-                                                window.dataLayer.push({
-                                                    'event': 'payment success',
-                                                    'name': $(
-                                                            "#inputName"
-                                                            )
-                                                        .val(),
-                                                    'phone': user_mobile,
-                                                    'email': user_email
+                                                        });
 
-                                                });
-
-                                            } else {
-                                                console.log("error");
-                                            }
+                                                    } else {
+                                                        console.log("error");
+                                                    }
+                                                }
+                                            });
                                         }
-                                    });
-
-
+                                    }
+                                });
                                 },
                                 "prefill": {
                                     "name": $("#inputName").val(),
