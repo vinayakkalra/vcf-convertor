@@ -1804,66 +1804,52 @@ session_start();
                     // console.log(JSON.parse(json_object));
                     // console.log(JSON.parse(json_object).length);
                     total_data_length = (JSON.parse(json_object).length) + 1;
-                    // console.log(total_data_length);
+                     console.log(total_data_length);
 
                     //submit step 2 by dekstop
                     $("#submit2_desktop").click(function() {
                         var sheet = $("#sheet").val();
                         var first_column = $("#first_column").val();
                         var last_column = $("#last_column").val();
-                        var first_row = $("#first_row").val();
-                        var last_row = $("#last_row").val();
+                        // var first_row = $("#first_row").val();
+                        // var last_row = $("#last_row").val();
                         var show_data = "";
-                        var error = "";
-                        // if (first_row == "") {
-                        //     $("#first_row").css('border-color', 'red');
-                        //     $("#first_row").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        // } else {
-                        //     $("#first_row").css('border-color', '#C0BBBB');
-                        //     $("#first_row").css('border-width', '1px');
-                        // }
-                        // if (last_row == "") {
-                        //     $("#last_row").css('border-color', 'red');
-                        //     $("#last_row").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        // } else {
-                        //     $("#last_row").css('border-color', '#C0BBBB');
-                        //     $("#last_row").css('border-width', '1px');
-                        // }
+                        var error = "";                     
 
                         // /* ----------------------------- row bound check ---------------------------- */
 
-                        var row_check_start = parseInt(first_row, 10);
-                        var row_check_end = parseInt(last_row, 10);
-                        if (row_check_start > total_data_length) {
-                            $("#first_row").css('border-color', 'red');
-                            $("#first_row").css('border-width', '2px');
-                            error = error + 'first_row';
-                            $('#alert_id_total_data').css('display', 'block');
-                            $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
-                        } else {
-                            $("#first_row").css('border-color', '#C0BBBB');
-                            $("#first_row").css('border-width', '1px');
-                            $('#alert_id_total_data').css('display', 'none');
-                        }
-                        if (row_check_end > total_data_length) {
-                            $("#last_row").css('border-color', 'red');
-                            $("#last_row").css('border-width', '2px');
-                            error = error + 'last_row';
-                            $('#alert_id_total_data').css('display', 'block');
-                            $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
-                        } else {
-                            $("#last_row").css('border-color', '#C0BBBB');
-                            $("#last_row").css('border-width', '1px');                            
-                        }
+                        // var row_check_start = parseInt(first_row, 10);
+                        // var row_check_end = parseInt(last_row, 10);
+                        // if (row_check_start > total_data_length) {
+                        //     $("#first_row").css('border-color', 'red');
+                        //     $("#first_row").css('border-width', '2px');
+                        //     error = error + 'first_row';
+                        //     $('#alert_id_total_data').css('display', 'block');
+                        //     $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
+                        // } else {
+                        //     $("#first_row").css('border-color', '#C0BBBB');
+                        //     $("#first_row").css('border-width', '1px');
+                        //     $('#alert_id_total_data').css('display', 'none');
+                        // }
+                        // if (row_check_end > total_data_length) {
+                        //     $("#last_row").css('border-color', 'red');
+                        //     $("#last_row").css('border-width', '2px');
+                        //     error = error + 'last_row';
+                        //     $('#alert_id_total_data').css('display', 'block');
+                        //     $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
+                        // } else {
+                        //     $("#last_row").css('border-color', '#C0BBBB');
+                        //     $("#last_row").css('border-width', '1px');                            
+                        // }
 
                         // /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
                             $('.preloader').css('display', 'block');
-                            row_start = first_row;
-                            row_end = last_row;
+                            // row_start = first_row;
+                            // row_end = last_row;
+                            row_start = 1;
+                            row_end = total_data_length;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1877,39 +1863,35 @@ session_start();
                                 $("#step2").css('display', 'none');
                                 $('.preloader').css('display', 'none');
                                 var string_raw = "";
-                                if (first_column.charCodeAt(0) > last_column
-                                    .charCodeAt(0)) {
+                                if (first_column.charCodeAt(0) > last_column.charCodeAt(0)) {
                                     string_raw = first_column;
                                     first_column = last_column;
                                     last_column = string_raw;
                                     string_raw = "";
                                 }
                                 // console.log("first_column="+first_column);
-                                // console.log("last_column="+last_column);
-                                for (var i = first_column.charCodeAt(0); i <= last_column
-                                    .charCodeAt(0); i++
-                                ) { //alphabetical loop selected according to user
+                                    var number_data=Object.keys(JSON.parse(json_object)[0]).length;
+                                //  console.log(number_data);
+                                
+                                for (var i = 1; i <= number_data; i++) { //alphabetical loop selected according to user
                                     // var j=(i.charCodeAt(0)-97);
-                                    total_data_come = (last_column.charCodeAt(0) - 64);
-
-                                    var show_data = Object.keys(JSON.parse(json_object)[0])[
-                                        i - 65
-                                    ]; //give alphabet indexing 
+                                    total_data_come = number_data;
+                                    console.log(total_data_come);
+                                    var show_data = Object.keys(JSON.parse(json_object)[0])[i - 1]; //give alphabet indexing 
 
                                     /* --------------------------------- testing -------------------------------- */
 
-                                    // console.log(show_data);
+                                    console.log(show_data);
 
                                     /* --------------------------------- testing -------------------------------- */
 
-                                    if (show_data ==
-                                        undefined) { //if row not found than show blank
+                                    if (show_data == undefined) { //if row not found than show blank
                                         show_data = "";
                                     }
                                     $("#step3_dyanamic_data").html($("#step3_dyanamic_data")
                                         .html() +
                                         '<div class="form-group row"><label for="what_is_last_column" class="col-5"> Column ' +
-                                        String.fromCharCode(i) + ' .      What is ' +
+                                        ((i + 9).toString(36).toUpperCase()) + ' .      What is ' +
                                         show_data +
                                         ' : </label><div class="col-7"><select name="last_column" id="column' +
                                         (i - 64) +
