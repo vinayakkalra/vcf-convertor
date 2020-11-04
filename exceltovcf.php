@@ -334,8 +334,8 @@ session_start();
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input class="sendButton btn btn-primary" type="submit" name="submit"
-                                                value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;">
+                                            <!-- <input class="sendButton btn btn-primary" type="submit" name="submit"
+                                                value="Submit" style="font-size: 1.6rem;padding: 1rem 6rem;"> -->
                                         </form>
                                     </div>
                                     <div class="col-5 d-flex justify-content-center">
@@ -343,7 +343,7 @@ session_start();
                                     </div>
                                 </div>
                                 <!-- ----------------------------- step 2 code ----------------------------- -->
-                                <div class="row" id="step2">
+                                <!-- <div class="row" id="step2">
                                     <div class="col">
                                         <form name="step2" id="step2form">
                                             <div class="form-row">                                           
@@ -387,7 +387,7 @@ session_start();
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <!-- ---------------------------- step 3 start ----------------------------- -->
 
@@ -1142,17 +1142,17 @@ session_start();
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row d-flex justify-content-center">
+                                            <!-- <div class="row d-flex justify-content-center">
                                                 <input class="sendButton btn btn-primary" type="submit" name="submit"
                                                     value="submit" style="font-size: 1.6rem;padding: 1rem 5rem;">
-                                            </div>
+                                            </div> -->
                                         </form>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- -------------------------- step 2 for mobile -------------------------- -->
-                            <div class="col collapseSignup" id="step2_mobile">
+                            <!-- <div class="col collapseSignup" id="step2_mobile">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col">
                                         <form method="post" name="step2" id="step2form_mobile">
@@ -1173,8 +1173,7 @@ session_start();
                                                     <input type="text" readonly="readonly" value="" class="form-control"
                                                         id="read_file_mobile">
                                                 </div>
-                                            </div>
-                                            <!-- <input type="hidden" name="filename" id="filename" value="DNdata.xlsx"> -->
+                                            </div>                                           
                                             <div class="form-group row">
                                                 <label for="sheet_mobile" class="col">Sheet Number:</label>
                                             </div>
@@ -1204,7 +1203,7 @@ session_start();
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- ---------------------------- step 3 mobile start ----------------------------- -->
                             <div class="col collapseSignup" id="step3_mobile">
                                 <div class="row d-flex justify-content-center">
@@ -1524,81 +1523,81 @@ session_start();
         // ----------------------------- for desktop ----------------------------- //
 
 
-        $('#upload_excel').on('submit', function(event) {
-            event.preventDefault();
-            var file_name = $('#fileToUpload').val();
-            if (file_name == '') {
-                $('#alert_id_file_not_select').css('display', 'block');
-                $('#alert_id_file_not_select').html("* Please Select excel file");
-                return false;
-            } else {
-                $('.preloader').css('display', 'block');
-                $.ajax({
-                    url: "php/insert.php",
-                    type: "POST",
-                    data: new FormData(this),
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(data) {
-                        // alert(data);
-                        data = jQuery.parseJSON(data);
-                        if (data.status == 201) {
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                'event': 'upload_excel'
-                            });
-                            $("#step2").css('display', 'block');
-                            $("#step1").css('display', 'none');
-                            $('.preloader').css('display', 'none');
-                            $("#read_file").val(data.filename);
-                            uploaded_file_name = data.filename;
-                        } else if (data.status == 601) {
-                            console.log(data.error);
-                            //     alert("problem with query");
-                        } else {}
-                    }
-                });
-            }
-        });
+        // $('#upload_excel').on('submit', function(event) {
+        //     event.preventDefault();
+        //     var file_name = $('#fileToUpload').val();
+        //     if (file_name == '') {
+        //         $('#alert_id_file_not_select').css('display', 'block');
+        //         $('#alert_id_file_not_select').html("* Please Select excel file");
+        //         return false;
+        //     } else {
+        //         $('.preloader').css('display', 'block');
+        //         $.ajax({
+        //             url: "php/insert.php",
+        //             type: "POST",
+        //             data: new FormData(this),
+        //             contentType: false,
+        //             cache: false,
+        //             processData: false,
+        //             success: function(data) {
+        //                 // alert(data);
+        //                 data = jQuery.parseJSON(data);
+        //                 if (data.status == 201) {
+        //                     window.dataLayer = window.dataLayer || [];
+        //                     window.dataLayer.push({
+        //                         'event': 'upload_excel'
+        //                     });
+        //                     $("#step2").css('display', 'block');
+        //                     $("#step1").css('display', 'none');
+        //                     $('.preloader').css('display', 'none');
+        //                     $("#read_file").val(data.filename);
+        //                     uploaded_file_name = data.filename;
+        //                 } else if (data.status == 601) {
+        //                     console.log(data.error);
+        //                     //     alert("problem with query");
+        //                 } else {}
+        //             }
+        //         });
+        //     }
+        // });
         //  for mobile
-        $('#upload_excel_mobile').on('submit', function(event) {
-            event.preventDefault();
-            var file_name = $('#fileToUpload_mobile').val();
-            if (file_name == '') {
-                $('#alert_id_file_not_select_mobile').css('display', 'block');
-                $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
-                return false;
-            } else {
-                $('.preloader_mobile').css('display', 'block');
-                $.ajax({
-                    url: "php/insert_mobile.php",
-                    method: "POST",
-                    data: new FormData(this),
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(data) {
-                        // alert(data);
-                        data = jQuery.parseJSON(data);
-                        if (data.status == 201) {
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({
-                                'event': 'upload_excel_mobile'
-                            });
-                            $("#step2_mobile").css('display', 'block');
-                            $("#step1_mobile").css('display', 'none');
-                            $('.preloader_mobile').css('display', 'none');
-                            $("#read_file_mobile").val(data.filename);
-                            uploaded_file_name = data.filename;
-                        } else if (data.status == 601) {
-                            console.log(data.error);
-                            //     alert("problem with query");
-                        } else {}
-                    }
-                });
-            }
-        });
+        // $('#upload_excel_mobile').on('submit', function(event) {
+        //     event.preventDefault();
+        //     var file_name = $('#fileToUpload_mobile').val();
+        //     if (file_name == '') {
+        //         $('#alert_id_file_not_select_mobile').css('display', 'block');
+        //         $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
+        //         return false;
+        //     } else {
+        //         $('.preloader_mobile').css('display', 'block');
+        //         $.ajax({
+        //             url: "php/insert_mobile.php",
+        //             method: "POST",
+        //             data: new FormData(this),
+        //             contentType: false,
+        //             cache: false,
+        //             processData: false,
+        //             success: function(data) {
+        //                 // alert(data);
+        //                 data = jQuery.parseJSON(data);
+        //                 if (data.status == 201) {
+        //                     window.dataLayer = window.dataLayer || [];
+        //                     window.dataLayer.push({
+        //                         'event': 'upload_excel_mobile'
+        //                     });
+        //                     $("#step2_mobile").css('display', 'block');
+        //                     $("#step1_mobile").css('display', 'none');
+        //                     $('.preloader_mobile').css('display', 'none');
+        //                     $("#read_file_mobile").val(data.filename);
+        //                     uploaded_file_name = data.filename;
+        //                 } else if (data.status == 601) {
+        //                     console.log(data.error);
+        //                     //     alert("problem with query");
+        //                 } else {}
+        //             }
+        //         });
+        //     }
+        // });
 
         // ---------------------- step 2 to 3 functionality ---------------------- //
         // var alpha = "";
@@ -1630,8 +1629,8 @@ session_start();
                     //  console.log(total_data_length);
 
                     //submit step 2 by dekstop
-                    $("#submit2_desktop").click(function() {
-                        var sheet = $("#sheet").val();
+                    // $("#submit2_desktop").click(function() {
+                        var sheet = 1;
                         // var first_column = $("#first_column").val();
                         // var last_column = $("#last_column").val();
                         var first_row = 1;
@@ -1724,11 +1723,11 @@ session_start();
                         }                     
                     }
 /* ------------------------- compare data if exists end------------------------- */
-                    });
+                    // });
 
                     //submit step 2 by mobile
-                    $("#submit2_mobile").click(function() {
-                        var sheet = $("#sheet_mobile").val();
+                    // $("#submit2_mobile").click(function() {
+                        var sheet = 1;
                         // var first_column = $("#first_column_mobile").val();
                         // var last_column = $("#last_column_mobile").val();
                         var first_row = 1;
@@ -1810,7 +1809,7 @@ session_start();
                         }                     
                     }
 /* ------------------------- compare data if exists end------------------------- */
-                    });
+                    // });
 
                     jQuery('#xlx_json').val(json_object);
                     // })
@@ -1830,10 +1829,69 @@ session_start();
             var files = evt.target.files; // FileList object
             var xl2json = new ExcelToJSON();
             xl2json.parseExcel(files[0]);
+            $.ajax({
+                    url: "php/insert.php",
+                    type: "POST",
+                    data: new FormData(upload_excel),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        // alert(data);
+                        data = jQuery.parseJSON(data);
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'upload_excel'
+                            });
+                            // $("#step2").css('display', 'block');
+                            $("#step1").css('display', 'none');
+                            $('.preloader').css('display', 'none');
+                            $("#read_file").val(data.filename);
+                            uploaded_file_name = data.filename;
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else {}
+                    }
+                });
             // console.log(files[0])              
         }
+        function handleFileSelect1(evt) {
+
+                    var files = evt.target.files; // FileList object
+                    var xl2json = new ExcelToJSON();
+                    xl2json.parseExcel(files[0]);
+                    $.ajax({
+                    url: "php/insert_mobile.php",
+                    method: "POST",
+                    data: new FormData(upload_excel_mobile),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        // alert(data);
+                        data = jQuery.parseJSON(data);
+                        if (data.status == 201) {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({
+                                'event': 'upload_excel_mobile'
+                            });
+                            // $("#step2_mobile").css('display', 'block');
+                            $("#step1_mobile").css('display', 'none');
+                            $('.preloader_mobile').css('display', 'none');
+                            $("#read_file_mobile").val(data.filename);
+                            uploaded_file_name = data.filename;
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else {}
+                    }
+                });
+                    // console.log(files[0])              
+                    }
         if (document.getElementById("fileToUpload").value == "") {
-            document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect, false);
+            document.getElementById('fileToUpload_mobile').addEventListener('change', handleFileSelect1, false);
         }
         document.getElementById('fileToUpload').addEventListener('change', handleFileSelect, false);
 
