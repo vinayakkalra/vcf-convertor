@@ -1627,52 +1627,24 @@ session_start();
                     // console.log(JSON.parse(json_object));
                     // console.log(JSON.parse(json_object).length);
                     total_data_length = (JSON.parse(json_object).length) + 1;
-                     console.log(total_data_length);
+                    //  console.log(total_data_length);
 
                     //submit step 2 by dekstop
                     $("#submit2_desktop").click(function() {
                         var sheet = $("#sheet").val();
                         // var first_column = $("#first_column").val();
                         // var last_column = $("#last_column").val();
-                         var first_row = 1;
-                         var last_row = total_data_length;
+                        var first_row = 1;
+                        var last_row = total_data_length;
                         var show_data = "";
                         var error = "";                     
-
-                        // /* ----------------------------- row bound check ---------------------------- */
-
-                        // var row_check_start = parseInt(first_row, 10);
-                        // var row_check_end = parseInt(last_row, 10);
-                        // if (row_check_start > total_data_length) {
-                        //     $("#first_row").css('border-color', 'red');
-                        //     $("#first_row").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        //     $('#alert_id_total_data').css('display', 'block');
-                        //     $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
-                        // } else {
-                        //     $("#first_row").css('border-color', '#C0BBBB');
-                        //     $("#first_row").css('border-width', '1px');
-                        //     $('#alert_id_total_data').css('display', 'none');
-                        // }
-                        // if (row_check_end > total_data_length) {
-                        //     $("#last_row").css('border-color', 'red');
-                        //     $("#last_row").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        //     $('#alert_id_total_data').css('display', 'block');
-                        //     $('#alert_id_total_data').html("You have total "+(total_data_length-1)+" data");
-                        // } else {
-                        //     $("#last_row").css('border-color', '#C0BBBB');
-                        //     $("#last_row").css('border-width', '1px');                            
-                        // }
-
-                        // /* --------------------------- row bound check end -------------------------- */
 
                         if (error == "") {
                             $('.preloader').css('display', 'block');
                             // row_start = first_row;
                             // row_end = last_row;
-                            row_start = 0;
-                            row_end = total_data_length;
+                            row_start = 1;
+                            row_end = total_data_length-1;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1685,27 +1657,19 @@ session_start();
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
                                 $('.preloader').css('display', 'none');
-                                // var string_raw = "";
-                                // if (first_column.charCodeAt(0) > last_column.charCodeAt(0)) {
-                                //     string_raw = first_column;
-                                //     first_column = last_column;
-                                //     last_column = string_raw;
-                                //     string_raw = "";
-                                // }
                                 // console.log("first_column="+first_column);
                                     var number_data=Object.keys(JSON.parse(json_object)[0]).length;
                                     total_value_row=number_data;
-                                //  console.log(number_data);
-                                
+                                //   console.log(number_data);                                
                                 for (var i = 1; i <= number_data; i++) { //alphabetical loop selected according to user
                                     // var j=(i.charCodeAt(0)-97);
                                     total_data_come = number_data;
-                                    console.log(total_data_come);
+                                    // console.log(total_data_come);
                                     var show_data = Object.keys(JSON.parse(json_object)[0])[i - 1]; //give  indexing 
 
                                     /* --------------------------------- testing -------------------------------- */
 
-                                    console.log(show_data);
+                                    // console.log(show_data);
 
                                     /* --------------------------------- testing -------------------------------- */
 
@@ -1732,7 +1696,8 @@ session_start();
 /* ------------------------- compare data if exists start------------------------- */                   
                     for(i=0;i<total_value_row;i++){
                         // console.log((arr_data[i]));
-                        var lowercase= arr_data[i].toLowerCase();                      
+                        var lowercase= arr_data[i].toLowerCase();
+                        // console.log(lowercase);                     
                         // if(lowercase == 'firstname'){  
                         //     $("#column"+i).val("first_name");
                         // }
@@ -1769,54 +1734,12 @@ session_start();
                         var first_row = 1;
                         var last_row = total_data_length;
                         var show_data = "";
-                        var error = "";
-                        // if (first_row == "") {
-                        //     $("#first_row_mobile").css('border-color', 'red');
-                        //     $("#first_row_mobile").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        // } else {
-                        //     $("#first_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#first_row_mobile").css('border-width', '1px');
-                        // }
-                        // if (last_row == "") {
-                        //     $("#last_row_mobile").css('border-color', 'red');
-                        //     $("#last_row_mobile").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        // } else {
-                        //     $("#last_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#last_row_mobile").css('border-width', '1px');
-                        // }
-                        /* ----------------------------- row bound check mobile ---------------------------- */
-
-                        // var row_check_start = parseInt(first_row, 10);
-                        // var row_check_end = parseInt(last_row, 10);
-                        // if (row_check_start > total_data_length) {
-                        //     $("#first_row_mobile").css('border-color', 'red');
-                        //     $("#first_row_mobile").css('border-width', '2px');
-                        //     error = error + 'first_row';
-                        //     $('#alert_id_total_data_mobile').css('display', 'block');
-                        //     $('#alert_id_total_data_mobile').html("You have total "+(total_data_length-1)+" data");
-                        // } else {
-                        //     $("#first_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#first_row_mobile").css('border-width', '1px');
-                        //     $('#alert_id_total_data_mobile').css('display', 'none');
-                        // }
-                        // if (row_check_end > total_data_length) {
-                        //     $("#last_row_mobile").css('border-color', 'red');
-                        //     $("#last_row_mobile").css('border-width', '2px');
-                        //     error = error + 'last_row';
-                        //     $('#alert_id_total_data_mobile').css('display', 'block');
-                        //     $('#alert_id_total_data_mobile').html("You have total "+(total_data_length-1)+" data");
-                        // } else {
-                        //     $("#last_row_mobile").css('border-color', '#C0BBBB');
-                        //     $("#last_row_mobile").css('border-width', '1px');
-                            
-                        // }
+                        var error = "";                        
                         /* --------------------------- row bound check end mobile-------------------------- */
                         if (error == "") {
                             $('.preloader_mobile').css('display', 'block');
                             row_start = 1;
-                            row_end = total_data_length;
+                            row_end = total_data_length-1;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
                                 var sheetName = sheet;
@@ -1828,16 +1751,10 @@ session_start();
                                 $("#step3_mobile").css('display', 'block');
                                 $("#step2_mobile").css('display', 'none');
                                 $('.preloader_mobile').css('display', 'none');
-                                var string_raw = "";
-                                // if (first_column.charCodeAt(0) > last_column
-                                //     .charCodeAt(0)) {
-                                //     string_raw = first_column;
-                                //     first_column = last_column;
-                                //     last_column = string_raw;
-                                //     string_raw = "";
-                                // }
+                                var string_raw = "";                                
                                 // console.log("first_column="+first_column);
                                 var number_data=Object.keys(JSON.parse(json_object)[0]).length;
+                                total_value_row=number_data;
                                 // console.log("last_column="+last_column);
                                 for (var i = 1; i <= number_data; i++) {
                                     // var j=(i.charCodeAt(0)-97);
@@ -1855,12 +1772,44 @@ session_start();
                                         (i - 1) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email (Work)</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option><option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option><option value="address">Address (Home)</option><option value="address_work">Address (Office)</option> <option value="website">Website</option><option value="email_personal">Email (Personal)</option><option value="phone_home">Tel (Home)</option><option value="phone_office">Tel (Office)</option></select></div>'
                                     );
+                                    arr_data.push(show_data);
                                     // console.log(String.fromCharCode(i));
                                 }
                             } else {
                                 alert("Sheet not found in file");
                             }
                         }
+                        /* ------------------------- compare data if exists start------------------------- */                   
+                    for(i=0;i<total_value_row;i++){
+                        // console.log((arr_data[i]));
+                        var lowercase= arr_data[i].toLowerCase();
+                        // console.log(lowercase);                     
+                        // if(lowercase == 'firstname'){  
+                        //     $("#column"+i).val("first_name");
+                        // }
+                        // if((arr_data[i]) == 'lastname'){  
+                        //     $("#column"+i).val("last_name");
+                        // }
+                        if(lowercase.includes("first")){
+                            $("#column_mobile"+i).val("first_name");
+                        }
+                        if(lowercase.includes("last")){
+                            $("#column_mobile"+i).val("last_name");
+                        }
+                        if(lowercase.includes("email")){
+                            $("#column_mobile"+i).val("email");
+                        }
+                        if(lowercase.includes("phone")){
+                            $("#column_mobile"+i).val("mobile");
+                        }
+                        if(lowercase.includes("mobile")){
+                            $("#column_mobile"+i).val("mobile");
+                        }
+                        if(lowercase.includes("address")){
+                            $("#column_mobile"+i).val("address_work");
+                        }                     
+                    }
+/* ------------------------- compare data if exists end------------------------- */
                     });
 
                     jQuery('#xlx_json').val(json_object);
@@ -1900,13 +1849,13 @@ session_start();
             var take;
             var take2 = [];
             json_array = keys_change;
-            for (var i = 1; i <= total_data_come; i++) {
+            for (var i = 0; i <total_data_come; i++) {
                 column_array[i] = $("#column" + i).val();
                 json_array = JSON.parse(JSON.stringify(json_array).split('"' + Object.keys(keys_change[
-                    0])[i - 1] + '":').join('"' + column_array[i] + '":'));
+                    0])[i] + '":').join('"' + column_array[i] + '":'));
                 take = json_array[0];
-                take2[i - 1] = column_array[i];
-                data_key[i] = take2[i - 1];
+                take2[i] = column_array[i];
+                data_key[i] = take2[i];
                 data_value[i] = take[data_key[i]];
             }
             /* ----------------------------get  data value to make VCF---------------------------- */
@@ -2001,26 +1950,6 @@ session_start();
                             $('.paid_person').css('display', 'none');
                         }
                         vcf()
-
-                        /* --------------------------- comment now 3 start -------------------------- */
-
-                        // for (var j = num_start; j <= num_end; j++) {
-                        //     // console.log(json_array[j-1]);
-                        //     all_data[(num_end) - (j)] = json_array[j - 1];
-                        // };
-                        // /* --------------------- data send for to make vcf files start-------------------- */
-                        // $.ajax({
-                        //     contentType: "application/json; charset=utf-8",
-                        //     type: 'POST',
-                        //     url: 'index2.php',
-                        //     data: JSON.stringify(all_data),
-                        //     success: function(data) {
-
-                        //         // window.location.href = 'index.php';                        
-
-                        //     }
-                        // });
-                        /* --------------------------- comment now 3 end -------------------------- */
                         /* --------------------- data send for to make vcf files end-------------------- */
                     }
                 });
@@ -2059,13 +1988,13 @@ session_start();
             var take;
             var take2 = [];
             json_array = keys_change;
-            for (var i = 1; i <= total_data_come; i++) {
+            for (var i = 0; i < total_data_come; i++) {
                 column_array[i] = $("#column_mobile" + i).val();
                 json_array = JSON.parse(JSON.stringify(json_array).split('"' + Object.keys(keys_change[
-                    0])[i - 1] + '":').join('"' + column_array[i] + '":'));
+                    0])[i] + '":').join('"' + column_array[i] + '":'));
                 take = json_array[0];
-                take2[i - 1] = column_array[i];
-                data_key[i] = take2[i - 1];
+                take2[i] = column_array[i];
+                data_key[i] = take2[i];
                 data_value[i] = take[data_key[i]];
             }
 
@@ -2082,17 +2011,6 @@ session_start();
             }
             num_end2 = num_end;
             /* -------------------------- get data value to make VCF for mobile end -------------------------- */
-            // for (var i = 1; i <= total_data_come; i++) {
-            //     if (column_array[i] == "") {
-            //         $("#column_mobile" + i).css('border-color', 'red');
-            //         $("#column_mobile" + i).css('border-width', '2px');
-            //         error = error + 'column_array[' + i + ']';
-            //     } else {
-            //         $("#column_mobile" + i).css('border-color', '#C0BBBB');
-            //         $("#column_mobile" + i).css('border-width', '1px');
-            //     }
-            // }
-            // if (error == "") {
                 $('.preloader_mobile').css('display', 'block');
                 $.ajax({
                     type: 'POST',
@@ -2158,25 +2076,7 @@ session_start();
                             $('.paid_person').css('display', 'none');
                         }
                         vcf()
-                        /* ------------------------------ comment now 2 start----------------------------- */
-
-                        // for (var j = num_start; j <= num_end; j++) {
-                        //     // console.log(json_array[j-1]);
-                        //     all_data[(num_end) - (j)] = json_array[j - 1];
-                        // };
-                        // /* --------------------- data send for to make vcf files start-------------------- */
-                        // $.ajax({
-                        //     contentType: "application/json; charset=utf-8",
-                        //     type: 'POST',
-                        //     url: 'index2.php',
-                        //     data: JSON.stringify(all_data),
-                        //     success: function(data) {
-
-                        //         // window.location.href = 'index.php';                        
-
-                        //     }
-                        // });
-                        /* ------------------------------ comment now 2 end----------------------------- */
+                       
                         /* --------------------- data send for to make vcf files end-------------------- */
                     }
 
@@ -2186,12 +2086,7 @@ session_start();
                 $('.preloader_mobile').css('display', 'none');
                 var file_start_char = uploaded_file_name.substring(0, 2);
                 $('.vcf_filename').html(file_start_char + '****.vcf is ready to download');               
-            // } else {
-            //     $('#pop_up_desktop').modal('hide');
-            //     $('#step3_mobile').css('display', 'block');
-            //     $('.preloader_mobile').css('display', 'none');
-            //     $('#step4_mobile').css('display', 'none');
-            // }
+            
             $('#signin_link').click(function() {
                 $('#sign_in_page').css('display', 'block');
                 $('#sign_up_page').css('display', 'none');
@@ -2545,26 +2440,7 @@ session_start();
                                         $('.paid_person').css('display', 'none');
                                     }
                                     vcf()
-                                    /* ------------------------------ comment now 1 start----------------------------- */
-
-                                    // for (var j = num_start; j <= num_end; j++) {
-                                    //     // console.log(json_array[j-1]);
-                                    //     all_data[(num_end) - (j)] = json_array[
-                                    //         j - 1];
-                                    // };
-                                    // /* --------------------- data send for to make vcf files start-------------------- */
-                                    // $.ajax({
-                                    //     contentType: "application/json; charset=utf-8",
-                                    //     type: 'POST',
-                                    //     url: 'index2.php',
-                                    //     data: JSON.stringify(all_data),
-                                    //     success: function(data) {
-
-                                    //         // window.location.href = 'index.php';                        
-
-                                    //     }
-                                    // });
-                                    /* ------------------------------ comment now 1 end----------------------------- */
+                                    
                                     /* --------------------- data send for to make vcf files end-------------------- */
                                 }
 
