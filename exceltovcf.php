@@ -397,7 +397,7 @@ session_start();
                                             <div class="form-row">
 
                                                 <div class="wrap-col select_file_text pb-3">
-                                                    Step 3 : Tell about data in each column
+                                                    Step 2 : Tell about data in each column
                                                 </div>
                                             </div>
                                             <div id="step3_dyanamic_data">
@@ -1211,7 +1211,7 @@ session_start();
                                         <form name="step3_mobile">
                                             <div class="form-row">
                                                 <div class="wrap-col select_file_text pb-3">
-                                                    Step 3 : Tell about data in each column
+                                                    Step 2 : Tell about data in each column
                                                 </div>
                                             </div>
                                             <div id="step3_dyanamic_data_mobile">
