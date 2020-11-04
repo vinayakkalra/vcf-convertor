@@ -1518,86 +1518,9 @@ session_start();
         var total_value_row=0;
 
 
-        // ------------------------ step 1 to 2 functionality ------------------------- //
+        
 
         // ----------------------------- for desktop ----------------------------- //
-
-
-        // $('#upload_excel').on('submit', function(event) {
-        //     event.preventDefault();
-        //     var file_name = $('#fileToUpload').val();
-        //     if (file_name == '') {
-        //         $('#alert_id_file_not_select').css('display', 'block');
-        //         $('#alert_id_file_not_select').html("* Please Select excel file");
-        //         return false;
-        //     } else {
-        //         $('.preloader').css('display', 'block');
-        //         $.ajax({
-        //             url: "php/insert.php",
-        //             type: "POST",
-        //             data: new FormData(this),
-        //             contentType: false,
-        //             cache: false,
-        //             processData: false,
-        //             success: function(data) {
-        //                 // alert(data);
-        //                 data = jQuery.parseJSON(data);
-        //                 if (data.status == 201) {
-        //                     window.dataLayer = window.dataLayer || [];
-        //                     window.dataLayer.push({
-        //                         'event': 'upload_excel'
-        //                     });
-        //                     $("#step2").css('display', 'block');
-        //                     $("#step1").css('display', 'none');
-        //                     $('.preloader').css('display', 'none');
-        //                     $("#read_file").val(data.filename);
-        //                     uploaded_file_name = data.filename;
-        //                 } else if (data.status == 601) {
-        //                     console.log(data.error);
-        //                     //     alert("problem with query");
-        //                 } else {}
-        //             }
-        //         });
-        //     }
-        // });
-        //  for mobile
-        // $('#upload_excel_mobile').on('submit', function(event) {
-        //     event.preventDefault();
-        //     var file_name = $('#fileToUpload_mobile').val();
-        //     if (file_name == '') {
-        //         $('#alert_id_file_not_select_mobile').css('display', 'block');
-        //         $('#alert_id_file_not_select_mobile').html("* Please Select excel file");
-        //         return false;
-        //     } else {
-        //         $('.preloader_mobile').css('display', 'block');
-        //         $.ajax({
-        //             url: "php/insert_mobile.php",
-        //             method: "POST",
-        //             data: new FormData(this),
-        //             contentType: false,
-        //             cache: false,
-        //             processData: false,
-        //             success: function(data) {
-        //                 // alert(data);
-        //                 data = jQuery.parseJSON(data);
-        //                 if (data.status == 201) {
-        //                     window.dataLayer = window.dataLayer || [];
-        //                     window.dataLayer.push({
-        //                         'event': 'upload_excel_mobile'
-        //                     });
-        //                     $("#step2_mobile").css('display', 'block');
-        //                     $("#step1_mobile").css('display', 'none');
-        //                     $('.preloader_mobile').css('display', 'none');
-        //                     $("#read_file_mobile").val(data.filename);
-        //                     uploaded_file_name = data.filename;
-        //                 } else if (data.status == 601) {
-        //                     console.log(data.error);
-        //                     //     alert("problem with query");
-        //                 } else {}
-        //             }
-        //         });
-        //     }
-        // });
 
         // ---------------------- step 2 to 3 functionality ---------------------- //
         // var alpha = "";
@@ -1829,6 +1752,7 @@ session_start();
             var files = evt.target.files; // FileList object
             var xl2json = new ExcelToJSON();
             xl2json.parseExcel(files[0]);
+            // ------------------------ step 1 to 2 functionality for desktop------------------------- //
             $.ajax({
                     url: "php/insert.php",
                     type: "POST",
@@ -1858,6 +1782,7 @@ session_start();
             // console.log(files[0])              
         }
         function handleFileSelect1(evt) {
+// ------------------------ step 1 to 2 functionality for mobile------------------------- //
 
                     var files = evt.target.files; // FileList object
                     var xl2json = new ExcelToJSON();
