@@ -1643,6 +1643,9 @@ session_start();
                         }
                         if(lowercase.includes("address")){
                             $("#column"+i).val("address_work");
+                        }
+                        if(lowercase.includes("e-mail")){
+                            $("#column"+i).val("email");
                         }                     
                     }
 /* ------------------------- compare data if exists end------------------------- */
@@ -1729,6 +1732,9 @@ session_start();
                         }
                         if(lowercase.includes("address")){
                             $("#column_mobile"+i).val("address_work");
+                        }
+                        if(lowercase.includes("e-mail")){
+                            $("#column_mobile"+i).val("email");
                         }                     
                     }
 /* ------------------------- compare data if exists end------------------------- */
