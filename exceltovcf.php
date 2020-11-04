@@ -368,93 +368,7 @@ session_start();
                                                     <input name="sheet" type="number" required="required" id="sheet"
                                                         max="9999" min="1" value="1" class="form-control">
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="first_column" class="col-3">First Column:</label>
-                                                <div class="col-9">
-                                                    <select name="first_column" id="first_column" required=""
-                                                        class="form-control">
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                        <option value="M">M</option>
-                                                        <option value="N">N</option>
-                                                        <option value="O">O</option>
-                                                        <option value="P">P</option>
-                                                        <option value="Q">Q</option>
-                                                        <option value="R">R</option>
-                                                        <option value="S">S</option>
-                                                        <option value="T">T</option>
-                                                        <option value="U">U</option>
-                                                        <option value="V">V</option>
-                                                        <option value="W">W</option>
-                                                        <option value="X">X</option>
-                                                        <option value="Y">Y</option>
-                                                        <option value="Z">Z</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="last_column" class="col-3">Last Column:</label>
-                                                <div class="col-9">
-                                                    <select name="last_column" id="last_column" required=""
-                                                        class="form-control">
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                        <option value="M">M</option>
-                                                        <option value="N">N</option>
-                                                        <option value="O">O</option>
-                                                        <option value="P">P</option>
-                                                        <option value="Q">Q</option>
-                                                        <option value="R">R</option>
-                                                        <option value="S">S</option>
-                                                        <option value="T">T</option>
-                                                        <option value="U">U</option>
-                                                        <option value="V">V</option>
-                                                        <option value="W">W</option>
-                                                        <option value="X">X</option>
-                                                        <option value="Y">Y</option>
-                                                        <option value="Z">Z</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="first_row" class="col-3">First Row
-                                                    Number:</label>
-                                                <div class="col-9">
-                                                    <input type="number" name="first_row" id="first_row" min="1"
-                                                        max="9999" class="form-control" autocomplete="off">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="last_row" class="col-3">Last Row
-                                                    Number:</label>
-                                                <div class="col-9">
-                                                    <input type="number" name="last_row" id="last_row" min="1"
-                                                        max="9999" autocomplete="off" class="form-control">
-                                                </div>
-                                            </div>
+                                            </div>                                            
                                             <div class="preloader">
                                                 <div class="row d-flex justify-content-center">
                                                     <div class="loadingio-spinner-rolling-n1r2sb8my0m">
@@ -1270,101 +1184,7 @@ session_start();
                                                         id="sheet_mobile" max="9999" min="1" value="1"
                                                         class="form-control">
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="first_column_mobile" class="col">First Column:</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col">
-                                                    <select name="first_column_mobile" id="first_column_mobile"
-                                                        required="" class="form-control">
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                        <option value="M">M</option>
-                                                        <option value="N">N</option>
-                                                        <option value="O">O</option>
-                                                        <option value="P">P</option>
-                                                        <option value="Q">Q</option>
-                                                        <option value="R">R</option>
-                                                        <option value="S">S</option>
-                                                        <option value="T">T</option>
-                                                        <option value="U">U</option>
-                                                        <option value="V">V</option>
-                                                        <option value="W">W</option>
-                                                        <option value="X">X</option>
-                                                        <option value="Y">Y</option>
-                                                        <option value="Z">Z</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="last_column_mobile" class="col">Last Column:</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col">
-                                                    <select name="last_column_mobile" id="last_column_mobile"
-                                                        required="" class="form-control">
-                                                        <option value="A">A</option>
-                                                        <option value="B">B</option>
-                                                        <option value="C">C</option>
-                                                        <option value="D">D</option>
-                                                        <option value="E">E</option>
-                                                        <option value="F">F</option>
-                                                        <option value="G">G</option>
-                                                        <option value="H">H</option>
-                                                        <option value="I">I</option>
-                                                        <option value="J">J</option>
-                                                        <option value="K">K</option>
-                                                        <option value="L">L</option>
-                                                        <option value="M">M</option>
-                                                        <option value="N">N</option>
-                                                        <option value="O">O</option>
-                                                        <option value="P">P</option>
-                                                        <option value="Q">Q</option>
-                                                        <option value="R">R</option>
-                                                        <option value="S">S</option>
-                                                        <option value="T">T</option>
-                                                        <option value="U">U</option>
-                                                        <option value="V">V</option>
-                                                        <option value="W">W</option>
-                                                        <option value="X">X</option>
-                                                        <option value="Y">Y</option>
-                                                        <option value="Z">Z</option>
-
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="first_row_mobile" class="col">First Row
-                                                    Number:</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col">
-                                                    <input type="number" name="first_row_mobile" id="first_row_mobile"
-                                                        min="1" max="9999" required="required" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="last_row_mobile" class="col">Last Row
-                                                    Number:</label>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col">
-                                                    <input type="number" name="last_row_mobile" id="last_row_mobile"
-                                                        min="1" max="9999" required="required" autocomplete="off"
-                                                        class="form-control">
-                                                </div>
-                                            </div>
+                                            </div>                                            
                                             <div class="preloader_mobile">
                                                 <div class="row d-flex justify-content-center">
                                                     <div class="loadingio-spinner-rolling-n1r2sb8my0m">
@@ -1695,6 +1515,9 @@ session_start();
         var user_email = "";
         var user_mobile = "";
         var GetSubscriberId_Basic = "";
+        var arr_data = [];
+        var total_value_row=0;
+
 
         // ------------------------ step 1 to 2 functionality ------------------------- //
 
@@ -1811,8 +1634,8 @@ session_start();
                         var sheet = $("#sheet").val();
                         // var first_column = $("#first_column").val();
                         // var last_column = $("#last_column").val();
-                        //  var first_row = 1;
-                        //  var last_row = total_data_length;
+                         var first_row = 1;
+                         var last_row = total_data_length;
                         var show_data = "";
                         var error = "";                     
 
@@ -1848,7 +1671,7 @@ session_start();
                             $('.preloader').css('display', 'block');
                             // row_start = first_row;
                             // row_end = last_row;
-                            row_start = 1;
+                            row_start = 0;
                             row_end = total_data_length;
                             if (json_object_length >= sheet) {
                                 sheet = workbook.SheetNames[sheet - 1];
@@ -1862,15 +1685,16 @@ session_start();
                                 $("#step3").css('display', 'block');
                                 $("#step2").css('display', 'none');
                                 $('.preloader').css('display', 'none');
-                                var string_raw = "";
-                                if (first_column.charCodeAt(0) > last_column.charCodeAt(0)) {
-                                    string_raw = first_column;
-                                    first_column = last_column;
-                                    last_column = string_raw;
-                                    string_raw = "";
-                                }
+                                // var string_raw = "";
+                                // if (first_column.charCodeAt(0) > last_column.charCodeAt(0)) {
+                                //     string_raw = first_column;
+                                //     first_column = last_column;
+                                //     last_column = string_raw;
+                                //     string_raw = "";
+                                // }
                                 // console.log("first_column="+first_column);
                                     var number_data=Object.keys(JSON.parse(json_object)[0]).length;
+                                    total_value_row=number_data;
                                 //  console.log(number_data);
                                 
                                 for (var i = 1; i <= number_data; i++) { //alphabetical loop selected according to user
@@ -1897,13 +1721,44 @@ session_start();
                                         (i - 1) +
                                         '" required=""class="form-control"><option value=""> -- select an option -- </option> <option value="first_name">First Name</option> <option value="last_name">Last Name</option> <option value="email">Email (Work)</option> <option value="mobile">Mobile No.</option> <option value="tel_office">Profession</option> <option value="tel_home">Position</option> <option value="fax">Department</option> <option value="company">Company Name</option> <option value="city">About</option> <option value="nickname">Nickname</option> <option value="address">Address (Home)</option><option value="address_work">Address (Office)</option><option value="website">Website</option><option value="email_personal">Email (Personal)</option><option value="phone_home">Tel (Home)</option><option value="phone_office">Tel (Office)</option></select></div>'
                                     );
+                                    arr_data.push(show_data);
                                     // console.log(String.fromCharCode(i));
                                 }
-
                             } else {
                                 alert("Sheet not found in file");
                             }
                         }
+
+/* ------------------------- compare data if exists start------------------------- */                   
+                    for(i=0;i<total_value_row;i++){
+                        // console.log((arr_data[i]));
+                        var lowercase= arr_data[i].toLowerCase();                      
+                        // if(lowercase == 'firstname'){  
+                        //     $("#column"+i).val("first_name");
+                        // }
+                        // if((arr_data[i]) == 'lastname'){  
+                        //     $("#column"+i).val("last_name");
+                        // }
+                        if(lowercase.includes("first")){
+                            $("#column"+i).val("first_name");
+                        }
+                        if(lowercase.includes("last")){
+                            $("#column"+i).val("last_name");
+                        }
+                        if(lowercase.includes("email")){
+                            $("#column"+i).val("email");
+                        }
+                        if(lowercase.includes("phone")){
+                            $("#column"+i).val("mobile");
+                        }
+                        if(lowercase.includes("mobile")){
+                            $("#column"+i).val("mobile");
+                        }
+                        if(lowercase.includes("address")){
+                            $("#column"+i).val("address_work");
+                        }                     
+                    }
+/* ------------------------- compare data if exists end------------------------- */
                     });
 
                     //submit step 2 by mobile
@@ -1911,8 +1766,8 @@ session_start();
                         var sheet = $("#sheet_mobile").val();
                         // var first_column = $("#first_column_mobile").val();
                         // var last_column = $("#last_column_mobile").val();
-                        // var first_row = $("#first_row_mobile").val();
-                        // var last_row = $("#last_row_mobile").val();
+                        var first_row = 1;
+                        var last_row = total_data_length;
                         var show_data = "";
                         var error = "";
                         // if (first_row == "") {
@@ -1974,13 +1829,13 @@ session_start();
                                 $("#step2_mobile").css('display', 'none');
                                 $('.preloader_mobile').css('display', 'none');
                                 var string_raw = "";
-                                if (first_column.charCodeAt(0) > last_column
-                                    .charCodeAt(0)) {
-                                    string_raw = first_column;
-                                    first_column = last_column;
-                                    last_column = string_raw;
-                                    string_raw = "";
-                                }
+                                // if (first_column.charCodeAt(0) > last_column
+                                //     .charCodeAt(0)) {
+                                //     string_raw = first_column;
+                                //     first_column = last_column;
+                                //     last_column = string_raw;
+                                //     string_raw = "";
+                                // }
                                 // console.log("first_column="+first_column);
                                 var number_data=Object.keys(JSON.parse(json_object)[0]).length;
                                 // console.log("last_column="+last_column);
@@ -2007,6 +1862,7 @@ session_start();
                             }
                         }
                     });
+
                     jQuery('#xlx_json').val(json_object);
                     // })
                 };
