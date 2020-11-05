@@ -268,7 +268,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="col-8 exceltovcf_text">
-                                <p>CSVTOVCF is a simple, 3-step tool where you can convert your contact details in excel /
+                                <p>CSVTOVCF is a simple, 2-step tool where you can convert your contact details in excel /
                                     spreadsheet to vCard (3.0) format. Supported formats are: xls, xlsx and csv. This
                                     format is most suitable for importing contacts in mobile devices. Although it is a
                                     general contact format which can be opened in any computer. But you should note that
@@ -279,13 +279,12 @@ session_start();
                                 <h4 style="font-weight: 500;">Follow these steps to convert Excel (xls/xslx/csv) to
                                     vCard vcf</h4>
                                 <ol style="list-style: decimal;padding-left: 4rem;">
-                                    <li>Upload Excel/csv file to convert. </li>
-                                    <li>Select first row,column and last row,column as per data in you sheet. </li>
+                                    <li>Upload Excel/csv file to convert. </li>                                   
                                     <li>Select which column contains what data. Example, which column contains name?
                                         which contains numbers? and so on. And input your email address. Done. </li>
-                                    <li>You will receive demo vcf file in your email address, containing your few
+                                    <li>You will receive demo vcf file to download containing your few
                                         contacts. If you are satisfied, you can make very small payment to receive full
-                                        vcf file with all contacts. <u>Now updated to work with iOS Apple devices</u>
+                                        vcf file with all contacts.
                                     </li>
                                 </ol>
                                 </p>
@@ -1081,14 +1080,13 @@ session_start();
                     <p class="mt-5">
                     <h4 style="font-weight:500">Follow these steps to convert Excel (xls/xslx/csv) to vCard vcf</h4>
                     <ol style="padding-left:4rem;list-style:decimal;" class="mt-3">
-                        <li>Upload Excel/csv file to convert. </li>
-                        <li>Select first row,column and last row,column as per data in you sheet. </li>
-                        <li>Select which column contains what data. Example, which column contains name?
-                            which contains numbers? and so on. And input your email address. Done. </li>
-                        <li>You will receive demo vcf file in your email address, containing your few
-                            contacts. If you are satisfied, you can make very small payment to receive full
-                            vcf file with all contacts. <u>Now updated to work with iOS Apple devices</u>
-                        </li>
+                    <li>Upload Excel/csv file to convert. </li>                                   
+                    <li>Select which column contains what data. Example, which column contains name?
+                        which contains numbers? and so on. And input your email address. Done. </li>
+                    <li>You will receive demo vcf file to download containing your few
+                        contacts. If you are satisfied, you can make very small payment to receive full
+                        vcf file with all contacts.
+                    </li>
                     </ol>
                     </p>
                 </div>
