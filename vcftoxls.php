@@ -962,7 +962,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                     <div class="container">
                         <div class="row pb-3">
                             <div class="col exceltovcf_heading_mobile d-flex justify-content-start">
-                                <h3><span>Convert</span> Excel <span>to</span> VCF</h3>
+                                <h3><span>Convert</span> VCF <span>to</span> Excel</h3>
                             </div>
                         </div>
                     </div>
