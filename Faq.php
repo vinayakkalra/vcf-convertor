@@ -259,10 +259,8 @@ session_start();
                                                 <h4 id="Q6" class="medium">How can I convert Excel/CSV to VCF files?</h4>
                                                 <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
                                                         title="Go to the main conversion page">main conversion page</a>
-                                                    by clicking the "Excel/CSV to VCF" image or Goto header and click on Tools and select ExceltoVCf,Now you on Step-1 click on "choose file" to browsing your file, selecting
-                                                    the relevant file click on  the "SUBMIT" button.
-                                                    Now you on Step-2 here you can fill your sheet number start column,end column and you must have fill start row and end row,than click on submit.
-                                                    Now you on Step-3 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
+                                                        by clicking the "Excel/CSV to VCF" image or Goto header and click on Tools and select ExceltoVCf,Now you on Step-1 click on "choose file" to browsing your file, selecting
+                                        the relevant file click on  the "SUBMIT" button.Now you on Step-2 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
                                                     </p>
                                             </li>
                                             <li class="mb-16">
@@ -775,9 +773,7 @@ session_start();
                                     <p>You can convert files from your computer on CSVTOVCF on our <a href="/"
                                             title="Go to the main conversion page">main conversion page</a>
                                         by clicking the "Excel/CSV to VCF" image or Goto header and click on Tools and select ExceltoVCf,Now you on Step-1 click on "choose file" to browsing your file, selecting
-                                        the relevant file click on  the "SUBMIT" button.
-                                        Now you on Step-2 here you can fill your sheet number start column,end column and you must have fill start row and end row,than click on submit.
-                                        Now you on Step-3 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
+                                        the relevant file click on  the "SUBMIT" button.Now you on Step-2 here you have to tell about your data in each column.than click on next button.If you are already login than click on download or first login than download your files.
                                         </p>
                                 </li>
                                 <li class="mb-16">
