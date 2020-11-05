@@ -184,7 +184,7 @@ session_start();
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="wrap-col">
-                                            <div class="item-container">
+                                            <div class="item-container" style="margin-bottom: 5px;">
                                                 <a href="exceltovcf">
                                                     <div class="item-caption">
                                                         <div class="item-caption-inner">
@@ -200,10 +200,13 @@ session_start();
                                                 </a>
                                             </div>
                                         </div>
+                                        <div class="row d-flex justify-content-center pb-3">
+                                            <a href="exceltovcf" class="btn btn-success" style="color: #fff;">Excel / CSV To VCF</a>
+                                        </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="wrap-col">
-                                            <div class="item-container">
+                                            <div class="item-container" style="margin-bottom: 5px;">
                                                 <a href="vcftoxls">
                                                     <div class="item-caption">
                                                         <div class="item-caption-inner">
@@ -218,6 +221,9 @@ session_start();
                                                         title="Excel/CSV to VCF/vCard Converter">
                                                 </a>
                                             </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center pb-3">
+                                            <a href="vcftoxls" class="btn btn-success" style="color: #fff;">VCF To CSV</a>
                                         </div>
                                     </div>
                                     <!-- <div class="col-4">
@@ -636,7 +642,7 @@ session_start();
                             <div class="row d-flex justify-content-center">
                                 <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
-                                        <div class="item-container">
+                                        <div class="item-container" style="margin-bottom: 10px;">
                                             <a href="exceltovcf">
                                                 <div class="item-caption">
                                                     <div class="item-caption-inner">
@@ -651,13 +657,16 @@ session_start();
                                                     title="Excel/CSV to VCF/vCard Converter">
                                             </a>
                                         </div>
+                                        <div class="row d-flex justify-content-center pb-4">
+                                            <a href="exceltovcf" class="btn btn-success" style="color: #fff;">Excel / CSV to VCF</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-8 d-flex justify-content-center">
                                     <div class="wrap-col">
-                                        <div class="item-container">
+                                        <div class="item-container" style="margin-bottom: 10px;">
                                             <a href="vcftoxls">
                                                 <div class="item-caption">
                                                     <div class="item-caption-inner">
@@ -671,6 +680,9 @@ session_start();
                                                     alt="Online Excel/CSV to VCF Converter free"
                                                     title="Excel/CSV to VCF/vCard Converter">
                                             </a>
+                                        </div>
+                                        <div class="row d-flex justify-content-center pb-3">
+                                            <a href="vcftoxls" class="btn btn-success" style="color: #fff;">VCF to CSV</a>
                                         </div>
                                     </div>
                                 </div>
