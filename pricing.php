@@ -21,26 +21,26 @@ session_start();
     <!-- required meta tags essential for seo and link sharing -->
 
     <!-- Enter a proper description for the page in the meta description tag -->
-    <meta name="description" content="ENTER_PAGE_DESCRIPTION">
+    <meta name="description" content="CSVTOVCF is a simple, 2-step tool where you can convert your contact details in excel / spreadsheet to vCard (3.0) format">
 
     <!-- Enter a keywords for the page in tag -->
-    <meta name="Keywords" content="ENTER_KEYWORDS_HERE">
+    <meta name="Keywords" content="CSVTOVCF,VCFTOCSV, vcf converter,online converter">
 
     <!-- Enter Page title -->
-    <meta property="og:title" content="ENTER_PAGE_TITLE" />
+    <meta property="og:title" content="CSVTOVCF | #1 VCF Converter" />
 
     <!-- Enter Page URL -->
-    <meta property="og:url" content="ENTER_PAGE_URL" />
+    <meta property="og:url" content="http://csvtovcfconversion.com/" />
 
     <!-- Enter page description -->
-    <meta property="og:description" content="ENTER_PAGE_DESCRIPTION">
+    <meta property="og:description" content="You can create Excel to VCF and VCF to excel in few steps.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Enter Logo image URL for example : http://cryptonite.finstreet.in/images/cryptonitepost.png -->
-    <!-- <meta property="og:image" itemprop="image" content="ENTER_IMAGE_URL" />
-    <meta property="og:image:secure_url" itemprop="image" content="ENTER_IMAGE_URL" />
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="315">
-    <meta property="og:type" content="website" /> -->
+    <meta property="og:image" itemprop="image" content="http://csvtovcfconversion.com/images/android-chrome-192x192.png" />
+    <meta property="og:image:secure_url" itemprop="image" content="http://csvtovcfconversion.com/images/android-chrome-192x192.png" />
+    <meta property="og:image:width" content="192">
+    <meta property="og:image:height" content="192">
+    <meta property="og:type" content="website" />
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
     <!-- <link rel="icon" href="ENTER_FAVICON_LOCATION"> -->
