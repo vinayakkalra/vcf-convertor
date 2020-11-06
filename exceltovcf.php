@@ -723,7 +723,7 @@ session_start();
                         <div class="md-form mb-5">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_signup" class="form-control validate"
-                                placeholder="Your password">
+                                placeholder="Your password (minimum 6 characters)">
                         </div>
                         <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
@@ -825,7 +825,7 @@ session_start();
                         <div class="md-form mb-5">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_forgot" class="form-control validate"
-                                placeholder="New password">
+                                placeholder="New password (minimum 6 characters)">
                         </div>
                         <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
@@ -2125,10 +2125,18 @@ session_start();
                 $("#Form_pass_signup").css('border-color', '#C0BBBB');
                 $("#Form_pass_signup").css('border-width', '1px');
             }
+            if (password.length<6) {
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass_signup").css('border-width', '1px');
+            }
             if (con_password == "") {
                 $("#Form_pass2_signup").css('border-color', 'red');
                 $("#Form_pass2_signup").css('border-width', '2px');
-                error = error + 'Class';
+                error = error + 'con_password';
             } else {
                 $("#Form_pass2_signup").css('border-color', '#C0BBBB');
                 $("#Form_pass2_signup").css('border-width', '1px');
@@ -2143,9 +2151,7 @@ session_start();
             }
             if (password != con_password) {
                 $("#Form_pass2_signup").css('border-color', 'red');
-                $("#Form_pass2_signup").css('border-width', '2px');
-                $("#Form_pass_signup").css('border-color', 'red');
-                $("#Form_pass_signup").css('border-width', '2px');
+                $("#Form_pass2_signup").css('border-width', '2px');                
                 // alert('Password not match !');
                 error = error + 'password not matched';
             }
@@ -2155,26 +2161,22 @@ session_start();
                     type: 'POST',
                     url: 'php/signup_form.php',
                     dataType: "json",
-                    async: false,
                     data: {
+                        'email': email,
                         'mobile': mobile,
-                        'password': password,
-                        'email': email
+                        'password': password
                     },
                     success: function(data) {
                         // console.log(data);
                         if (data.status == 201) {
                             user_id = data.id;
-                            user_email = data.email;
-                            user_mobile = data.mobile;
-                            // console.log(data.email);
-                            // console.log(data.mobile);
+                            user_email=data.email;
                             $('#sign_up_page').css('display', 'none');
                             $('.preloader').css('display', 'none');
                             $('#sign_up_Otp').css('display', 'block');
-
+                            
                         } else if (data.status == 601) {
-                            // console.log(data.error);
+                            console.log(data.error);
                             //     alert("problem with query");
                         } else if (data.status == 301) {
                             $('#alert_id_signup').css('display', 'block');
@@ -2231,6 +2233,14 @@ session_start();
                 $("#Form_pass_forgot").css('border-color', '#C0BBBB');
                 $("#Form_pass_forgot").css('border-width', '1px');
             }
+            if (password.length<6) {
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass_forgot").css('border-width', '1px');
+            }
             if (con_password == "") {
                 $("#Form_pass2_forgot").css('border-color', 'red');
                 $("#Form_pass2_forgot").css('border-width', '2px');
@@ -2249,9 +2259,7 @@ session_start();
             }
             if (password != con_password) {
                 $("#Form_pass2_forgot").css('border-color', 'red');
-                $("#Form_pass2_forgot").css('border-width', '2px');
-                $("#Form_pass_forgot").css('border-color', 'red');
-                $("#Form_pass_forgot").css('border-width', '2px');
+                $("#Form_pass2_forgot").css('border-width', '2px');                
                 // alert('Password not match !');
                 error = error + 'password not matched';
             }

@@ -482,7 +482,7 @@ session_start();
                         <div class="md-form mb-5">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_signup" class="form-control validate"
-                                placeholder="Your password">
+                                placeholder="Your password (minimum 6 characters)">
                         </div>
                         <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
@@ -589,7 +589,7 @@ session_start();
                         <div class="md-form mb-5">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <input type="password" id="Form_pass_forgot" class="form-control validate"
-                                placeholder="New password">
+                                placeholder="New password (minimum 6 characters)">
                         </div>
                         <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
@@ -929,108 +929,114 @@ session_start();
     <script>
         $(document).ready(function () {
             // ------------------------- pop up sign up form ------------------------- //
-            $('#pop_up_signup').on("click", function () {
-                var mobile = $("#Form_phone_signup").val();
-                var password = $("#Form_pass_signup").val();
-                var con_password = $("#Form_pass2_signup").val();
-                var email = $("#Form_email_signup").val();
-                var error = "";
-                uploaded_user_name = email;
+            $('#pop_up_signup').on("click", function() {
+            var mobile = $("#Form_phone_signup").val();
+            var password = $("#Form_pass_signup").val();
+            var con_password = $("#Form_pass2_signup").val();
+            var email = $("#Form_email_signup").val();
+            var error = "";
+            uploaded_user_name = email;
 
-                function validateEmail(email) {
-                    var re =
-                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return re.test(String(email).toLowerCase());
-                }
-                if (mobile == "") {
-                    $("#Form_phone_signup").css('border-color', 'red');
-                    $("#Form_phone_signup").css('border-width', '2px');
-                    error = error + 'mobile';
-                } else {
-                    $("#Form_phone_signup").css('border-color', '#C0BBBB');
-                    $("#Form_phone_signup").css('border-width', '1px');
-                }
-                if(mobile.length!=10){
-                    $("#Form_phone_signup").css('border-color', 'red');
-                    $("#Form_phone_signup").css('border-width', '2px');
-                    error = error + 'mobile';
-                }else {
-                    $("#Form_phone_signup").css('border-color', '#C0BBBB');
-                    $("#Form_phone_signup").css('border-width', '1px');
-                }
-                if (password == "") {
-                    $("#Form_pass_signup").css('border-color', 'red');
-                    $("#Form_pass_signup").css('border-width', '2px');
-                    error = error + 'password';
-                } else {
-                    $("#Form_pass_signup").css('border-color', '#C0BBBB');
-                    $("#Form_pass_signup").css('border-width', '1px');
-                }
-                if (con_password == "") {
-                    $("#Form_pass2_signup").css('border-color', 'red');
-                    $("#Form_pass2_signup").css('border-width', '2px');
-                    error = error + 'Class';
-                } else {
-                    $("#Form_pass2_signup").css('border-color', '#C0BBBB');
-                    $("#Form_pass2_signup").css('border-width', '1px');
-                }
-                if (!validateEmail(email)) {
-                    $("#Form_email_signup").css('border-color', 'red');
-                    $("#Form_email_signup").css('border-width', '2px');
-                    error = error + 'email';
-                } else {
-                    $("#Form_email_signup").css('border-color', '#C0BBBB');
-                    $("#Form_email_signup").css('border-width', '1px');
-                }
-                if (password != con_password) {
-                    $("#Form_pass2_signup").css('border-color', 'red');
-                    $("#Form_pass2_signup").css('border-width', '2px');
-                    $("#Form_pass_signup").css('border-color', 'red');
-                    $("#Form_pass_signup").css('border-width', '2px');
-                    // alert('Password not match !');
-                    error = error + 'password not matched';
-                }
-                if (error == "") {
-                    $('.preloader').css('display', 'block');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/signup_form.php',
-                        dataType: "json",
-                        data: {
-                            'email': email,
-                            'mobile': mobile,
-                            'password': password
-                        },
-                        success: function (data) {
-                            // console.log(data);
-                            if (data.status == 201) {
-                                user_id = data.id;
-                                user_email = data.email;
-                                $('#sign_up_page').css('display', 'none');
-                                $('.preloader').css('display', 'none');
-                                $('#sign_up_Otp').css('display', 'block');
-
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            } else if (data.status == 301) {
-                                $('#alert_id_signup').css('display', 'block');
-                                $('.preloader').css('display', 'none');
-                                $('#alert_id_signup').html(data.error);
-                                // alert(data.error);
-                            } else if (data.status == 302) {
-                                $('#alert_id_signup').css('display', 'block');
-                                $('.preloader').css('display', 'none');
-                                $('#alert_id_signup').html(data.error);
-                            } else {
-                                //console.log(data.error)
-                            }
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_signup").css('border-color', 'red');
+                $("#Form_phone_signup").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                $("#Form_phone_signup").css('border-width', '1px');
+            }
+            if(mobile.length!=10){
+                $("#Form_phone_signup").css('border-color', 'red');
+                $("#Form_phone_signup").css('border-width', '2px');
+                error = error + 'mobile';
+            }else {
+                $("#Form_phone_signup").css('border-color', '#C0BBBB');
+                $("#Form_phone_signup").css('border-width', '1px');
+            }
+            if (password == "") {
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass_signup").css('border-width', '1px');
+            }
+            if (password.length<6) {
+                $("#Form_pass_signup").css('border-color', 'red');
+                $("#Form_pass_signup").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass_signup").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');
+                error = error + 'con_password';
+            } else {
+                $("#Form_pass2_signup").css('border-color', '#C0BBBB');
+                $("#Form_pass2_signup").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_signup").css('border-color', 'red');
+                $("#Form_email_signup").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_signup").css('border-color', '#C0BBBB');
+                $("#Form_email_signup").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_signup").css('border-color', 'red');
+                $("#Form_pass2_signup").css('border-width', '2px');                
+                // alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {
+                $('.preloader').css('display', 'block');
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/signup_form.php',
+                    dataType: "json",
+                    data: {
+                        'email': email,
+                        'mobile': mobile,
+                        'password': password
+                    },
+                    success: function(data) {
+                        // console.log(data);
+                        if (data.status == 201) {
+                            user_id = data.id;
+                            user_email=data.email;
+                            $('#sign_up_page').css('display', 'none');
+                            $('.preloader').css('display', 'none');
+                            $('#sign_up_Otp').css('display', 'block');
+                            
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display', 'none');
+                            $('#alert_id_signup').html(data.error);
+                            // alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_signup').css('display', 'block');
+                            $('.preloader').css('display', 'none');
+                            $('#alert_id_signup').html(data.error);
+                        } else {
+                            //console.log(data.error)
                         }
-                    });
-                } else {
-                    // alert('There are error in the form. Please check your submissions');
-                }
-            });
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
             /* ------------------------- otp verification start ------------------------- */
 
             $('#pop_up_otp').click(function () {
@@ -1101,108 +1107,113 @@ session_start();
             });
             /* ------------------------- otp verification end ------------------------- */
             /* -------------------------- forgot_password functionality start ------------------------- */
-            $('#pop_up_forgot').on("click", function () {
-                var mobile = $("#Form_phone_forgot").val();
-                var password = $("#Form_pass_forgot").val();
-                var con_password = $("#Form_pass2_forgot").val();
-                var email = $("#Form_email_forgot").val();
-                var error = "";
+            $('#pop_up_forgot').on("click", function() {
+            var mobile = $("#Form_phone_forgot").val();
+            var password = $("#Form_pass_forgot").val();
+            var con_password = $("#Form_pass2_forgot").val();
+            var email = $("#Form_email_forgot").val();
+            var error = "";
 
-                function validateEmail(email) {
-                    var re =
-                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return re.test(String(email).toLowerCase());
-                }
-                if (mobile == "") {
+            function validateEmail(email) {
+                var re =
+                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            if (mobile == "") {
+                $("#Form_phone_forgot").css('border-color', 'red');
+                $("#Form_phone_forgot").css('border-width', '2px');
+                error = error + 'mobile';
+            } else {
+                $("#Form_phone_forgot").css('border-color', '#C0BBBB');
+                $("#Form_phone_forgot").css('border-width', '1px');
+            }
+            if(mobile.length!=10){
                     $("#Form_phone_forgot").css('border-color', 'red');
                     $("#Form_phone_forgot").css('border-width', '2px');
                     error = error + 'mobile';
-                } else {
+            }else {
                     $("#Form_phone_forgot").css('border-color', '#C0BBBB');
                     $("#Form_phone_forgot").css('border-width', '1px');
-                }
-                if(mobile.length!=10){
-                    $("#Form_phone_forgot").css('border-color', 'red');
-                    $("#Form_phone_forgot").css('border-width', '2px');
-                    error = error + 'mobile';
-                }else {
-                    $("#Form_phone_forgot").css('border-color', '#C0BBBB');
-                    $("#Form_phone_forgot").css('border-width', '1px');
-                }
-                if (password == "") {
-                    $("#Form_pass_forgot").css('border-color', 'red');
-                    $("#Form_pass_forgot").css('border-width', '2px');
-                    error = error + 'password';
-                } else {
-                    $("#Form_pass_forgot").css('border-color', '#C0BBBB');
-                    $("#Form_pass_forgot").css('border-width', '1px');
-                }
-                if (con_password == "") {
-                    $("#Form_pass2_forgot").css('border-color', 'red');
-                    $("#Form_pass2_forgot").css('border-width', '2px');
-                    error = error + 'Class';
-                } else {
-                    $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
-                    $("#Form_pass2_forgot").css('border-width', '1px');
-                }
-                if (!validateEmail(email)) {
-                    $("#Form_email_forgot").css('border-color', 'red');
-                    $("#Form_email_forgot").css('border-width', '2px');
-                    error = error + 'email';
-                } else {
-                    $("#Form_email_forgot").css('border-color', '#C0BBBB');
-                    $("#Form_email_forgot").css('border-width', '1px');
-                }
-                if (password != con_password) {
-                    $("#Form_pass2_forgot").css('border-color', 'red');
-                    $("#Form_pass2_forgot").css('border-width', '2px');
-                    $("#Form_pass_forgot").css('border-color', 'red');
-                    $("#Form_pass_forgot").css('border-width', '2px');
-                    // alert('Password not match !');
-                    error = error + 'password not matched';
-                }
-                if (error == "") {
-                    $('.preloader').css('display', 'block');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'php/forgot_password.php',
-                        dataType: "json",
-                        data: {
-                            'email': email,
-                            'mobile': mobile,
-                            'password': password
-
-                        },
-                        success: function (data) {
-                            // console.log(data);
-                            if (data.status == 201) {
-                                $('#alert_id_forgot2').css('display', 'block');
-                                $('#alert_id_forgot').css('display', 'none');
-                                $('.preloader').css('display', 'none');
-                                $('#alert_id_forgot2').html(data.success);
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                //     alert("problem with query");
-                            } else if (data.status == 301) {
-                                $('#alert_id_forgot').css('display', 'block');
-                                $('#alert_id_forgot2').css('display', 'none');
-                                $('.preloader').css('display', 'none');
-                                $('#alert_id_forgot').html(data.error);
-                                // alert(data.error);
-                            } else if (data.status == 302) {
-                                $('#alert_id_forgot').css('display', 'block');
-                                $('#alert_id_forgot2').css('display', 'none');
-                                $('.preloader').css('display', 'none');
-                                $('#alert_id_forgot').html(data.error);
-                            } else {
-                                //console.log(data.error)
-                            }
+            }
+            if (password == "") {
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass_forgot").css('border-width', '1px');
+            }
+            if (password.length<6) {
+                $("#Form_pass_forgot").css('border-color', 'red');
+                $("#Form_pass_forgot").css('border-width', '2px');
+                error = error + 'password';
+            } else {
+                $("#Form_pass_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass_forgot").css('border-width', '1px');
+            }
+            if (con_password == "") {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');
+                error = error + 'Class';
+            } else {
+                $("#Form_pass2_forgot").css('border-color', '#C0BBBB');
+                $("#Form_pass2_forgot").css('border-width', '1px');
+            }
+            if (!validateEmail(email)) {
+                $("#Form_email_forgot").css('border-color', 'red');
+                $("#Form_email_forgot").css('border-width', '2px');
+                error = error + 'email';
+            } else {
+                $("#Form_email_forgot").css('border-color', '#C0BBBB');
+                $("#Form_email_forgot").css('border-width', '1px');
+            }
+            if (password != con_password) {
+                $("#Form_pass2_forgot").css('border-color', 'red');
+                $("#Form_pass2_forgot").css('border-width', '2px');                
+                // alert('Password not match !');
+                error = error + 'password not matched';
+            }
+            if (error == "") {
+                $('.preloader').css('display', 'block');
+                $.ajax({
+                    type: 'POST',
+                    url: 'php/forgot_password.php',
+                    dataType: "json",
+                    data: {
+                        'mobile': mobile,
+                        'password': password,
+                        'email': email
+                    },
+                    success: function(data) {
+                        // console.log(data);
+                        if (data.status == 201) {
+                            $('#alert_id_forgot2').css('display', 'block');
+                            $('#alert_id_forgot').css('display', 'none');
+                            $('.preloader').css('display', 'none');
+                            $('#alert_id_forgot2').html(data.success);
+                        } else if (data.status == 601) {
+                            console.log(data.error);
+                            //     alert("problem with query");
+                        } else if (data.status == 301) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('.preloader').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                            // alert(data.error);
+                        } else if (data.status == 302) {
+                            $('#alert_id_forgot').css('display', 'block');
+                            $('#alert_id_forgot2').css('display', 'none');
+                            $('.preloader').css('display', 'none');
+                            $('#alert_id_forgot').html(data.error);
+                        } else {
+                            //console.log(data.error)
                         }
-                    });
-                } else {
-                    // alert('There are error in the form. Please check your submissions');
-                }
-            });
+                    }
+                });
+            } else {
+                // alert('There are error in the form. Please check your submissions');
+            }
+        });
             /* -------------------------- forgot_password functionality end ------------------------- */
             // ---------------------- step signin form  to download file functionality ---------------------- //
             $('#pop_up_signin').on("click", function () {
