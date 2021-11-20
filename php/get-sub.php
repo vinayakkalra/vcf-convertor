@@ -4,7 +4,7 @@
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://rzp_test_dePlubEU9z2Fn8:cv9J9wl3AWyCHYNqc26GHpYJ@api.razorpay.com/v1/subscriptions",
+        CURLOPT_URL => "https://:@api.razorpay.com/v1/subscriptions",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,

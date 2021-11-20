@@ -1881,7 +1881,7 @@ session_start();
                             });
                             // alert("checked out");
                             var options1 = {
-                                "key": "rzp_test_dePlubEU9z2Fn8",
+                                "key": "",
                                 "subscription_id": GetSubscriberId_Basic,
                                 "name": "VCF 100",
                                 "description": "100RS Subscription for VCF ",

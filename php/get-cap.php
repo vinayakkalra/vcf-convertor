@@ -16,7 +16,7 @@ if(isset($_POST['razorpay_idpay'])){
     $currency_code = "INR";
     function get_curl_handle($payementid, $data) {
     $url = 'https://api.razorpay.com/v1/payments/' . $payementid . '/capture';
-    $key_id = "rzp_test_dePlubEU9z2Fn8";
+    $key_id = "";
     $key_secret = "cv9J9wl3AWyCHYNqc26GHpYJ";
     $params = http_build_query($data);
     //cURL Request

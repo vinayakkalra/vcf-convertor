@@ -2150,7 +2150,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                 // alert("checked out");
                                 var order_id = data.id;
                                 var options = {
-                                    "key": "rzp_test_dePlubEU9z2Fn8",
+                                    "key": "",
                                     "amount": parseInt(result1.price_pro *
                                         100), // Amount is in currency subunits. Default currency is INR. Hence, 29935 refers to 29935 paise or INR 299.35.    
                                     "currency": "INR",
@@ -2328,7 +2328,7 @@ print '<p class="error">'.$GLOBALS['error_msg']."</p>\n";}?>
                                 });
                                 // alert("checked out");
                                 var options1 = {
-                                    "key": "rzp_test_dePlubEU9z2Fn8",
+                                    "key": "",
                                     "subscription_id": GetSubscriberId_Basic,
                                     "name": "VCF 100",
                                     "description": "100RS Subscription for VCF ",
